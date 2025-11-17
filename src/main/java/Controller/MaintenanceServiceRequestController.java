@@ -10,7 +10,7 @@ public class MaintenanceServiceRequestController {
           this.editMaintenanceRequestService = editMaintenanceRequestService;
      }
 
-     public void handleServiceRequestModification(String roomID, String description, boolean isEssential){
-          ServiceRequest sr = editMaintenanceRequestService.update(roomID);
+     public void handleServiceRequestModification(String serviceRequestID, String description, boolean isEssential){
+          ServiceRequest sr = editMaintenanceRequestService.update(serviceRequestID, description, isEssential);
      }
 }

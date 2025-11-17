@@ -2,12 +2,12 @@ package Model;
 
 public class NonEssentialServiceRequest extends ServiceRequest{
 
-     public NonEssentialServiceRequest(String nonEssentialServiceRequestID, String description, String status){
+     public NonEssentialServiceRequest(int nonEssentialServiceRequestID, String description, String status){
           super(nonEssentialServiceRequestID, description, status);
 
      }
      @Override
-     public String getServiceRequestID(){
+     public int getServiceRequestID(){
           return super.getServiceRequestID();
      }
      public void promoteServiceRequest(NonEssentialServiceRequest nesr){

@@ -4,13 +4,13 @@ import Model.ServiceRequest;
 import Service.SubmitServiceRequestService;
 
 public class AddServiceRequestController {
-     final SubmitServiceRequestService submitServiceRequest;
+     final SubmitServiceRequestService submitServiceRequestService;
 
      public AddServiceRequestController(SubmitServiceRequestService submitServiceRequest) {
-          this.submitServiceRequest = submitServiceRequest;
+          this.submitServiceRequestService = submitServiceRequest;
      }
 
      public void handleServiceRequestSubmission(String roomID, String description, boolean isEssential){
-          ServiceRequest sr = submitServiceRequest.submit(roomID, description, isEssential);
+          ServiceRequest sr = submitServiceRequestService.submit(roomID, description, isEssential);
      }
 }

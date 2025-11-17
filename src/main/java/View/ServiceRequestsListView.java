@@ -1,5 +1,10 @@
 package View;
 
+import Controller.AdminServiceRequestController;
+import Controller.MaintenanceServiceRequestController;
+import Model.ServiceRequest;
+import java.util.Scanner;
+
 public class ServiceRequestsListView {
      final MaintenanceServiceRequestController maintenanceServiceRequestController;
      final AdminServiceRequestController adminServiceRequestController;

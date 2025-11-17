@@ -12,14 +12,16 @@ public class SubmitServiceRequestService {
           this.requestRepository = requestRepository;
      }
      public ServiceRequest submit(String roomID, String description, boolean isEssential){
-         if(roomID == null || description == null){
+          if(roomID == null || description == null){
               throw new IllegalArgumentException("No room ID and/or no description.  ");
          }
           if(isEssential){
-               return new EssentialServiceRequest(0, description, false);
+               EssentialServiceRequest serviceRequest = new EssentialServiceRequest(0, description, true);
+               return requestRepository.save(serviceRequest);
          }
-          else{
-               return new NonEssentialServiceRequest(0, description);
+          else {
+               NonEssentialServiceRequest serviceRequest = new NonEssentialServiceRequest(0, description);
+               return requestRepository.save(serviceRequest);
           }
      }
 }

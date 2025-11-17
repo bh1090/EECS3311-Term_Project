@@ -1,0 +1,49 @@
+name: Create Development Branches
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-branches:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Create and push branches
+        run: |
+          branches=(
+            "develop"
+            "authentication"
+            "core-room-booking"
+            "admin-room-management"
+            "service-requests"
+            "booking-flow"
+          )
+          
+          for branch in "${branches[@]}"; do
+            echo "Processing branch: $branch"
+            
+            # Check if branch exists on remote
+            if git ls-remote --heads origin $branch | grep -q $branch; then
+              echo "  Branch $branch already exists on remote"
+            else
+              # Create branch from current HEAD (main/master)
+              git checkout -b $branch
+              git push origin $branch
+              git checkout ${{ github.ref_name }}
+              echo "  Created and pushed branch $branch"
+            fi
+          done
+          
+          echo "Branch creation complete!"

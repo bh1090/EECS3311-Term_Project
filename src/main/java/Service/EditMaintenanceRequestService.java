@@ -20,8 +20,8 @@ public class EditMaintenanceRequestService {
                return requestRepository.update(sr);
           }
           else{
-               NonEssentialServiceRequest serviceRequest = new NonEssentialServiceRequest(0, description);
-               return requestRepository.update(serviceRequest);
+               NonEssentialServiceRequest sr = new NonEssentialServiceRequest(serviceRequestID, description, status);
+               return requestRepository.update(sr);
           }
      }
 }

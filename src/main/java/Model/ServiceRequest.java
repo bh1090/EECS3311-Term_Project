@@ -12,4 +12,7 @@ public abstract class ServiceRequest {
      public int getServiceRequestID() {
           return this.serviceRequestID;
      }
+     public String getDescription() {
+          return this.description;
+     }
 }

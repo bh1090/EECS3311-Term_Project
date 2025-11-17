@@ -8,6 +8,6 @@ public abstract class ServiceRequest {
      }
 
      public int getServiceRequestID() {
-          return 0;
+          return this.serviceRequestID;
      }
 }

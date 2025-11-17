@@ -16,11 +16,11 @@ public class SubmitServiceRequestService {
               throw new IllegalArgumentException("No room ID and/or no description.  ");
          }
           if(isEssential){
-               EssentialServiceRequest serviceRequest = new EssentialServiceRequest(0, description, true);
+               EssentialServiceRequest serviceRequest = new EssentialServiceRequest(0, description, "Ongoing");
                return requestRepository.save(serviceRequest);
          }
           else {
-               NonEssentialServiceRequest serviceRequest = new NonEssentialServiceRequest(0, description);
+               NonEssentialServiceRequest serviceRequest = new NonEssentialServiceRequest(0, description, "Ongoing");
                return requestRepository.save(serviceRequest);
           }
      }

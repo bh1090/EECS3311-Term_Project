@@ -1,17 +1,17 @@
 package Model;
 
 public abstract class ServiceRequest {
-     private final String serviceRequestID;
+     private final int serviceRequestID;
      private String description;
      private String status;
 
-     public ServiceRequest(String serviceRequestID, String description, String status) {
+     public ServiceRequest(int serviceRequestID, String description, String status) {
           this.serviceRequestID = serviceRequestID;
           this.description = description;
           this.status = status;
      }
 
-     public String getServiceRequestID() {
+     public int getServiceRequestID() {
           return this.serviceRequestID;
      }
      public String getDescription() {

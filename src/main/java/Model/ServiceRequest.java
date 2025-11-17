@@ -3,6 +3,7 @@ package Model;
 public abstract class ServiceRequest {
      private final String serviceRequestID;
      private String description;
+     private String status;
 
      public ServiceRequest(int serviceRequestID, String description) {
           this.serviceRequestID = serviceRequestID;

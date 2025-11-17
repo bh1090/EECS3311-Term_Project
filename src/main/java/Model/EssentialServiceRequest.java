@@ -2,12 +2,12 @@ package Model;
 
 public class EssentialServiceRequest extends ServiceRequest{
 
-     public EssentialServiceRequest(String essentialServiceRequestID, String description, String status){
+     public EssentialServiceRequest(int essentialServiceRequestID, String description, String status){
           super(essentialServiceRequestID, description, status);
      }
 
      @Override
-     public String getServiceRequestID() {
+     public int getServiceRequestID() {
           return super.getServiceRequestID();
      }
 }

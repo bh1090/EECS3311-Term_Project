@@ -16,8 +16,8 @@ public class EditMaintenanceRequestService {
           String description = serviceRequest.getDescription();
           String status = serviceRequest.getStatus();
           if(isEssential){
-               EssentialServiceRequest serviceRequest = new EssentialServiceRequest(0, description, true);
-               return requestRepository.update(serviceRequest);
+               EssentialServiceRequest sr = new EssentialServiceRequest(serviceRequestID, description, status);
+               return requestRepository.update(sr);
           }
           else{
                NonEssentialServiceRequest serviceRequest = new NonEssentialServiceRequest(0, description);

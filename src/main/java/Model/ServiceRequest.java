@@ -5,7 +5,7 @@ public abstract class ServiceRequest {
      private String description;
      private String status;
 
-     public ServiceRequest(int serviceRequestID, String description) {
+     public ServiceRequest(String serviceRequestID, String description, String status) {
           this.serviceRequestID = serviceRequestID;
           this.description = description;
      }

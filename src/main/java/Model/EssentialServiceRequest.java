@@ -1,16 +1,16 @@
 package Model;
 
 public class EssentialServiceRequest extends ServiceRequest{
-     private String status;
-     public EssentialServiceRequest(int essentialServiceRequestID, String description, String status){
+     private boolean isComplete;
+     public EssentialServiceRequest(int essentialServiceRequestID, String description, boolean status){
           super(essentialServiceRequestID, description);
-          this.status = status;
+          this.isComplete = status;
      }
-     public String getStatus(){
-          return this.status;
+     public boolean getComplete(){
+          return this.isComplete;
      }
-     public void setStatus(String status){
-          this.status = status;
+     public void setComplete(boolean complete){
+          this.isComplete = complete;
      }
      @Override
      public int getServiceRequestID() {

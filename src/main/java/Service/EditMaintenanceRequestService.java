@@ -11,10 +11,10 @@ public class EditMaintenanceRequestService {
      public EditMaintenanceRequestService(ServiceRequestRepository requestRepository) {
           this.requestRepository = requestRepository;
      }
-     public ServiceRequest update(String roomID, String description, boolean isEssential){
-          if(roomID == null){
-               throw new IllegalArgumentException("No room ID.  ");
-          }
+     public ServiceRequest update(ServiceRequest serviceRequest, boolean isEssential){
+          int serviceRequestID = serviceRequest.getServiceRequestID();
+          String description = serviceRequest.getDescription();
+          String status = serviceRequest.getStatus();
           if(isEssential){
                EssentialServiceRequest serviceRequest = new EssentialServiceRequest(0, description, true);
                return requestRepository.update(serviceRequest);

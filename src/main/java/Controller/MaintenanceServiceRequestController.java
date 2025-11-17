@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.ServiceRequest;
 import Service.EditMaintenanceRequestService;
 
 public class MaintenanceServiceRequestController {

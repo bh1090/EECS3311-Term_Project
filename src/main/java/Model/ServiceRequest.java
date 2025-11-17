@@ -7,5 +7,7 @@ public abstract class ServiceRequest {
           this.serviceRequestID = serviceRequestID;
      }
 
-     public abstract int getServiceRequestID();
+     public int getServiceRequestID() {
+          return 0;
+     }
 }

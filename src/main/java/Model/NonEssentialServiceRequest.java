@@ -2,8 +2,8 @@ package Model;
 
 public class NonEssentialServiceRequest extends ServiceRequest{
 
-     public NonEssentialServiceRequest(int nonEssentialServiceRequest){
-          super(nonEssentialServiceRequest);
+     public NonEssentialServiceRequest(int nonEssentialServiceRequestID, String description){
+          super(nonEssentialServiceRequestID,description);
 
      }
      @Override

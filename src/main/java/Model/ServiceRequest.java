@@ -1,7 +1,7 @@
 package Model;
 
 public abstract class ServiceRequest {
-     private int serviceRequestID;
+     private final String serviceRequestID;
      private String description;
 
      public ServiceRequest(int serviceRequestID, String description) {

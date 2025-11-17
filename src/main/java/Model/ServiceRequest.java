@@ -9,7 +9,7 @@ public abstract class ServiceRequest {
           this.description = description;
      }
 
-     public int getServiceRequestID() {
+     public String getServiceRequestID() {
           return this.serviceRequestID;
      }
      public String getDescription() {

@@ -15,4 +15,8 @@ public class EssentialServiceRequest extends ServiceRequest{
      public String getStatus(){
           return this.status;
      }
+     @Override
+     public int getServiceRequestID() {
+          return super.getServiceRequestID();
+     }
 }

@@ -2,8 +2,8 @@ package Model;
 
 public class EssentialServiceRequest extends ServiceRequest{
      private String status;
-     public EssentialServiceRequest(int serviceRequestID, String status){
-          super(serviceRequestID);
+     public EssentialServiceRequest(int essentialServiceRequestID, String status){
+          super(essentialServiceRequestID);
           this.status = status;
      }
      public String getStatus(){

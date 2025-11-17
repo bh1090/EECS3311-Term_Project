@@ -1,13 +1,9 @@
 package Model;
 
 public class EssentialServiceRequest extends ServiceRequest{
-     private final boolean isEssential;
-     public EssentialServiceRequest(String essentialServiceRequestID, String description, String status, boolean isEssential){
+
+     public EssentialServiceRequest(String essentialServiceRequestID, String description, String status){
           super(essentialServiceRequestID, description, status);
-          this.isEssential = isEssential;
-     }
-     public boolean getIsEssential(){
-          return this.isEssential;
      }
 
      @Override

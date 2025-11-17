@@ -8,6 +8,7 @@ public abstract class ServiceRequest {
      public ServiceRequest(String serviceRequestID, String description, String status) {
           this.serviceRequestID = serviceRequestID;
           this.description = description;
+          this.status = status;
      }
 
      public String getServiceRequestID() {

@@ -15,4 +15,13 @@ public abstract class ServiceRequest {
      public String getDescription() {
           return this.description;
      }
+     public void setDescription(String newDescription) {
+          this.description = newDescription;
+     }
+     public String getStatus() {
+          return this.status;
+     }
+     public void setStatus(String updatedStatus) {
+          this.status = updatedStatus;
+     }
 }

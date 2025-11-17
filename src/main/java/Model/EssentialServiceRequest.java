@@ -9,7 +9,7 @@ public class EssentialServiceRequest extends ServiceRequest{
      public boolean getComplete(){
           return this.isComplete;
      }
-     public void setComplete(boolean complete){
+     public void setIsComplete(boolean complete){
           this.isComplete = complete;
      }
      @Override

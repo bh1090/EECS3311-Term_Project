@@ -12,8 +12,8 @@ public class SubmitServiceRequestService {
           this.requestRepository = requestRepository;
      }
      public ServiceRequest submit(int roomID, String description, boolean isEssential){
-          if(description == null){
-              throw new IllegalArgumentException("No description.  ");
+          if(roomID < 0 || description == null){
+              throw new IllegalArgumentException("Invalid room ID and/or no description.  ");
          }
           if(isEssential){
                EssentialServiceRequest serviceRequest = new EssentialServiceRequest(0, description, "Ongoing");

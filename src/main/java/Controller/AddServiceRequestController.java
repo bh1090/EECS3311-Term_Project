@@ -10,7 +10,7 @@ public class AddServiceRequestController {
           this.submitServiceRequestService = submitServiceRequest;
      }
 
-     public void handleServiceRequestSubmission(String roomID, String description, boolean isEssential){
+     public void handleServiceRequestSubmission(int roomID, String description, boolean isEssential){
           ServiceRequest sr = submitServiceRequestService.submit(roomID, description, isEssential);
      }
 }

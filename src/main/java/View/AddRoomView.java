@@ -1,6 +1,7 @@
 package View;
 
 import Controller.AddRoomController;
+import java.util.Scanner;
 
 public class AddRoomView {
      final AddRoomController addRoomController;

@@ -13,7 +13,7 @@ public class AddServiceRequestView {
           Scanner sc = new Scanner(System.in);
 
           System.out.print("Enter the room ID: ");
-          String roomID = sc.nextLine();
+          int roomID = sc.nextInt();
 
           System.out.print("Enter the description of the service request: ");
           String description = sc.nextLine();

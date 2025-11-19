@@ -1,4 +1,4 @@
-package booking_flow_repository;
+package repository;
 
 public class SensorRepository {
 

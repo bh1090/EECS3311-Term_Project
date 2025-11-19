@@ -1,4 +1,4 @@
-package booking_flow_services;
+package service;
 
 public class SensorService {
 

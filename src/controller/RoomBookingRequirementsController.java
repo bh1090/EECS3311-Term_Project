@@ -1,4 +1,4 @@
-package booking_flow_controllers;
+package controller;
 
 public class RoomBookingRequirementsController {
 

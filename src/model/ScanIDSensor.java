@@ -1,4 +1,4 @@
-package booking_flow_models;
+package model;
 
 public class ScanIDSensor {
 

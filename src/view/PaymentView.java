@@ -1,9 +1,7 @@
 package view;
-import controller.PaymentViewController;
+import javax.swing.*;
+import java.awt.*;
 
-public class PaymentView {
-	final PaymentViewController paymentViewController;
-	public PaymentView(PaymentViewController paymentViewController) {
-		this.paymentViewController = paymentViewController;
-	}
+public class PaymentView extends JFrame{
+	//unknown; this is ambiguous what this should contain
 }

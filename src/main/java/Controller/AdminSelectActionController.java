@@ -1,5 +1,8 @@
 package Controller;
 
+import View.AddRoomView;
+import View.RoomsListView;
+
 public class AdminSelectActionController {
 
      public void accessAddRoomView() {

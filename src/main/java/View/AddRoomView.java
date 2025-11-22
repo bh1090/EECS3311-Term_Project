@@ -9,6 +9,7 @@ public class AddRoomView {
      public AddRoomView(AddRoomController addRoomController) {
           this.addRoomController = addRoomController;
      }
+
      public void getAdminAddRoomInput(){
           JFrame jframe = new JFrame();
 

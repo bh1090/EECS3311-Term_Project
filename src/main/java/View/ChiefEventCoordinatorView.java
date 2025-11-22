@@ -35,21 +35,21 @@ public class ChiefEventCoordinatorView {
                     frameCreateAdmin.add(label1);
                     JTextField newAdminName = new JTextField();
                     frameCreateAdmin.add(newAdminName);
-                    label1.setBounds(25, 200, 150, 50);
+                    label1.setBounds(25, 200, 200, 50);
                     newAdminName.setBounds(200, 200, 220, 50);
 
                     JLabel label2 = new JLabel("Enter the new admin's email: ");
                     frameCreateAdmin.add(label2);
                     JTextField newAdminEmail = new JTextField();
                     frameCreateAdmin.add(newAdminEmail);
-                    label2.setBounds(25, 250, 150, 50);
+                    label2.setBounds(25, 250, 200, 50);
                     newAdminEmail.setBounds(200, 250, 220, 50);
 
-                    JLabel label3 = new JLabel("Enter the new admin's temporary password: ");
+                    JLabel label3 = new JLabel("Set temporary password: ");
                     frameCreateAdmin.add(label3);
                     JTextField newAdminPassword = new JTextField();
                     frameCreateAdmin.add(newAdminPassword);
-                    label3.setBounds(25, 300, 150, 50);
+                    label3.setBounds(25, 300, 200, 50);
                     newAdminPassword.setBounds(200, 300, 220, 50);
 
                     button3.setBounds(150, 350, 220, 50);
@@ -73,11 +73,11 @@ public class ChiefEventCoordinatorView {
                     frameRemoveAdmin.setSize(500, 600);
                     frameRemoveAdmin.setLayout(null);
 
-                    JLabel label1 = new JLabel("Remove admin by their user ID: ");
+                    JLabel label1 = new JLabel("Remove admin via user ID: ");
                     frameRemoveAdmin.add(label1);
                     JTextField adminID = new JTextField();
                     frameRemoveAdmin.add(adminID);
-                    label1.setBounds(50, 200, 150, 50);
+                    label1.setBounds(25, 200, 200, 50);
                     adminID.setBounds(200, 200, 220, 50);
 
                     button3.setBounds(150, 350, 220, 50);

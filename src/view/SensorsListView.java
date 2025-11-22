@@ -14,13 +14,16 @@ public class SensorsListView extends JFrame{
 		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.insets = new Insets(5, 5, 5, 5);
 		
 		gbc.gridx = 0;
 		gbc.gridy = 0;
-		gbc.gridwidth = 2;
+		gbc.gridwidth = 4;
+		gbc.fill = GridBagConstraints.HORIZONTAL;
 		add(this.backButton, gbc);
 		
 		gbc.gridwidth = 1;
+		gbc.fill = GridBagConstraints.NONE;
 		
 		gbc.gridy = 1;
 		for (int i = 0; i < SensorsListView.headers.length; i++) {
@@ -29,7 +32,7 @@ public class SensorsListView extends JFrame{
 		}
 		
 		for (int i = 0; i < sensorList.size(); i++) {
-			for (int j = 0; j < SensorsListView.headers.length; i++) {
+			for (int j = 0; j < SensorsListView.headers.length || j < sensorList.get(i).size(); j++) {
 				gbc.gridx = j;
 				gbc.gridy = i + 2;
 				add(new JLabel(sensorList.get(i).get(j)), gbc);

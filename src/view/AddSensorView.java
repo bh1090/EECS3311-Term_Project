@@ -1,6 +1,11 @@
 package view;
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import view.*;
 
 public class AddSensorView extends JFrame{
 	private static final String[] types = {"Bange Scanner", "Entry Sensor"};
@@ -25,5 +30,16 @@ public class AddSensorView extends JFrame{
 		add(this.backButton);
 		add(this.submitButton);
 		pack();
+	}
+	public static void main(String[] args) {
+		new AddSensorView().setVisible(true);
+		List<List<String>> al = new ArrayList<>();
+		al.add(new ArrayList<String>(Arrays.asList("1", "2", "3", "4")));
+		al.add(new ArrayList<String>(Arrays.asList("5", "6", "7", "8")));
+		new SensorsListView(al).setVisible(true);
+		new RoomBookingRequirementsView("732891").setVisible(true);
+		new GuestSelectActionView("732891").setVisible(true);
+		new CheckinView("732891").setVisible(true);
+		new RescheduleBookingView("732891", "fda").setVisible(true);
 	}
 }

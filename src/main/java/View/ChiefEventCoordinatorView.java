@@ -51,9 +51,12 @@ public class ChiefEventCoordinatorView {
                     frameCreateAdmin.add(newAdminPassword);
                     label3.setBounds(25, 300, 150, 50);
                     newAdminPassword.setBounds(200, 300, 220, 50);
+
                     button3.setBounds(150, 350, 220, 50);
                     frameCreateAdmin.add(button3);
+
                     frameCreateAdmin.setVisible(true);
+
                     button3.addActionListener(new ActionListener() {
                          public void actionPerformed(ActionEvent e) {
                               frameCreateAdmin.dispose();
@@ -78,6 +81,16 @@ public class ChiefEventCoordinatorView {
                     label1.setBounds(50, 200, 150, 50);
                     adminID.setBounds(200, 200, 220, 50);
 
+                    button3.setBounds(150, 350, 220, 50);
+                    frameRemoveAdmin.add(button3);
+
+                    frameRemoveAdmin.setVisible(true);
+
+                    button3.addActionListener(new ActionListener() {
+                         public void actionPerformed(ActionEvent e) {
+                              frameRemoveAdmin.dispose();
+                         }
+                    });
                     chiefEventCoordinatorController.removeAdmin(Integer.parseInt(adminID.getText()));
                }
           });

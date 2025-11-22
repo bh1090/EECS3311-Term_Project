@@ -8,8 +8,8 @@ public class AdminSelectActionController {
           addRoomView.getAdminAddRoomInput();
      }
      public void accessRoomsListView() {
-          AddRoomController addRoomController = new AddRoomController();
-          AddRoomView addRoomView = new AddRoomView(addRoomController);
-          addRoomView.getAdminAddRoomInput();
+          RoomsListController roomsListController = new RoomsListController();
+          RoomsListView roomsListView = new RoomsListView(roomsListController);
+          roomsListView.getListOfRooms();
      }
 }

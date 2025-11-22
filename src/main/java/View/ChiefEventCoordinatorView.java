@@ -68,6 +68,9 @@ public class ChiefEventCoordinatorView {
                     jframe.dispose();
 
                     JFrame frameRemoveAdmin = new JFrame();
+                    frameRemoveAdmin.setSize(500, 600);
+                    frameRemoveAdmin.setLayout(null);
+
                     JLabel label1 = new JLabel("Remove admin by their user ID: ");
                     frameRemoveAdmin.add(label1);
                     JTextField adminID = new JTextField();

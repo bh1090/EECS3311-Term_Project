@@ -1,22 +1,16 @@
 package core.service;
 
-import core.infrastructure.Database;
-import core.models.room.Room;
-import core.models.booking.Booking;
-import core.models.proxy.RoomProxy;
-import core.models.proxy.RoomProxyFactory;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.stream.Collectors;
 
-//
-// Handles CRUD operations with the Singleton Database
+import java.util.List;
+
+import core.infrastructure.Database;
+import core.models.booking.*;
+import core.models.room.*;
+
 class RoomRepository {
     private Database db = Database.getInstance();
 
-    public void save(Room room) { 
-    	db.saveRoom(room); 
-    	}
+    public void save(Room room) { db.saveRoom(room); }
     
     public Room findById(String id) {
         return db.rooms.stream()
@@ -29,6 +23,21 @@ class RoomRepository {
     public void saveBooking(Booking booking) { db.saveBooking(booking); }
     
     public List<Booking> findAllBookings() { return db.bookings; }
-    
-    
+
+    // HELPER METHOD: Calculates the next available ID
+    public String generateNextId() {
+        int maxId = 0;
+        for (Room r : db.rooms) {
+            try {
+                // We assumed IDs are numbers like "1", "2", "100", etc
+                int currentId = Integer.parseInt(r.getRoomId());
+                if (currentId > maxId) {
+                    maxId = currentId;
+                }
+            } catch (NumberFormatException e) {
+                // Ignore weird IDs that aren't numbers (just in case)
+            }
+        }
+        return String.valueOf(maxId + 1);
+    }
 }

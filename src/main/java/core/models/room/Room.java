@@ -5,13 +5,14 @@ package core.models.room;
 // This is the main object being passed around.
 
 public class Room {
-    private String roomId;
+    private String roomCapacity;
     private String location;
     private double price;
+    private String roomId;
     private RoomState state; // The current state object
 
-    public Room(String roomId, String location, double price) {
-        this.roomId = roomId;
+    public Room(String roomId, String location, double price, String roomCapacity) {
+        this.roomCapacity = roomCapacity;
         this.location = location;
         this.price = price;
         this.state = new RoomDisabledState(); // Default
@@ -37,12 +38,24 @@ public class Room {
     public RoomState getState() { 
     	return state; }
     
-    public String getRoomId() { 
-    	return roomId; }
+    public String getRoomCapacity() { 
+    	return roomCapacity; }
+    
+    public String getRoomId() {
+    	return roomId;
+    }
     
     public String getLocation() { 
     	return location; }
     
     public double getPrice() { 
     	return price; }
+    
+    public String getCapacity() {
+    	
+    return roomCapacity;
+    	
+    }
+    
 }
+

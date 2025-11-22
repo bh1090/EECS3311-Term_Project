@@ -59,11 +59,10 @@ public class ChiefEventCoordinatorView {
 
                     button3.addActionListener(new ActionListener() {
                          public void actionPerformed(ActionEvent e) {
+                              chiefEventCoordinatorController.createAdmin(newAdminName.getText(), newAdminEmail.getText(), newAdminPassword.getText());
                               frameCreateAdmin.dispose();
                          }
                     });
-                    chiefEventCoordinatorController.createAdmin(newAdminName.getText(), newAdminEmail.getText(), newAdminPassword.getText());
-
                }
           });
           button2.addActionListener(new ActionListener() {
@@ -88,10 +87,10 @@ public class ChiefEventCoordinatorView {
 
                     button3.addActionListener(new ActionListener() {
                          public void actionPerformed(ActionEvent e) {
+                              chiefEventCoordinatorController.removeAdmin(Integer.parseInt(adminID.getText()));
                               frameRemoveAdmin.dispose();
                          }
                     });
-                    chiefEventCoordinatorController.removeAdmin(Integer.parseInt(adminID.getText()));
                }
           });
      }

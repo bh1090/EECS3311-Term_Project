@@ -29,7 +29,33 @@ public class ChiefEventCoordinatorView {
                     jframe.setLocationRelativeTo(null);
                     jframe.dispose();
 
-                    chiefEventCoordinatorController.createAdmin();
+                    JFrame frameCreateAdmin = new JFrame();
+                    frameCreateAdmin.setSize(500, 600);
+                    frameCreateAdmin.setLayout(null);
+
+                    JLabel label1 = new JLabel("Enter the new admin's name: ");
+                    frameCreateAdmin.add(label1);
+                    JTextField newAdminName = new JTextField();
+                    frameCreateAdmin.add(newAdminName);
+                    label1.setBounds(25, 200, 150, 50);
+                    newAdminName.setBounds(200, 200, 220, 50);
+
+                    JLabel label2 = new JLabel("Enter the new admin's email: ");
+                    frameCreateAdmin.add(label2);
+                    JTextField newAdminEmail = new JTextField();
+                    frameCreateAdmin.add(newAdminEmail);
+                    label2.setBounds(25, 250, 150, 50);
+                    newAdminEmail.setBounds(200, 250, 220, 50);
+
+                    JLabel label3 = new JLabel("Enter the new admin's temporary password: ");
+                    frameCreateAdmin.add(label3);
+                    JTextField newAdminPassword = new JTextField();
+                    frameCreateAdmin.add(newAdminPassword);
+                    label3.setBounds(25, 300, 150, 50);
+                    newAdminPassword.setBounds(200, 300, 220, 50);
+
+                    frameCreateAdmin.setVisible(true);
+                    chiefEventCoordinatorController.createAdmin(newAdminName.getText(), newAdminEmail.getText(), newAdminPassword.getText());
 
                }
           });

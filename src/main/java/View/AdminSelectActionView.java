@@ -11,7 +11,7 @@ public class AdminSelectActionView {
 
           button1.setBounds(150, 200, 220, 50);
           jframe.add(button1);
-          button2.setBounds(150, 200, 220, 50);
+          button2.setBounds(150, 250, 220, 50);
           jframe.add(button2);
           jframe.setSize(500, 600);
           jframe.setLayout(null);

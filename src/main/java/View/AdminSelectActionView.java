@@ -23,8 +23,7 @@ public class AdminSelectActionView {
                     jframe.setLocationRelativeTo(null);
                     jframe.dispose();
 
-                    AddRoomView arv = new AddRoomView(arc);
-                    arv.getAdminAddRoomInput();
+                     adminSelectActionController.accessAddRoomView();
                }
           });
           button2.addActionListener(new ActionListener() {

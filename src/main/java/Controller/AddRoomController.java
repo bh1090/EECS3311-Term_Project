@@ -6,6 +6,6 @@ public class AddRoomController {
 //          this.roomService = roomService;
 //     }
      public void handleAddRoomSubmission(String roomName, int capacity, String location){
-          //Room room = submitServiceRequestService.submit(roomID, capacity, location);
+          //Room room = submitServiceRequestService.submit(roomName, capacity, location);
      }
 }

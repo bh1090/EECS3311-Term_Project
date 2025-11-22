@@ -36,7 +36,7 @@ public class AddRoomView {
           jframe.setSize(500, 600);
           jframe.setLayout(null);
           jframe.setVisible(true);
-
-          addRoomController.handleAddRoomSubmission(roomName, capacity, location);
+          
+          addRoomController.handleAddRoomSubmission(roomName.getText(), Integer.parseInt(roomCapacity.getText()), roomLocation.getText());
      }
 }

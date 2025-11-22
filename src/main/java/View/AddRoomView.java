@@ -26,8 +26,12 @@ public class AddRoomView {
           label2.setBounds(50, 250, 150, 50);
           roomCapacity.setBounds(200, 250, 220, 50);
 
-          System.out.print("Please specify the new room's capacity: ");
-          int capacity = sc.nextInt();
+          JLabel label3 = new JLabel("Enter the room's location: ");
+          jframe.add(label3);
+          JTextField roomLocation = new JTextField();
+          jframe.add(roomLocation);
+          label3.setBounds(50, 300, 150, 50);
+          roomLocation.setBounds(200, 300, 220, 50);
 
           System.out.print("Please enter the location of the new room: ");
           String location = sc.nextLine();

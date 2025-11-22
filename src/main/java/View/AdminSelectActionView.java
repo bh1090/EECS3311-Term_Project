@@ -1,5 +1,7 @@
 package View;
 
+import Controller.AdminSelectActionController;
+
 import javax.swing.*;
 
 public class AdminSelectActionView {

@@ -1,4 +1,5 @@
 import View.AdminSelectActionView;
+import View.ChiefEventCoordinatorView;
 
 public class Main {
      public static void main(String[] args){

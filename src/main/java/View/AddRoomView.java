@@ -10,7 +10,14 @@ public class AddRoomView {
           this.addRoomController = addRoomController;
      }
      public void getAdminAddRoomInput(){
-          Scanner sc = new Scanner(System.in);
+          JFrame jframe = new JFrame();
+
+          JLabel label1 = new JLabel("Enter the room name:");
+          jframe.add(label1);
+          JTextField roomName = new JTextField();
+          jframe.add(roomName);
+          label1.setBounds(50, 200, 150, 50);
+          roomName.setBounds(200, 200, 220, 50);
 
           System.out.print("Please enter the new room name: ");
           String roomName = sc.nextLine();

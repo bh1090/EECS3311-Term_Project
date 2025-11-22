@@ -29,8 +29,12 @@ public class AdminSelectActionView {
           });
           button2.addActionListener(new ActionListener() {
                public void actionPerformed(ActionEvent e){
-                    AddRoomView arv = new AddRoomView();
-                    arv.getAdminAddRoomInput();
+                    jframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Set default close operation
+                    jframe.setSize(300, 200);
+                    jframe.setLocationRelativeTo(null);
+                    jframe.dispose();
+
+                    adminSelectActionController.accessRoomsListView();
                }
           });
      }

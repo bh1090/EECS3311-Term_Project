@@ -53,6 +53,11 @@ public class ChiefEventCoordinatorView {
                     newAdminPassword.setBounds(200, 300, 220, 50);
 
                     frameCreateAdmin.setVisible(true);
+                    button3.addActionListener(new ActionListener() {
+                         public void actionPerformed(ActionEvent e) {
+                              frameCreateAdmin.dispose();
+                         }
+                    });
                     chiefEventCoordinatorController.createAdmin(newAdminName.getText(), newAdminEmail.getText(), newAdminPassword.getText());
 
                }

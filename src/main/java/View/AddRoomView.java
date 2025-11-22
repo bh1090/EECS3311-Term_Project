@@ -52,11 +52,8 @@ public class AddRoomView {
                     jframe.dispose();
 
                     //RoomService roomService = new RoomService();
-
-
+                    addRoomController.handleAddRoomSubmission(roomName.getText(), Integer.parseInt(roomCapacity.getText()), roomLocation.getText());
                }
           });
-
-          addRoomController.handleAddRoomSubmission(roomName.getText(), Integer.parseInt(roomCapacity.getText()), roomLocation.getText());
      }
 }

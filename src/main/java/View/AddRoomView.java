@@ -15,6 +15,9 @@ public class AddRoomView {
 
      public void getAdminAddRoomInput(){
           JFrame jframe = new JFrame();
+          JButton button1 = new JButton("Submit");
+          button1.setBounds(150, 350, 220, 50);
+          jframe.add(button1);
 
           JLabel label1 = new JLabel("Enter the room name:");
           jframe.add(label1);

@@ -16,6 +16,18 @@ public class AdminSelectActionView {
           jframe.setSize(500, 600);
           jframe.setLayout(null);
           jframe.setVisible(true);
+          button1.addActionListener(new ActionListener() {
+               public void actionPerformed(ActionEvent e){
+                    AddRoomView arv = new AddRoomView();
+                    arv.getAdminAddRoomInput();
+               }
+          });
+          button2.addActionListener(new ActionListener() {
+               public void actionPerformed(ActionEvent e){
+                    AddRoomView arv = new AddRoomView();
+                    arv.getAdminAddRoomInput();
+               }
+          });
      }
 
 }

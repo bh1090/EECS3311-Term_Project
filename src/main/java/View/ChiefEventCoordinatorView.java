@@ -14,6 +14,7 @@ public class ChiefEventCoordinatorView {
 
           JButton button1 = new JButton("Create Admin");
           JButton button2 = new JButton("Remove Admin");
+          JButton button3 = new JButton("Submit");
 
           button1.setBounds(150, 200, 220, 50);
           jframe.add(button1);

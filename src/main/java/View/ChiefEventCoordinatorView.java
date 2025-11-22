@@ -66,7 +66,15 @@ public class ChiefEventCoordinatorView {
                     jframe.setLocationRelativeTo(null);
                     jframe.dispose();
 
-                    chiefEventCoordinatorController.removeAdmin();
+                    JFrame frameRemoveAdmin = new JFrame();
+                    JLabel label1 = new JLabel("Remove admin by their user ID: ");
+                    frameRemoveAdmin.add(label1);
+                    JTextField adminID = new JTextField();
+                    frameRemoveAdmin.add(adminID);
+                    label1.setBounds(50, 200, 150, 50);
+                    adminID.setBounds(200, 200, 220, 50);
+
+                    chiefEventCoordinatorController.removeAdmin(Integer.parseInt(adminID.getText()));
                }
           });
      }

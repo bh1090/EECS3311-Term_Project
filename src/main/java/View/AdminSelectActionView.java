@@ -8,7 +8,10 @@ import java.awt.event.ActionListener;
 
 public class AdminSelectActionView {
 
-     final AdminSelectActionController adminSelectActionController = new AdminSelectActionController();
+     private final AdminSelectActionController adminSelectActionController;
+     public AdminSelectActionView(AdminSelectActionController adminSelectActionController) {
+          this.adminSelectActionController = adminSelectActionController;
+     }
      public void handleAdminAction(){
           JFrame jframe = new JFrame();
 

@@ -15,6 +15,7 @@ public class RoomsListView {
 
      public void getListOfRooms() {
           JFrame jframe = new JFrame();
+          jframe.setTitle("Room List");
           JButton button1 = new JButton("View Rooms");
           button1.setBounds(150, 200, 220, 50);
           jframe.add(button1);

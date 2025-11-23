@@ -86,7 +86,7 @@ public class LoginViewController {
             }
             //go to chief event coordinator view
             case "CHIEF": {
-                ChiefEventCoordinatorController chiefCtrl= new ChiefEventCoordinatorController();
+                ChiefEventCoordinatorController chiefCtrl= new ChiefEventCoordinatorController(userService);
                 ChiefEventCoordinatorView chiefView= new ChiefEventCoordinatorView(chiefCtrl);
                 chiefView.handleChiefCoordinatorAction();
                 break;

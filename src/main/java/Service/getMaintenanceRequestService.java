@@ -19,10 +19,6 @@ public final class getMaintenanceRequestService {
 
         repository.loadAllServiceRequestsForRoom(roomID).forEach(request -> {
             unfilteredRequests.add(request);
-            System.out.println(request.getDescription());
-            System.out.println(request instanceof EssentialServiceRequest);
-            System.out.println(request.getServiceRequestID());
-            System.out.println(request.getRoomID());
         });
         
         for(ServiceRequest request : unfilteredRequests){

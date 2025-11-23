@@ -13,10 +13,11 @@ public class Booking {
     private LocalTime startTime;
     private LocalTime endTime;
     private BookingState state;
+    private String paymentId; 
 
     public Booking(String bookingId, String roomId, String userId, 
             LocalDate startDate, LocalDate endDate, 
-            LocalTime startTime, LocalTime endTime) {
+            LocalTime startTime, LocalTime endTime, String paymentId) {
     		this.bookingId = bookingId;
     		this.roomId = roomId;
     		this.userId = userId;
@@ -25,6 +26,7 @@ public class Booking {
     		this.startTime = startTime;
     		this.endTime = endTime;
     		this.state = new ConfirmedState(); 
+    		this.paymentId = paymentId; 
 }
 
     // State Transitions
@@ -68,6 +70,10 @@ public class Booking {
     	}
     public LocalTime getEndTime() { 
     	return endTime; 
+    	}
+    
+    public String getPaymentId() { 
+    	return paymentId; 
     	}
     
 }

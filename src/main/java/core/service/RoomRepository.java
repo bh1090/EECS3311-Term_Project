@@ -24,6 +24,10 @@ class RoomRepository {
     
     public List<Booking> findAllBookings() { return db.bookings; }
 
+    public void savePayment(core.models.payment.Payment payment) {
+        db.savePayment(payment);
+    }
+    
     // HELPER METHOD: Calculates the next available ID
     public String generateNextId() {
         int maxId = 0;

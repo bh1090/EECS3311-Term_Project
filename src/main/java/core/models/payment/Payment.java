@@ -21,7 +21,10 @@ public class Payment {
     }
     
     // Getters
-    public String getPaymentId() { return paymentId; }
-    public double getAmount() { return amount; }
-    public String getStatus() { return status; }
+    public String getPaymentId() { 
+    	return paymentId; }
+    public double getAmount() { 
+    	return amount; }
+    public String getStatus() { 
+    	return status; }
 }

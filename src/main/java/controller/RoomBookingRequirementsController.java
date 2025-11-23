@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 
 import service.RoomService;
+import view.GuestSelectActionView;
 import view.RoomBookingRequirementsView;
 
 public class RoomBookingRequirementsController {
@@ -23,8 +24,10 @@ public class RoomBookingRequirementsController {
 
 	private void bookRoom() {
 		LocalDateTime sldt = ((Date) this.view.startDateTimeSpinner.getValue()).toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-		LocalDateTime eldt = ((Date) this.view.endDateTimeSpinner.getValue()).toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-		if (service.createBooking(this.view.UserID, this.view.roomIDTextField.getText(), sldt.toLocalDate(), eldt.toLocalDate(), sldt.toLocalTime(), eldt.toLocalTime())) {
+		LocalDateTime eldt = sldt.plusHours(1);
+		String bookingID = service.createBooking(this.view.userID, this.view.roomIDTextField.getText(), sldt.toLocalDate(), eldt.toLocalDate(), sldt.toLocalTime(), eldt.toLocalTime(), this.view.paymentID);
+		if (bookingID != null) {
+			JOptionPane.showMessageDialog(null, "Your BookingID is " + bookingID);
 			back();
 		} else {
 			JOptionPane.showMessageDialog(null, "Invalid booking");
@@ -32,7 +35,9 @@ public class RoomBookingRequirementsController {
 	}
 
 	private void back() {
+		GuestSelectActionView view = new GuestSelectActionView();
+		new GuestSelectActionController(view, null);
 		this.view.dispose();
-		//todo: next view
+		view.setVisible(true);
 	}
 }

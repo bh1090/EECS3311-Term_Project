@@ -1,5 +1,8 @@
 package view;
 import javax.swing.*;
+
+import application.SessionData;
+
 import java.awt.*;
 
 public class PaymentView extends JFrame{
@@ -12,8 +15,8 @@ public class PaymentView extends JFrame{
 	public JButton backButton = new JButton("Back");
 	public JButton payButton = new JButton("Pay");
 	
-	public PaymentView(String UserID) {
-		this.UserID = UserID;
+	public PaymentView() {
+		this.UserID = SessionData.getCurrentUser().getId();
 		
 		setTitle("Payment");
 		setLocationRelativeTo(null);
@@ -32,6 +35,8 @@ public class PaymentView extends JFrame{
         add(this.expiryTextField);
         add(new JLabel("CCV:"));
         add(this.ccvTextField);
+        add(new JLabel("Price:"));
+        add(new JLabel(String.format("%.2f", SessionData.getCurrentUser().getHourlyRate())));
         add(this.backButton);
         add(this.payButton);
         

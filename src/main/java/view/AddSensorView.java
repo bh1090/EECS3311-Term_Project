@@ -37,10 +37,10 @@ public class AddSensorView extends JFrame{
 		al.add(new ArrayList<String>(Arrays.asList("1", "2", "3", "4")));
 		al.add(new ArrayList<String>(Arrays.asList("5", "6", "7", "8")));
 		new SensorsListView(al).setVisible(true);
-		new RoomBookingRequirementsView("732891").setVisible(true);
-		new GuestSelectActionView("732891").setVisible(true);
-		new CheckinView("732891").setVisible(true);
-		new RescheduleBookingView("732891", "fda").setVisible(true);
-		new PaymentView("dfdaf").setVisible(true);
+		new RoomBookingRequirementsView("paymentid").setVisible(true);
+		new GuestSelectActionView().setVisible(true);
+		new CheckinView().setVisible(true);
+		new RescheduleBookingView().setVisible(true);
+		new PaymentView().setVisible(true);
 	}
 }

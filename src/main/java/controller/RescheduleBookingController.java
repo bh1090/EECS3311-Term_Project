@@ -8,9 +8,11 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 
 import service.RoomService;
+import view.GuestSelectActionView;
+import view.PaymentView;
 import view.RescheduleBookingView;
 
-public class RescheduleBookingController {
+public class RescheduleBookingController { //useless controller/view???
 	private RescheduleBookingView view;
 	private RoomService service;
 	
@@ -19,22 +21,22 @@ public class RescheduleBookingController {
 		this.service = service;
 		
 		this.view.backButton.addActionListener(e -> back());
-		this.view.rescheduleBookingButton.addActionListener(e -> back());
+		this.view.rescheduleBookingButton.addActionListener(e -> rescheduleBooking());
 	}
 	
 	public void back() {
+		GuestSelectActionView view = new GuestSelectActionView();
+		new GuestSelectActionController(view, null);
 		this.view.dispose();
-		//todo: next view
+		view.setVisible(true);
 	}
 	
 	public void rescheduleBooking() {
-		
-		LocalDateTime sldt = ((Date) this.view.startDateTimeSpinner.getValue()).toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-		LocalDateTime eldt = ((Date) this.view.endDateTimeSpinner.getValue()).toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-		if (service.createBooking(this.view.UserID, this.view.roomIDTextField.getText(), sldt.toLocalDate(), eldt.toLocalDate(), sldt.toLocalTime(), eldt.toLocalTime())) {
-			back();
-		} else {
-			JOptionPane.showMessageDialog(null, "Invalid booking");
-		}
+		this.service.cancelBooking(this.view.bookingIDTextField.getText());
+		PaymentView view = new PaymentView();
+		RoomService service = new RoomService();
+		new PaymentViewController(view, service);
+		this.view.dispose();
+		view.setVisible(true);
 	}
 }

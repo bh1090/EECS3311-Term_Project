@@ -21,7 +21,6 @@ public class GuestSelectActionController {
 		view.availableRoomsButton.addActionListener(e -> foo(e));
 		view.bookRoomButton.addActionListener(e -> foo(e));
 		view.logoutButton.addActionListener(e -> foo(e));
-		view.payButton.addActionListener(e -> foo(e));
 		view.rescheduleRoomButton.addActionListener(e -> foo(e));
 	}
 	
@@ -30,20 +29,15 @@ public class GuestSelectActionController {
 		String action = ((JButton) e.getSource()).getText();
 		if (action.equals("Available Rooms")) {
 			//todo
-		} else if (action.equals("Book Room")) {
-			RoomBookingRequirementsView view = new RoomBookingRequirementsView(this.view.UserID);
-			RoomService service = new RoomService(); //unknown
-			new RoomBookingRequirementsController(view, service);
-			view.setVisible(true);
-		} else if (action.equals("Reschedule Room")) {
-			RescheduleBookingView view = new RescheduleBookingView(this.view.UserID);
-			RoomService service = new RoomService(); //unknown
-			new RescheduleBookingController(view, service);
-			view.setVisible(true);
-		} else if (action.equals("Pay")) {
-			PaymentView view = new PaymentView(this.view.UserID);
+		} else if (action.equals("Book Room")) { //to pay
+			PaymentView view = new PaymentView();
 			RoomService service = new RoomService(); //unknown
 			new PaymentViewController(view, service);
+			view.setVisible(true);
+		} else if (action.equals("Reschedule/Cancel Room")) { // to remove booking -> to pay -> to add new booking
+			RescheduleBookingView view = new RescheduleBookingView();
+			RoomService service = new RoomService(); //unknown
+			new RescheduleBookingController(view, service);
 			view.setVisible(true);
 		} else if (action.equals("Logout")) {
 			//todo

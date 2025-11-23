@@ -14,6 +14,7 @@ public class AdminSelectActionView {
      }
      public void handleAdminAction(){
           JFrame jframe = new JFrame();
+          jframe.setTitle("Admin Actions");
 
           JButton button1 = new JButton("Add New Room");
           JButton button2 = new JButton("List Rooms");

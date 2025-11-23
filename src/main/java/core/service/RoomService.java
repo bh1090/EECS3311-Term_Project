@@ -170,4 +170,17 @@ public class RoomService {
             r.requestDisable(); 
         }
     }
+    
+    /**
+     * Retrieves a full Booking object using its ID.
+     * Can be used to display confirmation details (Time, Date, etc.)
+     */
+    public Booking getBookingDetails(String bookingId) {
+        return roomRepo.findAllBookings().stream()
+                .filter(b -> b.getBookingId().equals(bookingId))
+                .findFirst()
+                .orElse(null);
+    }
+    
+    
 }

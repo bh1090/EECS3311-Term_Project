@@ -24,7 +24,11 @@ public final class ServiceRequestRepository {
      }
 
      public ServiceRequest addServiceRequest(ServiceRequest serviceRequest) {
-          serviceRequestMap.get(serviceRequest.getRoomID()).add(serviceRequest);
+          int roomID = serviceRequest.getRoomID();
+          if (!serviceRequestMap.containsKey(roomID)) {
+               serviceRequestMap.put(roomID, new ArrayList<>());
+          }
+          serviceRequestMap.get(roomID).add(serviceRequest);
           saveMapToCsv(serviceRequestMap, "/Users/richard_balroop/Desktop/School/2025/EECS3311/Project/EECS3311-Term_Project/mockdataset.csv");
           return serviceRequest;
      }

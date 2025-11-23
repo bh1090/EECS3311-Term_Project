@@ -101,15 +101,20 @@ public class RoomService {
 		}
 
     // We execute this if the user decides to cancel their booking
-    public void cancelBooking(String bookingId) {
+    public boolean cancelBooking(String bookingId) { // Changed void -> boolean
         Booking b = roomRepo.findAllBookings().stream()
             .filter(booking -> booking.getBookingId().equals(bookingId))
             .findFirst()
             .orElse(null);
             
         if (b != null) {
-            b.performCancel(); // This triggers the State transition
-            roomRepo.saveBooking(b); // Saves the update state
+            b.performCancel(); 
+            roomRepo.saveBooking(b);
+            System.out.println("Booking " + bookingId + " has been cancelled.");
+            return true; // Success
+        } else {
+            System.out.println("Booking not found: " + bookingId);
+            return false; // Failure (Controller can now show an error popup)
         }
     }
     
@@ -181,6 +186,28 @@ public class RoomService {
                 .findFirst()
                 .orElse(null);
     }
+ 
+    /**
+     * Performs the check-in logic for a specific booking.
+     * @return true if check-in was successful, false if booking not found.
+     */
+    public boolean performCheckIn(String bookingId) {
+        Booking booking = roomRepo.findAllBookings().stream()
+                .filter(b -> b.getBookingId().equals(bookingId))
+                .findFirst()
+                .orElse(null);
+
+        if (booking == null) {
+            System.out.println("Booking not found: " + bookingId);
+            return false; // Failure
+        }
+
+        // Delegate to State Pattern (prints error if already cancelled/completed)
+        booking.performCheckIn();
+        roomRepo.saveBooking(booking);
+        return true; // Success
+    }
+    
     
     
 }

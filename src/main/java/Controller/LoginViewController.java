@@ -23,7 +23,9 @@ public class LoginViewController {
         this.view= view;
         this.authService= authService;
         this.navigator= navigator;
-        //when the user clicks  login, handlelogin()
+        this.roomService = roomService;
+        this.userService = userService;
+         //when the user clicks  login, handlelogin()
         this.view.addLoginListener(e->handleLogin());
         //when the user  clicks back, gotowelcome()
         this.view.addBackListener(e->navigator.goToWelcome());

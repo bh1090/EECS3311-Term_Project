@@ -54,8 +54,7 @@ public class SensorRepository {
 	}
 	
 	private boolean writeOccupancySensorLogsCSV(List<OccupancySensorData> occupancySensorLogs) {
-		try {
-			FileWriter writer = new FileWriter(db.occupancySensorLogsPath);
+		try (FileWriter writer = new FileWriter(db.occupancySensorLogsPath)) {
 			StatefulBeanToCsv<OccupancySensorData> beanToCsv = new StatefulBeanToCsvBuilder<OccupancySensorData>(writer).build();
             beanToCsv.write(occupancySensorLogs);
 			return true;

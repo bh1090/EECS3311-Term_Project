@@ -41,7 +41,8 @@ public class RoomService {
      * @param endDate The day the booking ends
      * @param startTime The specific time the booking starts (e.g., 09:00)
      * @param endTime The specific time the booking ends (e.g., 17:00)
-     * @return true if booking was successful, false if room is occupied or unavailable
+     * @param paymentId The ID of the payment associated with this booking
+     * @return the booking ID if booking was successful, or {@code null} if the room is occupied or unavailable
      */
     public String createBooking(String userId, String roomId, 
     	LocalDate startDate, LocalDate endDate, 
@@ -59,6 +60,12 @@ public class RoomService {
 		// 2. Date Math Setup
 		LocalDateTime requestStart = LocalDateTime.of(startDate, startTime);
 		LocalDateTime requestEnd = LocalDateTime.of(endDate, endTime);
+		
+		// 2a. Validate that end is after start
+				if (!requestEnd.isAfter(requestStart)) {
+					System.out.println("Invalid booking: end date/time must be after start date/time.");
+					return null;
+				}
 		
 		// 3. Overlap Check
 		boolean isOccupied = roomRepo.findAllBookings().stream()
@@ -107,19 +114,21 @@ public class RoomService {
     }
     
     
-    // This method the PaymentController to save the payment instance to the database without having to talk to the DB directly.
+    // This method allows the PaymentController to save the payment instance to the database without having to talk to the DB directly.
     public void savePayment(String paymentId, double amount) {
         // 1. Create the payment model
         // Assuming you have imported core.models.payment.Payment
         core.models.payment.Payment p = new core.models.payment.Payment(paymentId, amount);
         p.completePayment(); // Mark it as successful
         
-        // 2. Save to DB (You need to add this method to Repository first)
-        // Ideally, create a PaymentRepository, but for now:
-        Database.getInstance().savePayment(p); 
+        // Repository Pattern in Action
+        // We are creating a "middle-man" so that the user does not talk to the database directly.
+        // 
+        // 2. Save to DB (done through repository "buffer" method.)
+        roomRepo.savePayment(p);
     }
     
-    // This class handles the enabling of a room which was previously disabled.
+    // The following methods handle the enabling of a room which was previously disabled.
     
     /**
      * Marks a disabled room as having finished maintenance/cleaning.

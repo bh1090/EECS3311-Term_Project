@@ -70,8 +70,8 @@ public class LoginViewController {
             switch (user.getRole().toUpperCase()) {
             //go to admin  view
             case "ADMIN": {
-                AddRoomController addRoomCtrl= new AddRoomController();
-                RoomsListController roomsListCtrl= new RoomsListController();
+                AddRoomController addRoomCtrl= new AddRoomController(roomService);
+                RoomsListController roomsListCtrl= new RoomsListController(roomService);
                 AdminSelectActionController adminCtrl =new AdminSelectActionController(addRoomCtrl, roomsListCtrl);
 
                  AdminSelectActionView adminView = new AdminSelectActionView(adminCtrl);

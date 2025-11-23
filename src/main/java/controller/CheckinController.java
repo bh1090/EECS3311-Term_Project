@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 import application.SessionData;
 import model.Booking;
 import model.Sensor;
-import service.CheckinService;
 import service.RoomService;
 
 public class CheckinController {

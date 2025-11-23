@@ -18,6 +18,7 @@ public class AdminSelectActionView {
 
           JButton button1 = new JButton("Add New Room");
           JButton button2 = new JButton("List Rooms");
+          JButton button3 = new JButton("Disable Room");
 
           button1.setBounds(150, 200, 220, 50);
           jframe.add(button1);

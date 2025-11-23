@@ -26,6 +26,7 @@ public class AdminSelectActionView {
           jframe.setLayout(null);
           jframe.setVisible(true);
           button1.addActionListener(new ActionListener() {
+               @Override
                public void actionPerformed(ActionEvent e){
                     jframe.dispose();
 
@@ -33,6 +34,7 @@ public class AdminSelectActionView {
                }
           });
           button2.addActionListener(new ActionListener() {
+               @Override
                public void actionPerformed(ActionEvent e){
                     jframe.dispose();
 

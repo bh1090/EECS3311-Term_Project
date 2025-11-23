@@ -31,16 +31,4 @@ public class AddSensorView extends JFrame{
 		add(this.submitButton);
 		pack();
 	}
-	public static void main(String[] args) {
-		new AddSensorView().setVisible(true);
-		List<List<String>> al = new ArrayList<>();
-		al.add(new ArrayList<String>(Arrays.asList("1", "2", "3", "4")));
-		al.add(new ArrayList<String>(Arrays.asList("5", "6", "7", "8")));
-		new SensorsListView(al).setVisible(true);
-		new RoomBookingRequirementsView("paymentid").setVisible(true);
-		new GuestSelectActionView().setVisible(true);
-		new CheckinView().setVisible(true);
-		new RescheduleBookingView().setVisible(true);
-		new PaymentView().setVisible(true);
-	}
 }

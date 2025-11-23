@@ -1,7 +1,7 @@
 package Controller;
 
-import application.*;
-import view.*;
+import Application.*;
+import View.*;
 
 import javax.swing.*;
 

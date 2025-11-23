@@ -50,7 +50,7 @@ public class AuthenticationService {
                 break;
 
             default:
-                throw new AuthenticationException("error.");
+                throw new AuthenticationException("Wrong account type.");
         }
 
         //create the user

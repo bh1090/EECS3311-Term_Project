@@ -58,7 +58,7 @@ public final class AdminServiceRequestController {
         else{
             sensorID = sensorId;
         }       
-        editService.promoteServiceRequest(requestId, description, "To-Do", this.roomID, sensorID);
+        editService.promoteServiceRequest(requestId, description, "To-do", this.roomID, sensorID);
         handleServiceRequestListCompilation(); 
     }
 

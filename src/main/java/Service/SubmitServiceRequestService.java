@@ -1,27 +1,41 @@
 package Service;
 
+import java.util.ArrayList;
+
 import Model.EssentialServiceRequest;
 import Model.NonEssentialServiceRequest;
+import Model.SensorEssentialServiceRequest;
 import Model.ServiceRequest;
 import Repository.ServiceRequestRepository;
 
 public class SubmitServiceRequestService {
-     final ServiceRequestRepository requestRepository;
+    private static SubmitServiceRequestService instance = null;
 
-     public SubmitServiceRequestService(ServiceRequestRepository requestRepository){
-          this.requestRepository = requestRepository;
-     }
-     public ServiceRequest submit(int roomID, String description, boolean isEssential){
-          if(roomID < 0 || description == null){
-              throw new IllegalArgumentException("Invalid room ID and/or no description.  ");
-         }
-          if(isEssential){
-               EssentialServiceRequest serviceRequest = new EssentialServiceRequest(0, description, "Ongoing");
-               return requestRepository.save(serviceRequest);
-         }
-          else {
-               NonEssentialServiceRequest serviceRequest = new NonEssentialServiceRequest(0, description, "Ongoing");
-               return requestRepository.save(serviceRequest);
+    public ArrayList<ServiceRequest> submitServiceRequest(int roomID, String description, boolean isEssential, String sensorId){
+
+        ArrayList<ServiceRequest> serviceRequests = new ArrayList<>();
+
+        ServiceRequestRepository repository = ServiceRequestRepository.getInstance();
+        if(isEssential && sensorId.equals("-1")){
+               EssentialServiceRequest essentialServiceRequest = new EssentialServiceRequest(repository.generateNextId(roomID), description, "To-Do", roomID);
+               repository.addServiceRequest(essentialServiceRequest);
           }
-     }
+          else if(isEssential){
+               SensorEssentialServiceRequest sensorEssentialServiceRequest = new SensorEssentialServiceRequest(repository.generateNextId(roomID), description, "To-Do", roomID, Integer.parseInt(sensorId));
+               repository.addServiceRequest(sensorEssentialServiceRequest);
+          }
+          else{
+               NonEssentialServiceRequest nonEssentialServiceRequest = new NonEssentialServiceRequest(repository.generateNextId(roomID), description, "To-Do", roomID);
+               repository.addServiceRequest(nonEssentialServiceRequest);
+          }
+
+        return serviceRequests;
+    }
+
+    public static SubmitServiceRequestService getInstance(){
+        if(instance == null){
+            instance = new SubmitServiceRequestService();
+        }
+        return instance;
+    } 
 }

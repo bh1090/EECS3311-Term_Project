@@ -2,26 +2,42 @@ package Service;
 
 import Model.EssentialServiceRequest;
 import Model.NonEssentialServiceRequest;
-import Model.ServiceRequest;
+import Model.SensorEssentialServiceRequest;
 import Repository.ServiceRequestRepository;
 
 public class EditMaintenanceRequestService {
+     private static EditMaintenanceRequestService instance = null;
      final ServiceRequestRepository requestRepository;
 
      public EditMaintenanceRequestService(ServiceRequestRepository requestRepository) {
           this.requestRepository = requestRepository;
      }
-     public ServiceRequest update(ServiceRequest serviceRequest, boolean isEssential){
-          int serviceRequestID = serviceRequest.getServiceRequestID();
-          String description = serviceRequest.getDescription();
-          String status = serviceRequest.getStatus();
+     public void update(int serviceRequestID, String description, String status, boolean isEssential, int roomID){
           if(isEssential){
-               EssentialServiceRequest sr = new EssentialServiceRequest(serviceRequestID, description, status);
-               return requestRepository.update(sr);
+               EssentialServiceRequest essentialServiceRequest = new EssentialServiceRequest(serviceRequestID, description, status, roomID);
+               requestRepository.updateExistingServiceRequest(essentialServiceRequest);
           }
           else{
-               NonEssentialServiceRequest sr = new NonEssentialServiceRequest(serviceRequestID, description, status);
-               return requestRepository.update(sr);
+               NonEssentialServiceRequest nonEssentialServiceRequest = new NonEssentialServiceRequest(serviceRequestID, description, status, roomID);
+               requestRepository.updateExistingServiceRequest(nonEssentialServiceRequest);
           }
+     }
+
+     public void promoteServiceRequest(int serviceRequestID, String description, String status, int roomID, String sensorId){
+          if(!sensorId.equals("-1")){
+               SensorEssentialServiceRequest sensorEssentialServiceRequest = new SensorEssentialServiceRequest(serviceRequestID, description, status, roomID, Integer.parseInt(sensorId));
+               requestRepository.updateExistingServiceRequest(sensorEssentialServiceRequest);;
+          }
+          else{
+               EssentialServiceRequest essentialServiceRequest = new EssentialServiceRequest(serviceRequestID, description, status, roomID);
+               requestRepository.updateExistingServiceRequest(essentialServiceRequest);
+          }
+     }
+
+     public static EditMaintenanceRequestService getInstance(){
+          if(instance == null){
+               instance = new EditMaintenanceRequestService(ServiceRequestRepository.getInstance());
+          }
+          return instance;
      }
 }

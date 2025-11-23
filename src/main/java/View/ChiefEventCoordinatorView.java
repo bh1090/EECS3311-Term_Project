@@ -5,6 +5,7 @@ import Controller.ChiefEventCoordinatorController;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class ChiefEventCoordinatorView {
      private final ChiefEventCoordinatorController chiefEventCoordinatorController;

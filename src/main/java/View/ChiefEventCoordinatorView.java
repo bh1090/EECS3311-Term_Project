@@ -15,7 +15,7 @@ public class ChiefEventCoordinatorView {
 
      public void handleChiefCoordinatorAction() {
           JFrame jframe = new JFrame();
-
+          jframe.setTitle("Chief Event Coordinator Actions");
           JButton button1 = new JButton("Create Admin");
           JButton button3 = new JButton("Submit");
 

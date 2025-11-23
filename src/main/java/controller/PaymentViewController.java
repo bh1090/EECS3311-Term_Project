@@ -28,8 +28,8 @@ public class PaymentViewController {
 			String paymentId = "TXN-" + System.currentTimeMillis();
 			this.service.savePayment(paymentId, SessionData.getCurrentUser().getHourlyRate());
 			RoomBookingRequirementsView view = new RoomBookingRequirementsView(paymentId);
-			RoomService service = new RoomService();
-			new RoomBookingRequirementsController(view, service);
+			RoomService roomService = new RoomService();
+			new RoomBookingRequirementsController(view, roomService);
 			this.view.dispose();
 			view.setVisible(true);
 		} else {

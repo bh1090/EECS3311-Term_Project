@@ -7,7 +7,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ChiefEventCoordinatorView {
-     final ChiefEventCoordinatorController chiefEventCoordinatorController = new ChiefEventCoordinatorController();
+     private final ChiefEventCoordinatorController chiefEventCoordinatorController;
+     public ChiefEventCoordinatorView(ChiefEventCoordinatorController chiefEventCoordinatorController) {
+          this.chiefEventCoordinatorController = chiefEventCoordinatorController;
+     }
 
      public void handleChiefCoordinatorAction() {
           JFrame jframe = new JFrame();

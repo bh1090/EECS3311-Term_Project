@@ -71,7 +71,9 @@ public class MainAppFrame extends JFrame {
         new WelcomeViewController(welcomeView, navigator);
         new LoginViewController(loginView, authService, navigator, roomService, userService);
         new SignupController(signupView, authService, navigator);
-        
+        new AddRoomController(roomService);
+        new RoomsListController(roomService);
+
     }
 
     //switch screen

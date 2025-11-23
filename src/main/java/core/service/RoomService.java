@@ -200,7 +200,7 @@ public class RoomService {
 
         // Delegate to the State Pattern
         // This will trigger ConfirmedState -> CheckInState
-        // Or print an error if they are already cancelled.
+        // Or print an error if the booking is in an invalid state (cancelled, already checked in, or completed).
         booking.performCheckIn();
         
         // Save the updated state to the repo

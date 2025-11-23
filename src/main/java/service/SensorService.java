@@ -27,7 +27,7 @@ public class SensorService {
 		return this.sensorRepository.addScanIDSensorData(new ScanIDSensorData(String.valueOf(logID), sensorID, userID, scanOutcome, LocalDateTime.now()));
 	}
 	
-	public boolean addOccupancySensorSensorData(String sensorID) {
+	public boolean addOccupancySensorData(String sensorID) {
 		ThreadLocalRandom rng = ThreadLocalRandom.current();
 		Set<String> ids = this.sensorRepository.getOccupancySensorDataList().stream().map(d -> d.logID).collect(Collectors.toSet());
 		String logID;

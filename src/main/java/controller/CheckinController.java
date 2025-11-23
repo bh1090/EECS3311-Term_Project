@@ -60,7 +60,7 @@ public class CheckinController {
 		Sensor entrySensor = sensorService.getSensorByRoomID(booking.getRoomId(), "Entry Sensor");
 		entrySensor.occupied = true;
 		if (entrySensor != null) {			
-			sensorService.addOccupancySensorSensorData(entrySensor.id);
+			sensorService.addOccupancySensorData(entrySensor.id);
 		}
 		JOptionPane.showMessageDialog(null, "Checked in");
 		back();

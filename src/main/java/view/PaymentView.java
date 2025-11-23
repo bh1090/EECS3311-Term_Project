@@ -6,7 +6,7 @@ import application.SessionData;
 import java.awt.*;
 
 public class PaymentView extends JFrame{
-	public String UserID;
+	public String userID;
 	public JTextField bookingIDTextField = new JTextField(1);
 	public JCheckBox institutionalBillingCheckBox = new JCheckBox("Institutional billing");
 	public JTextField cardNumberTextField = new JTextField(1);
@@ -16,7 +16,7 @@ public class PaymentView extends JFrame{
 	public JButton payButton = new JButton("Pay");
 	
 	public PaymentView() {
-		this.UserID = SessionData.getCurrentUser().getId();
+		this.userID = SessionData.getCurrentUser().getId();
 		
 		setTitle("Payment");
 		setLocationRelativeTo(null);
@@ -24,7 +24,7 @@ public class PaymentView extends JFrame{
         
         setLayout(new GridLayout(7,2));
         add(new JLabel("User ID:"));
-        add(new JLabel(this.UserID));
+        add(new JLabel(this.userID));
         add(new JLabel("booking ID:"));
         add(this.bookingIDTextField);
         add(this.institutionalBillingCheckBox);

@@ -6,7 +6,7 @@ import application.SessionData;
 import java.awt.*;
 
 public class GuestSelectActionView extends JFrame{
-	public String UserID;
+	public String userID;
 	public JButton availableRoomsButton = new JButton("Available Rooms");
 	public JButton bookRoomButton = new JButton("Book Room");
 	public JButton rescheduleRoomButton = new JButton("Reschedule/Cancel Room");
@@ -15,7 +15,7 @@ public class GuestSelectActionView extends JFrame{
 	public JButton checkoutButton = new JButton("Checkout");
 	
 	public GuestSelectActionView() {
-		this.UserID = SessionData.getCurrentUser().getId();
+		this.userID = SessionData.getCurrentUser().getId();
 		
 		setTitle("Guest Select Action");
 		setLocationRelativeTo(null);
@@ -23,7 +23,7 @@ public class GuestSelectActionView extends JFrame{
 		
 		setLayout(new GridLayout(4,2));
 		add(new JLabel("User ID:"));
-        add(new JLabel(this.UserID));
+        add(new JLabel(this.userID));
         add(availableRoomsButton);
         add(bookRoomButton);
 		add(checkinButton);

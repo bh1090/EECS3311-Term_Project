@@ -9,9 +9,4 @@ public class ChiefEventCoordinatorController {
           // userService.createUser(accountType.STAFF, newAdminName, newAdminEmail, newAdminPassword);
 
      //}
-
-     public void removeAdmin(int adminID) {
-          // userService.removeUser(adminID);
-
-     }
 }

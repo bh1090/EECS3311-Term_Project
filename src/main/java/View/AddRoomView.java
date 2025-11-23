@@ -48,8 +48,24 @@ public class AddRoomView {
                public void actionPerformed(ActionEvent e){
                     jframe.dispose();
 
-                    //RoomService roomService = new RoomService();
-                    addRoomController.handleAddRoomSubmission(roomLocation.getText(), Integer.parseInt(roomCapacity.getText()), Double.parseDouble(roomPrice.getText()));
+                    String location = roomLocation.getText();
+                    String capacityText = roomCapacity.getText();
+                    String priceText = roomPrice.getText();
+                    int capacity;
+                    double price;
+                    try {
+                         capacity = Integer.parseInt(capacityText);
+                    } catch (NumberFormatException ex) {
+                         JOptionPane.showMessageDialog(jframe, "Please enter a valid integer for room capacity.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                         return;
+                    }
+                    try {
+                         price = Double.parseDouble(priceText);
+                    } catch (NumberFormatException ex) {
+                         JOptionPane.showMessageDialog(jframe, "Please enter a valid number for room price.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                         return;
+                    }
+                    addRoomController.handleAddRoomSubmission(location, capacity, price);
                }
           });
      }

@@ -66,7 +66,7 @@ public class AddRoomView {
                          JOptionPane.showMessageDialog(jframe, "Please enter a valid number for room price.", "Input Error", JOptionPane.ERROR_MESSAGE);
                          return;
                     }
-                    addRoomController.handleAddRoomSubmission(location, capacity, price);
+                    addRoomController.handleAddRoomSubmission(location, capacity, String.valueOf(price));
                }
           });
      }

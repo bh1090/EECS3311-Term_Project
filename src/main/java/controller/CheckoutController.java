@@ -10,25 +10,24 @@ import model.Sensor;
 import service.RoomService;
 import service.SensorService;
 import view.CheckinView;
+import view.CheckoutView;
 import view.GuestSelectActionView;
 
 public class CheckoutController {
-	private CheckinView view;
+	private CheckoutView view;
 	private RoomService roomService;
 	private SensorService sensorService;
-	public CheckoutController(CheckinView view, RoomService roomService, SensorService sensorService) {
+	public CheckoutController(CheckoutView view, RoomService roomService, SensorService sensorService) {
 		this.view = view;
 		this.roomService = roomService;
 		this.sensorService = sensorService;
 		
 		this.view.backButton.addActionListener(e -> back());
-		this.view.checkinButton.addActionListener(e -> checkout());
+		this.view.checkoutButton.addActionListener(e -> checkout());
 	}
 	private void checkout() {
 		boolean pass = true;
 		Booking booking = this.roomService.getBookingDetails(this.view.bookingIDTextField.getText());
-		LocalDateTime bookingDateTime;
-		LocalDateTime nowDateTime;
 		if (booking == null || !this.view.UserID.equals(booking.getUserId())) {
 			JOptionPane.showMessageDialog(null, "Invalid bookingID");
 			pass = false;

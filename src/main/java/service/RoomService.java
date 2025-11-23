@@ -32,5 +32,10 @@ public class RoomService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void performCheckOut(String text) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

@@ -5,6 +5,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 import service.RoomService;
+import service.SensorService;
+import view.CheckinView;
+import view.CheckoutView;
 import view.GuestSelectActionView;
 import view.PaymentView;
 import view.RescheduleBookingView;
@@ -52,7 +55,7 @@ public class GuestSelectActionController {
 			CheckoutView view = new CheckoutView();
 			RoomService roomService = new RoomService();
 			SensorService sensorService = new SensorService();
-			new CheckinController(view, roomService, sensorService);
+			new CheckoutController(view, roomService, sensorService);
 			this.view.dispose();
 			view.setVisible(true);
 		} else if (action.equals("Logout")) {

@@ -45,7 +45,7 @@ public class SensorService {
 		for (sensorID = String.valueOf(rng.nextInt(Integer.MAX_VALUE)); this.sensorRepository.getSensorByID(sensorID) != null; sensorID = String.valueOf(rng.nextInt(Integer.MAX_VALUE))) {
 			
 		}
-		this.sensorRepository.addSensor(new Sensor(sensorID, type, status, roomID, this));
+		this.sensorRepository.addSensor(new Sensor(sensorID, type, status, roomID, false, this));
 		return true;
 	}
 	

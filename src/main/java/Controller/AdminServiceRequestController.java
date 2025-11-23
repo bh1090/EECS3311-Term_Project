@@ -36,32 +36,29 @@ public final class AdminServiceRequestController {
      }
 
     public void handleAddServiceRequest(String description, boolean isEssential, String sensorId){
-            // Assuming roomID is already set
-        String sensorID;
-        if(sensorId.equals("N/A")){
-            sensorID = "-1";
-        }
-        else{
-            sensorID = sensorId;
-        }
+        // Assuming roomID is already set
+        String sensorID = convertSensorId(sensorId);
         SubmitServiceRequestService.getInstance().submitServiceRequest(this.roomID, description, isEssential, sensorID);
         handleServiceRequestListCompilation(); 
     }
 
-
     public void promoteServiceRequest(int requestId, String description, String sensorId){
         EditMaintenanceRequestService editService = EditMaintenanceRequestService.getInstance();
-        String sensorID;
-        if(sensorId.equals("N/A")){     
-            sensorID = "-1";
-        }
-        else{
-            sensorID = sensorId;
-        }       
-        editService.promoteServiceRequest(requestId, description, "To-do", this.roomID, sensorID);
+        String sensorID = convertSensorId(sensorId);
+        editService.promoteServiceRequest(requestId, description, "To-Do", this.roomID, sensorID);
         handleServiceRequestListCompilation(); 
     }
 
+    /**
+     * Converts a sensorId of "N/A" to "-1", otherwise returns the original sensorId.
+     */
+    private static String convertSensorId(String sensorId) {
+        if ("N/A".equals(sensorId)) {
+            return "-1";
+        } else {
+            return sensorId;
+        }
+    }
      public static void main(String args[]) {
           try {
                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

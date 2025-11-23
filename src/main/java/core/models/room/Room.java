@@ -16,6 +16,7 @@ public class Room {
         this.location = location;
         this.price = price;
         this.state = new RoomDisabledState(); // Default
+        this.roomId = roomId;
     }
 
     // State Delegation Methods
@@ -50,12 +51,6 @@ public class Room {
     
     public double getPrice() { 
     	return price; }
-    
-    public String getCapacity() {
-    	
-    return roomCapacity;
-    	
-    }
     
 }
 

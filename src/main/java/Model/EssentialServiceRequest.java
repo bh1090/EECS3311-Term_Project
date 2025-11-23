@@ -10,6 +10,7 @@ public class EssentialServiceRequest extends ServiceRequest{
      public int getServiceRequestID() {
           return super.getServiceRequestID();
      }
+     @Override
      public boolean isEssential(){
           return true;
      }    

@@ -40,7 +40,7 @@ public class SignupController {
 
             if (isYork) {
             	
-                JOptionPane.showMessageDialog(view,"Account created and verified.\nVerified YorkU account.","Signup Successful",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(view,"Account created.","Signup Successful",JOptionPane.INFORMATION_MESSAGE);
             } 
             
             else {

@@ -50,7 +50,9 @@ public class MainAppFrame extends JFrame {
         WelcomeView welcomeView= new WelcomeView();
         LoginView loginView= new LoginView();
         SignupView signupView= new SignupView();
-        //add screens
+        RoomService roomService = new RoomService();
+        UserService userService = new UserService();
+         //add screens
         cardsPanel.add(welcomeView, CARD_WELCOME);
         cardsPanel.add(loginView, CARD_LOGIN);
         cardsPanel.add(signupView, CARD_SIGNUP);

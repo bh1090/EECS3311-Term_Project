@@ -14,7 +14,7 @@ public enum AccountType {
     }
 
     public double getHourlyRate() {
-        return hourlyRate;
+        return  hourlyRate;
     }
     
 }

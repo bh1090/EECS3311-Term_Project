@@ -1,24 +1,21 @@
 package database;
 
-import repository.*;
-
 public class Database {
 
-    private static Database singletonInstance= new Database();
+    private  static Database singletonInstance= new Database();
 
-    private  UserRepository userRepository= UserRepository.getInstance();
+    //depends on where csv is
+    private final String userCsvPath= "data/users.csv";
 
     private Database() { 
     	
     }
 
     public static Database getInstance() {
-    	
         return singletonInstance;
     }
 
-    public UserRepository getUserRepository() {
-        return  userRepository;
+    public String getUserCsvPath() {
+        return  userCsvPath;
     }
-    
 }

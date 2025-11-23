@@ -1,43 +1,170 @@
 package repository;
 
+
+import database.*;
 import model.*;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import com.csvreader.CsvReader;
+import com.csvreader.CsvWriter;
+
+
 
 public class UserRepository {
 
-    private static UserRepository singletonInstance= new UserRepository();
+    private static final UserRepository singletonInstance = new UserRepository();
 
-    private final Map<String, User> usersByEmail= new HashMap<>();
+    public ArrayList<User> users= new ArrayList<User>();
 
-    private UserRepository() { 
-    	
+    private UserRepository() {
+        load();
     }
 
     public static UserRepository getInstance() {
         return singletonInstance;
     }
 
-    
-    public void save(User user) {
-        if (user== null || user.getEmail()== null) {
+    //load, but from database
+    private void load() {
+        String path= Database.getInstance().getUserCsvPath();
+
+        try {
         	
-            return;
+            CsvReader reader= new CsvReader(path);
+            reader.readHeaders();
+
+            users.clear();
+
+            while (reader.readRecord()) {
+                String name= reader.get("name");
+                String id= reader.get("id");
+                String email= reader.get("email");
+                String password= reader.get("password");
+                String accountstr= reader.get("accountType");
+                String verifiedstr= reader.get("verified");
+
+              
+                AccountType accountType= mapCsvTypeToAccountType(accountstr);
+             
+                boolean verified= Boolean.parseBoolean(verifiedstr);
+
+                //factory to create
+                User user = UserFactory.createUserFromCsv(id,name,email,password,accountType,verified );
+                users.add(user);
+                
+            }
+
+            reader.close();
+
+        } 
+        
+        catch (Exception e) {
+            System.out.println("error: " + e.getMessage());
         }
         
-        usersByEmail.put(user.getEmail().toLowerCase(), user);
     }
 
    
-    //returns the email of the user
-    public User findByEmail(String email) {
-    	
-        if (email==null) {
+    
+    private AccountType mapCsvTypeToAccountType(String typeText) {
+        if (typeText == null) {
+            throw new IllegalArgumentException("Missing user type in CSV.");
+        }
+        String t= typeText.trim().toUpperCase();
+
+        //4 main account types
+        try {
+            return AccountType.valueOf(t);
+        } 
+        
+        catch (IllegalArgumentException ignored) {
+            
+        }
+
+        //extra types
+        if (t.startsWith("MAINTENANCE")) {  
         	
-        	return null;
+            return  AccountType.STAFF;
         }
         
-        return usersByEmail.get(email.toLowerCase());
+        if (t.startsWith("CHIEF")) {   
+            return  AccountType.STAFF;
+        }
+        
+        if (t.startsWith("ADMIN")) {  
+            return  AccountType.STAFF;
+        }
+
+        throw new IllegalArgumentException("Unknown account type in users.csv: " + typeText);
+    }
+
+    
+    
+   
+    private void update() {
+    	
+        String path= Database.getInstance().getUserCsvPath();
+
+        try {
+        	
+            CsvWriter csvOutput= new CsvWriter(new FileWriter(path, false), ',');
+
+    
+            csvOutput.write("name");
+            csvOutput.write("id");
+            csvOutput.write("email");
+            csvOutput.write("password");
+            csvOutput.write("accountType");
+            csvOutput.write("verified");
+            csvOutput.endRecord();
+
+            for (User u: users) {
+                csvOutput.write(u.getName());
+                csvOutput.write(u.getId());
+                csvOutput.write(u.getEmail());
+                csvOutput.write(u.getPassword());
+                csvOutput.write(u.getAccountType().name());
+                csvOutput.write(String.valueOf(u.isVerified()));
+                csvOutput.endRecord();
+            }
+            
+            csvOutput.close();
+
+        } 
+        
+        catch (Exception e) {
+            System.out.println("error: " + e.getMessage());
+        }
         
     }
+
+    
+    
+
+    public User findByEmail(String  email) {
+        if (email== null) {
+        	return null;
+        }
+
+        for (User u: users) {
+        	
+            if (u.getEmail().equalsIgnoreCase(email)) {
+                return u;
+            }
+            
+        }
+        
+        return null;
+    }
+
+    
+    
+    public void save(User user) {
+    	
+        users.add(user);
+        update();
+    }
+    
 }

@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class RoomsListView {
-     final RoomsListController roomsListController;
+     private final RoomsListController roomsListController;
 
      public RoomsListView(RoomsListController roomsListController) {
           this.roomsListController = roomsListController;

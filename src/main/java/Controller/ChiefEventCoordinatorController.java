@@ -8,7 +8,7 @@ public class ChiefEventCoordinatorController {
      //public void createAdmin(String newAdminName, String newAdminEmail, String newAdminPassword) {
           // userService.createUser(accountType.STAFF, newAdminName, newAdminEmail, newAdminPassword);
 
-     }
+     //}
 
      public void removeAdmin(int adminID) {
           // userService.removeUser(adminID);

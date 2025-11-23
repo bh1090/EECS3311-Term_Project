@@ -51,7 +51,7 @@ public class UserRepository {
                 boolean verified= Boolean.parseBoolean(verifiedstr);
 
                 //factory to create
-                User user = UserFactory.createUserFromCsv(id,name,email,password,accountType,verified );
+                User user = UserFactory.createUserFromCsv(id,name,email,password,accountType,verified,accountstr);
                 users.add(user);
                 
             }
@@ -125,7 +125,7 @@ public class UserRepository {
                 csvOutput.write(u.getId());
                 csvOutput.write(u.getEmail());
                 csvOutput.write(u.getPassword());
-                csvOutput.write(u.getAccountType().name());
+                csvOutput.write(u.getRole());
                 csvOutput.write(String.valueOf(u.isVerified()));
                 csvOutput.endRecord();
             }

@@ -9,8 +9,9 @@ public class StaffUser extends User {
     }
     
     
-    //when CSV loading
-    public StaffUser(String id , String name,String email, String password,boolean verified) {
-    	super(id,name, email, password,  AccountType.STAFF,verified);
+  //when CSV loading
+    public StaffUser(String id, String name,String email,String password,boolean verified,String role) {
+        super(id,name, email, password,AccountType.STAFF,verified, role);
     }
+    
 }

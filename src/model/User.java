@@ -10,6 +10,8 @@ public abstract class User {
     private String name;
     private AccountType  accountType;
     private boolean verified;
+    //original role/accountype from CSV
+    private String role;
 
     //normal signup
     protected User(String name, String email, String password, AccountType accountType) {
@@ -19,16 +21,18 @@ public abstract class User {
         this.accountType= accountType;
     	this.id= UUID.randomUUID().toString();
         this.verified= true; 
+        this.role= accountType.name();
     }
 
     //used when using CSV, (include verified)
-    protected User(String id,String name,String email, String password, AccountType accountType, boolean verified) {
+    protected User(String id,String name,String email, String password, AccountType accountType, boolean verified, String role) {
     	this.id= id;
     	this.name= name;
     	this.email= email;
     	this.password= password;
     	this.accountType= accountType;
     	this.verified= verified;
+    	this.role= role;
     }
     
     //getters / setters
@@ -89,6 +93,14 @@ public abstract class User {
   
     public boolean checkPassword(String password) {
         return password!= null&& this.password.equals(password);
+    }
+    
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role= role;
     }
     
 }

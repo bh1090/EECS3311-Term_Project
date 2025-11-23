@@ -8,7 +8,9 @@ public class StudentUser extends User {
     }
     
     //when CSV loading
-    public StudentUser(String id, String name,String email,String password,boolean verified) {
-        super(id,name, email, password,AccountType.STUDENT,verified);
+    public StudentUser(String id, String name,String email,String password,boolean verified,String role) {
+        super(id,name, email, password,AccountType.STUDENT,verified, role);
     }
+    
+    
 }

@@ -30,19 +30,19 @@ public class UserFactory {
     	}
     
     //creating  from csv
-    public static User createUserFromCsv(String id, String name,String email, String password, AccountType accountType, boolean verified) {
+    public static User createUserFromCsv(String id, String name,String email, String password, AccountType accountType, boolean verified, String role) {
 
     	if (accountType== AccountType.STUDENT) {
-    		return new StudentUser(id,name,email,password,verified);
+    		return new StudentUser(id,name,email,password,verified, role);
     	}
     	else if (accountType==AccountType.FACULTY) {
-    		return new FacultyUser(id,name,email,password,verified);
+    		return new FacultyUser(id,name,email,password,verified, role);
     	}
     	else if (accountType==AccountType.STAFF) {
-    		return new StaffUser(id,name,email,password,verified);
+    		return new StaffUser(id,name,email,password,verified, role);
     	}
     	else if (accountType==AccountType.PARTNER) {
-    		return new PartnerUser(id,name,email,password,verified);
+    		return new PartnerUser(id,name,email,password,verified, role);
     	}
 
     	throw new IllegalArgumentException("wrong account type: " +accountType);

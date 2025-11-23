@@ -5,8 +5,8 @@ public class ChiefEventCoordinatorController {
 //     public ChiefEventCoordinatorController(UserService userService){
 //          this.userService = userService;
 //     }
-     //public void createAdmin(String newAdminName, String newAdminEmail, String newAdminPassword) {
+     public void createAdmin(String newAdminName, String newAdminEmail, String newAdminPassword) {
           // userService.createUser(accountType.STAFF, newAdminName, newAdminEmail, newAdminPassword);
 
-     //}
+     }
 }

@@ -19,11 +19,17 @@ public class AdminSelectActionView {
           JButton button1 = new JButton("Add New Room");
           JButton button2 = new JButton("List Rooms");
           JButton button3 = new JButton("Disable Room");
+          JButton button4 = new JButton("Disable Room");
 
-          button1.setBounds(150, 200, 220, 50);
+
+          button1.setBounds(150, 50, 220, 50);
           jframe.add(button1);
-          button2.setBounds(150, 250, 220, 50);
+          button2.setBounds(150, 100, 220, 50);
           jframe.add(button2);
+          button3.setBounds(150, 150, 220, 50);
+          jframe.add(button3);
+          button4.setBounds(150, 200, 220, 50);
+          jframe.add(button4);
           jframe.setSize(500, 600);
           jframe.setLayout(null);
           jframe.setVisible(true);

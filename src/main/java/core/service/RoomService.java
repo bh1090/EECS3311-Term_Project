@@ -181,6 +181,33 @@ public class RoomService {
                 .findFirst()
                 .orElse(null);
     }
+ 
+    /**
+     * Performs the check-in logic for a specific booking.
+     * Transitions state from CONFIRMED -> CHECKED_IN
+     */
+    public boolean performCheckIn(String bookingId) {
+        // Find the booking
+        Booking booking = roomRepo.findAllBookings().stream()
+                .filter(b -> b.getBookingId().equals(bookingId))
+                .findFirst()
+                .orElse(null);
+
+        if (booking == null) {
+            System.out.println("Booking not found.");
+            return false;
+        }
+
+        // Delegate to the State Pattern
+        // This will trigger ConfirmedState -> CheckInState
+        // Or print an error if they are already cancelled.
+        booking.performCheckIn();
+        
+        // Save the updated state to the repo
+        roomRepo.saveBooking(booking);
+        return true;
+    }
+    
     
     
 }

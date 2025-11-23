@@ -5,7 +5,7 @@ public abstract class ServiceRequest {
      private String description;
      private String status;
      public boolean isEssential;
-     public int roomID;
+     private int roomID;
 
      public ServiceRequest(int serviceRequestID, String description, String status, int roomID) {
           this.serviceRequestID = serviceRequestID;

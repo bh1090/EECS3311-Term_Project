@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.List;
 
 public class SensorsListView extends JFrame{
-	private final static String[] headers = {"Sensor ID", "Type", "Status", "Room ID"};
+	private final static String[] HEADERS = {"Sensor ID", "Type", "Status", "Room ID"};
 	public JButton backButton = new JButton("Back");
 	public SensorsListView(List<List<String>> sensorList) {
 		setTitle("Sensor List");
@@ -26,13 +26,13 @@ public class SensorsListView extends JFrame{
 		gbc.fill = GridBagConstraints.NONE;
 		
 		gbc.gridy = 1;
-		for (int i = 0; i < SensorsListView.headers.length; i++) {
+		for (int i = 0; i < SensorsListView.HEADERS.length; i++) {
 			gbc.gridx = i;
-			add(new JLabel(SensorsListView.headers[i]), gbc);
+			add(new JLabel(SensorsListView.HEADERS[i]), gbc);
 		}
 		
 		for (int i = 0; i < sensorList.size(); i++) {
-			for (int j = 0; j < SensorsListView.headers.length || j < sensorList.get(i).size(); j++) {
+			for (int j = 0; j < SensorsListView.HEADERS.length || j < sensorList.get(i).size(); j++) {
 				gbc.gridx = j;
 				gbc.gridy = i + 2;
 				add(new JLabel(sensorList.get(i).get(j)), gbc);

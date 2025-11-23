@@ -8,10 +8,10 @@ import java.util.List;
 import view.*;
 
 public class AddSensorView extends JFrame{
-	private static final String[] types = {"Badge Scanner", "Entry Sensor"};
-	private static final String[] statuses = {"Enabled", "Disabled"};
-	public JComboBox<String> typeComboBox = new JComboBox<String>(AddSensorView.types);
-	public JComboBox<String> statusComboBox = new JComboBox<String>(AddSensorView.statuses);
+	private static final String[] TYPES = {"Badge Scanner", "Entry Sensor"};
+	private static final String[] STATUSES = {"Enabled", "Disabled"};
+	public JComboBox<String> typeComboBox = new JComboBox<String>(AddSensorView.TYPES);
+	public JComboBox<String> statusComboBox = new JComboBox<String>(AddSensorView.STATUSES);
 	public JTextField idTextField = new JTextField(1);
 	public JButton backButton = new JButton("Back");
 	public JButton submitButton = new JButton("Add Sensor");

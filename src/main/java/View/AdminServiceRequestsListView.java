@@ -179,11 +179,4 @@ public class AdminServiceRequestsListView extends javax.swing.JFrame {
           return instance;
      }
      
-     public void updateStatus(Integer requestId, String newStatus, String description){
-          System.out.println("UPDATE REQUEST:");
-          System.out.println("ID: " + requestId);
-          System.out.println("Status: " + newStatus);
-          System.out.println("Description: " + description);
-     }
-
 }                 

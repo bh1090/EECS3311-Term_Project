@@ -65,7 +65,9 @@ public class ChiefEventCoordinatorView {
                          public void actionPerformed(ActionEvent e) {
                               String name = newAdminName.getText();
                               String email = newAdminEmail.getText();
-                              String password = Arrays.toString(newAdminPassword.getPassword());
+                              char[] passwordChars = newAdminPassword.getPassword();
+                              String password = new String(passwordChars);
+                              java.util.Arrays.fill(passwordChars, '\0');
                               if (name == null || name.trim().isEmpty()) {
                                    JOptionPane.showMessageDialog(frameCreateAdmin, "Name cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
                                    return;

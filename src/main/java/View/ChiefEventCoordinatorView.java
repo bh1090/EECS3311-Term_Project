@@ -24,6 +24,7 @@ public class ChiefEventCoordinatorView {
           jframe.setLayout(null);
           jframe.setVisible(true);
           button1.addActionListener(new ActionListener() {
+               @Override
                public void actionPerformed(ActionEvent e) {
                     jframe.dispose();
 
@@ -58,6 +59,7 @@ public class ChiefEventCoordinatorView {
                     frameCreateAdmin.setVisible(true);
 
                     button3.addActionListener(new ActionListener() {
+                         @Override
                          public void actionPerformed(ActionEvent e) {
                               chiefEventCoordinatorController.createAdmin(newAdminName.getText(), newAdminEmail.getText(), String.valueOf(newAdminPassword));
                               frameCreateAdmin.dispose();

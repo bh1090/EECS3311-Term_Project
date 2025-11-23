@@ -15,7 +15,11 @@ public class LoginViewController {
     private final RoomService roomService;
     private final UserService userService;
 
-    public LoginViewController(LoginView view,AuthenticationService authService,AppNavigator navigator) {
+    public LoginViewController(LoginView view,
+                               AuthenticationService authService,
+                               AppNavigator navigator,
+                               RoomService roomService,
+                               UserService userService) {
         this.view= view;
         this.authService= authService;
         this.navigator= navigator;

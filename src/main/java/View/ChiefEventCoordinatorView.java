@@ -30,6 +30,7 @@ public class ChiefEventCoordinatorView {
                     jframe.dispose();
 
                     JFrame frameCreateAdmin = new JFrame();
+                    frameCreateAdmin.setTitle("Create a new admin");
                     frameCreateAdmin.setSize(500, 600);
                     frameCreateAdmin.setLayout(null);
 

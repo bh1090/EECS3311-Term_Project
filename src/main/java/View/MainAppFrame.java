@@ -69,7 +69,7 @@ public class MainAppFrame extends JFrame {
         AuthenticationService authService= new AuthenticationService();
 
         new WelcomeViewController(welcomeView, navigator);
-        new LoginViewController(loginView, authService, navigator);
+        new LoginViewController(loginView, authService, navigator, roomService, userService);
         new SignupController(signupView, authService, navigator);
         
     }

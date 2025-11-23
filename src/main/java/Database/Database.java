@@ -43,4 +43,10 @@ public class Database {
         if(!payments.contains(payment)) payments.add(payment);
         System.out.println("Saved Payment: " + payment.getPaymentId());
     }
+     //depends on where csv is
+     private final String userCsvPath= "data/users.csv";
+
+     public String getUserCsvPath() {
+          return  userCsvPath;
+     }
 }

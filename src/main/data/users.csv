@@ -1,0 +1,8 @@
+name,id,email,password,accountType,verified
+Test Student,111,test1@yorku.ca,Password123!,STUDENT,true
+Faculty Example,222,fprof@yorku.ca,ProfPass123!,FACULTY,true
+Partner One,333,partner@outlook.com,Partner#44,PARTNER,true
+Maint Guy,444,maint@yorku.ca,MaintPass11!,MAINTENANCE,true
+Peter,b2c6fd85-feb4-4459-af9a-18c1b28cb871,dwdw@yorku.ca,Hello123!!,STUDENT,true
+John,6759289b-c980-4333-97e2-58a3258e5b7c,dwdywy2@yorku.ca,Today123!,STAFF,true
+Mike,70efe135-2a2b-4a42-a266-687d36b7515a,dwh2@yorku.ca,Hello12345!,STUDENT,true

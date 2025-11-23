@@ -61,7 +61,26 @@ public class ChiefEventCoordinatorView {
                     button3.addActionListener(new ActionListener() {
                          @Override
                          public void actionPerformed(ActionEvent e) {
-                              chiefEventCoordinatorController.createAdmin(newAdminName.getText(), newAdminEmail.getText(), String.valueOf(newAdminPassword));
+                              String name = newAdminName.getText();
+                              String email = newAdminEmail.getText();
+                              String password = newAdminPassword.getText();
+                              if (name == null || name.trim().isEmpty()) {
+                                   JOptionPane.showMessageDialog(frameCreateAdmin, "Name cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                                   return;
+                              }
+                              if (email == null || email.trim().isEmpty()) {
+                                   JOptionPane.showMessageDialog(frameCreateAdmin, "Email cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                                   return;
+                              }
+                              if (!isValidEmail(email)) {
+                                   JOptionPane.showMessageDialog(frameCreateAdmin, "Invalid email format.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                                   return;
+                              }
+                              if (password == null || password.trim().isEmpty()) {
+                                   JOptionPane.showMessageDialog(frameCreateAdmin, "Password cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                                   return;
+                              }
+                              chiefEventCoordinatorController.createAdmin(name, email, password);
                               frameCreateAdmin.dispose();
                          }
                     });

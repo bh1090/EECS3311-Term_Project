@@ -13,6 +13,10 @@ import view.PaymentView;
 import view.RescheduleBookingView;
 import view.RoomBookingRequirementsView;
 
+import view.WelcomeView;
+import view.RoomsListView;
+import service.RoomsListController;
+
 public class GuestSelectActionController {
 	private GuestSelectActionView view;
 	private Object service; // no service needed, can set null
@@ -32,8 +36,10 @@ public class GuestSelectActionController {
 	private void foo(ActionEvent e) {
 		this.view.dispose();
 		String action = ((JButton) e.getSource()).getText();
-		if (action.equals("Available Rooms")) {
-			//todo
+		if (action.equals("Available Rooms")) { //OTHER
+			this.view.dispose()
+			RoomsListView view = new RoomsListView(new RoomsListController(new RoomService()));
+			view.getListOfRooms();
 		} else if (action.equals("Book Room")) { //to pay
 			PaymentView view = new PaymentView();
 			RoomService service = new RoomService(); //unknown
@@ -58,8 +64,9 @@ public class GuestSelectActionController {
 			new CheckoutController(view, roomService, sensorService);
 			this.view.dispose();
 			view.setVisible(true);
-		} else if (action.equals("Logout")) {
-			//todo
+		} else if (action.equals("Logout")) { //OTHER
+			this.view.dispose();
+			WelcomeView();
 		}
 	}
 }

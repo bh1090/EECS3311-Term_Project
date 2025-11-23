@@ -13,8 +13,11 @@ public class SensorsListController {
 		view.backButton.addActionListener(e -> back());
 	}
 	
-	private void back() {
-		view.dispose();
-		//todo: next view
+	private void back() { //OTHER
+		this.view.dispose();
+		RoomService serivce = new RoomService();
+		AdminSelectActionController controller = new AdminSelectActionController(new AddRoomController(service), new RoomsListController(service));
+		AdminSelectActionView view = new AdminSelectActionView(controller);
+		view.handleAdminAction();
 	}
 }

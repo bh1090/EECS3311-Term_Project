@@ -16,9 +16,12 @@ public class AddSensorController {
 		this.view.submitButton.addActionListener(e -> submit());
 	}
 	
-	private void back() {
-		view.dispose();
-		// go back to admin start
+	private void back() { //OTHER
+		this.view.dispose();
+		RoomService serivce = new RoomService();
+		AdminSelectActionController controller = new AdminSelectActionController(new AddRoomController(service), new RoomsListController(service));
+		AdminSelectActionView view = new AdminSelectActionView(controller);
+		view.handleAdminAction();
 	}
 	
 	private void submit() {

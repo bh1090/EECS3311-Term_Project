@@ -43,6 +43,37 @@ public class AdminSelectActionView {
                     adminSelectActionController.accessRoomsListView();
                }
           });
+          button3.addActionListener(new ActionListener() {
+               @Override
+               public void actionPerformed(ActionEvent e){
+                    jframe.dispose();
+                    JFrame frameEnableRoom = new JFrame();
+                    frameEnableRoom.setTitle("Enable a Rom");
+                    JLabel label1 = new JLabel("Enter the room's ID: ");
+                    frameEnableRoom.add(label1);
+                    JTextField roomID = new JTextField();
+                    frameEnableRoom.add(roomID);
+                    label1.setBounds(50, 200, 150, 50);
+                    roomID.setBounds(200, 200, 220, 50);
+
+                    adminSelectActionController.enableRoom(roomID.getText());
+               }
+          });
+          button4.addActionListener(new ActionListener() {
+               @Override
+               public void actionPerformed(ActionEvent e){
+                    jframe.dispose();
+                    JFrame frameDisableRoom = new JFrame();
+                    frameDisableRoom.setTitle("Disable a Room");
+                    JLabel label1 = new JLabel("Enter the room's ID: ");
+                    frameDisableRoom.add(label1);
+                    JTextField roomID = new JTextField();
+                    frameDisableRoom.add(roomID);
+                    label1.setBounds(50, 200, 150, 50);
+                    roomID.setBounds(200, 200, 220, 50);
+                    adminSelectActionController.disableRoom(roomID.getText());
+               }
+          });
      }
 
 }

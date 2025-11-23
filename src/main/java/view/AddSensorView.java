@@ -41,5 +41,6 @@ public class AddSensorView extends JFrame{
 		new GuestSelectActionView("732891").setVisible(true);
 		new CheckinView("732891").setVisible(true);
 		new RescheduleBookingView("732891", "fda").setVisible(true);
+		new PaymentView("dfdaf").setVisible(true);
 	}
 }

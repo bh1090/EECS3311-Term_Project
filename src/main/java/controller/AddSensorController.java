@@ -26,8 +26,8 @@ public class AddSensorController {
 		String status = (String) view.statusComboBox.getSelectedItem();
 		String roomID = (String) view.idTextField.getText();
 		if (service.addSensor(type, status, roomID)) {
-			view.dispose();
-			// go back to admin start
+			JOptionPane.showMessageDialog(null, "Added");
+			back();
 		} else {
 			JOptionPane.showMessageDialog(null, "Invalid parameters");
 		}

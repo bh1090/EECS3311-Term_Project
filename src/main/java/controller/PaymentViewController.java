@@ -1,5 +1,7 @@
 package controller;
 
+import javax.swing.JOptionPane;
+
 import service.RoomService;
 import view.PaymentView;
 
@@ -16,7 +18,15 @@ public class PaymentViewController {
 	}
 
 	private void pay() {
-		//logic
+		if (this.view.institutionalBillingCheckBox.isSelected() ||
+				this.view.cardNumberTextField.getText().length() == 16 && this.view.cardNumberTextField.getText().matches("\\d+") &&
+				this.view.expiryTextField.getText().length() == 4 && this.view.expiryTextField.getText().matches("\\d+") &&
+				this.view.ccvTextField.getText().length() == 3 && this.view.ccvTextField.getText().matches("\\d+")) {
+			JOptionPane.showMessageDialog(null, "Thank you!");
+			back();
+		} else {
+			JOptionPane.showMessageDialog(null, "invalid parameters");
+		}
 	}
 
 	private void back() {

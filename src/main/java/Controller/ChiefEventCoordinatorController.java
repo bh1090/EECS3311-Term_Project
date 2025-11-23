@@ -1,5 +1,8 @@
 package Controller;
 
+import Service.UserService;
+import Model.AccountType;
+
 public class ChiefEventCoordinatorController {
      private final UserService userService;
      public ChiefEventCoordinatorController(UserService userService, AccountType accountType){

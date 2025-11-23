@@ -12,7 +12,7 @@ import view.GuestSelectActionView;
 import view.PaymentView;
 import view.RescheduleBookingView;
 
-public class RescheduleBookingController { //useless controller/view???
+public class RescheduleBookingController {
 	private RescheduleBookingView view;
 	private RoomService service;
 	

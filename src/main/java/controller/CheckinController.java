@@ -8,11 +8,12 @@ import java.time.LocalDateTime;
 import javax.swing.JOptionPane;
 
 import service.CheckinService;
+import service.RoomService;
 
 public class CheckinController {
 	private CheckinView view;
-	private CheckinService service;
-	public CheckinController(CheckinView view, CheckinService service) {
+	private RoomService service;
+	public CheckinController(CheckinView view, RoomService service) {
 		this.view = view;
 		this.service = service;
 		
@@ -21,9 +22,7 @@ public class CheckinController {
 	}
 	
 	private void checkin() {
-		//logic
-		//check if in 30min window, then booking.performcheckin()
-		Booking booking = this.service.getBookingDetails(this.view.bookingIDTextField);
+		Booking booking = this.service.getBookingDetails(this.view.bookingIDTextField.getText());
 		if (booking == null) {
 			JOptionPane.showMessageDialog(null, "Invalid bookingID");
 			return;
@@ -42,7 +41,7 @@ public class CheckinController {
 			JOptionPane.showMessageDialog(null, "Booking passed");
 			return;
 		}
-		service.performCheckIn(this.view.bookingIDTextField);
+		service.performCheckIn(this.view.bookingIDTextField.getText());
 		JOptionPane.showMessageDialog(null, "Checked in");
 		back();
 	}

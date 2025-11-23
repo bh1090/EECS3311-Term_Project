@@ -33,9 +33,19 @@ public class CheckinController {
 		if (booking == null || !this.view.UserID.equals(booking.getUserId())) {
 			JOptionPane.showMessageDialog(null, "Invalid bookingID");
 			pass = false;
-		} else if (!booking.getStatus().equals("CHECKED_IN")) {
-			JOptionPane.showMessageDialog(null, "Booking not checked in");
+		} else if (!booking.getStatus().equals("CONFIRMED")) {
+			JOptionPane.showMessageDialog(null, "Booking not confirmed");
 			pass = false;
+		} else {
+			bookingDateTime = booking.getStartDate().atTime(booking.getStartTime());
+			nowDateTime = LocalDateTime.now();
+			if (nowDateTime.isBefore(bookingDateTime.minusMinutes(30))) {
+				JOptionPane.showMessageDialog(null, "Too early to checkin");
+				pass = false;
+			} else if (nowDateTime.isAfter(bookingDateTime)) {
+				JOptionPane.showMessageDialog(null, "Booking passed");
+				pass = false;
+			}
 		}
 		roomService.performCheckIn(this.view.bookingIDTextField.getText());
 		Sensor badgeScanner = sensorService.getSensorByRoomID(booking.getRoomId(), "Badge Scanner");

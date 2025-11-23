@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import model.OccupancySensorData;
 import model.ScanIDSensorData;
+import model.Sensor;
 import repository.SensorRepository;
 
 public class SensorService {
@@ -33,7 +34,16 @@ public class SensorService {
 		return this.sensorRepository.addoccupancySensorData(new OccupancySensorData(String.valueOf(logID), sensorID, LocalDateTime.now()));
 	}
 	
-	public boolean addSensor() {
-		
+	public boolean addSensor(String type, String status, String roomID) { //no check vaild roomid
+		if (!(type.equals("Badge Scanner") || type.equals("Entry Sensor")) || !(status.equals("Enabled") || status.equals("Disabled"))) {
+			return false;
+		}
+		ThreadLocalRandom rng = ThreadLocalRandom.current();
+		String sensorID;
+		for (sensorID = String.valueOf(rng.nextInt(Integer.MAX_VALUE)); this.sensorRepository.getSensorByID(sensorID) != null; sensorID = String.valueOf(rng.nextInt(Integer.MAX_VALUE))) {
+			
+		}
+		this.sensorRepository.addSensor(new Sensor(sensorID, type, status, roomID, this));
+		return true;
 	}
 }

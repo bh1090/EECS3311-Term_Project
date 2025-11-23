@@ -153,7 +153,6 @@ public class AdminServiceRequestsListView extends javax.swing.JFrame {
           
           if (row >= 0){
                Integer requestId = (Integer) ServiceRequestsList.getValueAt(row, 0);
-               String newStatus = (String) ServiceRequestsList.getValueAt(row, 1);
                String description = (String) ServiceRequestsList.getValueAt(row, 2);
                String isEssential = (String) ServiceRequestsList.getValueAt(row, 3);
 

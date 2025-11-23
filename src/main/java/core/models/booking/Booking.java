@@ -1,6 +1,8 @@
 package core.models.booking;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+
 
 public class Booking {
     private String bookingId;
@@ -8,16 +10,22 @@ public class Booking {
     private String userId; 
     private LocalDate startDate;
     private LocalDate endDate;
+    private LocalTime startTime;
+    private LocalTime endTime;
     private BookingState state;
 
-    public Booking(String bookingId, String roomId, String userId, LocalDate start, LocalDate end) {
-        this.bookingId = bookingId;
-        this.roomId = roomId;
-        this.userId = userId;
-        this.startDate = start;
-        this.endDate = end;
-        this.state = new ConfirmedState(); // Default start state
-    }
+    public Booking(String bookingId, String roomId, String userId, 
+            LocalDate startDate, LocalDate endDate, 
+            LocalTime startTime, LocalTime endTime) {
+    		this.bookingId = bookingId;
+    		this.roomId = roomId;
+    		this.userId = userId;
+    		this.startDate = startDate;
+    		this.endDate = endDate;
+    		this.startTime = startTime;
+    		this.endTime = endTime;
+    		this.state = new ConfirmedState(); 
+}
 
     // State Transitions
     public void performCheckIn() { 
@@ -54,6 +62,12 @@ public class Booking {
     
     public LocalDate getEndDate() { 
     	return endDate;
+    	}
+    public LocalTime getStartTime() { 
+    	return startTime;
+    	}
+    public LocalTime getEndTime() { 
+    	return endTime; 
     	}
     
 }

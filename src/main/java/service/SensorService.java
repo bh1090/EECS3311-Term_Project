@@ -27,7 +27,7 @@ public class SensorService {
 		return this.sensorRepository.addScanIDSensorData(new ScanIDSensorData(String.valueOf(logID), sensorID, userID, scanOutcome, LocalDateTime.now()));
 	}
 	
-	public boolean addOccupancySensorSensorData(String sensorID, String userID, String scanOutcome) {
+	public boolean addOccupancySensorSensorData(String sensorID) {
 		ThreadLocalRandom rng = ThreadLocalRandom.current();
 		Set<String> ids = this.sensorRepository.getOccupancySensorDataList().stream().map(d -> d.logID).collect(Collectors.toSet());
 		String logID;
@@ -47,6 +47,14 @@ public class SensorService {
 		}
 		this.sensorRepository.addSensor(new Sensor(sensorID, type, status, roomID, this));
 		return true;
+	}
+	
+	public List<Sensor> getSensorsByRoomID(String id) {
+		return this.sensorRepository.readSensorsCSV().stream().filter(s -> s.roomID.equals(id)).collect(Collectors.toList());
+	}
+	
+	public Sensor getSensorByRoomID(String id, String type) {
+		return this.getSensorsByRoomID(id).stream().filter(s -> s.type.equals(type)).findFirst().orElse(null);
 	}
 	
 	public List<List<String>> getSensorsFormatted() {

@@ -3,7 +3,7 @@ package service;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import controller.Booking;
+import model.Booking;
 
 public class RoomService {
 

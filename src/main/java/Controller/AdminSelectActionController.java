@@ -1,5 +1,6 @@
 package Controller;
 
+import Service.RoomService;
 import View.AddRoomView;
 import View.RoomsListView;
 

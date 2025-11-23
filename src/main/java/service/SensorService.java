@@ -1,6 +1,8 @@
 package service;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
@@ -45,5 +47,9 @@ public class SensorService {
 		}
 		this.sensorRepository.addSensor(new Sensor(sensorID, type, status, roomID, this));
 		return true;
+	}
+	
+	public List<List<String>> getSensorsFormatted() {
+		return this.sensorRepository.readSensorsCSV().stream().map(s -> Arrays.asList(s.id, s.type, s.status, s.roomID)).collect(Collectors.toList());
 	}
 }

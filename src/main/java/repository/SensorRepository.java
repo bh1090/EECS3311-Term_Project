@@ -20,7 +20,7 @@ public class SensorRepository {
 		// TODO Auto-generated constructor stub
 	}
 	
-	private List<Sensor> readSensorsCSV() {
+	public List<Sensor> readSensorsCSV() {
 		try {
 			return new CsvToBeanBuilder<Sensor>(new FileReader(db.sensorsPath))
 					.withType(Sensor.class)

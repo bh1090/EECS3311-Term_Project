@@ -17,15 +17,15 @@ public class SubmitServiceRequestService {
 
         ServiceRequestRepository repository = ServiceRequestRepository.getInstance();
         if(isEssential && sensorId.equals("-1")){
-               EssentialServiceRequest essentialServiceRequest = new EssentialServiceRequest(repository.generateNextId(roomID), description, "To-Do", roomID);
+               EssentialServiceRequest essentialServiceRequest = new EssentialServiceRequest(repository.generateNextId(roomID), description, "To-do", roomID);
                repository.addServiceRequest(essentialServiceRequest);
           }
           else if(isEssential){
-               SensorEssentialServiceRequest sensorEssentialServiceRequest = new SensorEssentialServiceRequest(repository.generateNextId(roomID), description, "To-Do", roomID, Integer.parseInt(sensorId));
+               SensorEssentialServiceRequest sensorEssentialServiceRequest = new SensorEssentialServiceRequest(repository.generateNextId(roomID), description, "To-do", roomID, Integer.parseInt(sensorId));
                repository.addServiceRequest(sensorEssentialServiceRequest);
           }
           else{
-               NonEssentialServiceRequest nonEssentialServiceRequest = new NonEssentialServiceRequest(repository.generateNextId(roomID), description, "To-Do", roomID);
+               NonEssentialServiceRequest nonEssentialServiceRequest = new NonEssentialServiceRequest(repository.generateNextId(roomID), description, "To-do", roomID);
                repository.addServiceRequest(nonEssentialServiceRequest);
           }
 

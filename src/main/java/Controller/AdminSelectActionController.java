@@ -20,4 +20,12 @@ public class AdminSelectActionController {
           RoomsListView roomsListView = new RoomsListView(roomsListController);
           roomsListView.getListOfRooms();
      }
+     public void enableRoom(String roomID) {
+          RoomService roomService = new RoomService();
+          roomService.enableRoom(roomID);
+     }
+     public void disableRoom(String roomID) {
+          RoomService roomService = new RoomService();
+          roomService.disableRoom(roomID);
+     }
 }

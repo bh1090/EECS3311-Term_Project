@@ -20,7 +20,7 @@ public class AdminSelectActionController {
           RoomsListView roomsListView = new RoomsListView(roomsListController);
           roomsListView.getListOfRooms();
      }
-          public void enableRoom(String roomID) {
+     public void enableRoom(String roomID) {
           RoomService roomService = new RoomService();
           roomService.enableRoom(roomID);
      }

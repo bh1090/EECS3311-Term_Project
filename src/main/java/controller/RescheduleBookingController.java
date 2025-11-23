@@ -17,10 +17,11 @@ public class RescheduleBookingController {
 	}
 	
 	public void back() {
-		
+		this.view.dispose();
+		//back
 	}
 	
 	public void rescheduleBooking() {
-		
+		//logic
 	}
 }

@@ -47,7 +47,7 @@ public class ChiefEventCoordinatorView {
 
                     JLabel label3 = new JLabel("Set temporary password: ");
                     frameCreateAdmin.add(label3);
-                    JTextField newAdminPassword = new JTextField();
+                    JPasswordField newAdminPassword = new JPasswordField();
                     frameCreateAdmin.add(newAdminPassword);
                     label3.setBounds(25, 300, 200, 50);
                     newAdminPassword.setBounds(200, 300, 220, 50);
@@ -59,7 +59,7 @@ public class ChiefEventCoordinatorView {
 
                     button3.addActionListener(new ActionListener() {
                          public void actionPerformed(ActionEvent e) {
-                              chiefEventCoordinatorController.createAdmin(newAdminName.getText(), newAdminEmail.getText(), newAdminPassword.getText());
+                              chiefEventCoordinatorController.createAdmin(newAdminName.getText(), newAdminEmail.getText(), String.valueOf(newAdminPassword));
                               frameCreateAdmin.dispose();
                          }
                     });

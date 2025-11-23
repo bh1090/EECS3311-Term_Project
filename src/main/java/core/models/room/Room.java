@@ -51,6 +51,11 @@ public class Room {
     
     public double getPrice() { 
     	return price; }
+
+	public void performMaintenance() {
+		state.maintain(this);
+		
+	}
     
 }
 

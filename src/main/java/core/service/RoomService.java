@@ -1,6 +1,7 @@
 package core.service;
 
 import core.models.room.Room;
+import core.infrastructure.Database;
 import core.models.booking.Booking;
 import java.time.LocalDate;
 import java.time.LocalTime; // Used for specific time slots (e.g., 14:00)
@@ -42,73 +43,113 @@ public class RoomService {
      * @param endTime The specific time the booking ends (e.g., 17:00)
      * @return true if booking was successful, false if room is occupied or unavailable
      */
-    public boolean createBooking(String userId, String roomId, 
-                                 LocalDate startDate, LocalDate endDate, 
-                                 LocalTime startTime, LocalTime endTime) {
-        
-        // Fetch the room object to check its current state (Enabled/Disabled/Maintenance)
-        Room room = roomRepo.findById(roomId);
-        
-        // 1. Validate Room Availability
-        // If the room doesn't exist OR if the State Pattern says it's not bookable (e.g. disabled), fail.
-        if (room == null || !room.isAvailable()) {
-            System.out.println("Room not available (Offline or does not exist).");
-            return false;
-        }
+    public String createBooking(String userId, String roomId, 
+    	LocalDate startDate, LocalDate endDate, 
+		LocalTime startTime, LocalTime endTime,
+		String paymentId) { // payment parameter
+		
+		Room room = roomRepo.findById(roomId);
+		
+		// 1. Availability Check
+		if (room == null || !room.isAvailable()) {
+		System.out.println("Room not available.");
+		return null; // <--- Return null on failure
+		}
+		
+		// 2. Date Math Setup
+		LocalDateTime requestStart = LocalDateTime.of(startDate, startTime);
+		LocalDateTime requestEnd = LocalDateTime.of(endDate, endTime);
+		
+		// 3. Overlap Check
+		boolean isOccupied = roomRepo.findAllBookings().stream()
+		.filter(b -> b.getRoomId().equals(roomId)) 
+		.filter(b -> !b.getStatus().equals("CANCELLED")) 
+		.anyMatch(b -> {
+		LocalDateTime existingStart = LocalDateTime.of(b.getStartDate(), b.getStartTime());
+		LocalDateTime existingEnd = LocalDateTime.of(b.getEndDate(), b.getEndTime());
+		return requestStart.isBefore(existingEnd) && requestEnd.isAfter(existingStart);
+		});
+		
+		if (isOccupied) {
+			System.out.println("Room is occupied on these dates/times.");
+			return null; // <--- Return null on failure
+		}
+		
+		// 4. Create Booking with ID and Payment ID
+		String newBookingId = "B-" + System.currentTimeMillis(); // Generate ID here to return it
+		
+		Booking booking = new Booking(
+		newBookingId, 
+		roomId, 
+		userId, 
+		startDate, 
+		endDate,
+		startTime, 
+		endTime,
+		paymentId // <--- Pass paymentId to model
+		);
+		
+		roomRepo.saveBooking(booking);
+		return newBookingId; // <--- Return the ID on success
+		}
 
-        // 2. Prepare Date-Time Objects for Math
-        // We combine Date + Time into a single LocalDateTime object.
-        // This allows us to handle overnight bookings or complex date ranges linearly.
-        // e.g. "2025-11-22" + "14:00" becomes "2025-11-22T14:00"
-        LocalDateTime requestStart = LocalDateTime.of(startDate, startTime);
-        LocalDateTime requestEnd = LocalDateTime.of(endDate, endTime);
-
-        // 3. Check for Scheduling Conflicts
-        // We look through ALL bookings to find a "conflict".
-        boolean isOccupied = roomRepo.findAllBookings().stream()
-            // Filter A: Only look at bookings for THIS specific room ID.
-            .filter(b -> b.getRoomId().equals(roomId)) 
+    // We execute this if the user decides to cancel their booking
+    public void cancelBooking(String bookingId) {
+        Booking b = roomRepo.findAllBookings().stream()
+            .filter(booking -> booking.getBookingId().equals(bookingId))
+            .findFirst()
+            .orElse(null);
             
-            // Filter B: Ignore bookings that were previously cancelled (they don't block the slot).
-            .filter(b -> !b.getStatus().equals("CANCELLED")) 
-            
-            // Filter C: The Overlap Check
-            // We check if our requested time overlaps with this existing booking 'b'.
-            .anyMatch(b -> {
-                // Convert the existing booking's Date/Time to LocalDateTime for comparison
-                LocalDateTime existingStart = LocalDateTime.of(b.getStartDate(), b.getStartTime());
-                LocalDateTime existingEnd = LocalDateTime.of(b.getEndDate(), b.getEndTime());
-
-                // LOGIC EXPLAINED:
-                // A conflict exists if the requested start is BEFORE the existing end
-                // AND the requested end is AFTER the existing start.
-                // This formula covers all types of overlap (partial, full containment, or exact match).
-                return requestStart.isBefore(existingEnd) && requestEnd.isAfter(existingStart);
-            });
-
-        // If 'anyMatch' returned true, it means we found a conflict.
-        if (isOccupied) {
-            System.out.println("Room is occupied on these dates/times.");
-            return false;
+        if (b != null) {
+            b.performCancel(); // This triggers the State transition
+            roomRepo.saveBooking(b); // Saves the update state
         }
-
-        // 4. Finalize Booking
-        // Generate a unique Booking ID using the current system time in milliseconds.
-        Booking booking = new Booking(
-            "B-" + System.currentTimeMillis(), 
-            roomId, 
-            userId, 
-            startDate, 
-            endDate,
-            startTime, 
-            endTime    
-        );
+    }
+    
+    
+    // This method the PaymentController to save the payment instance to the database without having to talk to the DB directly.
+    public void savePayment(String paymentId, double amount) {
+        // 1. Create the payment model
+        // Assuming you have imported core.models.payment.Payment
+        core.models.payment.Payment p = new core.models.payment.Payment(paymentId, amount);
+        p.completePayment(); // Mark it as successful
         
-        // Save the new booking to the repository
-        roomRepo.saveBooking(booking);
-        return true;
+        // 2. Save to DB (You need to add this method to Repository first)
+        // Ideally, create a PaymentRepository, but for now:
+        Database.getInstance().savePayment(p); 
+    }
+    
+    // This class handles the enabling of a room which was previously disabled.
+    
+    /**
+     * Marks a disabled room as having finished maintenance/cleaning.
+     * Transition: DISABLED -> READY_FOR_ENABLE
+     */
+    public void maintenanceCompleted(String roomId) { 
+        Room r = roomRepo.findById(roomId);
+        if (r != null) {
+            r.performMaintenance(); // Calls the model method (keeps original name in Room.java)
+            System.out.println("Room " + roomId + " maintenance complete. Ready to enable.");
+        }
     }
 
+    /**
+     * Enables a room that is ready.
+     * Transition: READY_FOR_ENABLE -> ENABLED
+     */
+    public void enableRoom(String roomId) {
+        Room r = roomRepo.findById(roomId);
+        if (r != null) {
+            // added check for already enabled
+            if (r.isAvailable()) { 
+                System.out.println("Room is already enabled.");
+                return;
+            }
+            r.requestEnable();
+        }
+    }
+    
+  
     /**
      * Disables a room so it cannot be booked (e.g. for maintenance or renovations).
      * Uses the Room's State Pattern to handle the transition.

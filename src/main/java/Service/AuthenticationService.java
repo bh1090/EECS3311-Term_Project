@@ -1,9 +1,9 @@
 package Service;
 
-import application.*;
-import database.*;
-import model.*;
-import repository.*;
+import Application.*;
+import Database.*;
+import Model.*;
+import Repository.*;
 
 public class AuthenticationService {
 

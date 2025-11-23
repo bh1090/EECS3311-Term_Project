@@ -1,9 +1,9 @@
 package Controller;
 
-import application.*;
-import model.*;
-import service.*;
-import view.*;
+import Application.*;
+import Model.*;
+import Service.*;
+import View.*;
 
 import javax.swing.*;
 

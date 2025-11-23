@@ -1,6 +1,6 @@
 package Application;
 
-import model.*;
+import Model.*;
 
 public class SessionData {
 

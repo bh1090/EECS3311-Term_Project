@@ -1,8 +1,8 @@
 package View;
 
-import application.*;
-import controller.*;
-import service.*;
+import Application.*;
+import Controller.*;
+import Service.*;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,8 +1,8 @@
 package Repository;
 
 
-import database.*;
-import model.*;
+import Database.Database.*;
+import Model.*;
 
 import java.io.FileWriter;
 import java.util.ArrayList;

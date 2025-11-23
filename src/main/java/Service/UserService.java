@@ -1,8 +1,8 @@
 package Service;
 
-import database.*;
-import model.*;
-import repository.*;
+import Database.Database.*;
+import Model.*;
+import Repository.*;
 
 
 public class UserService {
@@ -21,5 +21,5 @@ public class UserService {
         return user;
     }
 
-   
+
 }

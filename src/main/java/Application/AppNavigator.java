@@ -1,6 +1,6 @@
 package Application;
 
-import view.*;
+import View.*;
 
 public class AppNavigator {
 

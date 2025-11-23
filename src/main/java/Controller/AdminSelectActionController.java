@@ -2,11 +2,14 @@ package Controller;
 
 import View.AddRoomView;
 import View.RoomsListView;
+import core.service.RoomService;
 
 public class AdminSelectActionController {
      private final AddRoomController addRoomController;
      private final RoomsListController roomsListController;
-     public AdminSelectActionController(AddRoomController addRoomController, RoomsListController roomsListController) {
+     public AdminSelectActionController(AddRoomController addRoomController,
+                                        RoomsListController roomsListController
+                                        ) {
           this.addRoomController = addRoomController;
           this.roomsListController = roomsListController;
      }
@@ -19,6 +22,10 @@ public class AdminSelectActionController {
           RoomsListView roomsListView = new RoomsListView(roomsListController);
           roomsListView.getListOfRooms();
      }
+//     public void enableRoom(String roomID) {
+//          RoomService roomService = new RoomService();
+//          roomService.enableRoom(roomID);
+//     }
      public void disableRoom(String roomID) {
           RoomService roomService = new RoomService();
           roomService.disableRoom(roomID);

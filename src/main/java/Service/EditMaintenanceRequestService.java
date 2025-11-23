@@ -26,7 +26,7 @@ public class EditMaintenanceRequestService {
      public void promoteServiceRequest(int serviceRequestID, String description, String status, int roomID, String sensorId){
           if(!sensorId.equals("-1")){
                SensorEssentialServiceRequest sensorEssentialServiceRequest = new SensorEssentialServiceRequest(serviceRequestID, description, status, roomID, Integer.parseInt(sensorId));
-               requestRepository.updateExistingServiceRequest(sensorEssentialServiceRequest);;
+               requestRepository.updateExistingServiceRequest(sensorEssentialServiceRequest);
           }
           else{
                EssentialServiceRequest essentialServiceRequest = new EssentialServiceRequest(serviceRequestID, description, status, roomID);

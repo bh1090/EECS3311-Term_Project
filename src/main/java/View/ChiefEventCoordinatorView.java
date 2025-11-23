@@ -65,33 +65,5 @@ public class ChiefEventCoordinatorView {
                     });
                }
           });
-          button2.addActionListener(new ActionListener() {
-               public void actionPerformed(ActionEvent e) {
-                    jframe.dispose();
-
-                    JFrame frameRemoveAdmin = new JFrame();
-                    frameRemoveAdmin.setSize(500, 600);
-                    frameRemoveAdmin.setLayout(null);
-
-                    JLabel label1 = new JLabel("Remove admin via user ID: ");
-                    frameRemoveAdmin.add(label1);
-                    JTextField adminID = new JTextField();
-                    frameRemoveAdmin.add(adminID);
-                    label1.setBounds(25, 200, 200, 50);
-                    adminID.setBounds(200, 200, 220, 50);
-
-                    button3.setBounds(150, 350, 220, 50);
-                    frameRemoveAdmin.add(button3);
-
-                    frameRemoveAdmin.setVisible(true);
-
-                    button3.addActionListener(new ActionListener() {
-                         public void actionPerformed(ActionEvent e) {
-                              chiefEventCoordinatorController.removeAdmin(Integer.parseInt(adminID.getText()));
-                              frameRemoveAdmin.dispose();
-                         }
-                    });
-               }
-          });
      }
 }

@@ -1,7 +1,4 @@
 package controller;
-import service.SensorService;
-import view.CheckinView;
-import view.GuestSelectActionView;
 
 import java.time.LocalDateTime;
 
@@ -11,33 +8,45 @@ import application.SessionData;
 import model.Booking;
 import model.Sensor;
 import service.RoomService;
+import service.SensorService;
+import view.CheckinView;
+import view.GuestSelectActionView;
 
-public class CheckinController {
+public class CheckoutController {
 	private CheckinView view;
 	private RoomService roomService;
 	private SensorService sensorService;
-	public CheckinController(CheckinView view, RoomService roomService, SensorService sensorService) {
+	public CheckoutController(CheckinView view, RoomService roomService, SensorService sensorService) {
 		this.view = view;
 		this.roomService = roomService;
 		this.sensorService = sensorService;
 		
 		this.view.backButton.addActionListener(e -> back());
-		this.view.checkinButton.addActionListener(e -> checkin());
+		this.view.checkinButton.addActionListener(e -> checkout());
 	}
-	
-	private void checkin() {
+	private void checkout() {
 		boolean pass = true;
 		Booking booking = this.roomService.getBookingDetails(this.view.bookingIDTextField.getText());
 		LocalDateTime bookingDateTime;
 		LocalDateTime nowDateTime;
-		if (booking == null || !this.view.UserID.equals(booking.getUserId())) {
+		if (booking == null) {
 			JOptionPane.showMessageDialog(null, "Invalid bookingID");
 			pass = false;
-		} else if (!booking.getStatus().equals("CHECKED_IN")) {
-			JOptionPane.showMessageDialog(null, "Booking not checked in");
+		} else if (!booking.getStatus().equals("CONFIRMED")) {
+			JOptionPane.showMessageDialog(null, "Booking not confirmed");
 			pass = false;
+		} else {
+			bookingDateTime = booking.getStartDate().atTime(booking.getStartTime());
+			nowDateTime = LocalDateTime.now();
+			if (nowDateTime.isBefore(bookingDateTime.minusMinutes(30))) {
+				JOptionPane.showMessageDialog(null, "Too early to checkin");
+				pass = false;
+			} else if (nowDateTime.isAfter(bookingDateTime)) {
+				JOptionPane.showMessageDialog(null, "Booking passed");
+				pass = false;
+			}
 		}
-		roomService.performCheckIn(this.view.bookingIDTextField.getText());
+		roomService.performCheckOut(this.view.bookingIDTextField.getText());
 		Sensor badgeScanner = sensorService.getSensorByRoomID(booking.getRoomId(), "Badge Scanner");
 		if (badgeScanner != null) {
 			if (pass) {

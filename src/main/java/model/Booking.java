@@ -24,5 +24,10 @@ public class Booking {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public String getUserId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

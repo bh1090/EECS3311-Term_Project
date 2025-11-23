@@ -8,7 +8,7 @@ import java.util.List;
 import view.*;
 
 public class AddSensorView extends JFrame{
-	private static final String[] types = {"Bange Scanner", "Entry Sensor"};
+	private static final String[] types = {"Badge Scanner", "Entry Sensor"};
 	private static final String[] statuses = {"Enabled", "Disabled"};
 	public JComboBox<String> typeComboBox = new JComboBox<String>(AddSensorView.types);
 	public JComboBox<String> statusComboBox = new JComboBox<String>(AddSensorView.statuses);

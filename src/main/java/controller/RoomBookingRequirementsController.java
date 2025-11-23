@@ -27,12 +27,12 @@ public class RoomBookingRequirementsController {
 		if (service.createBooking(this.view.UserID, this.view.roomIDTextField.getText(), sldt.toLocalDate(), eldt.toLocalDate(), sldt.toLocalTime(), eldt.toLocalTime())) {
 			back();
 		} else {
-			JOptionPane.showMessageDialog(null, "Invalid parameters");
+			JOptionPane.showMessageDialog(null, "Invalid booking");
 		}
 	}
 
 	private void back() {
 		this.view.dispose();
-		//back
+		//todo: next view
 	}
 }

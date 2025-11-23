@@ -19,6 +19,6 @@ public class CheckinController {
 	}
 	private void back() {
 		this.view.dispose();
-		//back
+		//todo: next view
 	}
 }

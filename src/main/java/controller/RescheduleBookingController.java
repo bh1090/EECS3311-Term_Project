@@ -1,6 +1,12 @@
 package controller;
 //import service.RoomService;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
+
+import javax.swing.JOptionPane;
+
 import service.RoomService;
 import view.RescheduleBookingView;
 
@@ -18,10 +24,17 @@ public class RescheduleBookingController {
 	
 	public void back() {
 		this.view.dispose();
-		//back
+		//todo: next view
 	}
 	
 	public void rescheduleBooking() {
-		//logic
+		
+		LocalDateTime sldt = ((Date) this.view.startDateTimeSpinner.getValue()).toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+		LocalDateTime eldt = ((Date) this.view.endDateTimeSpinner.getValue()).toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+		if (service.createBooking(this.view.UserID, this.view.roomIDTextField.getText(), sldt.toLocalDate(), eldt.toLocalDate(), sldt.toLocalTime(), eldt.toLocalTime())) {
+			back();
+		} else {
+			JOptionPane.showMessageDialog(null, "Invalid booking");
+		}
 	}
 }

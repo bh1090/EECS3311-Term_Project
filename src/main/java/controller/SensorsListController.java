@@ -15,6 +15,6 @@ public class SensorsListController {
 	
 	private void back() {
 		view.dispose();
-		//next view
+		//todo: next view
 	}
 }

@@ -88,7 +88,7 @@ public abstract class User {
 
   
     public boolean checkPassword(String password) {
-        return password!= null&& password.equals(password);
+        return password!= null&& this.password.equals(password);
     }
     
 }

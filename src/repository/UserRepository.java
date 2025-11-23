@@ -16,7 +16,7 @@ public class UserRepository {
 
     private static final UserRepository singletonInstance = new UserRepository();
 
-    public ArrayList<User> users= new ArrayList<User>();
+    private ArrayList<User> users= new ArrayList<User>();
 
     private UserRepository() {
         load();

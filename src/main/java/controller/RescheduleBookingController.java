@@ -31,8 +31,8 @@ public class RescheduleBookingController {
 	public void rescheduleBooking() {
 		this.service.cancelBooking(this.view.bookingIDTextField.getText());
 		PaymentView view = new PaymentView();
-		RoomService service = new RoomService();
-		new PaymentViewController(view, service);
+		RoomService paymentService = new RoomService();
+		new PaymentViewController(view, paymentService);
 		this.view.dispose();
 		view.setVisible(true);
 	}

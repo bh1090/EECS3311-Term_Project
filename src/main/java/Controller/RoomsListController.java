@@ -8,6 +8,6 @@ public class RoomsListController {
           this.roomService = roomService;
      }
      public void getAllRooms() {
-          // roomService.getRooms();
+          //roomService.getRooms();
      }
 }

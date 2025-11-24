@@ -1,215 +1,130 @@
 package Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
+import Model.Booking;
 import Model.Payment;
 import Model.Room;
-import Model.Booking;
-import Repository.RoomRepository;
-
-import java.time.LocalDate;
-import java.time.LocalTime; // Used for specific time slots (e.g., 14:00)
-import java.time.LocalDateTime; // Used for comparing Date + Time together
+import core.service.BookingRepository;
+import core.service.PaymentRepository;
 
 /**
  * Service Layer for handling Room and Booking logic.
- * This class acts as the bridge between the Controllers (UI) and the Repository (Data).
+ * Now connects to Singleton Repositories for persistence.
  */
 public class RoomService {
-    private RoomRepository roomRepo = new RoomRepository();
+    // 1. Get Singleton instances of the repositories
+    private RoomRepository roomRepo = RoomRepository.getInstance();
+    private BookingRepository bookingRepo = BookingRepository.getInstance();
+    private PaymentRepository paymentRepo = PaymentRepository.getInstance();
 
-    /**
-     * Creates a new room in the system.
-     * * @param loc The physical location of the room (e.g., "Library 2nd Floor")
-     * @param price The cost per time unit
-     * @param capacity The maximum number of people allowed in the room
-     */
     public void createRoom(String loc, double price, String capacity) {
-        // 1. Auto-generate the next available ID to prevent duplicates
         String nextId = roomRepo.generateNextId();
-        
-        // 2. Instantiate the Room model with the new ID and details
         Room newRoom = new Room(nextId, loc, price, capacity);
-        
-        // 3. Persist (save) the new room to the database via the repository
-        roomRepo.save(newRoom);
-        System.out.println("Room created successfully with ID: " + nextId + ", Capacity: " + capacity);
+        roomRepo.save(newRoom); // Saves to rooms.csv
+        System.out.println("Room created: " + nextId);
     }
 
-    /**
-     * Attempts to create a booking for a specific user and room.
-     * This method validates availability, checks for time overlaps, and ensures the room is active.
-     * * @param userId The ID of the user making the booking
-     * @param roomId The ID of the room to book
-     * @param startDate The day the booking starts
-     * @param endDate The day the booking ends
-     * @param startTime The specific time the booking starts (e.g., 09:00)
-     * @param endTime The specific time the booking ends (e.g., 17:00)
-     * @param paymentId The ID of the payment associated with this booking
-     * @return the booking ID if booking was successful, or {@code null} if the room is occupied or unavailable
-     */
     public String createBooking(String userId, String roomId, 
-    	LocalDate startDate, LocalDate endDate, 
-		LocalTime startTime, LocalTime endTime,
-		String paymentId) { // payment parameter
-		
-		Room room = roomRepo.findById(roomId);
-		
-		// 1. Availability Check
-		if (room == null || !room.isAvailable()) {
-		System.out.println("Room not available.");
-		return null; // <--- Return null on failure
-		}
-		
-		// 2. Date Math Setup
-		LocalDateTime requestStart = LocalDateTime.of(startDate, startTime);
-		LocalDateTime requestEnd = LocalDateTime.of(endDate, endTime);
-		
-		// 2a. Validate that end is after start
-				if (!requestEnd.isAfter(requestStart)) {
-					System.out.println("Invalid booking: end date/time must be after start date/time.");
-					return null;
-				}
-		
-		// 3. Overlap Check
-		boolean isOccupied = roomRepo.findAllBookings().stream()
-		.filter(b -> b.getRoomId().equals(roomId)) 
-		.filter(b -> !b.getStatus().equals("CANCELLED")) 
-		.anyMatch(b -> {
-		LocalDateTime existingStart = LocalDateTime.of(b.getStartDate(), b.getStartTime());
-		LocalDateTime existingEnd = LocalDateTime.of(b.getEndDate(), b.getEndTime());
-		return requestStart.isBefore(existingEnd) && requestEnd.isAfter(existingStart);
-		});
-		
-		if (isOccupied) {
-			System.out.println("Room is occupied on these dates/times.");
-			return null; // <--- Return null on failure
-		}
-		
-		// 4. Create Booking with ID and Payment ID
-		String newBookingId = "B-" + System.currentTimeMillis(); // Generate ID here to return it
-		
-		Booking booking = new Booking(
-		newBookingId, 
-		roomId, 
-		userId, 
-		startDate, 
-		endDate,
-		startTime, 
-		endTime,
-		paymentId // <--- Pass paymentId to model
-		);
-		
-		roomRepo.saveBooking(booking);
-		return newBookingId; // <--- Return the ID on success
-		}
+                                 LocalDate startDate, LocalDate endDate, 
+                                 LocalTime startTime, LocalTime endTime,
+                                 String paymentId) {
+        // Use RoomRepo to find room
+        Room room = roomRepo.findById(roomId);
+        if (room == null || !room.isAvailable()) return null;
 
-    // We execute this if the user decides to cancel their booking
-    public void cancelBooking(String bookingId) {
-        Booking b = roomRepo.findAllBookings().stream()
-            .filter(booking -> booking.getBookingId().equals(bookingId))
-            .findFirst()
-            .orElse(null);
-            
-        if (b != null) {
-            b.performCancel(); // This triggers the State transition
-            roomRepo.saveBooking(b); // Saves the update state
+        LocalDateTime requestStart = LocalDateTime.of(startDate, startTime);
+        LocalDateTime requestEnd = LocalDateTime.of(endDate, endTime);
+
+        // Use BookingRepo to find conflicts
+        boolean isOccupied = bookingRepo.findAll().stream() 
+            .filter(b -> b.getRoomId().equals(roomId)) 
+            .filter(b -> !b.getStatus().equals("CANCELLED")) 
+            .anyMatch(b -> {
+                LocalDateTime existingStart = LocalDateTime.of(b.getStartDate(), b.getStartTime());
+                LocalDateTime existingEnd = LocalDateTime.of(b.getEndDate(), b.getEndTime());
+                return requestStart.isBefore(existingEnd) && requestEnd.isAfter(existingStart);
+            });
+
+        if (isOccupied) {
+            System.out.println("Room is occupied.");
+            return null;
         }
-    }
-    
-    
-    // This method allows the PaymentController to save the payment instance to the database without having to talk to the DB directly.
-    public void savePayment(String paymentId, double amount) {
-        // 1. Create the payment model
-        // Assuming you have imported Model.Payment
-        Payment p = new Payment(paymentId, amount);
-        p.completePayment(); // Mark it as successful
+
+        Booking booking = new Booking("B-" + System.currentTimeMillis(), roomId, userId, startDate, endDate, startTime, endTime, paymentId);
         
-        // Repository Pattern in Action
-        // We are creating a "middle-man" so that the user does not talk to the database directly.
-        // 
-        // 2. Save to DB (done through repository "buffer" method.)
-        roomRepo.savePayment(p);
-    }
-    
-    // The following methods handle the enabling of a room which was previously disabled.
-    
-    /**
-     * Marks a disabled room as having finished maintenance/cleaning.
-     * Transition: DISABLED -> READY_FOR_ENABLE
-     */
-    public void maintenanceCompleted(String roomId) { 
-        Room r = roomRepo.findById(roomId);
-        if (r != null) {
-            r.performMaintenance(); // Calls the model method (keeps original name in Room.java)
-            System.out.println("Room " + roomId + " maintenance complete. Ready to enable.");
-        }
+        // Use BookingRepo to save
+        bookingRepo.save(booking); // Saves to bookings.csv
+        return booking.getBookingId();
     }
 
-    /**
-     * Enables a room that is ready.
-     * Transition: READY_FOR_ENABLE -> ENABLED
-     */
-    public void enableRoom(String roomId) {
-        Room r = roomRepo.findById(roomId);
-        if (r != null) {
-            // added check for already enabled
-            if (r.isAvailable()) { 
-                System.out.println("Room is already enabled.");
-                return;
-            }
-            r.requestEnable();
-        }
+    public void savePayment(String paymentId, double amount) {
+        Payment p = new Payment(paymentId, amount);
+        p.completePayment();
+        // Use PaymentRepo to save
+        paymentRepo.save(p); // Saves to payments.csv
     }
     
-  
-    /**
-     * Disables a room so it cannot be booked (e.g. for maintenance or renovations).
-     * Uses the Room's State Pattern to handle the transition.
-     */
     public void disableRoom(String roomId) {
         Room r = roomRepo.findById(roomId);
         if (r != null) {
-            // This delegates to the current state (e.g. RoomEnabledState -> RoomDisabledState)
-            r.requestDisable(); 
+            r.requestDisable();
+            roomRepo.save(r); // Persist state change
         }
     }
-    
-    /**
-     * Retrieves a full Booking object using its ID.
-     * Can be used to display confirmation details (Time, Date, etc.)
-     */
-    public Booking getBookingDetails(String bookingId) {
-        return roomRepo.findAllBookings().stream()
-                .filter(b -> b.getBookingId().equals(bookingId))
-                .findFirst()
-                .orElse(null);
+
+    public void maintenanceCompleted(String roomId) {
+        Room r = roomRepo.findById(roomId);
+        if (r != null) {
+            r.performMaintenance();
+            roomRepo.save(r); // Persist state change
+        }
     }
- 
-    /**
-     * Performs the check-in logic for a specific booking.
-     * Transitions state from CONFIRMED -> CHECKED_IN
-     */
+
+    public void enableRoom(String roomId) {
+        Room r = roomRepo.findById(roomId);
+        if (r != null) {
+            if (r.isAvailable()) return;
+            r.requestEnable();
+            roomRepo.save(r); // Persist state change
+        }
+    }
+
+    public boolean cancelBooking(String bookingId) {
+        Booking b = bookingRepo.findById(bookingId);
+        if (b != null) {
+            b.performCancel();
+            bookingRepo.save(b); // Persist state change
+            return true;
+        }
+        return false;
+    }
+    
     public boolean performCheckIn(String bookingId) {
-        // Find the booking
-        Booking booking = roomRepo.findAllBookings().stream()
-                .filter(b -> b.getBookingId().equals(bookingId))
-                .findFirst()
-                .orElse(null);
-
-        if (booking == null) {
-            System.out.println("Booking not found.");
-            return false;
+        Booking b = bookingRepo.findById(bookingId);
+        if (b != null) {
+            b.performCheckIn();
+            bookingRepo.save(b); // Persist state change
+            return true;
         }
+        return false;
+    }
 
-        // Delegate to the State Pattern
-        // This will trigger ConfirmedState -> CheckInState
-        // Or print an error if the booking is in an invalid state (cancelled, already checked in, or completed).
-        booking.performCheckIn();
-        
-        // Save the updated state to the repo
-        roomRepo.saveBooking(booking);
-        return true;
+    public Booking getBookingDetails(String bookingId) {
+        return bookingRepo.findById(bookingId);
     }
     
-    
-    
+    // Perform Checkout
+    public boolean performCheckOut(String bookingId) {
+        Booking b = bookingRepo.findById(bookingId);
+        if (b != null) {
+            b.performCheckOut();
+            bookingRepo.save(b); // Persist state change (CONFIRMED/CHECKED_IN -> COMPLETED)
+            return true;
+        }
+        return false;
+    }
+  
 }

@@ -1,7 +1,7 @@
 requestId,roomId,isEssential,status,description,sensorID
 1,1,Nonessential,To-Do,Fix chair,-1
 2,1,Nonessential,To-Do,Floor is ugly,-1
-3,2,Essential,To-do,Badge ID Scanner,-1
+3,2,Essential,In Progress,Badge ID Scanner,-1
 4,2,Nonessential,To-Do,Remove stain,-1
 5,3,Nonessential,To-Do,Unclog toilet,-1
 6,3,Nonessential,To-Do,Room is slightly stinky,-1

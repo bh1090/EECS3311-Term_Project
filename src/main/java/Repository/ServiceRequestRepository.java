@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Map;
+
+import Database.Database;
+
 import java.util.List;
 import java.util.HashMap;
 
@@ -20,7 +23,7 @@ public final class ServiceRequestRepository {
      private Map<Integer, List<ServiceRequest>> serviceRequestMap = new HashMap<>();
 
      private ServiceRequestRepository() {
-          serviceRequestMap = parseCsvFileToMap("/Users/richard_balroop/Desktop/School/2025/EECS3311/Project/EECS3311-Term_Project/mockdataset.csv", false);
+          serviceRequestMap = parseCsvFileToMap(Database.getInstance().getMaintenanceRequestsCsvPath(), false);
      }
 
      public ServiceRequest addServiceRequest(ServiceRequest serviceRequest) {
@@ -29,7 +32,7 @@ public final class ServiceRequestRepository {
                serviceRequestMap.put(roomID, new ArrayList<>());
           }
           serviceRequestMap.get(roomID).add(serviceRequest);
-          saveMapToCsv(serviceRequestMap, "/Users/richard_balroop/Desktop/School/2025/EECS3311/Project/EECS3311-Term_Project/mockdataset.csv");
+          saveMapToCsv(serviceRequestMap, Database.getInstance().getMaintenanceRequestsCsvPath());
           return serviceRequest;
      }
 
@@ -43,7 +46,7 @@ public final class ServiceRequestRepository {
           }
           if (index != -1) {
                serviceRequestMap.get(serviceRequest.getRoomID()).set(index, serviceRequest);
-               saveMapToCsv(serviceRequestMap, "/Users/richard_balroop/Desktop/School/2025/EECS3311/Project/EECS3311-Term_Project/mockdataset.csv");
+               saveMapToCsv(serviceRequestMap, Database.getInstance().getMaintenanceRequestsCsvPath());
           }
      }
 

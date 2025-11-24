@@ -49,4 +49,8 @@ public class Database {
      public String getUserCsvPath() {
           return  userCsvPath;
      }
+
+     public String getMaintenanceRequestsCsvPath() {
+          return "src/main/data/MaintenanceRequests.csv";
+     }
 }

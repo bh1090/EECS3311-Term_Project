@@ -21,6 +21,7 @@ public class EditMaintenanceRequestService {
                NonEssentialServiceRequest nonEssentialServiceRequest = new NonEssentialServiceRequest(serviceRequestID, description, status, roomID);
                requestRepository.updateExistingServiceRequest(nonEssentialServiceRequest);
           }
+          EvaluateRoomMaintenanceRelationshipService.getInstance().evaluateRoomMaintenanceRelationship(roomID);
      }
 
      public void promoteServiceRequest(int serviceRequestID, String description, String status, int roomID, String sensorId){
@@ -32,6 +33,7 @@ public class EditMaintenanceRequestService {
                EssentialServiceRequest essentialServiceRequest = new EssentialServiceRequest(serviceRequestID, description, status, roomID);
                requestRepository.updateExistingServiceRequest(essentialServiceRequest);
           }
+          EvaluateRoomMaintenanceRelationshipService.getInstance().evaluateRoomMaintenanceRelationship(roomID);
      }
 
      public static EditMaintenanceRequestService getInstance(){

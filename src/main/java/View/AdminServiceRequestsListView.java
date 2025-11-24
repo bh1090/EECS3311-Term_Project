@@ -1,7 +1,6 @@
 package View;
 
 import Controller.AdminServiceRequestController;
-import Controller.MaintenanceServiceRequestController;
 import Model.ServiceRequest;
 
 import java.util.List;
@@ -24,16 +23,9 @@ public class AdminServiceRequestsListView extends javax.swing.JFrame {
      
      public AdminServiceRequestsListView() {
           initComponents();
-          setupDropdown();
      }
      
-     private void setupDropdown() {
-          String[] statuses = {"To-do", "In Progress", "Completed"};
-          TableColumn statusColumn = ServiceRequestsList.getColumnModel().getColumn(1);
-          statusColumn.setCellEditor(new DefaultCellEditor(new JComboBox<>(statuses)));
-     }
-     
-                              
+                   
     @SuppressWarnings("unchecked")                
     private void initComponents() {
 
@@ -66,7 +58,13 @@ public class AdminServiceRequestsListView extends javax.swing.JFrame {
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false; 
+            }
         });
+        
         jScrollPane3.setViewportView(ServiceRequestsList);
 
         jPanel1.add(jScrollPane3, java.awt.BorderLayout.CENTER);

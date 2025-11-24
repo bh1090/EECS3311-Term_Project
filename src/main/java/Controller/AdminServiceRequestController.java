@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import Model.ServiceRequest;
 import Service.EditMaintenanceRequestService;
 import Service.SubmitServiceRequestService;
-import Service.getMaintenanceRequestService;
+import Service.GetMaintenanceRequestService;
 import View.AdminServiceRequestsListView;
 
 public final class AdminServiceRequestController {
@@ -16,7 +16,7 @@ public final class AdminServiceRequestController {
      public AdminServiceRequestController(){};
  
      public ArrayList<ServiceRequest> handleServiceRequestListCompilation(){
-          getMaintenanceRequestService maintenanceService = getMaintenanceRequestService.getInstance();
+          GetMaintenanceRequestService maintenanceService = GetMaintenanceRequestService.getInstance();
           ArrayList<ServiceRequest> requests = maintenanceService.getServiceRequests(this.roomID, true);
           requests.addAll(maintenanceService.getServiceRequests(this.roomID, false));
           View.AdminServiceRequestsListView view = View.AdminServiceRequestsListView.getInstance();

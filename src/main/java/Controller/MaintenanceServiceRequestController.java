@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import Model.ServiceRequest;
 import Service.EditMaintenanceRequestService;
-import Service.getMaintenanceRequestService;
+import Service.GetMaintenanceRequestService;
 import View.MaintenanceServiceRequestsListView;
 
 public final class MaintenanceServiceRequestController {
@@ -15,7 +15,7 @@ public final class MaintenanceServiceRequestController {
      public MaintenanceServiceRequestController(){};
  
      public ArrayList<ServiceRequest> handleServiceRequestListCompilation(){
-          getMaintenanceRequestService maintenanceService = getMaintenanceRequestService.getInstance();
+          GetMaintenanceRequestService maintenanceService = GetMaintenanceRequestService.getInstance();
           ArrayList<ServiceRequest> requests = maintenanceService.getServiceRequests(this.roomID, true);
           View.MaintenanceServiceRequestsListView view = View.MaintenanceServiceRequestsListView.getInstance();
           view.displayRequests(requests);

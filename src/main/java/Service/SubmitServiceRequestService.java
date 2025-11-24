@@ -28,6 +28,7 @@ public class SubmitServiceRequestService {
                NonEssentialServiceRequest nonEssentialServiceRequest = new NonEssentialServiceRequest(repository.generateNextId(roomID), description, "To-do", roomID);
                repository.addServiceRequest(nonEssentialServiceRequest);
           }
+          EvaluateRoomMaintenanceRelationshipService.getInstance().evaluateRoomMaintenanceRelationship(roomID);
 
         return serviceRequests;
     }

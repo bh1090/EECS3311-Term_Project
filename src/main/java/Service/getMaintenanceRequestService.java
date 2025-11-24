@@ -1,13 +1,11 @@
 package Service;
 import java.util.ArrayList;
-
-import Model.EssentialServiceRequest;
 import Model.ServiceRequest;
 import Repository.ServiceRequestRepository;
 
-public final class getMaintenanceRequestService {
+public final class GetMaintenanceRequestService {
     
-    private static getMaintenanceRequestService instance = null;
+    private static GetMaintenanceRequestService instance = null;
 
     public ArrayList<ServiceRequest> getServiceRequests(int roomID, boolean isEssential){
 
@@ -29,9 +27,9 @@ public final class getMaintenanceRequestService {
         return serviceRequests;
     }
 
-    public static getMaintenanceRequestService getInstance(){
+    public static GetMaintenanceRequestService getInstance(){
         if(instance == null){
-            instance = new getMaintenanceRequestService();
+            instance = new GetMaintenanceRequestService();
         }
         return instance;
     }   

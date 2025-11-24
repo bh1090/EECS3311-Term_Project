@@ -14,10 +14,10 @@ public class SensorsListController {
 	}
 	
 	private void back() { //OTHER
-		this.view.dispose();
-		RoomService serivce = new RoomService();
-		AdminSelectActionController controller = new AdminSelectActionController(new AddRoomController(service), new RoomsListController(service));
-		AdminSelectActionView view = new AdminSelectActionView(controller);
-		view.handleAdminAction();
+//		this.view.dispose();
+//		RoomService serivce = new RoomService();
+//		AdminSelectActionController controller = new AdminSelectActionController(new AddRoomController(service), new RoomsListController(service));
+//		AdminSelectActionView view = new AdminSelectActionView(controller);
+//		view.handleAdminAction();
 	}
 }

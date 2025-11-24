@@ -13,9 +13,9 @@ import view.PaymentView;
 import view.RescheduleBookingView;
 import view.RoomBookingRequirementsView;
 
-import view.WelcomeView;
-import view.RoomsListView;
-import service.RoomsListController;
+//import view.WelcomeView;
+//import view.RoomsListView;
+//import service.RoomsListController;
 
 public class GuestSelectActionController {
 	private GuestSelectActionView view;
@@ -23,7 +23,6 @@ public class GuestSelectActionController {
 	
 	public GuestSelectActionController(GuestSelectActionView view, Object service) {
 		this.view = view;
-		this.service = service;
 		
 		view.availableRoomsButton.addActionListener(e -> foo(e));
 		view.bookRoomButton.addActionListener(e -> foo(e));
@@ -34,21 +33,22 @@ public class GuestSelectActionController {
 	}
 	
 	private void foo(ActionEvent e) {
-		this.view.dispose();
 		String action = ((JButton) e.getSource()).getText();
 		if (action.equals("Available Rooms")) { //OTHER
-			this.view.dispose()
-			RoomsListView view = new RoomsListView(new RoomsListController(new RoomService()));
-			view.getListOfRooms();
+//			this.view.dispose()
+//			RoomsListView view = new RoomsListView(new RoomsListController(new RoomService()));
+//			view.getListOfRooms();
 		} else if (action.equals("Book Room")) { //to pay
 			PaymentView view = new PaymentView();
 			RoomService service = new RoomService(); //unknown
 			new PaymentViewController(view, service);
+			this.view.dispose();
 			view.setVisible(true);
 		} else if (action.equals("Reschedule/Cancel Room")) { // to remove booking -> to pay -> to add new booking
 			RescheduleBookingView view = new RescheduleBookingView();
 			RoomService service = new RoomService(); //unknown
 			new RescheduleBookingController(view, service);
+			this.view.dispose();
 			view.setVisible(true);
 		} else if (action.equals("Checkin")) {
 			CheckinView view = new CheckinView();
@@ -65,8 +65,13 @@ public class GuestSelectActionController {
 			this.view.dispose();
 			view.setVisible(true);
 		} else if (action.equals("Logout")) { //OTHER
-			this.view.dispose();
-			WelcomeView();
+//			this.view.dispose();
+//			WelcomeView();
 		}
+	}
+	public static void main(String[] args) {
+		GuestSelectActionView view = new GuestSelectActionView();
+		new GuestSelectActionController(view, null);
+		view.setVisible(true);
 	}
 }

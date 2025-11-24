@@ -3,12 +3,11 @@ package model;
 public class User {
 
 	public String getId() {
-		// TODO Auto-generated method stub
-		return null;
+		return "id4932";
 	}
 
 	public double getHourlyRate() {
-		return 0.0;
+		return 2.0;
 	}
 
 }

@@ -22,7 +22,7 @@ public class PaymentView extends JFrame{
 		setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        setLayout(new GridLayout(7,2));
+        setLayout(new GridLayout(8,2));
         add(new JLabel("User ID:"));
         add(new JLabel(this.userID));
         add(new JLabel("booking ID:"));

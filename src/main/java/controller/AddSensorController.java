@@ -18,10 +18,10 @@ public class AddSensorController {
 	
 	private void back() { //OTHER
 		this.view.dispose();
-		RoomService serivce = new RoomService();
-		AdminSelectActionController controller = new AdminSelectActionController(new AddRoomController(service), new RoomsListController(service));
-		AdminSelectActionView view = new AdminSelectActionView(controller);
-		view.handleAdminAction();
+//		RoomService serivce = new RoomService();
+//		AdminSelectActionController controller = new AdminSelectActionController(new AddRoomController(service), new RoomsListController(service));
+//		AdminSelectActionView view = new AdminSelectActionView(controller);
+//		view.handleAdminAction();
 	}
 	
 	private void submit() {

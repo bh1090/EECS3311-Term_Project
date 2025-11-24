@@ -1,0 +1,13 @@
+requestID,roomId,isEssential,status,description,sensorID
+1,1,Nonessential,To-Do,Fix chair,-1
+2,1,Nonessential,To-Do,Floor is ugly,-1
+3,2,Essential,To-Do,Badge ID Scanner,3
+4,2,Nonessential,To-Do,Remove stain,-1
+5,3,Nonessential,To-Do,Unclog toilet,-1
+6,3,Nonessential,To-Do,Room is slightly stinky,-1
+7,4,Essential,To-Do,Fix AC,-1
+8,4,Nonessential,To-Do,Replace TV to flatter one,-1
+9,5,Nonessential,To-Do,Remove fungus in walls,-1
+10,5,Nonessential,To-Do,Badge ID Scanner,11
+11,6,Essential,To-Do,Occupancy Sensor,2
+12,6,Nonessential,To-Do,Painting is ugly,3

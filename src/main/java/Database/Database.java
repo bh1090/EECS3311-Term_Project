@@ -44,7 +44,7 @@ public class Database {
         System.out.println("Saved Payment: " + payment.getPaymentId());
     }
      //depends on where csv is
-     private final String userCsvPath= "data/users.csv";
+     private final String userCsvPath= "src/main/data/users.csv";
 
      public String getUserCsvPath() {
           return  userCsvPath;

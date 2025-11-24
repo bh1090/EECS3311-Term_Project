@@ -27,7 +27,7 @@ public class AppNavigator {
         frame.showCard(MainAppFrame.CARD_SIGNUP);
     }
 
-   
+    
 }
 
 

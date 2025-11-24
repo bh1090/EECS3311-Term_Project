@@ -1,5 +1,6 @@
 package Controller;
 
+import Service.RoomService;
 import View.AddRoomView;
 import View.RoomsListView;
 
@@ -18,5 +19,13 @@ public class AdminSelectActionController {
      public void accessRoomsListView() {
           RoomsListView roomsListView = new RoomsListView(roomsListController);
           roomsListView.getListOfRooms();
+     }
+     public void enableRoom(String roomID) {
+          RoomService roomService = new RoomService();
+          roomService.enableRoom(roomID);
+     }
+     public void disableRoom(String roomID) {
+          RoomService roomService = new RoomService();
+          roomService.disableRoom(roomID);
      }
 }

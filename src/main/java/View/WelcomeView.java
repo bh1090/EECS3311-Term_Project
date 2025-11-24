@@ -19,10 +19,10 @@ public class WelcomeView extends JPanel {
         setLayout(new BorderLayout());
 
         JLabel label = new JLabel("Welcome!",SwingConstants.CENTER);
-        label.setFont(label.getFont().deriveFont(Font.BOLD, 18f));
-        add(label, BorderLayout.NORTH);
+        label.setFont(label.getFont().deriveFont(Font.BOLD,18f));
+        add(label,BorderLayout.NORTH);
 
-        JPanel buttonsPanel= new JPanel(new GridLayout(3, 1, 10, 10));
+        JPanel buttonsPanel= new JPanel(new GridLayout(3, 1,10, 10));
 
         loginButton= new  JButton("Login");
         signupButton= new  JButton("Sign Up");
@@ -32,7 +32,7 @@ public class WelcomeView extends JPanel {
         buttonsPanel.add(exitButton);
 
         add(buttonsPanel, BorderLayout.CENTER);
-        setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        setBorder(BorderFactory.createEmptyBorder(20,20, 20,20));
     }
 
     public void addLoginListener(ActionListener l) {

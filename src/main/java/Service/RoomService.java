@@ -3,6 +3,8 @@ package Service;
 import Model.Payment;
 import Model.Room;
 import Model.Booking;
+import Repository.RoomRepository;
+
 import java.time.LocalDate;
 import java.time.LocalTime; // Used for specific time slots (e.g., 14:00)
 import java.time.LocalDateTime; // Used for comparing Date + Time together

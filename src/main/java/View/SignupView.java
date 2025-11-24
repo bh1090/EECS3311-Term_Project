@@ -23,7 +23,7 @@ public class SignupView extends JPanel {
 
         //titles
         JLabel title = new JLabel("Sign Up", SwingConstants.CENTER);
-        title.setFont(title.getFont().deriveFont(Font.BOLD, 18f));
+        title.setFont(title.getFont().deriveFont(Font.BOLD,18f));
         add(title, BorderLayout.NORTH);
 
        
@@ -33,7 +33,7 @@ public class SignupView extends JPanel {
         add(centerWrapper, BorderLayout.CENTER);
 
         JPanel formPanel= new JPanel(new GridLayout(4, 2, 10, 10));
-        Dimension fieldSize= new Dimension(150, 26);
+        Dimension fieldSize= new Dimension(150,26);
 
         //name
         formPanel.add(new JLabel("Name:"));
@@ -54,7 +54,7 @@ public class SignupView extends JPanel {
 
         //password
         formPanel.add(new JLabel("Password:"));
-        JPanel passWrapper= new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        JPanel passWrapper= new JPanel(new FlowLayout(FlowLayout.LEFT, 0,0));
         passwordField= new JPasswordField();
         passwordField.setPreferredSize(fieldSize);
         passWrapper.add(passwordField);

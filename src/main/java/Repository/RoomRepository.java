@@ -1,5 +1,4 @@
-package Service;
-
+package Repository;
 
 import java.util.List;
 
@@ -8,7 +7,7 @@ import Model.Booking;
 import Model.Payment;
 import Model.Room;
 
-class RoomRepository {
+public class RoomRepository {
     private Database db = Database.getInstance();
 
     public void save(Room room) { db.saveRoom(room); }

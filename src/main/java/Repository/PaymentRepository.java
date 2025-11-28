@@ -39,7 +39,7 @@ public class PaymentRepository {
 
     private void loadPaymentsFromCSV() {
         payments.clear();
-        File file = new File(Database.PAYMENT_FILE);
+        File file = new File(Database.getInstance().getPaymentCsvPath());
         if (!file.exists()) return;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -67,7 +67,7 @@ public class PaymentRepository {
     }
 
     private void savePaymentsToCSV() {
-        try (PrintWriter pw = new PrintWriter(new FileWriter(Database.PAYMENT_FILE))) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(Database.getInstance().getPaymentCsvPath()))) {
             pw.println("paymentId,amount,status");
             for (Payment p : payments) {
                 pw.println(p.getPaymentId() + "," + p.getAmount() + "," + p.getStatus());

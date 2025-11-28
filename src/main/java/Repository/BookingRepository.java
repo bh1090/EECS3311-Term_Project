@@ -56,7 +56,7 @@ public class BookingRepository {
 
     private void loadBookingsFromCSV() {
         bookings.clear();
-        File file = new File(Database.BOOKING_FILE);
+        File file = new File(Database.getInstance().getBookingCsvPath());
         if (!file.exists()) return;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -101,7 +101,7 @@ public class BookingRepository {
     }
 
     private void saveBookingsToCSV() {
-        try (PrintWriter pw = new PrintWriter(new FileWriter(Database.BOOKING_FILE))) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(Database.getInstance().getBookingCsvPath()))) {
             pw.println("Booking ID,Room ID,Date,Time,User ID,Payment Information,Status");
 
             for (Booking b : bookings) {

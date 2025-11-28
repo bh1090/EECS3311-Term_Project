@@ -123,7 +123,7 @@ public class RoomRepository {
     }
 
     private void saveRoomsToCSV() {
-        try (PrintWriter pw = new PrintWriter(new FileWriter(Database.ROOM_FILE))) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(Database.getInstance().getRoomCSVPath()))) {
             pw.println("Room ID,Capacity,Location,Status,Price"); 
 
             for (Room r : rooms) {

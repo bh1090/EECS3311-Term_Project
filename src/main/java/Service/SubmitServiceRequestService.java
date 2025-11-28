@@ -2,9 +2,9 @@ package Service;
 
 import java.util.ArrayList;
 
-import EssentialServiceRequest;
-import NonEssentialServiceRequest;
-import SensorEssentialServiceRequest;
+import Model.ServiceRequest.EssentialServiceRequest;
+import Model.ServiceRequest.NonEssentialServiceRequest;
+import Model.ServiceRequest.SensorEssentialServiceRequest;
 import Model.ServiceRequest.ServiceRequest;
 import Repository.ServiceRequestRepository;
 

@@ -1,0 +1,13 @@
+Sensor ID,Type (Badge Scanner/ Entry Sensor),Status (Enabled/Disabled),Room ID
+1,Badge Scanner,Enabled,1
+2,Entry Sensor,Enabled,1
+3,Badge Scanner,Disabled,2
+4,Entry Sensor,Enabled,2
+5,Badge Scanner,Enabled,3
+6,Entry Sensor,Enabled,3
+7,Badge Scanner,Disabled,4
+8,Entry Sensor,Enabled,4
+9,Badge Scanner,Enabled,5
+10,Entry Sensor,Enabled,5
+11,Badge Scanner,Disabled,6
+12,Entry Sensor,Enabled,6

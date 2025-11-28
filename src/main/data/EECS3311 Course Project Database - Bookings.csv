@@ -1,0 +1,4 @@
+Booking ID,Room ID,Date,Time,User ID,Payment Information,Status (checked in/checked out/not present)
+1,1,"April 1, 2002",,111,Completed,Checked In
+2,3,"May 1, 2002",,222,Completed,Checked In
+3,5,"June 1, 2002",,333,Completed,Checked In

@@ -14,16 +14,48 @@ public class Sensor {
 	@CsvBindByName(column = "Occupied")
 	protected boolean occupied;
 	
-	
-	public Sensor(String id2, String type2, String status2, String roomID2, boolean b) {
-		// TODO Auto-generated constructor stub
+	public Sensor(String id, String type, String status, String roomID, boolean occupied) {
+		this.id = id;
+		this.type = type;
+		this.status = status;
+		this.roomID = roomID;
+		this.occupied = occupied;
 	}
+
+	public String getID() {
+		return this.id;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public String getRoomID() {
+		return this.roomID;
+	}
+
+	public boolean getOccupied() {
+		return this.occupied;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void setRoomID(String roomID) {
+		this.roomID = roomID;
+	}
+
 	public void setOccupied(boolean occupied) {
-		// TODO Auto-generated method stub
-		
+		this.occupied = occupied;
 	}
-    
-    // Note: I removed 'sensorService' as typically models don't hold service references.
-    // If you explicitly need it, add: public SensorService sensorService; back here.
 	
+	@Override
+	public boolean equals(Object obj) { // id is same
+		return obj instanceof Sensor && this.id.equals(((Sensor) obj).getID());
+	}
 }

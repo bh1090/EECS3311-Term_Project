@@ -12,10 +12,10 @@ import Database.Database;
 import java.util.List;
 import java.util.HashMap;
 
-import Model.EssentialServiceRequest;
-import Model.NonEssentialServiceRequest;
-import Model.SensorEssentialServiceRequest;
-import Model.ServiceRequest;
+import EssentialServiceRequest;
+import NonEssentialServiceRequest;
+import SensorEssentialServiceRequest;
+import Model.ServiceRequest.ServiceRequest;
 
 public final class ServiceRequestRepository {
      private static ServiceRequestRepository instance = null;

@@ -4,9 +4,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-import Model.Booking;
-import Model.Payment;
-import Model.Room;
+import Model.Room.Booking;
+import Model.Payment.Payment;
+import Model.Room.Room;
 import Repository.BookingRepository;
 import Repository.PaymentRepository;
 import Repository.RoomRepository;

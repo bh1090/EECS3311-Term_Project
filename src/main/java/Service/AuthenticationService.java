@@ -1,8 +1,9 @@
 package Service;
 
 import Application.*;
-import Database.*;
-import Model.*;
+import Model.User.AccountType;
+import Model.User.User;
+import Model.User.UserFactory;
 import Repository.*;
 
 public class AuthenticationService {
@@ -14,7 +15,7 @@ public class AuthenticationService {
     }
 
 
-    public User register(String name,String email,String password,AccountType accountType) throws AuthenticationException {
+    public User register(String name, String email, String password, AccountType accountType) throws AuthenticationException {
 
         if (name== null||name.isBlank()|| email== null|| email.isBlank()|| password== null||password.isBlank() ||accountType== null) {
             throw new AuthenticationException("Missing  field.");

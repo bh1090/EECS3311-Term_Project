@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Database.Database;
-import Model.Room;
-import Model.RoomDisabledState;
-import Model.RoomEnabledState;
-import Model.RoomReadyForEnableState;
+import Model.Room.Room;
+import Model.State.RoomDisabledState;
+import Model.State.RoomEnabledState;
+import Model.State.RoomReadyForEnableState;
 
 /**
  * Repository for managing Room data persistence via CSV.

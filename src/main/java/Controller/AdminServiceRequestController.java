@@ -2,7 +2,7 @@ package Controller;
 
 import java.util.ArrayList;
 
-import Model.ServiceRequest;
+import Model.ServiceRequest.ServiceRequest;
 import Service.EditMaintenanceRequestService;
 import Service.SubmitServiceRequestService;
 import Service.GetMaintenanceRequestService;

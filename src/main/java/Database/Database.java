@@ -13,14 +13,14 @@ public class Database {
 
     // FILE PATH CONSTANTS
     // Core Booking System Paths
-    public static final String ROOM_FILE = "EECS3311 Course Project Database - Rooms.csv";
-    public static final String BOOKING_FILE = "EECS3311 Course Project Database - Bookings.csv";
-    public static final String PAYMENT_FILE = "EECS3311 Course Project Database - payments.csv";
+    private static final String ROOM_FILE = "EECS3311 Course Project Database - Rooms.csv";
+    private static final String BOOKING_FILE = "EECS3311 Course Project Database - Bookings.csv";
+    private static final String PAYMENT_FILE = "EECS3311 Course Project Database - payments.csv";
     
     // User & Maintenance Paths (Adjusted to match the existing structure)
     // Note: Ensure the "src/main/data" folder exists in the designated filepath.
-    public static final String USER_CSV_FILE = "src/main/data/users.csv";
-    public static final String MAINTENANCE_REQUESTS_FILE = "src/main/data/MaintenanceRequests.csv";
+    private static final String USER_CSV_FILE = "src/main/data/users.csv";
+    private static final String MAINTENANCE_REQUESTS_FILE = "src/main/data/MaintenanceRequests.csv";
 
     // Sensor Paths
     private final String sensorsPath = "sensors.csv";

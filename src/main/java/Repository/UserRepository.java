@@ -8,9 +8,9 @@ import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 
 import Database.Database;
-import Model.AccountType;
-import Model.User;
-import Model.UserFactory;
+import Model.User.AccountType;
+import Model.User.User;
+import Model.User.UserFactory;
 
 
 public class UserRepository {

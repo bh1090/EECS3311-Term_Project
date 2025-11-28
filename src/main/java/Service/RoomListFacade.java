@@ -1,8 +1,8 @@
 package Service;
 
-import Model.Room;
-import Model.RoomProxy;
-import Model.RoomProxyFactory;
+import Model.Room.Room;
+import Model.Room.RoomProxy;
+import Model.Room.RoomProxyFactory;
 import Repository.RoomRepository; 
 
 import java.util.List;

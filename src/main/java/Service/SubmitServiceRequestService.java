@@ -2,10 +2,10 @@ package Service;
 
 import java.util.ArrayList;
 
-import Model.EssentialServiceRequest;
-import Model.NonEssentialServiceRequest;
-import Model.SensorEssentialServiceRequest;
-import Model.ServiceRequest;
+import EssentialServiceRequest;
+import NonEssentialServiceRequest;
+import SensorEssentialServiceRequest;
+import Model.ServiceRequest.ServiceRequest;
 import Repository.ServiceRequestRepository;
 
 public class SubmitServiceRequestService {

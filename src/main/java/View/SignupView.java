@@ -1,6 +1,7 @@
 package View;
 
-import Model.*;
+import Model.User.AccountType;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;

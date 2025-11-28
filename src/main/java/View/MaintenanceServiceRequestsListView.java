@@ -1,6 +1,6 @@
 package View;
 import Controller.MaintenanceServiceRequestController;
-import Model.ServiceRequest;
+import Model.ServiceRequest.ServiceRequest;
 
 import java.util.List;
 import javax.swing.*;

@@ -12,7 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Database.Database;
-import Model.*;
+import Model.Room.Booking;
+import Model.State.CancelledState;
+import Model.State.CheckInState;
+import Model.State.CompletedState;
 
 
 /**

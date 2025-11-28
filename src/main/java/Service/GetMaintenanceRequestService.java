@@ -1,6 +1,6 @@
 package Service;
 import java.util.ArrayList;
-import Model.ServiceRequest;
+import Model.ServiceRequest.ServiceRequest;
 import Repository.ServiceRequestRepository;
 
 public final class GetMaintenanceRequestService {

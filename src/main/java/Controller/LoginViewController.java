@@ -1,7 +1,7 @@
 package Controller;
 
 import Application.*;
-import Model.*;
+import Model.User.User;
 import Service.*;
 import View.*;
 

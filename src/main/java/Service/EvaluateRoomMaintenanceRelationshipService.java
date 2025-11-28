@@ -3,9 +3,10 @@ package Service;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Subject;
-import Model.Observer;
-import Model.RoomServicePlaceholder;
+import Model.ServiceRequest.ServiceRequest;
+import Model.Room.Subject;
+import Model.Room.Observer;
+import Model.Room.RoomServicePlaceholder;
 
 public final class EvaluateRoomMaintenanceRelationshipService implements Subject {
 
@@ -57,9 +58,9 @@ public final class EvaluateRoomMaintenanceRelationshipService implements Subject
     }
 
     public boolean doesRoomHaveEssentialMaintenanceRequests(int roomID, GetMaintenanceRequestService getMaintenanceRequestService ){
-        ArrayList<Model.ServiceRequest> essentialRequests = getMaintenanceRequestService.getServiceRequests(roomID, true);
+        ArrayList<ServiceRequest> essentialRequests = getMaintenanceRequestService.getServiceRequests(roomID, true);
         boolean hasPendingEssentialRequests = false;
-        for(Model.ServiceRequest request : essentialRequests){
+        for(ServiceRequest request : essentialRequests){
             if(request.getStatus().equals("To-do") || request.getStatus().equals("In Progress")){
                 hasPendingEssentialRequests = true;
                 break;

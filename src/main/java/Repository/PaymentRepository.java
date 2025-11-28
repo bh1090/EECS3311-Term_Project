@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Payment;
+import Model.Payment.Payment;
 import Database.Database;
 /**
  * Repository for managing Payment data persistence via CSV.

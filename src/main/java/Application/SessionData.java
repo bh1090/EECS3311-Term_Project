@@ -1,6 +1,6 @@
 package Application;
 
-import Model.*;
+import Model.User.User;
 
 public class SessionData {
 

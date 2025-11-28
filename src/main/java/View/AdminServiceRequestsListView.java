@@ -1,7 +1,7 @@
 package View;
 
 import Controller.AdminServiceRequestController;
-import Model.ServiceRequest;
+import Model.ServiceRequest.ServiceRequest;
 
 import java.util.List;
 import javax.swing.*;

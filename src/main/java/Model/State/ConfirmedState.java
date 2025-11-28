@@ -4,7 +4,7 @@ package Model.State;
 
 import Model.Room.Booking;
 
-class ConfirmedState implements BookingState {
+public class ConfirmedState implements BookingState {
  @Override
  public void cancel(Booking context) {
      System.out.println("Booking cancelled.");

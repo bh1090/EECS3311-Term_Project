@@ -7,8 +7,9 @@ import java.time.LocalTime;
 import Model.Booking;
 import Model.Payment;
 import Model.Room;
-import core.service.BookingRepository;
-import core.service.PaymentRepository;
+import Repository.BookingRepository;
+import Repository.PaymentRepository;
+import Repository.RoomRepository;
 
 /**
  * Service Layer for handling Room and Booking logic.

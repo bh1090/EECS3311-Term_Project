@@ -75,5 +75,9 @@ public class Booking {
     public String getPaymentId() { 
     	return paymentId; 
     	}
+
+	public String getUserId() {
+		return userId;
+	}
     
 }

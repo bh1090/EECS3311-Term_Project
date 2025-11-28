@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Model.Payment;
-import core.infrastructure.Database;
-
+import Database.Database;
 /**
  * Repository for managing Payment data persistence via CSV.
  */

@@ -11,11 +11,9 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Booking;
-import Model.CancelledState;
-import Model.CheckInState;
-import Model.CompletedState;
-import core.infrastructure.Database;
+import Database.Database;
+import Model.*;
+
 
 /**
  * Repository for managing Booking data persistence via CSV.

@@ -16,5 +16,12 @@ public class Database {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	// This method returns the CSV path to the UserRepository.
+	public static String getUserCsvPath(){
+		return "Path/To/CSV";
+		
+		
+	}
 	 
 }

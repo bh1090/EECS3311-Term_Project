@@ -1,6 +1,6 @@
 package Model;
 
-class CancelledState implements BookingState {
+public class CancelledState implements BookingState {
     @Override
     public void cancel(Booking context) { 
     	System.out.println("Error: Booking was cancelled.");

@@ -2,7 +2,7 @@ package Model;
 
 //This class is the completed state. Represents state when the full booking process is done. 
 
-class CompletedState implements BookingState {
+public class CompletedState implements BookingState {
     @Override
     public void cancel(Booking context) { 
         System.out.println("Cannot cancel a completed booking.");

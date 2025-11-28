@@ -1,13 +1,16 @@
 package Repository;
 
 
-import Database.*;
-import Model.*;
-
 import java.io.FileWriter;
 import java.util.ArrayList;
+
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
+
+import Database.Database;
+import Model.AccountType;
+import Model.User;
+import Model.UserFactory;
 
 
 
@@ -27,7 +30,7 @@ public class UserRepository {
 
     //load, but from database
     private void load() {
-        String path= Database.getInstance().getUserCsvPath();
+        String path= Database.getUserCsvPath();
 
         try {
         	
@@ -104,7 +107,7 @@ public class UserRepository {
    
     private void update() {
     	
-        String path= Database.getInstance().getUserCsvPath();
+        String path= Database.getUserCsvPath();
 
         try {
         	

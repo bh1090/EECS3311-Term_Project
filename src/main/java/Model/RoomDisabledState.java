@@ -2,7 +2,7 @@ package Model;
 
 // DISABLED STATE
 // Scenario 2: Room is offline/renovating.
-class RoomDisabledState implements RoomState {
+public class RoomDisabledState implements RoomState {
     @Override
     public void enable(Room context) {
         System.out.println("Cannot enable directly from Disabled. Must be prepped first.");

@@ -1,7 +1,7 @@
 package Model;
 
 //Guest is currently in the room.
-class CheckInState implements BookingState {
+public class CheckInState implements BookingState {
  @Override
  public void cancel(Booking context) {
      System.out.println("Cannot cancel. Guest is already here.");

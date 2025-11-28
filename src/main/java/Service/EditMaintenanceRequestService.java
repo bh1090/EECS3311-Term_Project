@@ -1,8 +1,8 @@
 package Service;
 
-import EssentialServiceRequest;
-import NonEssentialServiceRequest;
-import SensorEssentialServiceRequest;
+import Model.ServiceRequest.EssentialServiceRequest;
+import Model.ServiceRequest.NonEssentialServiceRequest;
+import Model.ServiceRequest.SensorEssentialServiceRequest;
 import Repository.ServiceRequestRepository;
 
 public class EditMaintenanceRequestService {

@@ -49,6 +49,10 @@ public class Database {
         return MAINTENANCE_REQUESTS_FILE;
     }
 
+     public String getRoomCSVPath() {
+          return ROOM_FILE;
+     }
+
     public String getSensorsCsvPath() {
         return this.sensorsPath;
     }

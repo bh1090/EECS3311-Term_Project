@@ -78,7 +78,7 @@ public class RoomRepository {
 
     private void loadRoomsFromCSV() {
         rooms.clear();
-        File file = new File(Database.ROOM_FILE);
+        File file = new File(Database.getInstance().getRoomCSVPath());
         if (!file.exists()) return;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {

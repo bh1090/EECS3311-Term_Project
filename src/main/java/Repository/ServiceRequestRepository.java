@@ -12,9 +12,9 @@ import Database.Database;
 import java.util.List;
 import java.util.HashMap;
 
-import EssentialServiceRequest;
-import NonEssentialServiceRequest;
-import SensorEssentialServiceRequest;
+import Model.ServiceRequest.EssentialServiceRequest;
+import Model.ServiceRequest.NonEssentialServiceRequest;
+import Model.ServiceRequest.SensorEssentialServiceRequest;
 import Model.ServiceRequest.ServiceRequest;
 
 public final class ServiceRequestRepository {

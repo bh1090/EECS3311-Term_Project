@@ -1,7 +1,7 @@
 package Model.Room;
 
-import Model.AdminRoomProxy;
-import Model.GuestRoomProxy;
+import Model.Room.AdminRoomProxy;
+import Model.Room.GuestRoomProxy;
 
 public class RoomProxyFactory {
     public static RoomProxy getProxy(String userType, Room room) {

@@ -49,8 +49,15 @@ public class Database {
         return MAINTENANCE_REQUESTS_FILE;
     }
 
-     public String getRoomCSVPath() {
+     public String getRoomCsvPath() {
           return ROOM_FILE;
+     }
+
+     public String getBookingCsvPath() {
+          return BOOKING_FILE;
+     }
+     public String getPaymentCsvPath() {
+          return PAYMENT_FILE;
      }
 
     public String getSensorsCsvPath() {

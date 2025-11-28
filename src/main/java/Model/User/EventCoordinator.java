@@ -23,4 +23,10 @@ public class EventCoordinator{
      public void setChiefEventCoordinatorEmail(String chiefEventCoordinatorEmail){
           this.chiefEventCoordinatorEmail = chiefEventCoordinatorEmail;
      }
+     public String getChiefEventCoordinatorPassword(){
+          return this.chiefEventCoordinatorPassword;
+     }
+     public void setChiefEventCoordinatorPassword(String chiefEventCoordinatorPassword){
+          this.chiefEventCoordinatorPassword = chiefEventCoordinatorPassword;
+     }
 }

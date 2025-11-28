@@ -53,4 +53,17 @@ public class Database {
      public String getMaintenanceRequestsCsvPath() {
           return "src/main/data/MaintenanceRequests.csv";
      }
+
+    private final String sensorsPath = "sensors.csv";
+	private final String occupancySensorLogsPath = "occupancy_sensor_logs.csv";
+	private final String scanIDSensorLogsPath = "scanid_sensor_logs.csv";
+    public String getSensorsCsvPath() {
+		return this.sensorsPath;
+	}
+	public String getOccupancySensorLogsPath() {
+		return this.occupancySensorLogsPath;
+	}
+	public String getScanIDSensorLogsPath() {
+		return this.scanIDSensorLogsPath;
+	}
 }

@@ -92,7 +92,7 @@ public class SensorRepository {
 		if (occupancySensorLog == null) {
 			return false;
 		}
-		List<OccupancySensorData> logs = this.getOccupancySensorLogsList();
+		List<OccupancySensorData> logs = this.getOccupancySensorLogsList().stream().filter(l -> !l.equals(occupancySensorLog)).collect(Collectors.toList());
 		logs.add(occupancySensorLog);
 		try (FileWriter writer = new FileWriter(db.getOccupancySensorLogsPath())) {
 			StatefulBeanToCsv<OccupancySensorData> beanToCsv = new StatefulBeanToCsvBuilder<OccupancySensorData>(writer).build();
@@ -119,7 +119,7 @@ public class SensorRepository {
 		if (scanIDSensorLog == null) {
 			return false;
 		}
-		List<ScanIDSensorData> logs = this.getScanIDSensorLogsList();
+		List<ScanIDSensorData> logs = this.getScanIDSensorLogsList().stream().filter(l -> !l.equals(scanIDSensorLog)).collect(Collectors.toList());
 		logs.add(scanIDSensorLog);
 		try {
 			FileWriter writer = new FileWriter(db.getScanIDSensorLogsPath());

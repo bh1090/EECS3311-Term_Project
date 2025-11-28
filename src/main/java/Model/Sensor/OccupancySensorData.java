@@ -14,4 +14,9 @@ public class OccupancySensorData {
 		this.sensorID = sensorID;
 		this.dateTime = dateTime;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return obj instanceof OccupancySensorData && this.logID.equals(((OccupancySensorData) obj).logID);
+	}
 }

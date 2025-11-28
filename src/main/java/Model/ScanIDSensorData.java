@@ -1,0 +1,16 @@
+package Model;
+
+
+import java.time.LocalDateTime;
+
+public class ScanIDSensorData extends OccupancySensorData{
+	// @CsvBindByName(column = "User ID")
+	public String userID;
+	// @CsvBindByName(column = "Scan Outcome")
+	public String scanOutcome;
+	public ScanIDSensorData(String logID, String sensorID, String userID, String scanOutcome, LocalDateTime dateTime) {
+		super(logID, sensorID, dateTime);
+		this.userID = userID;
+		this.scanOutcome = scanOutcome;
+	}
+}

@@ -13,7 +13,6 @@ import Model.User;
 import Model.UserFactory;
 
 
-
 public class UserRepository {
 
     private static final UserRepository singletonInstance = new UserRepository();

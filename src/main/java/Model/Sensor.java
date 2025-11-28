@@ -2,8 +2,6 @@ package Model;
 
 import com.opencsv.bean.CsvBindByName;
 
-import Service.SensorService;
-
 public class Sensor {
 	@CsvBindByName(column = "Sensor ID")
 	protected String id;
@@ -25,7 +23,7 @@ public class Sensor {
 	}
 
 	public String getID() {
-		return this.id
+		return this.id;
 	}
 
 	public String getType() {

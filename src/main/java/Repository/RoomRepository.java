@@ -78,7 +78,7 @@ public class RoomRepository {
 
     private void loadRoomsFromCSV() {
         rooms.clear();
-        File file = new File(Database.getInstance().getRoomCSVPath());
+        File file = new File(Database.getInstance().getRoomCsvPath());
         if (!file.exists()) return;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -123,7 +123,7 @@ public class RoomRepository {
     }
 
     private void saveRoomsToCSV() {
-        try (PrintWriter pw = new PrintWriter(new FileWriter(Database.getInstance().getRoomCSVPath()))) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(Database.getInstance().getRoomCsvPath()))) {
             pw.println("Room ID,Capacity,Location,Status,Price"); 
 
             for (Room r : rooms) {

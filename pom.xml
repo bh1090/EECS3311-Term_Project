@@ -45,6 +45,11 @@
         <artifactId>mockito-junit-jupiter</artifactId>
         <version>5.20.0</version>
     </dependency>
+    <dependency>
+	    <groupId>com.github.stefanbirkner</groupId>
+	    <artifactId>system-lambda</artifactId>
+	    <version>1.2.1</version>
+	</dependency>
     
     <dependency>
         <groupId>net.sourceforge.javacsv</groupId>

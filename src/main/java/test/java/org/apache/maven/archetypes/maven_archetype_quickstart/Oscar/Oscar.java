@@ -18,6 +18,7 @@ import org.junit.platform.suite.api.Suite;
     RoomBookingRequirementsControllerTest.class,
     ScanIDSensorDataTest.class,
     ScanIDSensorTest.class,
+    SensorRepositoryTest.class,
     SensorServiceTest.class,
     SensorsListControllerTest.class,
 })

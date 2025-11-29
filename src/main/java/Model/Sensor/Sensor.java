@@ -2,7 +2,7 @@ package Model.Sensor;
 
 import com.opencsv.bean.CsvBindByName;
 
-public class Sensor {
+public abstract class Sensor {
 	@CsvBindByName(column = "Sensor ID")
 	protected String id;
 	@CsvBindByName(column = "Type")

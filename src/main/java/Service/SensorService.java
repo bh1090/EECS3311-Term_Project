@@ -7,7 +7,9 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
+import Model.Sensor.OccupancySensor;
 import Model.Sensor.OccupancySensorData;
+import Model.Sensor.ScanIDSensor;
 import Model.Sensor.ScanIDSensorData;
 import Model.Sensor.Sensor;
 import Repository.SensorRepository;
@@ -44,7 +46,11 @@ public class SensorService {
 		String sensorID;
 		for (sensorID = String.valueOf(rng.nextInt(Integer.MAX_VALUE)); this.sensorRepository.getSensorByID(sensorID) != null; sensorID = String.valueOf(rng.nextInt(Integer.MAX_VALUE))) {
 		}
-		this.sensorRepository.writeSensor(new Sensor(sensorID, type, status, roomID, false));
+		if (type.equals("Badge Scanner")) {			
+			this.sensorRepository.writeSensor(new ScanIDSensor(sensorID, type, status, roomID));
+		} else {
+			this.sensorRepository.writeSensor(new OccupancySensor(sensorID, type, status, roomID, false));
+		}
 		return true;
 	}
 	

@@ -46,11 +46,7 @@ public class SensorService {
 		String sensorID;
 		for (sensorID = String.valueOf(rng.nextInt(Integer.MAX_VALUE)); this.sensorRepository.getSensorByID(sensorID) != null; sensorID = String.valueOf(rng.nextInt(Integer.MAX_VALUE))) {
 		}
-		if (type.equals("Badge Scanner")) {			
-			this.sensorRepository.writeSensor(new ScanIDSensor(sensorID, type, status, roomID));
-		} else {
-			this.sensorRepository.writeSensor(new OccupancySensor(sensorID, type, status, roomID, false));
-		}
+		this.sensorRepository.writeSensor(new Sensor(sensorID, type, status, roomID, false));
 		return true;
 	}
 	

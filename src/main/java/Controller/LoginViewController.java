@@ -71,8 +71,7 @@ public class LoginViewController {
             //go to admin  view
             case "ADMIN": {
                 AddRoomController addRoomCtrl= new AddRoomController(roomService);
-                RoomsListController roomsListCtrl= new RoomsListController(roomService);
-                AdminSelectActionController adminCtrl =new AdminSelectActionController(addRoomCtrl, roomsListCtrl);
+                AdminSelectActionController adminCtrl =new AdminSelectActionController(addRoomCtrl);
 
                  AdminSelectActionView adminView = new AdminSelectActionView(adminCtrl);
                 adminView.handleAdminAction();

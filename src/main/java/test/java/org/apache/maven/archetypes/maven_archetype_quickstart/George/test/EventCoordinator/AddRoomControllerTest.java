@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class AddRoomControllerTest {
@@ -49,7 +50,7 @@ public class AddRoomControllerTest {
           Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
           String actualRoomLocation = "Lassonde 1111";
           String expectedRoomLocation = room.getLocation();
-          
+
           Assertions.assertEquals(actualRoomLocation, expectedRoomLocation, "The room's location is incorrect.  ");
      }
      @Test
@@ -79,5 +80,11 @@ public class AddRoomControllerTest {
           Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
 
           assertEquals(Room.class, room.getClass(), "The object is not of type Room.  ");
+     }
+     @Test
+     public void roomIdIsNotNullTest(){
+          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String roomId = room.getRoomId();
+          assertNotNull(roomId, "The room ID is null.  ");
      }
 }

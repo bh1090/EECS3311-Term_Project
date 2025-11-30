@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 import Application.SessionData;
 import Model.Room.Booking;
 import Model.Sensor.Sensor;
+import Model.User.StudentUser;
+import Model.User.User;
 import Service.RoomService;
 
 public class CheckinController {
@@ -69,6 +71,12 @@ public class CheckinController {
 		GuestSelectActionView view = new GuestSelectActionView();
 		new GuestSelectActionController(view, null);
 		this.view.dispose();
+		view.setVisible(true);
+	}
+	public static void main(String[] args) {
+		Application.SessionData.setCurrentUser(new StudentUser("Test Student", "test1@yorku.ca", "Password123!"));
+		CheckinView view = new CheckinView();
+		new CheckinController(view, new RoomService(), new SensorService());
 		view.setVisible(true);
 	}
 }

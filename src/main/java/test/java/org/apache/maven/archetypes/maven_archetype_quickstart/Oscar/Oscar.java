@@ -21,6 +21,7 @@ import org.junit.platform.suite.api.Suite;
     SensorRepositoryTest.class,
     SensorServiceTest.class,
     SensorsListControllerTest.class,
+    SensorTest.class,
 })
 
 public class Oscar {

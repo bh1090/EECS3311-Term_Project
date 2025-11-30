@@ -36,7 +36,7 @@ public class SensorService {
 		return this.sensorRepository.writeOccupancySensorLog(new OccupancySensorData(String.valueOf(logID), sensorID, LocalDateTime.now()));
 	}
 	
-	public boolean addSensor(String type, String status, String roomID) {
+	public boolean addSensor(String type, String status, String roomID) { // write/replace
 		if (!(type.equals("Badge Scanner") || type.equals("Entry Sensor")) || !(status.equals("Enabled") || status.equals("Disabled"))) {
 			return false;
 		}
@@ -48,7 +48,7 @@ public class SensorService {
 		return true;
 	}
 	
-	public Sensor getSensorByRoomID(String id, String type) {
+	public Sensor getSensorByRoomID(String id, String type) { // get
 		return this.sensorRepository.getSensorByRoomIDType(id, type).stream().findFirst().orElse(null);
 	}
 	

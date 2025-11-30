@@ -61,6 +61,12 @@ public class AdminSelectActionControllerTest {
           Assertions.assertEquals(actualRoomPrice, expectedRoomPrice, "The room's price is incorrect.  ");
      }
      @Test
+     public void roomAdminAddedRoomExistsInRoomRepositoryTest(){
+          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+
+          Assertions.assertNotNull(room, "The room wasn't properly stored in the room repository.  ");
+     }
+     @Test
      public void checkEnableRoomTest(){
           RoomService roomService = new RoomService();
           Room room = RoomRepository.getInstance().findById("1");

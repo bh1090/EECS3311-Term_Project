@@ -1,5 +1,15 @@
 package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.George.test.EventCoordinator;
 
+import Controller.AddRoomController;
+import Model.Room.Room;
+import Repository.RoomRepository;
+import Service.RoomService;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 public class AddRoomControllerTest {
 
           Assertions.assertEquals(actualRoomCapacity, expectedRoomCapacity, "The room's capacity is incorrect.  ");

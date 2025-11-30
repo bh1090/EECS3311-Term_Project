@@ -97,5 +97,12 @@ public class AdminSelectActionControllerTest {
           Room room = RoomRepository.getInstance().findById("1");
           Assertions.assertNotNull(room.getRoomId(), "adminAddRoom did not return a Room object.");
      }
+     @Test
+     public void adminAddRoomCreatesCorrectObjectTypeTest() {
+          adminSelectActionController.adminAddRoom("Lassonde 3333", 20, 15);
+          Room room = RoomRepository.getInstance().findById("1");
+
+          Assertions.assertEquals(Room.class, room.getClass(), "Admin add room action did not create a Room object.  ");
+     }
 
 }

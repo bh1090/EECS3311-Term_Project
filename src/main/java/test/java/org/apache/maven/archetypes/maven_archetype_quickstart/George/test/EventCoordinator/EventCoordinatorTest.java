@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-
 class EventCoordinatorTest {
 
      private EventCoordinator chiefEventCoordinator;
@@ -61,27 +59,21 @@ class EventCoordinatorTest {
           Assertions.assertEquals(actualPassword, expectedPassword, "Passwords do not match.\n");
      }
      @Test
-     public void setChiefEventCoordinatorNameTest(){
-          this.chiefEventCoordinator.setChiefEventCoordinatorName("Jane Doe");
-          String actualName = "Jane Doe";
-          String expectedName = this.chiefEventCoordinator.getChiefEventCoordinatorName();
-
-          Assertions.assertEquals(actualName, expectedName, "Names do not match.\n");
+     public void singletonEventCoordinatorNotNullTest() {
+          EventCoordinator instance = EventCoordinator.getInstance();
+          Assertions.assertNotNull(instance, "Singleton instance of event coordinator is null.  ");
      }
      @Test
-     public void setChiefEventCoordinatorEmailTest(){
-          this.chiefEventCoordinator.setChiefEventCoordinatorEmail("jdoe@yorku.ca");
-          String actualEmail = "jdoe@yorku.ca";
-          String expectedEmail = this.chiefEventCoordinator.getChiefEventCoordinatorEmail();
-
-          Assertions.assertEquals(actualEmail, expectedEmail, "Emails do not match.\n");
+     public void singletonEventCoordinatorSameInstanceTest() {
+          EventCoordinator instance1 = EventCoordinator.getInstance();
+          EventCoordinator instance2 = EventCoordinator.getInstance();
+          Assertions.assertSame(instance1, instance2, "Singleton instances of event coordinator are not the same.  ");
      }
      @Test
-     public void setChiefEventCoordinatorPasswordTest(){
-          this.chiefEventCoordinator.setChiefEventCoordinatorPassword("@Password123");
-          String actualPassword = "@Password123";
-          String expectedPassword = this.chiefEventCoordinator.getChiefEventCoordinatorPassword();
-
-          Assertions.assertEquals(actualPassword, expectedPassword, "Passwords do not match.\n");
+     public void singletonEventCoordinatorCorrectDefaultValuesTest() {
+          EventCoordinator instance = EventCoordinator.getInstance();
+          Assertions.assertEquals("John Smith", instance.getChiefEventCoordinatorName());
+          Assertions.assertEquals("jsmith@yorku.ca", instance.getChiefEventCoordinatorEmail());
+          Assertions.assertEquals("!Password123", instance.getChiefEventCoordinatorPassword());
      }
 }

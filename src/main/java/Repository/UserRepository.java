@@ -167,5 +167,9 @@ public class UserRepository {
         users.add(user);
         update();
     }
+
+    public int getAll(){
+         return this.users.size();
+    }
     
 }

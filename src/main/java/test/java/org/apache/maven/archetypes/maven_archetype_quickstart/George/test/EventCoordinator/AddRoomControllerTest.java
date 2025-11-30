@@ -5,49 +5,53 @@ import Model.Room.Room;
 import Repository.RoomRepository;
 import Service.RoomService;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class AddRoomControllerTest {
-     private AddRoomController addRoomController;
+     private static AddRoomController addRoomController;
 
-     @BeforeEach
-     public void setUp(){
+     @BeforeAll
+     public static void setUp(){
           RoomService roomService = new RoomService();
-          this.addRoomController = new AddRoomController(roomService);
-          this.addRoomController.handleAddRoomSubmission("Lassonde 1111", 50, 20);
+          addRoomController = new AddRoomController(roomService);
+          addRoomController.handleAddRoomSubmission("Lassonde 1111", 50, 20);
      }
      @Test
      public void objectRoomIsNotNullTest(){
-          assertNotNull(this.addRoomController, "The controller object is null.  ");
+          assertNotNull(addRoomController, "The controller object is null.  ");
      }
      @Test
      public void checkRoomLocationNotNullTest(){
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
           String roomLocation = room.getLocation();
 
           Assertions.assertNotNull(roomLocation, "The room's location is null.  ");
      }
      @Test
      public void checkRoomCapacityInitializationTest(){
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
           int roomCapacity = Integer.parseInt(room.getRoomCapacity());
 
           Assertions.assertNotEquals(0, roomCapacity, "The room's capacity is 0.  ");
      }
      @Test
      public void checkRoomPriceInitializationTest(){
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
           double roomPrice = room.getPrice();
 
           Assertions.assertNotEquals(0, roomPrice, "The room's price is 0.  ");
      }
      @Test
      public void checkRoomLocationTest(){
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
           String actualRoomLocation = "Lassonde 1111";
           String expectedRoomLocation = room.getLocation();
 
@@ -55,7 +59,8 @@ public class AddRoomControllerTest {
      }
      @Test
      public void checkRoomCapacityTest(){
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
           int expectedRoomCapacity = Integer.parseInt(room.getRoomCapacity());
           int actualRoomCapacity = 50;
 
@@ -63,7 +68,8 @@ public class AddRoomControllerTest {
      }
      @Test
      public void checkRoomPriceTest(){
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
           double expectedRoomPrice = room.getPrice();
           double actualRoomPrice = 20;
 
@@ -71,20 +77,24 @@ public class AddRoomControllerTest {
      }
      @Test
      public void roomExistsInRoomRepositoryTest(){
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
 
           Assertions.assertNotNull(room, "The room wasn't properly stored in the room repository.  ");
      }
      @Test
      public void roomIsCorrectObjectTest(){
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
 
           assertEquals(Room.class, room.getClass(), "The object is not of type Room.  ");
      }
      @Test
      public void roomIdIsNotNullTest(){
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
-          String roomId = room.getRoomId();
-          assertNotNull(roomId, "The room ID is null.  ");
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
+          String actualRoomId = room.getRoomId();
+
+          assertNotNull(actualRoomId, "The room ID is null.  ");
      }
 }

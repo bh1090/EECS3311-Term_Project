@@ -13,13 +13,7 @@ class EventCoordinatorTest {
 
      @BeforeEach
      public void setUp(){
-          String chiefEventCoordinatorName = "John Smith";
-          String chiefEventCoordinatorEmail = "jsmith@yorku.ca";
-          String chiefEventCoordinatorPassword = "!Password123";
-          chiefEventCoordinator = new EventCoordinator(
-                  chiefEventCoordinatorName,
-                  chiefEventCoordinatorEmail,
-                  chiefEventCoordinatorPassword);
+          chiefEventCoordinator = EventCoordinator.getInstance();
      }
      @Test
      public void getChiefEventCoordinatorNameNullTest(){

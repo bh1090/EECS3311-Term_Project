@@ -45,6 +45,14 @@ public class AddRoomControllerTest {
           Assertions.assertNotEquals(0, roomPrice, "The room's price is 0.  ");
      }
      @Test
+     public void checkRoomLocationTest(){
+          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String actualRoomLocation = "Lassonde 1111";
+          String expectedRoomLocation = room.getLocation();
+          
+          Assertions.assertEquals(actualRoomLocation, expectedRoomLocation, "The room's location is incorrect.  ");
+     }
+     @Test
      public void checkRoomCapacityTest(){
           Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
           int expectedRoomCapacity = Integer.parseInt(room.getRoomCapacity());

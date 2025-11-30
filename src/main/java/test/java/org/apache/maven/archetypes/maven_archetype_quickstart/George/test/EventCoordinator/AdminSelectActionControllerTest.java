@@ -34,6 +34,33 @@ public class AdminSelectActionControllerTest {
           Assertions.assertNotNull(this.adminSelectActionController, "The admin select action controller is null.  ");
      }
      @Test
+     public void checkAdminSuccessfullyAddedRoomLocation(){
+          adminSelectActionController.adminAddRoom("Lassonde 1111", 60, 25);
+          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          String actualRoomLocation = "Lassonde 1111";
+          String expectedRoomLocation = room.getLocation();
+
+          Assertions.assertEquals(actualRoomLocation, expectedRoomLocation, "The room's location is incorrect.  ");
+     }
+     @Test
+     public void checkAdminSuccessfullyAddedRoomCapacity(){
+          adminSelectActionController.adminAddRoom("Lassonde 1111", 60, 25);
+          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          int expectedRoomCapacity = Integer.parseInt(room.getRoomCapacity());
+          int actualRoomCapacity = 50;
+
+          Assertions.assertEquals(actualRoomCapacity, expectedRoomCapacity, "The room's capacity is incorrect.  ");
+     }
+     @Test
+     public void checkAdminSuccessfullyAddedRoomPrice(){
+          adminSelectActionController.adminAddRoom("Lassonde 1111", 60, 25);
+          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          double expectedRoomPrice = room.getPrice();
+          double actualRoomPrice = 20;
+
+          Assertions.assertEquals(actualRoomPrice, expectedRoomPrice, "The room's price is incorrect.  ");
+     }
+     @Test
      public void checkEnableRoomTest(){
           RoomService roomService = new RoomService();
           Room room = RoomRepository.getInstance().findById("1");

@@ -7,7 +7,7 @@ import com.opencsv.bean.CsvDate;
 
 public class OccupancySensorData {
 	 @CsvBindByName(column = "Log ID")
-	public String logID;
+	private String logID;
 	 @CsvBindByName(column = "Sensor ID")
 	public String sensorID;
 	 @CsvDate("yyyy-MM-dd'T'HH:mm")
@@ -24,5 +24,17 @@ public class OccupancySensorData {
 	@Override
 	public boolean equals(Object obj) {
 		return obj instanceof OccupancySensorData && this.logID.equals(((OccupancySensorData) obj).logID);
+	}
+	
+	public String getLogID() {
+		return this.logID;
+	}
+	
+	public String getSensorID() {
+		return this.sensorID;
+	}
+	
+	public LocalDateTime getLocalDateTime() {
+		return this.dateTime;
 	}
 }

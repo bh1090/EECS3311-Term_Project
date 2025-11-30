@@ -7,9 +7,7 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
-import Model.Sensor.OccupancySensor;
 import Model.Sensor.OccupancySensorData;
-import Model.Sensor.ScanIDSensor;
 import Model.Sensor.ScanIDSensorData;
 import Model.Sensor.Sensor;
 import Repository.SensorRepository;
@@ -22,7 +20,7 @@ public class SensorService {
 	
 	public boolean addScanIDSensorData(String sensorID, String userID, String scanOutcome) {
 		ThreadLocalRandom rng = ThreadLocalRandom.current();
-		Set<String> ids = this.sensorRepository.getScanIDSensorLogsList().stream().map(d -> d.logID).collect(Collectors.toSet());
+		Set<String> ids = this.sensorRepository.getScanIDSensorLogsList().stream().map(d -> d.getLogID()).collect(Collectors.toSet());
 		String logID;
 		for (logID = String.valueOf(rng.nextInt(Integer.MAX_VALUE)); ids.contains(logID); logID = String.valueOf(rng.nextInt(Integer.MAX_VALUE))) {
 		}
@@ -31,7 +29,7 @@ public class SensorService {
 	
 	public boolean addOccupancySensorData(String sensorID) {
 		ThreadLocalRandom rng = ThreadLocalRandom.current();
-		Set<String> ids = this.sensorRepository.getOccupancySensorLogsList().stream().map(d -> d.logID).collect(Collectors.toSet());
+		Set<String> ids = this.sensorRepository.getOccupancySensorLogsList().stream().map(d -> d.getLogID()).collect(Collectors.toSet());
 		String logID;
 		for (logID = String.valueOf(rng.nextInt(Integer.MAX_VALUE)); ids.contains(logID); logID = String.valueOf(rng.nextInt(Integer.MAX_VALUE))) {
 		}

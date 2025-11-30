@@ -87,17 +87,17 @@ public class SensorRepositoryTest {
 	@Test
 	void test7() {
 		this.repo.writeOccupancySensorLog(new OccupancySensorData("TESTLOG0", "TEST1", LocalDateTime.now()));
-		assertTrue(this.repo.getOccupancySensorLogsList().stream().anyMatch(l -> l.logID.equals("TESTLOG0")));
+		assertTrue(this.repo.getOccupancySensorLogsList().stream().anyMatch(l -> l.getLogID().equals("TESTLOG0")));
 	}
 	@Test
 	void test8() {
 		this.repo.writeScanIDSensorLog(new ScanIDSensorData("TESTLOG0", "SID0", "TESTUID0", "Accepted", LocalDateTime.now()));
 		assertEquals(1, this.repo.getScanIDSensorLogsList().size());
-		assertTrue(this.repo.getScanIDSensorLogsList().stream().anyMatch(l -> l.logID.equals("TESTLOG0")));
+		assertTrue(this.repo.getScanIDSensorLogsList().stream().anyMatch(l -> l.getLogID().equals("TESTLOG0")));
 	}
 	@Test
 	void test9() {
 		this.repo.writeScanIDSensorLog(new ScanIDSensorData("TESTLOG0", "TEST1", "TESTUID0", "Accepted", LocalDateTime.now()));
-		assertFalse(this.repo.getOccupancySensorLogsList().stream().anyMatch(l -> l.logID.equals("TESTLOG0")));
+		assertFalse(this.repo.getOccupancySensorLogsList().stream().anyMatch(l -> l.getLogID().equals("TESTLOG0")));
 	}
 }

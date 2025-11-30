@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 
 import Model.Sensor.OccupancySensorData;
+import Model.Sensor.ScanIDSensorData;
 
 public class OccupancySensorDataTest {
 	@Test
@@ -19,6 +20,7 @@ public class OccupancySensorDataTest {
 	void test1() {
 		LocalDateTime dt = LocalDateTime.now();
 		OccupancySensorData data = new OccupancySensorData("LID0", "SID0", dt);
+		assertFalse(data instanceof ScanIDSensorData);
 	}
 	@Test
 	void test2() {

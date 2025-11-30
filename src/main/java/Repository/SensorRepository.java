@@ -71,7 +71,7 @@ public class SensorRepository {
 			list = list.stream().filter(s -> s.getRoomID().equals(roomID)).collect(Collectors.toList());
 		}
 		if (type != null) {
-			list = list.stream().filter(s -> s.getType().equals(roomID)).collect(Collectors.toList());
+			list = list.stream().filter(s -> s.getType().equals(type)).collect(Collectors.toList());
 		}
 		return list;
 	}
@@ -121,8 +121,7 @@ public class SensorRepository {
 		}
 		List<ScanIDSensorData> logs = this.getScanIDSensorLogsList().stream().filter(l -> !l.equals(scanIDSensorLog)).collect(Collectors.toList());
 		logs.add(scanIDSensorLog);
-		try {
-			FileWriter writer = new FileWriter(db.getScanIDSensorLogsPath());
+		try (FileWriter writer = new FileWriter(db.getScanIDSensorLogsPath())) {
 			StatefulBeanToCsv<ScanIDSensorData> beanToCsv = new StatefulBeanToCsvBuilder<ScanIDSensorData>(writer).build();
             beanToCsv.write(logs);
 			return true;

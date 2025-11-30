@@ -9,6 +9,8 @@ public class ScanIDSensorData extends OccupancySensorData {
 	public String userID;
 	@CsvBindByName(column = "Scan Outcome")
 	public String scanOutcome;
+	public ScanIDSensorData() {
+	}
 	public ScanIDSensorData(String logID, String sensorID, String userID, String scanOutcome, LocalDateTime dateTime) {
 		super(logID, sensorID, dateTime);
 		this.userID = userID;

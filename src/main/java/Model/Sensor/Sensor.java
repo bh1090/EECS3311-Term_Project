@@ -14,6 +14,10 @@ public class Sensor {
 	@CsvBindByName(column = "Occupied")
 	protected boolean occupied;
 	
+	public Sensor() {
+		
+	}
+	
 	public Sensor(String id, String type, String status, String roomID, boolean occupied) {
 		this.id = id;
 		this.type = type;

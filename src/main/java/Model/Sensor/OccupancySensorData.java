@@ -2,13 +2,19 @@ package Model.Sensor;
 
 import java.time.LocalDateTime;
 
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvDate;
+
 public class OccupancySensorData {
-	// @CsvBindByName(column = "Log ID")
+	 @CsvBindByName(column = "Log ID")
 	public String logID;
-	// @CsvBindByName(column = "Sensor ID")
+	 @CsvBindByName(column = "Sensor ID")
 	public String sensorID;
-	// @CsvBindByName(column = "DateTime")
+	 @CsvDate("yyyy-MM-dd'T'HH:mm")
 	public LocalDateTime dateTime;
+	public OccupancySensorData() {
+		// TODO Auto-generated constructor stub
+	}
 	public OccupancySensorData(String logID, String sensorID, LocalDateTime dateTime) {
 		this.logID = logID;
 		this.sensorID = sensorID;

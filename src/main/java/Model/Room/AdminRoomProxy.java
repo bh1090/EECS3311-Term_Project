@@ -3,7 +3,7 @@ package Model.Room;
 
 //This class (Admin) can see everything (Maintenance status, full ID, etc)
 
-class AdminRoomProxy implements RoomProxy {
+public class AdminRoomProxy implements RoomProxy {
  private Room realRoom;
 
  public AdminRoomProxy(Room room) {

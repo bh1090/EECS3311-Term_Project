@@ -2,7 +2,7 @@ package Model.Room;
 
 //This class hides maintenance state.
 
-class GuestRoomProxy implements RoomProxy {
+public class GuestRoomProxy implements RoomProxy {
  private Room realRoom;
 
  public GuestRoomProxy(Room room) {

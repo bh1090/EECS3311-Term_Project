@@ -40,5 +40,18 @@ public class AdminSelectActionControllerTest {
 
           Assertions.assertEquals(expectedRoomState, actualRoomState, "Room states don't match.  ");
      }
+     @Test
+     public void checkDisableRoomTest(){
+          RoomService roomService = new RoomService();
+          Room room = RoomRepository.getInstance().findById("1");
+          RoomState roomState = new RoomReadyForEnableState();
+          roomState.enable(room);
+          roomService.enableRoom(room.getRoomId());
+          room.requestDisable();
+          String expectedRoomState = "DISABLED";
+          String actualRoomState = room.getState().getStateName();
+
+          Assertions.assertEquals(expectedRoomState, actualRoomState, "Room states don't match.  ");
+     }
 
 }

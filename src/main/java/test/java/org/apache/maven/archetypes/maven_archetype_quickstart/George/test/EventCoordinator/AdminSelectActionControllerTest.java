@@ -85,5 +85,11 @@ public class AdminSelectActionControllerTest {
 
           Assertions.assertEquals(expectedRoomState, actualRoomState, "Room states don't match.  ");
      }
+     @Test
+     public void adminAddRoomWhereRoomIDNotNullTest() {
+          adminSelectActionController.adminAddRoom("Lassonde 3333", 70, 30);
+          Room room = RoomRepository.getInstance().findById("1");
+          Assertions.assertNotNull(room.getRoomId(), "adminAddRoom did not return a Room object.");
+     }
 
 }

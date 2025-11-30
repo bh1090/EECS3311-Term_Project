@@ -74,4 +74,10 @@ public class AddRoomControllerTest {
 
           Assertions.assertNotNull(room, "The room wasn't properly stored in the room repository.  ");
      }
+     @Test
+     public void roomIsCorrectObjectTest(){
+          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+
+          assertEquals(Room.class, room.getClass(), "The object is not of type Room.  ");
+     }
 }

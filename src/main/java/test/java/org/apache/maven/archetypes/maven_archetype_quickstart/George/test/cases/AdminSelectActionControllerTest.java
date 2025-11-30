@@ -1,4 +1,4 @@
-package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.George.test.EventCoordinator;
+package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.George.test.cases;
 
 import Controller.AddRoomController;
 import Controller.AdminSelectActionController;

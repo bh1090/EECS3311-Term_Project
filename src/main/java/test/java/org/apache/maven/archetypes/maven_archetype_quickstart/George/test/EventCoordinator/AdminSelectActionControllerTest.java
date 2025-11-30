@@ -15,4 +15,16 @@ public class AdminSelectActionControllerTest {
           adminSelectActionController = new AdminSelectActionController(addRoomController);
      }
 
+     @Test
+     public void checkEnableRoomTest(){
+          RoomService roomService = new RoomService();
+          Room room = RoomRepository.getInstance().findById("1");
+          roomService.enableRoom(room.getRoomId());
+          RoomState roomState = room.getState();
+          String actualRoomState = "ENABLED";
+          String expectedRoomState = roomState.getStateName();
+
+          Assertions.assertEquals(actualRoomState, expectedRoomState, "Room states don't match.  ");
+     }
+
 }

@@ -2,8 +2,17 @@ package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.George.
 
 import Controller.AddRoomController;
 import Controller.AdminSelectActionController;
+import Model.Room.Room;
+import Model.State.RoomEnabledState;
+import Model.State.RoomReadyForEnableState;
+import Model.State.RoomState;
+import Repository.RoomRepository;
 import Service.RoomService;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class AdminSelectActionControllerTest {
      private AdminSelectActionController adminSelectActionController;
@@ -11,7 +20,11 @@ public class AdminSelectActionControllerTest {
      @BeforeEach
      public void setUp(){
           RoomService roomService = new RoomService();
+          String location = "Lassonde 1111";
+          int capacity = 40;
+          double price = 15;
           AddRoomController addRoomController = new AddRoomController(roomService);
+          addRoomController.handleAddRoomSubmission(location, capacity, price);
           adminSelectActionController = new AdminSelectActionController(addRoomController);
      }
 
@@ -19,12 +32,13 @@ public class AdminSelectActionControllerTest {
      public void checkEnableRoomTest(){
           RoomService roomService = new RoomService();
           Room room = RoomRepository.getInstance().findById("1");
+          RoomState roomState = new RoomReadyForEnableState();
+          roomState.enable(room);
           roomService.enableRoom(room.getRoomId());
-          RoomState roomState = room.getState();
-          String actualRoomState = "ENABLED";
-          String expectedRoomState = roomState.getStateName();
+          String expectedRoomState = "ENABLED";
+          String actualRoomState = room.getState().getStateName();
 
-          Assertions.assertEquals(actualRoomState, expectedRoomState, "Room states don't match.  ");
+          Assertions.assertEquals(expectedRoomState, actualRoomState, "Room states don't match.  ");
      }
 
 }

@@ -39,7 +39,6 @@ public class AdminSelectActionView {
                public void actionPerformed(ActionEvent e){
                     jframe.dispose();
 
-                    adminSelectActionController.accessRoomsListView();
                }
           });
      }

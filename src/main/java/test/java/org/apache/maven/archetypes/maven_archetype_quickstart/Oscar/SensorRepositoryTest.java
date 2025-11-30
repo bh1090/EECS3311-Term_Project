@@ -34,7 +34,7 @@ public class SensorRepositoryTest {
 		Database db = Database.getInstance();
 		Files.writeString(Paths.get(db.getSensorsCsvPath()), this.prevData1);
 		Files.writeString(Paths.get(db.getOccupancySensorLogsPath()), this.prevData2);
-//		Files.writeString(Paths.get(db.getScanIDSensorLogsPath()), this.prevData3);
+		Files.writeString(Paths.get(db.getScanIDSensorLogsPath()), this.prevData3);
 	}
 	@Test
 	void test0() {

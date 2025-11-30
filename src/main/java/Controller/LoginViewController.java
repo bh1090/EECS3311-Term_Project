@@ -92,14 +92,9 @@ public class LoginViewController {
             }
             //go to  guest view
             default: {
-                RoomsListController roomsCtrl= new RoomsListController(roomService);
-                RoomsListView roomsView= new RoomsListView(roomsCtrl);
-                roomsView.getListOfRooms();
                 break;
             }
-        }
-
-        
+            }
         }
         
         catch (AuthenticationException ex) {

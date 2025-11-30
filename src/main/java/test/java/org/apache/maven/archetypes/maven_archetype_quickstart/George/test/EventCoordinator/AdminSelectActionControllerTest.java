@@ -3,7 +3,6 @@ package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.George.
 import Controller.AddRoomController;
 import Controller.AdminSelectActionController;
 import Model.Room.Room;
-import Model.State.RoomEnabledState;
 import Model.State.RoomReadyForEnableState;
 import Model.State.RoomState;
 import Repository.RoomRepository;
@@ -12,19 +11,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-
 public class AdminSelectActionControllerTest {
      private AdminSelectActionController adminSelectActionController;
 
      @BeforeEach
      public void setUp(){
           RoomService roomService = new RoomService();
-          String location = "Lassonde 1111";
-          int capacity = 40;
-          double price = 15;
           AddRoomController addRoomController = new AddRoomController(roomService);
-          addRoomController.handleAddRoomSubmission(location, capacity, price);
           adminSelectActionController = new AdminSelectActionController(addRoomController);
      }
 
@@ -35,8 +28,9 @@ public class AdminSelectActionControllerTest {
      }
      @Test
      public void checkAdminSuccessfullyAddedRoomLocation(){
-          adminSelectActionController.adminAddRoom("Lassonde 1111", 60, 25);
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          adminSelectActionController.adminAddRoom("Lassonde 1111", 10, 10);
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
           String actualRoomLocation = "Lassonde 1111";
           String expectedRoomLocation = room.getLocation();
 
@@ -44,19 +38,21 @@ public class AdminSelectActionControllerTest {
      }
      @Test
      public void checkAdminSuccessfullyAddedRoomCapacity(){
-          adminSelectActionController.adminAddRoom("Lassonde 1111", 60, 25);
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          adminSelectActionController.adminAddRoom("Lassonde 2222", 20, 20);
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
           int expectedRoomCapacity = Integer.parseInt(room.getRoomCapacity());
-          int actualRoomCapacity = 50;
+          int actualRoomCapacity = 20;
 
           Assertions.assertEquals(actualRoomCapacity, expectedRoomCapacity, "The room's capacity is incorrect.  ");
      }
      @Test
      public void checkAdminSuccessfullyAddedRoomPrice(){
-          adminSelectActionController.adminAddRoom("Lassonde 1111", 60, 25);
-          Room room = RoomRepository.getInstance().findById("1"); // Assuming this method call has already been tested.
+          adminSelectActionController.adminAddRoom("Lassonde 3333", 30, 30);
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
           double expectedRoomPrice = room.getPrice();
-          double actualRoomPrice = 20;
+          double actualRoomPrice = 30;
 
           Assertions.assertEquals(actualRoomPrice, expectedRoomPrice, "The room's price is incorrect.  ");
      }
@@ -79,6 +75,15 @@ public class AdminSelectActionControllerTest {
           Assertions.assertEquals(expectedRoomState, actualRoomState, "Room states don't match.  ");
      }
      @Test
+     public void adminAddRoomInitialStateIsDisabledTest() {
+          adminSelectActionController.adminAddRoom("Lassonde 4444", 40, 40);
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
+          String roomState = room.getState().getStateName();
+
+          Assertions.assertEquals("DISABLED", roomState, "Newly created room should default to DISABLED.");
+     }
+     @Test
      public void checkDisableRoomTest(){
           RoomService roomService = new RoomService();
           Room room = RoomRepository.getInstance().findById("1");
@@ -93,14 +98,17 @@ public class AdminSelectActionControllerTest {
      }
      @Test
      public void adminAddRoomWhereRoomIDNotNullTest() {
-          adminSelectActionController.adminAddRoom("Lassonde 3333", 70, 30);
-          Room room = RoomRepository.getInstance().findById("1");
-          Assertions.assertNotNull(room.getRoomId(), "adminAddRoom did not return a Room object.");
+          adminSelectActionController.adminAddRoom("Lassonde 5555", 50, 50);
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
+
+          Assertions.assertNotNull(room.getRoomId(), "Admin's newly added room has a null roomId.  ");
      }
      @Test
      public void adminAddRoomCreatesCorrectObjectTypeTest() {
-          adminSelectActionController.adminAddRoom("Lassonde 3333", 20, 15);
-          Room room = RoomRepository.getInstance().findById("1");
+          adminSelectActionController.adminAddRoom("Lassonde 6666", 60, 60);
+          String roomId = String.valueOf(RoomRepository.getInstance().findAll().size());
+          Room room = RoomRepository.getInstance().findById(roomId);
 
           Assertions.assertEquals(Room.class, room.getClass(), "Admin add room action did not create a Room object.  ");
      }

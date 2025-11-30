@@ -8,9 +8,9 @@ public class AdminSelectActionController {
      public AdminSelectActionController(AddRoomController addRoomController) {
           this.addRoomController = addRoomController;
      }
-     public void accessAddRoomView() {
-          AddRoomView addRoomView = new AddRoomView(addRoomController);
-          addRoomView.getAdminAddRoomInput();
+     public void adminAddRoom(String location, int capacity, double price) {
+          RoomService roomService = new RoomService();
+          roomService.createRoom(location, capacity, String.valueOf(price));
      }
      public void enableRoom(String roomID) {
           RoomService roomService = new RoomService();

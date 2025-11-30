@@ -29,6 +29,11 @@ public class AdminSelectActionControllerTest {
      }
 
      @Test
+     public void objectAdminSelectActionControllerNotNullTest(){
+
+          Assertions.assertNotNull(this.adminSelectActionController, "The admin select action controller is null.  ");
+     }
+     @Test
      public void checkEnableRoomTest(){
           RoomService roomService = new RoomService();
           Room room = RoomRepository.getInstance().findById("1");

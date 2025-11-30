@@ -1,0 +1,53 @@
+package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Oscar;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.*;
+
+import Controller.AddSensorController;
+import View.AddSensorView;
+
+public class AddSensorControllerTest {
+	@Mock
+	private AddSensorView view;
+	
+	@Test
+	void test0() {
+		
+	}
+	@Test
+	void test1() {
+		
+	}
+	@Test
+	void test2() {
+		
+	}
+	@Test
+	void test3() {
+		
+	}
+	@Test
+	void test4() {
+		
+	}
+	@Test
+	void test5() {
+		
+	}
+	@Test
+	void test6() {
+		
+	}
+	@Test
+	void test7() {
+		
+	}
+	@Test
+	void test8() {
+		
+	}
+	@Test
+	void test9() {
+		
+	}
+}

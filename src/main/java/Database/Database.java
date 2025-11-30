@@ -23,9 +23,9 @@ public class Database {
     private static final String MAINTENANCE_REQUESTS_FILE = "src/main/data/MaintenanceRequests.csv";
 
     // Sensor Paths
-    private final String sensorsPath = "sensors.csv";
-    private final String occupancySensorLogsPath = "occupancy_sensor_logs.csv";
-    private final String scanIDSensorLogsPath = "scanid_sensor_logs.csv";
+    private final String sensorsPath = "src/main/data/sensors.csv";
+    private final String occupancySensorLogsPath = "src/main/data/occupancy_sensor_logs.csv";
+    private final String scanIDSensorLogsPath = "src/main/data/scanid_sensor_logs.csv";
 
     private Database() {
         // No lists to initialize here anymore - Repositories handle their own data.

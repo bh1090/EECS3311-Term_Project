@@ -10,6 +10,13 @@ public class EventCoordinator{
           this.chiefEventCoordinatorEmail = chiefEventCoordinatorEmail;
           this.chiefEventCoordinatorPassword = chiefEventCoordinatorPassword;
      }
+     private static EventCoordinator instance;
+     public static EventCoordinator getInstance() {
+          if (instance == null) {
+               instance = new EventCoordinator("John Smith", "jsmith@yorku.ca", "!Password123");
+          }
+          return instance;
+     }
 
      public String getChiefEventCoordinatorName(){
           return this.chiefEventCoordinatorName;

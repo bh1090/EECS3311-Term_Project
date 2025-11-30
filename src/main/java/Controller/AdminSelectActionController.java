@@ -10,7 +10,7 @@ public class AdminSelectActionController {
      }
      public void adminAddRoom(String location, int capacity, double price) {
           RoomService roomService = new RoomService();
-          roomService.createRoom(location, capacity, String.valueOf(price));
+          addRoomController.handleAddRoomSubmission(location, capacity, price);
      }
      public void enableRoom(String roomID) {
           RoomService roomService = new RoomService();

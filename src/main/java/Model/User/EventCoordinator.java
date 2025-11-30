@@ -1,11 +1,11 @@
 package Model.User;
 
 public class EventCoordinator{
-     private String chiefEventCoordinatorName;
-     private String chiefEventCoordinatorEmail;
-     private String chiefEventCoordinatorPassword;
+     private final String chiefEventCoordinatorName;
+     private final String chiefEventCoordinatorEmail;
+     private final String chiefEventCoordinatorPassword;
 
-     public EventCoordinator(String chiefEventCoordinatorName, String chiefEventCoordinatorEmail,String chiefEventCoordinatorPassword){
+     private EventCoordinator(String chiefEventCoordinatorName, String chiefEventCoordinatorEmail,String chiefEventCoordinatorPassword){
           this.chiefEventCoordinatorName = chiefEventCoordinatorName;
           this.chiefEventCoordinatorEmail = chiefEventCoordinatorEmail;
           this.chiefEventCoordinatorPassword = chiefEventCoordinatorPassword;
@@ -14,19 +14,10 @@ public class EventCoordinator{
      public String getChiefEventCoordinatorName(){
           return this.chiefEventCoordinatorName;
      }
-     public void setChiefEventCoordinatorName(String chiefEventCoordinatorName){
-          this.chiefEventCoordinatorName = chiefEventCoordinatorName;
-     }
      public String getChiefEventCoordinatorEmail(){
           return this.chiefEventCoordinatorEmail;
      }
-     public void setChiefEventCoordinatorEmail(String chiefEventCoordinatorEmail){
-          this.chiefEventCoordinatorEmail = chiefEventCoordinatorEmail;
-     }
      public String getChiefEventCoordinatorPassword(){
           return this.chiefEventCoordinatorPassword;
-     }
-     public void setChiefEventCoordinatorPassword(String chiefEventCoordinatorPassword){
-          this.chiefEventCoordinatorPassword = chiefEventCoordinatorPassword;
      }
 }

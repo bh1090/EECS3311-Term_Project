@@ -5,7 +5,7 @@ import View.AddRoomView;
 
 public class AdminSelectActionController {
      private final AddRoomController addRoomController;
-     public AdminSelectActionController(AddRoomController addRoomController, RoomsListController roomsListController) {
+     public AdminSelectActionController(AddRoomController addRoomController) {
           this.addRoomController = addRoomController;
      }
      public void accessAddRoomView() {

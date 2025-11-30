@@ -8,7 +8,6 @@ public class AdminSelectActionController {
           this.addRoomController = addRoomController;
      }
      public void adminAddRoom(String location, int capacity, double price) {
-          RoomService roomService = new RoomService();
           addRoomController.handleAddRoomSubmission(location, capacity, price);
      }
      public void enableRoom(String roomID) {

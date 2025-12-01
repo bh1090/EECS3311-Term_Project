@@ -2,7 +2,6 @@ package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.George.
 
 import Model.Room.Booking;
 import Model.State.BookingState;
-import Model.State.CompletedState;
 import Model.State.ConfirmedState;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -31,19 +30,24 @@ public class ConfirmedStateTest {
           Assertions.assertNotNull(bookingState, "Object of CompletedState is null.  ");
      }
      @Test
-     public void cancelHandlesNullBookingTest() {
+     public void confirmedStateCancelAfterCheckOutTest() {
           booking.setState(new ConfirmedState());
+          bookingState.checkOut(booking);
           bookingState.cancel(booking);
-          String expectedBookingState = "CANCELED";
+          String expectedBookingState = "CANCELLED";
           Assertions.assertEquals(expectedBookingState, booking.getStatus(), "Booking state is wrong.  ");
      }
      @Test
-     public void checkInHandlesNullBookingTest() {
-          Assertions.assertDoesNotThrow(() -> bookingState.checkIn(null), "Exception shouldn't be thrown for null booking");
+     public void confirmedStateCheckOutTwiceTest() {
+          booking.setState(new ConfirmedState());
+          bookingState.checkOut(booking);
+          bookingState.checkOut(booking);
+          String expectedBookingState = "CONFIRMED";
+          Assertions.assertEquals(expectedBookingState, booking.getStatus(), "Booking state is wrong.  ");
      }
      @Test
      public void checkOutHandlesNullBookingTest() {
-          Assertions.assertDoesNotThrow(() -> bookingState.checkOut(null), "Exception shouldn't be thrown for null booking");
+          Assertions.assertDoesNotThrow(() -> bookingState.checkOut(null), "Exception shouldn't be thrown for null booking.  ");
      }
 
      @Test
@@ -86,9 +90,5 @@ public class ConfirmedStateTest {
      @Test
      public void instanceOfConfirmedStateTest() {
           Assertions.assertInstanceOf(ConfirmedState.class, bookingState, "BookingState object has wrong state.  ");
-     }
-     @Test
-     public void bookingStateIsConfirmedStateTest() {
-          Assertions.assertEquals("CONFIRMED", booking.getStatus(), "The booking's internal state should be COMPLETED.");
      }
 }

@@ -16,7 +16,6 @@ public class CompletedStateTest {
      private static Booking booking;
      @BeforeAll
      public static void setUp(){
-          bookingState = new CompletedState();
           booking = new Booking("1", "1", "1",
                   LocalDate.of(2030, 12, 12),
                   LocalDate.of(2030, 12, 13),
@@ -28,7 +27,7 @@ public class CompletedStateTest {
      }
 
      @Test
-     public void objectCompletedStateNotNull(){
+     public void objectCompletedStateNotNullTest(){
 
           Assertions.assertNotNull(bookingState, "Object of CompletedState is null.  ");
      }

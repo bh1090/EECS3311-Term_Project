@@ -80,4 +80,12 @@ public class CompletedStateTest {
           // the state from COMPLETED to anything.
           Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
      }
+     @Test
+     public void instanceOfCompletedStateTest() {
+          Assertions.assertInstanceOf(CompletedState.class, bookingState, "BookingState object has wrong state.  ");
+     }
+     @Test
+     public void bookingStateIsCompletedStateTest() {
+          Assertions.assertEquals("COMPLETED", booking.getStatus(), "The booking's internal state should be COMPLETED.");
+     }
 }

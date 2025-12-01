@@ -27,8 +27,7 @@ public class ConfirmedStateTest {
      }
 
      @Test
-     public void objectCompletedStateNotNullTest(){
-
+     public void objectConfirmedStateNotNullTest(){
           Assertions.assertNotNull(bookingState, "Object of CompletedState is null.  ");
      }
      @Test
@@ -45,14 +44,14 @@ public class ConfirmedStateTest {
      }
 
      @Test
-     public void completedStateNameTest(){
+     public void confirmedStateNameTest(){
           String expectedStateName = bookingState.getStatus();
           String actualStateName = "CONFIRMED";
 
           Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
      }
      @Test
-     public void completedStateCancelTest(){
+     public void confirmedStateCancelTest(){
           bookingState.cancel(booking);
           String expectedStateName = bookingState.getStatus();
           String actualStateName = "CONFIRMED";
@@ -62,7 +61,7 @@ public class ConfirmedStateTest {
           Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
      }
      @Test
-     public void completedStateCheckInTest(){
+     public void confirmedStateCheckInTest(){
           bookingState.checkIn(booking);
           String expectedStateName = bookingState.getStatus();
           String actualStateName = "CONFIRMED";
@@ -72,7 +71,7 @@ public class ConfirmedStateTest {
           Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
      }
      @Test
-     public void completedStateCheckOutTest(){
+     public void confirmedStateCheckOutTest(){
           bookingState.checkOut(booking);
           String expectedStateName = bookingState.getStatus();
           String actualStateName = "CONFIRMED";
@@ -82,11 +81,11 @@ public class ConfirmedStateTest {
           Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
      }
      @Test
-     public void instanceOfCompletedStateTest() {
+     public void instanceOfConfirmedStateTest() {
           Assertions.assertInstanceOf(ConfirmedState.class, bookingState, "BookingState object has wrong state.  ");
      }
      @Test
-     public void bookingStateIsCompletedStateTest() {
+     public void bookingStateIsConfirmedStateTest() {
           Assertions.assertEquals("CONFIRMED", booking.getStatus(), "The booking's internal state should be COMPLETED.");
      }
 }

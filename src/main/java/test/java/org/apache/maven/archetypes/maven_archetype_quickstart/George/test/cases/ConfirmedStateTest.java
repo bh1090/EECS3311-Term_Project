@@ -33,8 +33,9 @@ public class ConfirmedStateTest {
      @Test
      public void cancelHandlesNullBookingTest() {
           booking.setState(new ConfirmedState());
-          
-          Assertions.assertDoesNotThrow(() -> bookingState.cancel(null), "Exception shouldn't be thrown for null booking");
+          bookingState.cancel(booking);
+          String expectedBookingState = "CANCELED";
+          Assertions.assertEquals(expectedBookingState, booking.getStatus(), "Booking state is wrong.  ");
      }
      @Test
      public void checkInHandlesNullBookingTest() {

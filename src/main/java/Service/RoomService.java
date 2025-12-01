@@ -23,11 +23,14 @@ public class RoomService implements Observer{
     private BookingRepository bookingRepo = BookingRepository.getInstance();
     private PaymentRepository paymentRepo = PaymentRepository.getInstance();
 
-    public void createRoom(String loc, double price, String capacity) {
+    public String createRoom(String loc, double price, String capacity) {
         String nextId = roomRepo.generateNextId();
         Room newRoom = new Room(nextId, loc, price, capacity);
+        newRoom.performMaintenance(); // enabling room upon creation.
+        newRoom.requestEnable();
         roomRepo.save(newRoom); // Saves to rooms.csv
         System.out.println("Room created: " + nextId);
+        return nextId;
     }
 
     public String createBooking(String userId, String roomId, 
@@ -36,7 +39,7 @@ public class RoomService implements Observer{
                                  String paymentId) {
         // Use RoomRepo to find room
         Room room = roomRepo.findById(roomId);
-        if (room == null || !room.isAvailable()) return null;
+        if (room == null || room.isAvailable() == false) return null;
 
         LocalDateTime requestStart = LocalDateTime.of(startDate, startTime);
         LocalDateTime requestEnd = LocalDateTime.of(endDate, endTime);

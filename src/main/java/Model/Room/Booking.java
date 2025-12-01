@@ -82,5 +82,9 @@ public class Booking {
 	public String getUserId() {
 		return userId;
 	}
+
+	public void setPaymentId(String paymentid) {
+		this.paymentId = paymentid;
+	}
     
 }

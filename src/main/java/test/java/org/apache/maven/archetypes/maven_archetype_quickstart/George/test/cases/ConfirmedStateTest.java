@@ -77,7 +77,7 @@ public class ConfirmedStateTest {
      public void confirmedStateCheckInTest(){
           bookingState.checkIn(booking);
           String expectedStateName = "CHECKED_IN";
-          String actualStateName = bookingState.getStatus();
+          String actualStateName = booking.getStatus();
           // Since checkOut only has a print statement,
           // we just check to see if calling it changed
           // the state from COMPLETED to anything.
@@ -103,7 +103,7 @@ public class ConfirmedStateTest {
      public void doubleGetConfirmedStateNameCallTest() {
           String firstActualStateName = bookingState.getStatus();
           String secondActualStateName = bookingState.getStatus();
-          String expectedStateName = "Confirmed";
+          String expectedStateName = "CONFIRMED";
 
           Assertions.assertEquals(expectedStateName, firstActualStateName, "States aren't the same.  ");
           Assertions.assertEquals(expectedStateName, secondActualStateName, "States aren't the same.  ");

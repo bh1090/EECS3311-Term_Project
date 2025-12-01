@@ -50,7 +50,12 @@ public class CheckinController {
 			}
 		}
 		roomService.performCheckIn(this.view.bookingIDTextField.getText());
-		Sensor badgeScanner = sensorService.getSensorByRoomID(booking.getRoomId(), "Badge Scanner");
+		Sensor badgeScanner;
+		if (booking != null) {
+			badgeScanner = sensorService.getSensorByRoomID(booking.getRoomId(), "Badge Scanner");
+		} else {
+			return;
+		}
 		if (badgeScanner != null) {
 			if (pass) {
 				sensorService.addScanIDSensorData(badgeScanner.getID(), SessionData.getCurrentUser().getId(), "Accepted");				
@@ -60,8 +65,8 @@ public class CheckinController {
 			}
 		}
 		Sensor entrySensor = sensorService.getSensorByRoomID(booking.getRoomId(), "Entry Sensor");
-		entrySensor.setOccupied(true);
 		if (entrySensor != null) {			
+			entrySensor.setOccupied(true);
 			sensorService.addOccupancySensorData(entrySensor.getID());
 		}
 		JOptionPane.showMessageDialog(null, "Checked in");
@@ -71,12 +76,6 @@ public class CheckinController {
 		GuestSelectActionView view = new GuestSelectActionView();
 		new GuestSelectActionController(view, null);
 		this.view.dispose();
-		view.setVisible(true);
-	}
-	public static void main(String[] args) {
-		Application.SessionData.setCurrentUser(new StudentUser("Test Student", "test1@yorku.ca", "Password123!"));
-		CheckinView view = new CheckinView();
-		new CheckinController(view, new RoomService(), new SensorService());
 		view.setVisible(true);
 	}
 }

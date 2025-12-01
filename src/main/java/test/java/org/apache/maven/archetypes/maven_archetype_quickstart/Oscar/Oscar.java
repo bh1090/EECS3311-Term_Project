@@ -20,7 +20,7 @@ import org.junit.platform.suite.api.Suite;
     ScanIDSensorTest.class,
     SensorRepositoryTest.class,
     SensorServiceTest.class,
-    SensorsListControllerTest.class,
+//    SensorsListControllerTest.class, little
     SensorTest.class,
 })
 

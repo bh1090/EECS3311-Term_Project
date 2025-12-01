@@ -54,4 +54,39 @@ public class RoomDisabledStateTest {
 
           assertEquals(expectedDisabledStateName, actualDisabledStateName, "Room state name should be DISABLED.  ");
      }
+     @Test
+     public void doubleEnableRoomFromDisabledStateTest(){
+          roomState.enable(room);
+          roomState.enable(room);
+          String expectedRoomState = "DISABLED";
+          String actualRoomState = room.getState().getStateName();
+
+          assertEquals(expectedRoomState, actualRoomState, "Room state should not change.  ");
+     }
+     @Test
+     public void doubleDisableRoomFromDisabledStateTest(){
+          roomState.disable(room);
+          roomState.disable(room);
+          String expectedRoomState = "DISABLED";
+          String actualRoomState = room.getState().getStateName();
+
+          assertEquals(expectedRoomState, actualRoomState, "Room state should not change.  ");
+     }
+     @Test
+     public void allMethodsForDisableRoomFromDisabledStateTest(){
+          roomState.enable(room);
+          roomState.maintain(room);
+          roomState.disable(room);
+          String expectedRoomState = "DISABLED";
+          String actualRoomState = room.getState().getStateName();
+
+          assertEquals(expectedRoomState, actualRoomState, "Room state should not change.  ");
+     }
+     @Test
+     public void stateNameNotNullTest(){
+          String stateName = roomState.getStateName();
+
+          Assertions.assertNotNull(stateName, "Object of RoomDisabledState is null.  ");
+     }
+
 }

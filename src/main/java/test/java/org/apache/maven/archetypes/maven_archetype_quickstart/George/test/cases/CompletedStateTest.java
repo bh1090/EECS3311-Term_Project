@@ -23,7 +23,7 @@ public class CompletedStateTest {
                   LocalTime.of(12, 0),
                   LocalTime.of(13, 0),
                   "1");
-     }
+          }
 
      @Test
      public void objectCompletedStateNotNull(){

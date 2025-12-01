@@ -4,12 +4,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.lang.reflect.Method;
 
+import Repository.ServiceRequestRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import Controller.AdminServiceRequestController;
 
 public class AdminServiceRequestControllerTest {
-
+     @BeforeEach
+     void initRepository() {
+          ServiceRequestRepository.getInstance();
+     }
     // test0: getInstance returns non-null
     @Test
     void test0() {

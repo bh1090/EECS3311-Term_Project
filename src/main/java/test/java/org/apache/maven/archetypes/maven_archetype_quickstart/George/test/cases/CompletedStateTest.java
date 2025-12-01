@@ -31,6 +31,19 @@ public class CompletedStateTest {
           Assertions.assertNotNull(bookingState, "Object of CompletedState is null.  ");
      }
      @Test
+     public void cancelHandlesNullBookingTest() {
+          Assertions.assertDoesNotThrow(() -> bookingState.cancel(null), "Exception shouldn't be thrown for null booking");
+     }
+     @Test
+     public void checkInHandlesNullBookingTest() {
+          Assertions.assertDoesNotThrow(() -> bookingState.checkIn(null), "Exception shouldn't be thrown for null booking");
+     }
+     @Test
+     public void checkOutHandlesNullBookingTest() {
+          Assertions.assertDoesNotThrow(() -> bookingState.checkOut(null), "Exception shouldn't be thrown for null booking");
+     }
+
+     @Test
      public void completedStateNameTest(){
           String expectedStateName = bookingState.getStatus();
           String actualStateName = "COMPLETED";

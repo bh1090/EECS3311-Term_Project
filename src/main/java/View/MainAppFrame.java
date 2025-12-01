@@ -72,7 +72,6 @@ public class MainAppFrame extends JFrame {
         new LoginViewController(loginView, authService, navigator, roomService, userService);
         new SignupController(signupView, authService, navigator);
         new AddRoomController(roomService);
-        new RoomsListController(roomService);
 
     }
 

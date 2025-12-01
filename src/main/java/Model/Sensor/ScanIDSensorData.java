@@ -16,7 +16,7 @@ public class ScanIDSensorData extends OccupancySensorData {
 		this.userID = userID;
 		this.scanOutcome = scanOutcome;
 	}
-	
+
 	public String getUserID() {
 		return this.userID;
 	}

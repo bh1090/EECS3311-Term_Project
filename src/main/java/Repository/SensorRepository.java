@@ -20,7 +20,7 @@ public class SensorRepository {
 	public SensorRepository() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public List<Sensor> getSensorsList() {
 		try (FileReader reader = new FileReader(db.getSensorsCsvPath())) {
 			return new CsvToBeanBuilder<Sensor>(reader)
@@ -31,7 +31,7 @@ public class SensorRepository {
 			return null;
 		}
 	}
-	
+
 	private boolean writeSensorsList(List<Sensor> sensors) {
 		try (FileWriter writer = new FileWriter(db.getSensorsCsvPath())) {
 			StatefulBeanToCsv<Sensor> beanToCsv = new StatefulBeanToCsvBuilder<Sensor>(writer).build();
@@ -41,7 +41,7 @@ public class SensorRepository {
 			return false;
 		}
 	}
-	
+
 	public boolean writeSensor(Sensor sensor) {
 		if (sensor == null) {
 			return false;
@@ -56,15 +56,15 @@ public class SensorRepository {
 			return false;
 		}
 	}
-	
+
 	public Sensor getSensorByID(String id) {
 		return this.getSensorsList().stream().filter(s -> s.getID().equals(id)).findFirst().orElse(null);
 	}
-	
+
 	public void deleteSensorByID(String id) {
 		this.writeSensorsList(this.getSensorsList().stream().filter(s -> !s.getID().equals(id)).collect(Collectors.toList()));
 	}
-	
+
 	public List<Sensor> getSensorByRoomIDType(String roomID, String type) {
 		List<Sensor> list = this.getSensorsList();
 		if (roomID != null) {
@@ -75,7 +75,7 @@ public class SensorRepository {
 		}
 		return list;
 	}
-	
+
 	// Occupancy sensor logs
 	public List<OccupancySensorData> getOccupancySensorLogsList() {
 		try {
@@ -87,7 +87,7 @@ public class SensorRepository {
 			return null;
 		}
 	}
-	
+
 	public boolean writeOccupancySensorLog(OccupancySensorData occupancySensorLog) {
 		if (occupancySensorLog == null) {
 			return false;
@@ -102,7 +102,7 @@ public class SensorRepository {
 			return false;
 		}
 	}
-	
+
 	// Scanid sensor logs
 	public List<ScanIDSensorData> getScanIDSensorLogsList() {
 		try {
@@ -114,7 +114,7 @@ public class SensorRepository {
 			return null;
 		}
 	}
-	
+
 	public boolean writeScanIDSensorLog(ScanIDSensorData scanIDSensorLog) {
 		if (scanIDSensorLog == null) {
 			return false;

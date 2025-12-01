@@ -23,7 +23,9 @@ public class CompletedStateTest {
                   LocalTime.of(12, 0),
                   LocalTime.of(13, 0),
                   "1");
-          }
+          bookingState = new CompletedState();
+          booking.setState(new CompletedState());
+     }
 
      @Test
      public void objectCompletedStateNotNull(){

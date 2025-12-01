@@ -42,9 +42,16 @@ public class RoomDisabledStateTest {
      }
      @Test
      public void isBookableFromRoomDisabledStateTest(){
-          boolean expectedBookability = roomState.isBookable();
-          boolean actualBookability = false;
+          boolean expectedBookability = false;
+          boolean actualBookability = roomState.isBookable();
 
           assertEquals(expectedBookability, actualBookability, "Room should not be bookable in the room disabled state.  ");
+     }
+     @Test
+     public void getStateNameFromDisabledStateTest(){
+          String expectedDisabledStateName = "DISABLED";
+          String actualDisabledStateName = roomState.getStateName();
+
+          assertEquals(expectedDisabledStateName, actualDisabledStateName, "Room state name should be DISABLED.  ");
      }
 }

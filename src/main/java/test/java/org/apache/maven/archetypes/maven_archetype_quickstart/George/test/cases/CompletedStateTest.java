@@ -17,7 +17,7 @@ public class CompletedStateTest {
      @BeforeAll
      public static void setUp(){
           bookingState = new CompletedState();
-          Booking booking = new Booking("1", "1", "1",
+           booking = new Booking("1", "1", "1",
                   LocalDate.of(2030, 12, 12),
                   LocalDate.of(2030, 12, 13),
                   LocalTime.of(12, 0),

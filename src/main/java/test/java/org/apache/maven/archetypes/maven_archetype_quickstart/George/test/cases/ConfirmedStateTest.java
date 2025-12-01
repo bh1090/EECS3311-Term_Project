@@ -4,25 +4,26 @@ import Model.Room.Booking;
 import Model.State.BookingState;
 import Model.State.ConfirmedState;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class ConfirmedStateTest {
-     private static BookingState bookingState;
-     private static Booking booking;
-     @BeforeAll
-     public static void setUp(){
+     private BookingState bookingState;
+     private Booking booking;
+
+     @BeforeEach
+     public void setUp(){
           booking = new Booking("1", "1", "1",
                   LocalDate.of(2030, 12, 12),
-                  LocalDate.of(2030, 12, 13),
+                  LocalDate.of(2030, 12, 12),
                   LocalTime.of(12, 0),
                   LocalTime.of(13, 0),
                   "1");
           bookingState = new ConfirmedState();
-          booking.setState(new ConfirmedState());
+          booking.setState(bookingState);
      }
 
      @Test
@@ -35,7 +36,9 @@ public class ConfirmedStateTest {
           bookingState.checkOut(booking);
           bookingState.cancel(booking);
           String expectedBookingState = "CANCELLED";
-          Assertions.assertEquals(expectedBookingState, booking.getStatus(), "Booking state is wrong.  ");
+          String actualBookingState = booking.getStatus();
+
+          Assertions.assertEquals(expectedBookingState, actualBookingState, "Booking state is wrong.  ");
      }
      @Test
      public void confirmedStateCheckOutTwiceTest() {
@@ -43,7 +46,9 @@ public class ConfirmedStateTest {
           bookingState.checkOut(booking);
           bookingState.checkOut(booking);
           String expectedBookingState = "CONFIRMED";
-          Assertions.assertEquals(expectedBookingState, booking.getStatus(), "Booking state is wrong.  ");
+          String actualBookingState = booking.getStatus();
+
+          Assertions.assertEquals(expectedBookingState, actualBookingState, "Booking state is wrong.  ");
      }
      @Test
      public void checkOutHandlesNullBookingTest() {
@@ -52,43 +57,55 @@ public class ConfirmedStateTest {
 
      @Test
      public void confirmedStateNameTest(){
-          String expectedStateName = bookingState.getStatus();
-          String actualStateName = "CONFIRMED";
+          String expectedStateName = "CONFIRMED";
+          String actualStateName = bookingState.getStatus();
 
-          Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
+          Assertions.assertEquals(expectedStateName, actualStateName, "States aren't the same.  ");
      }
      @Test
      public void confirmedStateCancelTest(){
           bookingState.cancel(booking);
-          String expectedStateName = bookingState.getStatus();
-          String actualStateName = "CONFIRMED";
+          String expectedStateName = "CONFIRMED";
+          String actualStateName = bookingState.getStatus();
           // Since checkOut only has a print statement,
           // we just check to see if calling it changed
           // the state from COMPLETED to anything.
-          Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
+
+          Assertions.assertEquals(expectedStateName, actualStateName, "States aren't the same.  ");
      }
      @Test
      public void confirmedStateCheckInTest(){
           bookingState.checkIn(booking);
-          String expectedStateName = bookingState.getStatus();
-          String actualStateName = "CONFIRMED";
+          String expectedStateName = "CHECKED_IN";
+          String actualStateName = bookingState.getStatus();
           // Since checkOut only has a print statement,
           // we just check to see if calling it changed
           // the state from COMPLETED to anything.
-          Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
+
+          Assertions.assertEquals(expectedStateName, actualStateName, "State's aren't the same.  ");
      }
      @Test
      public void confirmedStateCheckOutTest(){
           bookingState.checkOut(booking);
-          String expectedStateName = bookingState.getStatus();
-          String actualStateName = "CONFIRMED";
+          String expectedStateName = "CONFIRMED";
+          String actualStateName = bookingState.getStatus();
           // Since checkOut only has a print statement,
           // we just check to see if calling it changed
           // the state from COMPLETED to anything.
-          Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
+
+          Assertions.assertEquals(expectedStateName, actualStateName, "States aren't the same.  ");
      }
      @Test
      public void instanceOfConfirmedStateTest() {
           Assertions.assertInstanceOf(ConfirmedState.class, bookingState, "BookingState object has wrong state.  ");
+     }
+     @Test
+     public void doubleGetConfirmedStateNameCallTest() {
+          String firstActualStateName = bookingState.getStatus();
+          String secondActualStateName = bookingState.getStatus();
+          String expectedStateName = "Confirmed";
+
+          Assertions.assertEquals(expectedStateName, firstActualStateName, "States aren't the same.  ");
+          Assertions.assertEquals(expectedStateName, secondActualStateName, "States aren't the same.  ");
      }
 }

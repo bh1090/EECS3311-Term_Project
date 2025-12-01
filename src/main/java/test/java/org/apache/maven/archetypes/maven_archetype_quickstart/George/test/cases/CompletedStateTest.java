@@ -42,7 +42,9 @@ public class CompletedStateTest {
           bookingState.cancel(booking);
           String expectedStateName = bookingState.getStatus();
           String actualStateName = "COMPLETED";
-
+          // Since checkOut only has a print statement,
+          // we just check to see if calling it changed
+          // the state from COMPLETED to anything.
           Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
      }
      @Test
@@ -50,7 +52,9 @@ public class CompletedStateTest {
           bookingState.checkIn(booking);
           String expectedStateName = bookingState.getStatus();
           String actualStateName = "COMPLETED";
-
+          // Since checkOut only has a print statement,
+          // we just check to see if calling it changed
+          // the state from COMPLETED to anything.
           Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
      }
      @Test
@@ -58,7 +62,9 @@ public class CompletedStateTest {
           bookingState.checkOut(booking);
           String expectedStateName = bookingState.getStatus();
           String actualStateName = "COMPLETED";
-
+          // Since checkOut only has a print statement,
+          // we just check to see if calling it changed
+          // the state from COMPLETED to anything.
           Assertions.assertEquals(actualStateName, expectedStateName, "State's aren't the same.  ");
      }
 }

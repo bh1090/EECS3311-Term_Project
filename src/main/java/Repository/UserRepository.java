@@ -69,7 +69,7 @@ public class UserRepository {
 
    
     
-    private AccountType mapCsvTypeToAccountType(String typeText) {
+    public AccountType mapCsvTypeToAccountType(String typeText) {
         if (typeText == null) {
             throw new IllegalArgumentException("Missing user type in CSV.");
         }

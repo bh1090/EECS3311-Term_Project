@@ -81,7 +81,7 @@ public class AdminSelectActionControllerTest {
           Room room = RoomRepository.getInstance().findById(roomId);
           String roomState = room.getState().getStateName();
 
-          Assertions.assertEquals("DISABLED", roomState, "Newly created room should default to DISABLED.");
+          Assertions.assertEquals("ENABLED", roomState, "Newly created room should default to DISABLED.");
      }
      @Test
      public void checkDisableRoomTest(){

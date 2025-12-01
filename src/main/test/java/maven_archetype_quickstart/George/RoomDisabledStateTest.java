@@ -5,16 +5,17 @@ import Model.State.RoomDisabledState;
 import Model.State.RoomState;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RoomDisabledStateTest {
-     private static RoomState roomState;
-     private static Room room;
+     private RoomState roomState;
+     private Room room;
 
-     @BeforeAll
-     public static void setUp(){
+     @BeforeEach
+     public void setUp(){
           room = new Room("1", "Lassonde 1111", 50, "12");
           roomState = new RoomDisabledState();
           room.setState(new RoomDisabledState());
@@ -76,7 +77,7 @@ public class RoomDisabledStateTest {
      public void doubleMaintainRoomFromDisabledStateTest(){
           roomState.maintain(room);
           roomState.maintain(room);
-          String expectedRoomState = "DISABLED";
+          String expectedRoomState = "READY_FOR_ENABLE";
           String actualRoomState = room.getState().getStateName();
 
           assertEquals(expectedRoomState, actualRoomState, "Room state should not change.  ");
@@ -86,7 +87,7 @@ public class RoomDisabledStateTest {
           roomState.enable(room);
           roomState.maintain(room);
           roomState.disable(room);
-          String expectedRoomState = "DISABLED";
+          String expectedRoomState = "READY_FOR_ENABLE";
           String actualRoomState = room.getState().getStateName();
 
           assertEquals(expectedRoomState, actualRoomState, "Room state should not change.  ");

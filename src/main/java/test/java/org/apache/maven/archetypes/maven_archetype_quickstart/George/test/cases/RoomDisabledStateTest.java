@@ -26,7 +26,7 @@ public class RoomDisabledStateTest {
           Assertions.assertNotNull(roomState, "Object of RoomDisabledState is null.  ");
      }
      @Test
-     public void Test(){
+     public void enableRoomFromDisabledStateTest(){
           roomState.enable(room);
           String expectedRoomState = "DISABLED";
           String actualRoomState = room.getState().getStateName();

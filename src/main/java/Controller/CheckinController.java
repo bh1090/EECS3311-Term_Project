@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 import Application.SessionData;
 import Model.Room.Booking;
 import Model.Sensor.Sensor;
+import Model.User.StudentUser;
+import Model.User.User;
 import Service.RoomService;
 
 public class CheckinController {
@@ -48,7 +50,12 @@ public class CheckinController {
 			}
 		}
 		roomService.performCheckIn(this.view.bookingIDTextField.getText());
-		Sensor badgeScanner = sensorService.getSensorByRoomID(booking.getRoomId(), "Badge Scanner");
+		Sensor badgeScanner;
+		if (booking != null) {
+			badgeScanner = sensorService.getSensorByRoomID(booking.getRoomId(), "Badge Scanner");
+		} else {
+			return;
+		}
 		if (badgeScanner != null) {
 			if (pass) {
 				sensorService.addScanIDSensorData(badgeScanner.getID(), SessionData.getCurrentUser().getId(), "Accepted");				
@@ -58,8 +65,8 @@ public class CheckinController {
 			}
 		}
 		Sensor entrySensor = sensorService.getSensorByRoomID(booking.getRoomId(), "Entry Sensor");
-		entrySensor.setOccupied(true);
 		if (entrySensor != null) {			
+			entrySensor.setOccupied(true);
 			sensorService.addOccupancySensorData(entrySensor.getID());
 		}
 		JOptionPane.showMessageDialog(null, "Checked in");

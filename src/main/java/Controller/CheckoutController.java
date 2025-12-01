@@ -33,7 +33,12 @@ public class CheckoutController {
 			pass = false;
 		}
 		roomService.performCheckOut(this.view.bookingIDTextField.getText());
-		Sensor badgeScanner = sensorService.getSensorByRoomID(booking.getRoomId(), "Badge Scanner");
+		Sensor badgeScanner;
+		if (booking != null) {
+			badgeScanner = sensorService.getSensorByRoomID(booking.getRoomId(), "Badge Scanner");
+		} else {
+			return;
+		}
 		if (badgeScanner != null) {
 			if (pass) {
 				sensorService.addScanIDSensorData(badgeScanner.getID(), SessionData.getCurrentUser().getId(), "Accepted");				
@@ -43,11 +48,11 @@ public class CheckoutController {
 			}
 		}
 		Sensor entrySensor = sensorService.getSensorByRoomID(booking.getRoomId(), "Entry Sensor");
-		entrySensor.setOccupied(false);
 		if (entrySensor != null) {			
+			entrySensor.setOccupied(false);
 			sensorService.addOccupancySensorData(entrySensor.getID());
 		}
-		JOptionPane.showMessageDialog(null, "Checked in");
+		JOptionPane.showMessageDialog(null, "Checked out");
 		back();
 	}
 	private void back() {

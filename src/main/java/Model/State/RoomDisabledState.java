@@ -26,6 +26,6 @@ public class RoomDisabledState implements RoomState {
 	@Override
 	public void maintain(Room context) {
 		// TODO Auto-generated method stub
-		System.out.println("Cannot perform maintenance: room is already disabled.");
+		context.setState(new RoomReadyForEnableState());
 	}
 }

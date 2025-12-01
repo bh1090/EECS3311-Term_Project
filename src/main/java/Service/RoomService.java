@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import Model.Room.Booking;
+import Model.Room.Observer;
 import Model.Payment.Payment;
 import Model.Room.Room;
 import Repository.BookingRepository;
@@ -15,17 +16,21 @@ import Repository.RoomRepository;
  * Service Layer for handling Room and Booking logic.
  * Now connects to Singleton Repositories for persistence.
  */
-public class RoomService {
+public class RoomService implements Observer{
     // 1. Get Singleton instances of the repositories
+    private static RoomService instance = null;
     private RoomRepository roomRepo = RoomRepository.getInstance();
     private BookingRepository bookingRepo = BookingRepository.getInstance();
     private PaymentRepository paymentRepo = PaymentRepository.getInstance();
 
-    public void createRoom(String loc, double price, String capacity) {
+    public String createRoom(String loc, double price, String capacity) {
         String nextId = roomRepo.generateNextId();
         Room newRoom = new Room(nextId, loc, price, capacity);
+        newRoom.performMaintenance(); // enabling room upon creation.
+        newRoom.requestEnable();
         roomRepo.save(newRoom); // Saves to rooms.csv
         System.out.println("Room created: " + nextId);
+        return nextId;
     }
 
     public String createBooking(String userId, String roomId, 
@@ -34,7 +39,7 @@ public class RoomService {
                                  String paymentId) {
         // Use RoomRepo to find room
         Room room = roomRepo.findById(roomId);
-        if (room == null || !room.isAvailable()) return null;
+        if (room == null || room.isAvailable() == false) return null;
 
         LocalDateTime requestStart = LocalDateTime.of(startDate, startTime);
         LocalDateTime requestEnd = LocalDateTime.of(endDate, endTime);
@@ -84,6 +89,14 @@ public class RoomService {
         }
     }
 
+    public RoomService getInstance(){
+        if(instance == null){
+            instance = new RoomService();
+            EvaluateRoomMaintenanceRelationshipService.getInstance().registerObserver(instance);
+        }
+        return instance;
+    }
+
     public void enableRoom(String roomId) {
         Room r = roomRepo.findById(roomId);
         if (r != null) {
@@ -127,5 +140,17 @@ public class RoomService {
         }
         return false;
     }
-  
+
+    @Override
+    public void update(boolean isAnyEssentialMaintenanceRequestPending, int currentRoomID) {
+        Room r = roomRepo.findById(String.valueOf(currentRoomID));
+        if (r != null) {
+            if (isAnyEssentialMaintenanceRequestPending) {
+                r.requestDisable();
+            } else {
+                r.requestEnable();
+            }
+            roomRepo.save(r); // Persist state change
+        }
+    }
 }

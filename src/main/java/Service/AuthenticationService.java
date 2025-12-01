@@ -120,13 +120,13 @@ public class AuthenticationService {
         
     }
 
-    private boolean isYorkEmail(String email) {
+    public boolean isYorkEmail(String email) {
         String lower= email.toLowerCase();
         return lower.endsWith("@yorku.ca")||lower.endsWith("@my.yorku.ca");
     }
 
   
-    private boolean properEmail(String email) {
+    public boolean properEmail(String email) {
     	
         String lower= email.toLowerCase();
         int atIndex= lower.lastIndexOf('@');

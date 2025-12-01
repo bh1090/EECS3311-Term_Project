@@ -15,7 +15,8 @@ public class RoomListFacade {
 
     public RoomListFacade() {
         this.roomService = new RoomService();
-        this.repo = new RoomRepository();
+        // Using the singleton instance data is shared with the test.
+        this.repo = RoomRepository.getInstance(); 
     }
 
     // For Guests: Only show bookable rooms wrapped in GuestProxy

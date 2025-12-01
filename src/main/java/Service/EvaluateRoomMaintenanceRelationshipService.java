@@ -6,7 +6,7 @@ import java.util.List;
 import Model.ServiceRequest.ServiceRequest;
 import Model.Room.Subject;
 import Model.Room.Observer;
-import Model.Room.RoomServicePlaceholder;
+import Service.RoomService;
 
 public final class EvaluateRoomMaintenanceRelationshipService implements Subject {
 
@@ -20,7 +20,6 @@ public final class EvaluateRoomMaintenanceRelationshipService implements Subject
     public static EvaluateRoomMaintenanceRelationshipService getInstance() {
         if (instance == null) {
             instance = new EvaluateRoomMaintenanceRelationshipService();
-            instance.registerObserver(RoomServicePlaceholder.getInstance());
         }
         return instance;
     }

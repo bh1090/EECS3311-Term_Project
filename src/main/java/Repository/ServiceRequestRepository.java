@@ -17,7 +17,7 @@ import Model.ServiceRequest.NonEssentialServiceRequest;
 import Model.ServiceRequest.SensorEssentialServiceRequest;
 import Model.ServiceRequest.ServiceRequest;
 
-public final class ServiceRequestRepository {
+public class ServiceRequestRepository {
      private static ServiceRequestRepository instance = null;
 
      private Map<Integer, List<ServiceRequest>> serviceRequestMap = new HashMap<>();

@@ -37,15 +37,18 @@ public class ServiceRequestRepository {
      }
 
      public void updateExistingServiceRequest(ServiceRequest serviceRequest) {
+          int roomID = serviceRequest.getRoomID();
+          serviceRequestMap.putIfAbsent(roomID, new ArrayList<>());
+
           int index = -1;
-          for (int i = 0; i < serviceRequestMap.get(serviceRequest.getRoomID()).size(); i++) {
-               if (serviceRequestMap.get(serviceRequest.getRoomID()).get(i).getServiceRequestID() == serviceRequest.getServiceRequestID()) {
+          for (int i = 0; i < serviceRequestMap.get(roomID).size(); i++) {
+               if (serviceRequestMap.get(roomID).get(i).getServiceRequestID() == serviceRequest.getServiceRequestID()) {
                     index = i;
                     break;
                }
           }
           if (index != -1) {
-               serviceRequestMap.get(serviceRequest.getRoomID()).set(index, serviceRequest);
+               serviceRequestMap.get(roomID).set(index, serviceRequest);
                saveMapToCsv(serviceRequestMap, Database.getInstance().getMaintenanceRequestsCsvPath());
           }
      }
@@ -62,101 +65,100 @@ public class ServiceRequestRepository {
 
      public Map<Integer, List<ServiceRequest>> parseCsvFileToMap(String filePath, boolean isSensorData) {
 
-     Map<Integer, List<ServiceRequest>> serviceRequestMap = new HashMap<>();
-     String line;
+          Map<Integer, List<ServiceRequest>> serviceRequestMap = new HashMap<>();
+          String line;
 
-     try (BufferedReader br = new BufferedReader(new java.io.FileReader(filePath))) {
+          try (BufferedReader br = new BufferedReader(new java.io.FileReader(filePath))) {
 
-          br.readLine(); 
+               br.readLine();
 
-          while ((line = br.readLine()) != null) {
-               String[] values = line.split(",");
+               while ((line = br.readLine()) != null) {
+                    String[] values = line.split(",");
 
-               int requestId     = Integer.parseInt(values[0]);  
-               int roomId     = Integer.parseInt(values[1]);                  
-               boolean isEssential = values[2].trim().equalsIgnoreCase("Essential"); 
-               String status     = values[3];                    
-               String description = values[4];  
-               Integer sensorID = Integer.parseInt(values[5]);                  
+                    int requestId = Integer.parseInt(values[0]);
+                    int roomId = Integer.parseInt(values[1]);
+                    boolean isEssential = values[2].trim().equalsIgnoreCase("Essential");
+                    String status = values[3];
+                    String description = values[4];
+                    Integer sensorID = Integer.parseInt(values[5]);
 
-               ServiceRequest serviceRequest;
-               if(isEssential == false){
-                    serviceRequest = new NonEssentialServiceRequest(requestId, description, status, roomId);
-               }
-               else if (sensorID == -1){
-                    serviceRequest = new EssentialServiceRequest(requestId, description, status, roomId);
-               }
-               else{
-                    serviceRequest = new SensorEssentialServiceRequest(requestId, description, status, roomId, sensorID);
-                    ((SensorEssentialServiceRequest) serviceRequest).assignRoomID(roomId);
-               }
-               if (!serviceRequestMap.containsKey(roomId)) {
-                    serviceRequestMap.put(roomId, new ArrayList<>());
+                    ServiceRequest serviceRequest;
+                    if(!isEssential){
+                         serviceRequest = new NonEssentialServiceRequest(requestId, description, status, roomId);
                     }
-               serviceRequestMap.get(roomId).add(serviceRequest);
+                    else if (sensorID == -1){
+                         serviceRequest = new EssentialServiceRequest(requestId, description, status, roomId);
+                    }
+                    else{
+                         serviceRequest = new SensorEssentialServiceRequest(requestId, description, status, roomId, sensorID);
+                         ((SensorEssentialServiceRequest) serviceRequest).assignRoomID(roomId);
+                    }
+                    if (!serviceRequestMap.containsKey(roomId)) {
+                         serviceRequestMap.put(roomId, new ArrayList<>());
+                    }
+                    serviceRequestMap.get(roomId).add(serviceRequest);
+               }
+
+               return serviceRequestMap;
+
+          } catch (Exception e) {
+               e.printStackTrace();
+               return new HashMap<>();
           }
-
-          return serviceRequestMap;
-
-     } catch (Exception e) {
-          e.printStackTrace();
-          return null;
-     }
      }
 
      public Integer generateNextId(int roomID) {
-        int maxId = 0;
-        for (ServiceRequest request : serviceRequestMap.get(roomID)) {
-            try {
-                // We assumed IDs are numbers like "1", "2", "100", etc
-                int currentId = request.getServiceRequestID();
-                if (currentId > maxId) {
-                    maxId = currentId;
-                }
-            } catch (NumberFormatException e) {
-                // Ignore weird IDs that aren't numbers (just in case)
-            }
-        }
-        return maxId + 1;
-    }
+          serviceRequestMap.putIfAbsent(roomID, new ArrayList<>());
+
+          int maxId = 0;
+          for (ServiceRequest request : serviceRequestMap.get(roomID)) {
+               try {
+                    int currentId = request.getServiceRequestID();
+                    if (currentId > maxId) {
+                         maxId = currentId;
+                    }
+               } catch (NumberFormatException e) {}
+          }
+          return maxId + 1;
+     }
 
      public boolean saveMapToCsv(Map<Integer, List<ServiceRequest>> map, String filePath) {
-     try (PrintWriter pw = new PrintWriter(new File(filePath))) {
+          try (PrintWriter pw = new PrintWriter(new File(filePath))) {
 
-          pw.println("requestId,roomId,isEssential,status,description,sensorID");
+               pw.println("requestId,roomId,isEssential,status,description,sensorID");
 
-          for (List<ServiceRequest> list : map.values()) {
-               for (ServiceRequest request : list) {
-                    String isEssential = 
-                    (request instanceof EssentialServiceRequest || request instanceof SensorEssentialServiceRequest)
-                    ? "Essential" 
-                    : "Nonessential";
+               for (List<ServiceRequest> list : map.values()) {
+                    for (ServiceRequest request : list) {
+                         String isEssential =
+                                 (request instanceof EssentialServiceRequest || request instanceof SensorEssentialServiceRequest)
+                                         ? "Essential"
+                                         : "Nonessential";
 
-                    if (request instanceof SensorEssentialServiceRequest) {
-                    pw.println(
-                         request.getServiceRequestID() + "," +
-                         ((SensorEssentialServiceRequest) request).getRoomID() + "," +
-                         isEssential + "," +
-                         request.getStatus() + "," +
-                         request.getDescription() + "," +
-                         ((SensorEssentialServiceRequest) request).getSensorID()
-                    );
-                    } else {
-                    pw.println(
-                         request.getServiceRequestID() + "," +
-                         request.getRoomID() + "," +
-                         isEssential + "," +
-                         request.getStatus() + "," +
-                         request.getDescription() + ",-1"     
-                    );
+                         if (request instanceof SensorEssentialServiceRequest) {
+                              pw.println(
+                                      request.getServiceRequestID() + "," +
+                                              ((SensorEssentialServiceRequest) request).getRoomID() + "," +
+                                              isEssential + "," +
+                                              request.getStatus() + "," +
+                                              request.getDescription() + "," +
+                                              ((SensorEssentialServiceRequest) request).getSensorID()
+                              );
+                         } else {
+                              pw.println(
+                                      request.getServiceRequestID() + "," +
+                                              request.getRoomID() + "," +
+                                              isEssential + "," +
+                                              request.getStatus() + "," +
+                                              request.getDescription() + ",-1"
+                              );
+                         }
                     }
                }
-          }
-          return true; 
+               return true;
 
-     } catch (IOException e) {
-          e.printStackTrace();
-          return false; 
-          }    
+          } catch (IOException e) {
+               e.printStackTrace();
+               return false;
+          }
      }
 }

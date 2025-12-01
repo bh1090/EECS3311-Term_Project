@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import Model.Room.Booking;
+import Model.Room.Observer;
 import Model.Payment.Payment;
 import Model.Room.Room;
 import Repository.BookingRepository;
@@ -15,8 +16,9 @@ import Repository.RoomRepository;
  * Service Layer for handling Room and Booking logic.
  * Now connects to Singleton Repositories for persistence.
  */
-public class RoomService {
+public class RoomService implements Observer{
     // 1. Get Singleton instances of the repositories
+    private static RoomService instance = null;
     private RoomRepository roomRepo = RoomRepository.getInstance();
     private BookingRepository bookingRepo = BookingRepository.getInstance();
     private PaymentRepository paymentRepo = PaymentRepository.getInstance();
@@ -84,6 +86,14 @@ public class RoomService {
         }
     }
 
+    public RoomService getInstance(){
+        if(instance == null){
+            instance = new RoomService();
+            EvaluateRoomMaintenanceRelationshipService.getInstance().registerObserver(instance);
+        }
+        return instance;
+    }
+
     public void enableRoom(String roomId) {
         Room r = roomRepo.findById(roomId);
         if (r != null) {
@@ -127,5 +137,17 @@ public class RoomService {
         }
         return false;
     }
-  
+
+    @Override
+    public void update(boolean isAnyEssentialMaintenanceRequestPending, int currentRoomID) {
+        Room r = roomRepo.findById(String.valueOf(currentRoomID));
+        if (r != null) {
+            if (isAnyEssentialMaintenanceRequestPending) {
+                r.requestDisable();
+            } else {
+                r.requestEnable();
+            }
+            roomRepo.save(r); // Persist state change
+        }
+    }
 }

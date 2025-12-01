@@ -3,7 +3,6 @@ package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.George.
 import Model.Room.Room;
 import Model.State.RoomDisabledState;
 import Model.State.RoomState;
-import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

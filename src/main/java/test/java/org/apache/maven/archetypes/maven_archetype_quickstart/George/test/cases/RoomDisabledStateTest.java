@@ -4,8 +4,11 @@ import Model.Room.Room;
 import Model.State.RoomDisabledState;
 import Model.State.RoomState;
 import org.junit.Before;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RoomDisabledStateTest {
      private static RoomState roomState;
@@ -19,7 +22,15 @@ public class RoomDisabledStateTest {
      }
 
      @Test
+     public void objectRoomDisabledStateNotNullTest(){
+          Assertions.assertNotNull(roomState, "Object of RoomDisabledState is null.  ");
+     }
+     @Test
      public void Test(){
+          roomState.enable(room);
+          String expectedRoomState = "DISABLED";
+          String actualRoomState = room.getState().getStateName();
 
+          assertEquals(expectedRoomState, actualRoomState, "Room state should not change.  ");
      }
 }

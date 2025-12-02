@@ -12,23 +12,20 @@ public class MaintenanceServiceRequestControllerTest {
 
     @BeforeEach
     void resetSingleton() throws Exception {
-        // Reset the static instance so each test starts from a clean state
         Field instanceField = MaintenanceServiceRequestController.class.getDeclaredField("instance");
         instanceField.setAccessible(true);
         instanceField.set(null, null);
     }
 
-    // test0: getInstance returns non-null
     @Test
-    void test0() {
+    void testGetInstanceReturnsNonNull() {
         MaintenanceServiceRequestController controller =
                 MaintenanceServiceRequestController.getInstance();
         assertNotNull(controller);
     }
 
-    // test1: getInstance returns the same singleton instance
     @Test
-    void test1() {
+    void testGetInstanceReturnsSameSingleton() {
         MaintenanceServiceRequestController c1 =
                 MaintenanceServiceRequestController.getInstance();
         MaintenanceServiceRequestController c2 =
@@ -36,9 +33,8 @@ public class MaintenanceServiceRequestControllerTest {
         assertSame(c1, c2);
     }
 
-    // test2: setRoomID + handleServiceRequestListCompilation do not throw
     @Test
-    void test2() {
+    void testSetRoomIDAndHandleServiceRequestListCompilationDoNotThrow() {
         MaintenanceServiceRequestController controller =
                 MaintenanceServiceRequestController.getInstance();
         controller.setRoomID(1);
@@ -48,9 +44,8 @@ public class MaintenanceServiceRequestControllerTest {
         });
     }
 
-    // test3: handleServiceRequestListCompilation works with another roomID
     @Test
-    void test3() {
+    void testHandleServiceRequestListCompilationWorksWithAnotherRoomID() {
         MaintenanceServiceRequestController controller =
                 MaintenanceServiceRequestController.getInstance();
         controller.setRoomID(2);
@@ -60,9 +55,8 @@ public class MaintenanceServiceRequestControllerTest {
         });
     }
 
-    // test4: updateMaintenanceRequestStatus does not throw
     @Test
-    void test4() {
+    void testUpdateMaintenanceRequestStatusDoesNotThrow() {
         MaintenanceServiceRequestController controller =
                 MaintenanceServiceRequestController.getInstance();
         controller.setRoomID(10);
@@ -72,9 +66,8 @@ public class MaintenanceServiceRequestControllerTest {
         });
     }
 
-    // test5: updateMaintenanceRequestStatus with different status/description
     @Test
-    void test5() {
+    void testUpdateMaintenanceRequestStatusWithDifferentStatusDescriptionDoesNotThrow() {
         MaintenanceServiceRequestController controller =
                 MaintenanceServiceRequestController.getInstance();
         controller.setRoomID(20);
@@ -84,9 +77,8 @@ public class MaintenanceServiceRequestControllerTest {
         });
     }
 
-    // test6: handleServiceRequestListCompilation without setting roomID explicitly (default 0)
     @Test
-    void test6() {
+    void testHandleServiceRequestListCompilationWithoutSettingRoomID() {
         MaintenanceServiceRequestController controller =
                 MaintenanceServiceRequestController.getInstance();
 
@@ -95,9 +87,8 @@ public class MaintenanceServiceRequestControllerTest {
         });
     }
 
-    // test7: multiple calls still use same singleton
     @Test
-    void test7() {
+    void testMultipleCallsStillUseSameSingleton() {
         MaintenanceServiceRequestController c1 =
                 MaintenanceServiceRequestController.getInstance();
         c1.setRoomID(5);
@@ -112,19 +103,15 @@ public class MaintenanceServiceRequestControllerTest {
         assertSame(c1, c2);
     }
 
-    // test8: main method runs without throwing
-    // If this causes GUI issues in your environment, you can comment out this test.
     @Test
-    void test8() {
+    void testMainMethodRunsWithoutThrowing() {
         assertDoesNotThrow(() -> {
             MaintenanceServiceRequestController.main(new String[]{});
         });
     }
 
-    // test9: getInstance still works after main has been called
     @Test
-    void test9() {
-        // simulate main having been run once
+    void testGetInstanceStillWorksAfterMainHasBeenCalled() {
         MaintenanceServiceRequestController.main(new String[]{});
 
         MaintenanceServiceRequestController controller =

@@ -17,7 +17,6 @@ import Service.GetMaintenanceRequestService;
 
 public class GetMaintenanceRequestServiceTest {
 
-    // Fake ServiceRequest with configurable essential flag
     static class FakeServiceRequest extends ServiceRequest {
         private final boolean essential;
 
@@ -34,12 +33,10 @@ public class GetMaintenanceRequestServiceTest {
 
     @BeforeEach
     void setup() throws Exception {
-        // Reset GetMaintenanceRequestService singleton
         Field svcInstance = GetMaintenanceRequestService.class.getDeclaredField("instance");
         svcInstance.setAccessible(true);
         svcInstance.set(null, null);
 
-        // Overwrite the internal map of ServiceRequestRepository so tests don't depend on CSV/DB
         ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
         Field mapField = ServiceRequestRepository.class.getDeclaredField("serviceRequestMap");
         mapField.setAccessible(true);
@@ -56,24 +53,21 @@ public class GetMaintenanceRequestServiceTest {
         map.put(roomID, requests);
     }
 
-    // test0: getInstance returns non-null
     @Test
-    void test0() {
+    void testGetInstanceReturnsNonNull() {
         GetMaintenanceRequestService service = GetMaintenanceRequestService.getInstance();
         assertNotNull(service);
     }
 
-    // test1: getInstance returns same singleton instance
     @Test
-    void test1() {
+    void testGetInstanceReturnsSameSingleton() {
         GetMaintenanceRequestService s1 = GetMaintenanceRequestService.getInstance();
         GetMaintenanceRequestService s2 = GetMaintenanceRequestService.getInstance();
         assertSame(s1, s2);
     }
 
-    // test2: empty repository -> empty result for essential = true
     @Test
-    void test2() {
+    void testGetServiceRequestsReturnsEmptyForEssentialTrueWhenRepositoryEmpty() {
         GetMaintenanceRequestService service = GetMaintenanceRequestService.getInstance();
 
         ArrayList<ServiceRequest> result = service.getServiceRequests(1, true);
@@ -82,9 +76,8 @@ public class GetMaintenanceRequestServiceTest {
         assertTrue(result.isEmpty());
     }
 
-    // test3: empty repository -> empty result for essential = false
     @Test
-    void test3() {
+    void testGetServiceRequestsReturnsEmptyForEssentialFalseWhenRepositoryEmpty() {
         GetMaintenanceRequestService service = GetMaintenanceRequestService.getInstance();
 
         ArrayList<ServiceRequest> result = service.getServiceRequests(1, false);
@@ -93,9 +86,8 @@ public class GetMaintenanceRequestServiceTest {
         assertTrue(result.isEmpty());
     }
 
-    // test4: one essential request, filter with isEssential = true
     @Test
-    void test4() throws Exception {
+    void testGetServiceRequestsReturnsOneEssentialWhenFilteredForEssential() throws Exception {
         ArrayList<ServiceRequest> list = new ArrayList<>();
         list.add(new FakeServiceRequest(1, "Leak", "OPEN", 10, true));
         putRoomRequests(10, list);
@@ -108,9 +100,8 @@ public class GetMaintenanceRequestServiceTest {
         assertTrue(result.get(0).isEssential());
     }
 
-    // test5: one essential request, filter with isEssential = false -> empty
     @Test
-    void test5() throws Exception {
+    void testGetServiceRequestsReturnsEmptyForEssentialFalseWhenOneEssentialExists() throws Exception {
         ArrayList<ServiceRequest> list = new ArrayList<>();
         list.add(new FakeServiceRequest(2, "Broken window", "PENDING", 11, true));
         putRoomRequests(11, list);
@@ -122,9 +113,8 @@ public class GetMaintenanceRequestServiceTest {
         assertTrue(result.isEmpty());
     }
 
-    // test6: mix of essential and non-essential, filter essential
     @Test
-    void test6() throws Exception {
+    void testGetServiceRequestsReturnsOnlyEssentialWhenFilteredForEssential() throws Exception {
         ArrayList<ServiceRequest> list = new ArrayList<>();
         list.add(new FakeServiceRequest(3, "AC issue", "OPEN", 12, true));
         list.add(new FakeServiceRequest(4, "TV issue", "OPEN", 12, false));
@@ -139,9 +129,8 @@ public class GetMaintenanceRequestServiceTest {
         assertEquals(3, essentials.get(0).getServiceRequestID());
     }
 
-    // test7: mix of essential and non-essential, filter non-essential
     @Test
-    void test7() throws Exception {
+    void testGetServiceRequestsReturnsOnlyNonEssentialWhenFilteredForNonEssential() throws Exception {
         ArrayList<ServiceRequest> list = new ArrayList<>();
         list.add(new FakeServiceRequest(5, "Door stuck", "OPEN", 13, true));
         list.add(new FakeServiceRequest(6, "Lamp broken", "OPEN", 13, false));
@@ -156,9 +145,8 @@ public class GetMaintenanceRequestServiceTest {
         assertEquals(6, nonEssentials.get(0).getServiceRequestID());
     }
 
-    // test8: different roomID should not see requests from another room
     @Test
-    void test8() throws Exception {
+    void testGetServiceRequestsReturnsEmptyForDifferentRoomID() throws Exception {
         ArrayList<ServiceRequest> list = new ArrayList<>();
         list.add(new FakeServiceRequest(7, "Heater issue", "OPEN", 20, true));
         putRoomRequests(20, list);
@@ -169,9 +157,8 @@ public class GetMaintenanceRequestServiceTest {
         assertTrue(result.isEmpty());
     }
 
-    // test9: calling getServiceRequests multiple times for same roomID works and is deterministic
     @Test
-    void test9() throws Exception {
+    void testGetServiceRequestsIsDeterministicForSameRoomID() throws Exception {
         ArrayList<ServiceRequest> list = new ArrayList<>();
         list.add(new FakeServiceRequest(8, "Fan issue", "OPEN", 30, true));
         list.add(new FakeServiceRequest(9, "Light issue", "OPEN", 30, false));

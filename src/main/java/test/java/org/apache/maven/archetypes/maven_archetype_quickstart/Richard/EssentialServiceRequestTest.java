@@ -9,39 +9,34 @@ import Model.ServiceRequest.ServiceRequest;
 
 public class EssentialServiceRequestTest {
 
-    // test0: constructor sets ID correctly
     @Test
-    void test0() {
+    void testIsIDSetCorrectly() {
         EssentialServiceRequest req =
                 new EssentialServiceRequest(1, "Leak", "OPEN", 101);
         assertEquals(1, req.getServiceRequestID());
     }
 
-    // test1: constructor sets description correctly
     @Test
-    void test1() {
+    void testIsDescriptionSetCorrectly() {
         EssentialServiceRequest req =
                 new EssentialServiceRequest(2, "Heater broken", "PENDING", 102);
         assertEquals("Heater broken", req.getDescription());
     }
 
-    // test2: constructor sets status correctly
     @Test
-    void test2() {
+    void testIsStatusSetCorrectly() {
         EssentialServiceRequest req =
                 new EssentialServiceRequest(3, "Window cracked", "IN_PROGRESS", 103);
         assertEquals("IN_PROGRESS", req.getStatus());
     }
 
-    // test3: constructor sets roomID correctly
     @Test
-    void test3() {
+    void testIsRoomIDSetCorrectly() {
         EssentialServiceRequest req =
                 new EssentialServiceRequest(4, "Door stuck", "OPEN", 104);
         assertEquals(104, req.getRoomID());
     }
 
-    // test4: isEssential() always returns true
     @Test
     void test4() {
         EssentialServiceRequest req =
@@ -49,7 +44,6 @@ public class EssentialServiceRequestTest {
         assertTrue(req.isEssential());
     }
 
-    // test5: isEssential() is not false
     @Test
     void test5() {
         EssentialServiceRequest req =
@@ -57,7 +51,6 @@ public class EssentialServiceRequestTest {
         assertNotEquals(false, req.isEssential());
     }
 
-    // test6: getServiceRequestID does not return wrong ID
     @Test
     void test6() {
         EssentialServiceRequest req =
@@ -65,7 +58,6 @@ public class EssentialServiceRequestTest {
         assertNotEquals(999, req.getServiceRequestID());
     }
 
-    // test7: description is not some other string
     @Test
     void test7() {
         EssentialServiceRequest req =
@@ -73,7 +65,6 @@ public class EssentialServiceRequestTest {
         assertNotEquals("Heater broken", req.getDescription());
     }
 
-    // test8: status is not some other status
     @Test
     void test8() {
         EssentialServiceRequest req =
@@ -81,7 +72,6 @@ public class EssentialServiceRequestTest {
         assertNotEquals("OPEN", req.getStatus());
     }
 
-    // test9: object is an instance of ServiceRequest (superclass)
     @Test
     void test9() {
         EssentialServiceRequest req =

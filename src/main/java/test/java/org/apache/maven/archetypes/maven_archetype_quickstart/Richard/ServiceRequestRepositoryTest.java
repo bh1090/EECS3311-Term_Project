@@ -20,7 +20,6 @@ import Repository.ServiceRequestRepository;
 
 public class ServiceRequestRepositoryTest {
 
-    // Simple fake request we can fully control
     static class FakeServiceRequest extends ServiceRequest {
         private final boolean essential;
 
@@ -50,24 +49,21 @@ public class ServiceRequestRepositoryTest {
         return repo;
     }
 
-    // test0: getInstance returns non-null
     @Test
-    void test0() {
+    void testGetInstanceReturnsNonNull() {
         ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
         assertNotNull(repo);
     }
 
-    // test1: getInstance returns the same singleton
     @Test
-    void test1() {
+    void testGetInstanceReturnsSameSingleton() {
         ServiceRequestRepository r1 = ServiceRequestRepository.getInstance();
         ServiceRequestRepository r2 = ServiceRequestRepository.getInstance();
         assertSame(r1, r2);
     }
 
-    // test2: addServiceRequest adds into internal map and returns same object
     @Test
-    void test2() throws Exception {
+    void testAddServiceRequestAddsIntoInternalMapAndReturnsSameObject() throws Exception {
         ServiceRequestRepository repo = getFreshRepoWithEmptyMap();
 
         FakeServiceRequest req = new FakeServiceRequest(1, "Leak", "OPEN", 101, false);
@@ -80,9 +76,8 @@ public class ServiceRequestRepositoryTest {
         assertSame(req, loaded.get(0));
     }
 
-    // test3: updateExistingServiceRequest replaces matching request
     @Test
-    void test3() throws Exception {
+    void testUpdateExistingServiceRequestReplacesMatchingRequest() throws Exception {
         ServiceRequestRepository repo = getFreshRepoWithEmptyMap();
 
         // Manually populate map for room 200
@@ -104,9 +99,8 @@ public class ServiceRequestRepositoryTest {
         assertEquals("New desc", loaded.get(0).getDescription());
     }
 
-    // test4: updateExistingServiceRequest with no matching ID leaves list unchanged
     @Test
-    void test4() throws Exception {
+    void testUpdateExistingServiceRequestWithNoMatchingIDLeavesListUnchanged() throws Exception {
         ServiceRequestRepository repo = getFreshRepoWithEmptyMap();
 
         Map<Integer, List<ServiceRequest>> map = new HashMap<>();
@@ -126,9 +120,8 @@ public class ServiceRequestRepositoryTest {
         assertEquals("Only one", loaded.get(0).getDescription());
     }
 
-    // test5: loadAllServiceRequestsForRoom returns a copy, not the internal list
     @Test
-    void test5() throws Exception {
+    void testLoadAllServiceRequestsForRoomReturnsCopyNotInternalList() throws Exception {
         ServiceRequestRepository repo = getFreshRepoWithEmptyMap();
 
         Map<Integer, List<ServiceRequest>> map = new HashMap<>();
@@ -152,9 +145,8 @@ public class ServiceRequestRepositoryTest {
         assertEquals(2, loaded2.size());
     }
 
-    // test6: generateNextId returns maxId + 1 for given room
     @Test
-    void test6() throws Exception {
+    void testGenerateNextIdReturnsMaxIdPlusOneForGivenRoom() throws Exception {
         ServiceRequestRepository repo = getFreshRepoWithEmptyMap();
 
         Map<Integer, List<ServiceRequest>> map = new HashMap<>();
@@ -172,9 +164,8 @@ public class ServiceRequestRepositoryTest {
         assertEquals(4, nextId);
     }
 
-    // test7: parseCsvFileToMap builds correct subclasses and map structure
     @Test
-    void test7() throws Exception {
+    void testParseCsvFileToMapBuildsCorrectSubclassesAndMapStructure() throws Exception {
         // Create temp CSV file
         File temp = File.createTempFile("servicereq_parse", ".csv");
         temp.deleteOnExit();
@@ -215,7 +206,7 @@ public class ServiceRequestRepositoryTest {
 
     // test8: saveMapToCsv writes a non-empty file with both essential and non-essential
     @Test
-    void test8() throws Exception {
+    void testSaveMapToCsvWritesNonEmptyFileWithBothEssentialAndNonEssential() throws Exception {
         ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
 
         // Build a small map with both types
@@ -238,14 +229,13 @@ public class ServiceRequestRepositoryTest {
         assertTrue(temp.exists());
         assertTrue(temp.length() > 0);
 
-        // Optional: check header present
+        //Check header present
         String content = String.join("\n", Files.readAllLines(Paths.get(temp.getAbsolutePath())));
         assertTrue(content.contains("requestId,roomId,isEssential,status,description,sensorID"));
     }
 
-    // test9: loadAllServiceRequestsForRoom for room with no entries returns empty list, not null
     @Test
-    void test9() throws Exception {
+    void testLoadAllServiceRequestsForRoomForRoomWithNoEntriesReturnsEmptyListNotNull() throws Exception {
         ServiceRequestRepository repo = getFreshRepoWithEmptyMap();
 
         ArrayList<ServiceRequest> result = repo.loadAllServiceRequestsForRoom(9999);

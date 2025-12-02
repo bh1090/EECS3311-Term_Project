@@ -153,3 +153,39 @@ user,69fa2bbb-cbb6-41bd-8a55-9b1e540b4026,staff_70dc2427-5208-458d-bd7a-7dcaa17d
 user,9a848615-ddab-4d50-afc5-69c20ce2ee3f,email1_2bbce28b-2977-428a-a159-d9bcc4a83c9b@yorku.ca,Password123!,STUDENT,true
 user,e8349ec6-8f78-4861-9443-3b2cdf4471b7,email2_0fd2a103-2b79-49df-a22e-e7631eae47f1@yorku.ca,Password123!,STUDENT,true
 user,67774b70-8137-44ae-8453-28b2f5b5542b,partner_0b69efdc-1736-458d-9169-ade0990a74f2@gmail.com,Password123!,PARTNER,true
+Login User,f42d8ab0-749e-4b91-bfc7-10e010459e91,login_987ef0f0-8245-481f-b4a1-4e3cc1ea40f0@yorku.ca,Password123!,STUDENT,true
+York Partner,731bfd10-999c-4cca-ad7c-9ac081c19f64,partnerYork_6c736d6d-8a0b-4200-9ae2-96305278b439@yorku.ca,Password123!,PARTNER,true
+Student,72ab6c86-d96d-424d-8db4-d55d8d2ecfbd,student_c452230a-ffd3-43d1-9bed-23cf2fad2c54@yorku.ca,Password123!,STUDENT,true
+Student1,5387fc5f-2cd6-4d7e-83e5-bda8099651b4,student1_ec213252-0a6a-41a4-bec3-e302952b52d0@my.yorku.ca,Password123!,STUDENT,true
+Faculty,28370047-bb85-4cc4-9878-7f7f0db54d22,faculty_d53d06bf-e6ec-45ac-8f46-2f22fb2cf3b1@yorku.ca,Password123!,FACULTY,true
+Staff,0213507e-4602-4dce-9e30-410f49a9a461,staff_96fd9cc6-5c76-4b27-b091-3437494cf6ed@yorku.ca,Password123!,STAFF,true
+Partner,fb94c886-0d8b-4829-ae1e-cd3e7c35eca9,partner_3d86c0de-89d9-45c3-b8a9-b978e4cc636f@gmail.com,Password123!,PARTNER,true
+user,12ca080a-5f08-4028-929f-19eeb93c38b8,user_2f05b5aa-82e8-4548-a155-e295ca320e87@yorku.ca,Password123!,STUDENT,true
+User1,b6fa2c32-cc23-4679-8463-a8366eabfb14,same_e38fc11a-bfd4-47df-961c-69b6fce0dd37@yorku.ca,Password123!,STUDENT,true
+Logout User,5925c36d-5aac-4975-9459-537b7a49cc1f,user_58efb5f4-8f18-4b3f-9d74-f409bce9beeb@yorku.ca,Password123!,STUDENT,true
+user,6fd551bf-a894-4617-a8d0-83867537eb62,student_a3f5a01f-ea19-47e4-9ed5-036cba7f77fc@yorku.ca,Password123!,STUDENT,true
+user,55796eb9-d8ae-452e-8657-31feaaeeb0f7,faculty_f6dfa8ca-740c-4790-8897-f037cc845127@yorku.ca,Password123!,FACULTY,true
+user,beea89d0-b794-47ff-a2e0-ca00ca37c086,partner_5c0e2294-4b15-41c3-bcd2-53f5588e9f44@gmail.com,Password123!,PARTNER,true
+user,6baec4ab-2152-4cb8-84ba-21e25939137e,staff_30ce86df-e88a-46bc-b574-4e5f980940da@yorku.ca,Password123!,STAFF,true
+user,9184997a-ed9a-42c1-8f71-79eb07bee2fd,student_134e6020-1b66-4072-ad87-1d1afb6773c7@yorku.ca,Password123!,STUDENT,true
+user,eb387f6a-5df7-446b-9489-a428495f4708,partner_b7d3dae8-77b6-4800-bde0-561cf28b9bd0@gmail.com,Password123!,PARTNER,true
+user1,8c6d0285-f0ab-4397-ac30-c0a0d9066c3f,user1_63bfe634-399d-4068-80b0-ab14f479090c@yorku.ca,Password123!,STUDENT,true
+user2,dd8715e1-d569-4cb8-9751-0231aec4aa0f,user2_86349dc3-520e-438a-b753-42fa70dce527@gmail.com,Password123!1,PARTNER,true
+user,7359af3a-95c6-4a67-9b91-fa23073245d3,id_882c94d6-f5e7-42f4-ba8b-b8a585a74851@yorku.ca,Password123!,STUDENT,true
+user,fd265d75-cf1f-4b7c-9bdc-be8bc3cb4469,same_ebf755d7-98d9-41d2-bb61-1aa353fb36d8@yorku.ca,Password123!,STUDENT,true
+user,fd265d75-cf1f-4b7c-9bdc-be8bc3cb4469,same_ebf755d7-98d9-41d2-bb61-1aa353fb36d8@yorku.ca,Password123!,STUDENT,true
+user,d726e07b-d40f-4725-a4e7-913a0036b6a2,checkType_efefcd7c-bb38-467b-91f4-ee71fbf5ce26@yorku.ca,Password123!,FACULTY,true
+user,801ad525-6869-4bcf-89cf-dff912d9da46,user_0df86246-f749-47b3-a4d5-245132fefd09@yorku.ca,Password123!,STUDENT,true
+user,c9832320-6bbd-49ad-a558-ffe79976561a,user0_4deb3deb-1ed9-48c1-8695-6b00ab876440@yorku.ca,Password123!,STUDENT,true
+user,a11d2c34-8a0b-463c-9caf-ea855ee06dda,user1_cab70da6-7586-4fc9-84b2-1bbb81b99893@yorku.ca,Password123!,STUDENT,true
+user,3667b3df-70b1-45d9-b13d-919c07e56f1e,user2_26dff3e2-5ba2-4f5b-8005-c19a08e74bb8@yorku.ca,Password123!,STUDENT,true
+user,12b7a5df-e60f-4075-91e6-4ca2b16dea59,user3_7f75e297-80fa-4724-a1ab-324ad1c6fdfb@yorku.ca,Password123!,STUDENT,true
+user,5bef2d99-cb4c-480a-b91c-1abf80e38f85,user4_253a584e-5ba9-4686-a7c8-fb60cdebecc9@yorku.ca,Password123!,STUDENT,true
+user,fb7d57b7-242c-4c88-8338-0191a6321ecb,student_a50992c5-48aa-47d3-bceb-1e59803cd9e8@yorku.ca,Password123!,STUDENT,true
+user,59b52a9b-72e5-4fda-9ffb-f15392fff0fc,user_a87913f8-a591-4d38-ac37-ef0362263fab@gmail.com,Password123!,PARTNER,true
+user,8305a4ef-3717-487b-9d47-b418f310ac0f,faculty_69d1e832-adf5-4e91-991d-804ddf5875bb@yorku.ca,Password123!,FACULTY,true
+user,4eff0386-93df-4794-b026-629cb12d809a,user_4a3a8ec0-431b-4f9c-9bef-1f61490f9e9d@yorku.ca,Password123!,STAFF,true
+user,1dfd2dd6-0f8c-44db-998f-1425bc1d1ba3,staff_26e6f295-5b51-49a9-87c0-cad98082b601@yorku.ca,Password123!,STAFF,true
+user,8df35505-1e83-4af8-8198-c51279de75d0,email1_e97ad854-3b21-48e8-b425-fdb050209b29@yorku.ca,Password123!,STUDENT,true
+user,790571be-63a3-4f51-8406-ad3ecb1112ff,email2_e1e2e5cb-3c6a-4e43-b913-5e402d0b001d@yorku.ca,Password123!,STUDENT,true
+user,eb242975-c3ef-4cd4-afbb-3c193c7f5365,partner_309a4353-a7ea-4025-a41e-e5d2be38411e@gmail.com,Password123!,PARTNER,true

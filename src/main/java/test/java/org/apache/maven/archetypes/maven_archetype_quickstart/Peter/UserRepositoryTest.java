@@ -1,4 +1,4 @@
-package Peter;
+package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Peter;
 
 import Model.User.*;
 import org.junit.jupiter.api.Test;

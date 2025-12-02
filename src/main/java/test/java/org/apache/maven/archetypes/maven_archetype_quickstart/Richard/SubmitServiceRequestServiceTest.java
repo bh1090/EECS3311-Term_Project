@@ -1,134 +1,218 @@
 package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Richard;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import Model.ServiceRequest.EssentialServiceRequest;
+import Model.ServiceRequest.NonEssentialServiceRequest;
+import Model.ServiceRequest.SensorEssentialServiceRequest;
+import Model.ServiceRequest.ServiceRequest;
+import Repository.ServiceRequestRepository;
 import Service.SubmitServiceRequestService;
+
 
 public class SubmitServiceRequestServiceTest {
 
     @BeforeEach
-    void resetSingleton() throws Exception {
-        // Reset the static instance so first getInstance() call goes through the "instance == null" branch
+    void resetSingletonsAndRepo() throws Exception {
         Field instanceField = SubmitServiceRequestService.class.getDeclaredField("instance");
         instanceField.setAccessible(true);
         instanceField.set(null, null);
+
+        ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
+        Field mapField = ServiceRequestRepository.class.getDeclaredField("serviceRequestMap");
+        mapField.setAccessible(true);
+        mapField.set(repo, new HashMap<Integer, List<ServiceRequest>>());
+    }
+
+    private void ensureRoomListExists(int roomID) throws Exception {
+        ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
+        Field mapField = ServiceRequestRepository.class.getDeclaredField("serviceRequestMap");
+        mapField.setAccessible(true);
+        @SuppressWarnings("unchecked")
+        Map<Integer, List<ServiceRequest>> map =
+                (Map<Integer, List<ServiceRequest>>) mapField.get(repo);
+        map.computeIfAbsent(roomID, k -> new ArrayList<>());
     }
 
     // test0: getInstance returns non-null
     @Test
-    void test0() {
+    void testGetInstanceIsNotNull() {
         SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
         assertNotNull(service);
     }
 
-    // test1: getInstance returns same singleton instance
+    // test1: getInstance returns same singleton
     @Test
-    void test1() {
+    void testGetInstanceReturnsSameSingleton() {
         SubmitServiceRequestService s1 = SubmitServiceRequestService.getInstance();
         SubmitServiceRequestService s2 = SubmitServiceRequestService.getInstance();
         assertSame(s1, s2);
     }
 
-    // test2: essential request with sensorId = "-1" (EssentialServiceRequest branch) does not throw
+    // test2: essential & sensorId = "-1" -> EssentialServiceRequest stored
     @Test
-    void test2() {
-        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+    void testEssentialNoSensor() throws Exception {
+        int roomID = 101;
+        ensureRoomListExists(roomID);
 
-        assertDoesNotThrow(() -> {
-            var result = service.submitServiceRequest(101, "Essential no sensor", true, "-1");
-            assertNotNull(result);
-            assertTrue(result.isEmpty()); // method always returns empty list
-        });
+        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+        var result = service.submitServiceRequest(roomID, "Essential no sensor", true, "-1");
+
+        assertNotNull(result);
+        assertTrue(result.isEmpty()); // method always returns empty list
+
+        ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
+        ArrayList<ServiceRequest> stored = repo.loadAllServiceRequestsForRoom(roomID);
+        assertEquals(1, stored.size());
+        assertTrue(stored.get(0) instanceof EssentialServiceRequest);
+        assertEquals("Essential no sensor", stored.get(0).getDescription());
+        assertEquals("To-do", stored.get(0).getStatus());
     }
 
-    // test3: essential request with sensorId != "-1" (SensorEssentialServiceRequest branch) does not throw
+    // test3: essential & sensorId != "-1" -> SensorEssentialServiceRequest stored
     @Test
-    void test3() {
-        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+    void testEssentialWithSensor() throws Exception {
+        int roomID = 102;
+        ensureRoomListExists(roomID);
 
-        assertDoesNotThrow(() -> {
-            var result = service.submitServiceRequest(102, "Essential with sensor", true, "5");
-            assertNotNull(result);
-            assertEquals(0, result.size());
-        });
+        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+        service.submitServiceRequest(roomID, "Essential with sensor", true, "5");
+
+        ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
+        ArrayList<ServiceRequest> stored = repo.loadAllServiceRequestsForRoom(roomID);
+        assertEquals(1, stored.size());
+        assertTrue(stored.get(0) instanceof SensorEssentialServiceRequest);
+
+        SensorEssentialServiceRequest req = (SensorEssentialServiceRequest) stored.get(0);
+        assertEquals(5, req.getSensorID());
+        assertEquals("To-do", req.getStatus());
+        assertEquals("Essential with sensor", req.getDescription());
     }
 
-    // test4: non-essential request (NonEssentialServiceRequest branch) does not throw
+    // test4: non-essential -> NonEssentialServiceRequest stored
     @Test
-    void test4() {
-        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+    void testNonEssential() throws Exception {
+        int roomID = 103;
+        ensureRoomListExists(roomID);
 
-        assertDoesNotThrow(() -> {
-            var result = service.submitServiceRequest(103, "Nonessential request", false, "-1");
-            assertNotNull(result);
-            assertTrue(result.isEmpty());
-        });
+        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+        service.submitServiceRequest(roomID, "Nonessential request", false, "-1");
+
+        ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
+        ArrayList<ServiceRequest> stored = repo.loadAllServiceRequestsForRoom(roomID);
+        assertEquals(1, stored.size());
+        assertTrue(stored.get(0) instanceof NonEssentialServiceRequest);
+        assertEquals("Nonessential request", stored.get(0).getDescription());
+        assertEquals("To-do", stored.get(0).getStatus());
     }
 
-    // test5: multiple calls for same roomID and different flags still do not throw
+    // test5: IDs generated increment for same roomID
     @Test
-    void test5() {
-        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+    void testIdsGeneratedIncrementForSameRoomID() throws Exception {
+        int roomID = 200;
+        ensureRoomListExists(roomID);
 
-        assertDoesNotThrow(() -> {
-            service.submitServiceRequest(200, "Req1", true, "-1");
-            service.submitServiceRequest(200, "Req2", true, "10");
-            service.submitServiceRequest(200, "Req3", false, "-1");
-        });
+        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+        service.submitServiceRequest(roomID, "First", true, "-1");
+        service.submitServiceRequest(roomID, "Second", false, "-1");
+
+        ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
+        ArrayList<ServiceRequest> stored = repo.loadAllServiceRequestsForRoom(roomID);
+        assertEquals(2, stored.size());
+
+        int id1 = stored.get(0).getServiceRequestID();
+        int id2 = stored.get(1).getServiceRequestID();
+
+        assertEquals(1, id1);
+        assertEquals(2, id2);
     }
 
-    // test6: submitting for different roomIDs works without errors
+    // test6: non-essential with non "-1" sensorId still goes through non-essential branch
     @Test
-    void test6() {
-        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+    void testNonEssentialWithSensorString() throws Exception {
+        int roomID = 300;
+        ensureRoomListExists(roomID);
 
-        assertDoesNotThrow(() -> {
-            service.submitServiceRequest(300, "Room 300 req", true, "-1");
-            service.submitServiceRequest(301, "Room 301 req", false, "-1");
-        });
+        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+        service.submitServiceRequest(roomID, "Nonessential with sensor string", false, "99");
+
+        ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
+        ArrayList<ServiceRequest> stored = repo.loadAllServiceRequestsForRoom(roomID);
+        assertEquals(1, stored.size());
+        assertTrue(stored.get(0) instanceof NonEssentialServiceRequest);
     }
 
-    // test7: calling submitServiceRequest via multiple getInstance() calls still uses same singleton
+    // test7: multiple mixed submissions for same room
     @Test
-    void test7() {
-        SubmitServiceRequestService s1 = SubmitServiceRequestService.getInstance();
-        SubmitServiceRequestService s2 = SubmitServiceRequestService.getInstance();
+    void testMultipleMixedSubmissionsForSameRoom() throws Exception {
+        int roomID = 400;
+        ensureRoomListExists(roomID);
 
-        assertSame(s1, s2);
+        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+        service.submitServiceRequest(roomID, "E1", true, "-1");
+        service.submitServiceRequest(roomID, "E2", true, "10");
+        service.submitServiceRequest(roomID, "N1", false, "-1");
 
-        assertDoesNotThrow(() -> {
-            s1.submitServiceRequest(400, "Test via s1", true, "-1");
-            s2.submitServiceRequest(400, "Test via s2", false, "-1");
-        });
+        ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
+        ArrayList<ServiceRequest> stored = repo.loadAllServiceRequestsForRoom(roomID);
+        assertEquals(3, stored.size());
+        assertTrue(stored.stream().anyMatch(r -> r instanceof EssentialServiceRequest));
+        assertTrue(stored.stream().anyMatch(r -> r instanceof SensorEssentialServiceRequest));
+        assertTrue(stored.stream().anyMatch(r -> r instanceof NonEssentialServiceRequest));
     }
 
-    // test8: weird but valid sensorId string (still essential branch, second if) does not throw
+    // test8: return value is always a non-null, empty list
     @Test
-    void test8() {
-        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+    void testReturnValueIsAlwaysNonNullEmptyList() throws Exception {
+        int roomID = 500;
+        ensureRoomListExists(roomID);
 
-        assertDoesNotThrow(() -> {
-            // still parses as int, goes through SensorEssentialServiceRequest branch
-            var result = service.submitServiceRequest(500, "Weird sensor string", true, "42");
-            assertNotNull(result);
-            assertEquals(0, result.size());
-        });
+        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+        var result = service.submitServiceRequest(roomID, "Check return", true, "-1");
+
+        assertNotNull(result);
+        assertTrue(result.isEmpty());
     }
 
-    // test9: non-essential with non "-1" sensorId still goes through non-essential branch and doesn't throw
+    // test9: works when room already has existing requests with high IDs
     @Test
-    void test9() {
-        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+    void testWorksWhenRoomAlreadyHasExistingRequestsWithHighIDs() throws Exception {
+        int roomID = 600;
+        ensureRoomListExists(roomID);
 
-        assertDoesNotThrow(() -> {
-            var result = service.submitServiceRequest(600, "Nonessential with sensor string", false, "99");
-            assertNotNull(result);
-            assertTrue(result.isEmpty());
-        });
+        // Pre-populate map with an existing request ID 10
+        ServiceRequestRepository repo = ServiceRequestRepository.getInstance();
+        Field mapField = ServiceRequestRepository.class.getDeclaredField("serviceRequestMap");
+        mapField.setAccessible(true);
+        @SuppressWarnings("unchecked")
+        Map<Integer, List<ServiceRequest>> map =
+                (Map<Integer, List<ServiceRequest>>) mapField.get(repo);
+
+        List<ServiceRequest> existingList = new ArrayList<>();
+        existingList.add(new NonEssentialServiceRequest(10, "Existing", "OLD", roomID));
+        map.put(roomID, existingList);
+
+        SubmitServiceRequestService service = SubmitServiceRequestService.getInstance();
+        service.submitServiceRequest(roomID, "After existing", true, "-1");
+
+        ArrayList<ServiceRequest> stored = repo.loadAllServiceRequestsForRoom(roomID);
+        assertEquals(2, stored.size());
+
+        // New ID should be 11
+        int newId = stored.stream()
+                          .map(ServiceRequest::getServiceRequestID)
+                          .max(Integer::compareTo)
+                          .orElse(0);
+        assertEquals(11, newId);
     }
 }

@@ -1,4 +1,4 @@
-package maven_archetype_quickstart.George;
+package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.George;
 
 import Model.Room.Room;
 import Model.State.RoomDisabledState;

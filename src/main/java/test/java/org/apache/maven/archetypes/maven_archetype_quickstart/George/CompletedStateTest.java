@@ -1,4 +1,4 @@
-package maven_archetype_quickstart.George;
+package test.java.org.apache.maven.archetypes.maven_archetype_quickstart.George;
 
 import Model.Room.Booking;
 import Model.State.BookingState;

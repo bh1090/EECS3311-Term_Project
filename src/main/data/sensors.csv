@@ -1,2 +1,3 @@
 "OCCUPIED","ROOM ID","SENSOR ID","STATUS","TYPE"
 "false","TESTROOM0","TEST1","Enabled","Badge Scanner"
+"true","EECS3311 Course Project Database - Rooms.csv","","1","1"

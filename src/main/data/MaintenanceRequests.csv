@@ -1,0 +1,13 @@
+requestId,roomId,isEssential,status,description,sensorID
+1,400,Essential,To-do,Test via s1,-1
+2,400,Nonessential,To-do,Test via s2,-1
+1,500,Essential,To-do,Weird sensor string,42
+1,101,Essential,To-do,Essential no sensor,-1
+1,102,Essential,To-do,Essential with sensor,5
+1,103,Nonessential,To-do,Nonessential request,-1
+1,200,Essential,To-do,Req1,-1
+2,200,Essential,To-do,Req2,10
+3,200,Nonessential,To-do,Req3,-1
+1,600,Nonessential,To-do,Nonessential with sensor string,-1
+1,300,Essential,To-do,Room 300 req,-1
+1,301,Nonessential,To-do,Room 301 req,-1

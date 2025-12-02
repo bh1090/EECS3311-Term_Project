@@ -71,8 +71,7 @@ public class LoginViewController {
             //go to admin  view
             case "ADMIN": {
                 AddRoomController addRoomCtrl= new AddRoomController(roomService);
-                RoomsListController roomsListCtrl= new RoomsListController(roomService);
-                AdminSelectActionController adminCtrl =new AdminSelectActionController(addRoomCtrl, roomsListCtrl);
+                AdminSelectActionController adminCtrl =new AdminSelectActionController(addRoomCtrl);
 
                  AdminSelectActionView adminView = new AdminSelectActionView(adminCtrl);
                 adminView.handleAdminAction();
@@ -93,14 +92,9 @@ public class LoginViewController {
             }
             //go to  guest view
             default: {
-                RoomsListController roomsCtrl= new RoomsListController(roomService);
-                RoomsListView roomsView= new RoomsListView(roomsCtrl);
-                roomsView.getListOfRooms();
                 break;
             }
-        }
-
-        
+            }
         }
         
         catch (AuthenticationException ex) {
@@ -110,7 +104,6 @@ public class LoginViewController {
     
     } 
 }
-
 
 
 

@@ -30,8 +30,9 @@ public class AdminSelectActionView {
                @Override
                public void actionPerformed(ActionEvent e){
                     jframe.dispose();
-
-                     adminSelectActionController.accessAddRoomView();
+                    // Have to add addtinal listeners for the admin to
+                    // input the new room's location, capacity, and price.  
+                     //adminSelectActionController.adminAddRoom();
                }
           });
           button2.addActionListener(new ActionListener() {
@@ -39,7 +40,6 @@ public class AdminSelectActionView {
                public void actionPerformed(ActionEvent e){
                     jframe.dispose();
 
-                    adminSelectActionController.accessRoomsListView();
                }
           });
      }

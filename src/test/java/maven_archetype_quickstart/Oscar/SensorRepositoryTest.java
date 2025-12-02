@@ -28,6 +28,9 @@ public class SensorRepositoryTest {
 		this.prevData1 = Files.readString(Paths.get(db.getSensorsCsvPath()));
 		this.prevData2 = Files.readString(Paths.get(db.getOccupancySensorLogsPath()));
 		this.prevData3 = Files.readString(Paths.get(db.getScanIDSensorLogsPath()));
+		Files.writeString(Paths.get(db.getSensorsCsvPath()), "");
+		Files.writeString(Paths.get(db.getOccupancySensorLogsPath()), "");
+		Files.writeString(Paths.get(db.getScanIDSensorLogsPath()), "");
 	}
 	@AfterEach
 	public void setDownClass() throws IOException {

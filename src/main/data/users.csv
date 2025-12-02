@@ -114,3 +114,233 @@ user,7d9000e6-6fb7-44fe-b701-1a743d159cb3,staff_49ef1e01-9f49-42c6-b93e-01aeed4f
 user,92b480ec-3ecd-4f59-9013-3eebfc44f1f5,email1_863e0e65-a54b-406c-af5c-feb2447b7917@yorku.ca,Password123!,STUDENT,true
 user,dea939b1-1cb9-451c-9012-5a1477f02b99,email2_d1d30ecd-8bc5-471d-b2f9-502139819b0f@yorku.ca,Password123!,STUDENT,true
 user,54c498ef-9a3f-4afd-8d53-6687bf13f6a4,partner_afed4d13-5a28-4bc3-806e-def057f86e79@gmail.com,Password123!,PARTNER,true
+Jerry West,a369d2ab-b395-4580-8d9a-4d35395c3f57,jwest@email.com,@Password123,STAFF,true
+Jerry West,2091cbec-1890-45f0-b128-7bdc089b6479,jwest@email.com,@Password123,STAFF,true
+Jerry West,5db645c1-6d26-465a-8903-5102c4185800,jwest@email.com,@Password123,STAFF,true
+Jerry West,74c17038-897e-45ff-80c8-acf20d74335e,jwest@email.com,@Password123,STAFF,true
+Jerry West,8a59ec14-c0e1-4c64-a07f-23a42c3999b8,jwest@email.com,@Password123,STAFF,true
+Jerry West,b9a1585a-57f9-4509-a203-025d96da72ae,jwest@email.com,@Password123,STAFF,true
+Jerry West,d32c73e1-de76-4462-9512-cdce6f847131,jwest@email.com,@Password123,STAFF,true
+Jerry West,d8337f8f-7d70-4b8f-829c-2536855541a0,jwest@email.com,@Password123,STAFF,true
+Jerry West,e1bfb8f9-282d-4948-90fd-f228f17055b6,jwest@email.com,@Password123,STAFF,true
+Jerry West,50dab503-38a0-4623-989d-4f64294ddfe6,jwest@email.com,@Password123,STAFF,true
+Login User,9a909ce5-0219-4b2b-9811-3bbecbf44fad,login_f497abd6-90e3-488d-81f9-ab8f7ef6a0e6@yorku.ca,Password123!,STUDENT,true
+York Partner,f8799722-8421-4c70-b62c-5f8a46a7ab6b,partnerYork_26f25302-34d3-4147-931e-ecc97721036f@yorku.ca,Password123!,PARTNER,true
+Student,76d86c2e-5775-4525-a93b-036e18ba768b,student_70970efc-2582-43fc-8437-16342a14e9c4@yorku.ca,Password123!,STUDENT,true
+Student1,9c9529d8-6585-426b-a0f8-b387fe93640d,student1_b1cac011-96c6-43be-bf2c-3150bca4f5be@my.yorku.ca,Password123!,STUDENT,true
+Faculty,985a9ba0-c61e-4968-934f-c3fd28f4fa34,faculty_946fa43a-fce9-4407-a39e-1f989f6d61d5@yorku.ca,Password123!,FACULTY,true
+Staff,70f4d82f-c0dd-4be6-8a9b-fa947434a637,staff_fad034b1-3aab-498c-96b6-5e0f17be189f@yorku.ca,Password123!,STAFF,true
+Partner,7c7963e5-6f38-47f9-9c2d-7dfa1a1c1fd4,partner_373fc3a2-71df-4c42-9c3d-63439392fef1@gmail.com,Password123!,PARTNER,true
+user,3f436b19-6c45-45d4-8421-f0c37d178783,user_cde0cafb-6298-4598-bd6b-a4b3678a10a6@yorku.ca,Password123!,STUDENT,true
+User1,c399f35d-b8ec-45bc-9856-f300936abd51,same_c31d297d-2d71-481e-9b9f-7efee71a3612@yorku.ca,Password123!,STUDENT,true
+Logout User,d1c63a3e-c934-461c-b289-b54a1b70b3f0,user_e2fbda2b-2f4e-4baa-bda6-831d952b30ee@yorku.ca,Password123!,STUDENT,true
+user,8613681d-cea1-4ce3-a315-30421dd3d42d,student_7c720cbf-4577-43bc-a53d-ed74f6cc4597@yorku.ca,Password123!,STUDENT,true
+user,0bebba91-9d91-40b6-ac41-b816f6ee0b05,faculty_fbd15295-45fa-4529-a0a6-3720db03f01c@yorku.ca,Password123!,FACULTY,true
+user,dadee385-05cc-46ba-a21e-ba0adf9d3eae,partner_92c94c94-17a8-4136-9ddb-e640ea09fb1d@gmail.com,Password123!,PARTNER,true
+user,6e44dc28-6461-4f24-879a-5167521619d1,staff_0c9f3b37-bfa9-40ce-8b86-abc5cbd09da6@yorku.ca,Password123!,STAFF,true
+user,64fc4630-1203-49b9-b3ee-fa0ddff4bf2b,student_54f8aa8b-bc51-4ed5-9071-556328d5aa66@yorku.ca,Password123!,STUDENT,true
+user,c2e392c5-562d-4055-8127-efefd31cd131,partner_04d6cfe4-e805-4cc1-8058-b43be16fafd8@gmail.com,Password123!,PARTNER,true
+user1,d34058b6-2c09-4eda-b586-17d8a19b98ba,user1_1ec81acd-8b8b-40ea-aec3-2aff9ef5c957@yorku.ca,Password123!,STUDENT,true
+user2,4089e12b-68e5-4b5b-89ef-a91d05dc91a1,user2_2ebd304f-3eb0-4ca4-8086-4a1ba5723b31@gmail.com,Password123!1,PARTNER,true
+user,8ea98ce0-ba01-4ee1-8d3d-d6741760a39c,id_0be888a9-bf8d-42b1-9c7b-5e66b5124145@yorku.ca,Password123!,STUDENT,true
+user,9ada98ef-2dd5-472a-87b6-fd28a5e41eaf,same_75077b18-adb0-45b2-b450-f9323c8767ab@yorku.ca,Password123!,STUDENT,true
+user,9ada98ef-2dd5-472a-87b6-fd28a5e41eaf,same_75077b18-adb0-45b2-b450-f9323c8767ab@yorku.ca,Password123!,STUDENT,true
+user,5fb807a4-c86e-4c4c-ba53-ee8696af44b6,checkType_89ffef88-2327-4981-bdfb-38f4a922004d@yorku.ca,Password123!,FACULTY,true
+user,ac741a4a-f3b1-4961-bb34-6660f674440b,user_4be961ab-4a93-4f34-9800-d325e416635b@yorku.ca,Password123!,STUDENT,true
+user,9b83618f-8602-4720-84b6-64afb45c3f71,user0_6ea9c926-31f7-4e23-a3d9-4a55989679b3@yorku.ca,Password123!,STUDENT,true
+user,ba9651ff-5ea7-4061-9209-0ba93c0c60de,user1_2cc8ca9a-dbd8-4212-9563-78d3d3936e00@yorku.ca,Password123!,STUDENT,true
+user,e5ef3415-767f-48a1-b941-8be7d74e2d7b,user2_382661c8-845a-4b74-a700-b378354cfee5@yorku.ca,Password123!,STUDENT,true
+user,de11ff2e-b5be-4fb2-9f73-8d19141d0835,user3_83243a8d-4d8a-423a-852e-91983d15ab8a@yorku.ca,Password123!,STUDENT,true
+user,b3fe8161-6420-48f4-8444-e6b64e987055,user4_d39e80e8-1d21-48ff-af8b-89e218a64074@yorku.ca,Password123!,STUDENT,true
+user,60afc678-6479-4d65-8be3-e7caab92e23c,student_94d5231b-8522-44c7-ab83-5f9a2abeba55@yorku.ca,Password123!,STUDENT,true
+user,99ee3d21-ba27-4863-8f53-d036aad478ca,user_f998b4c1-53b2-4d74-a1a9-45af834ab5d8@gmail.com,Password123!,PARTNER,true
+user,887843da-c91d-4e68-9f12-2f713fc1ec37,faculty_eb54e823-78ce-45da-aeb3-1efaaaa65d0d@yorku.ca,Password123!,FACULTY,true
+user,fda8ab1b-f2af-40c3-9c33-70943b6a8efc,user_de859858-eaa8-4d0a-847f-c23a7995875d@yorku.ca,Password123!,STAFF,true
+user,d794f4cf-9043-4817-98e3-c57203d3b92c,staff_fb5b9344-f974-439f-b580-77fabf807ca9@yorku.ca,Password123!,STAFF,true
+user,8fef2497-96be-44dd-8b25-f6c7b36e0997,email1_657bb79d-c73d-4a51-99d1-9c7ad1fd4d63@yorku.ca,Password123!,STUDENT,true
+user,3e7f6c2d-c634-4269-b402-43640621d8ac,email2_594e6a1e-9b6c-4826-b2ce-c855a9a57771@yorku.ca,Password123!,STUDENT,true
+user,c7ec2a9a-6fab-44cc-922c-3673ef1e118a,partner_e6512688-4690-4bb6-b9bc-b3b595eb1727@gmail.com,Password123!,PARTNER,true
+Jerry West,14a4bfcb-16a1-4f42-bb38-ea5b9d20a0ca,jwest@email.com,@Password123,STAFF,true
+Jerry West,b176ba34-ede3-4db3-900a-1384101970c9,jwest@email.com,@Password123,STAFF,true
+Jerry West,ed6def04-1ed9-4083-8f05-2d3e11e3126e,jwest@email.com,@Password123,STAFF,true
+Jerry West,bd96a220-0845-4037-b088-23287e122880,jwest@email.com,@Password123,STAFF,true
+Jerry West,e797d673-ded4-4301-85cd-99ca1c1dac7e,jwest@email.com,@Password123,STAFF,true
+Jerry West,70030423-b99d-4a08-8ccb-b4d4e2afbae5,jwest@email.com,@Password123,STAFF,true
+Jerry West,0d688611-638e-4dd9-b006-89038ae15be8,jwest@email.com,@Password123,STAFF,true
+Jerry West,1c4a29a6-4456-43b6-9c6e-b013c9cdf363,jwest@email.com,@Password123,STAFF,true
+Jerry West,c0241ad5-9d17-4d59-bcdb-8c20055b828f,jwest@email.com,@Password123,STAFF,true
+Jerry West,ced6eea6-ec7d-424c-9cbb-58e5ac7fdfe6,jwest@email.com,@Password123,STAFF,true
+Login User,6f98d255-c655-42a0-a1c4-470991ed1e05,login_dd1c044a-7f9d-4ec4-987f-f40f6d63c513@yorku.ca,Password123!,STUDENT,true
+York Partner,754192a9-c68d-4d03-9282-145173cd5a71,partnerYork_98887a62-ecdf-42b5-a684-1eb20fe6a3a8@yorku.ca,Password123!,PARTNER,true
+Student,c17f6d4a-7041-4280-a8d9-8d215e20f003,student_3bdc2c48-f615-485c-b411-82364ab4adc3@yorku.ca,Password123!,STUDENT,true
+Student1,31a8ae0e-cb65-446e-b6b6-86b1b91e031d,student1_ff750ce6-718c-4296-9aca-57a5ce62d8e9@my.yorku.ca,Password123!,STUDENT,true
+Faculty,0f2df0a2-0dee-4ac8-b289-e03f8fe7cf59,faculty_2b1aa0b2-589d-4306-8de9-aa2dd7410349@yorku.ca,Password123!,FACULTY,true
+Staff,07a8d34b-7153-4885-8365-ca83280d17e9,staff_476a2fe0-1641-4b8e-bb0d-7b447209c815@yorku.ca,Password123!,STAFF,true
+Partner,5983f56d-d890-414c-8121-a1bf59bd3acc,partner_081b7086-8ccb-45b5-9d8f-421e65a6d31c@gmail.com,Password123!,PARTNER,true
+user,7d6c7960-e80d-4ad5-8af0-75cb7cd26242,user_ecf276ba-14ab-4b4b-a2b1-62ae1eca3914@yorku.ca,Password123!,STUDENT,true
+User1,a9f11dc2-ae61-4f66-9756-97f8d39d4da3,same_6f326b42-a814-4093-bdad-aca9223de9eb@yorku.ca,Password123!,STUDENT,true
+Logout User,f0972b54-6708-4d5e-a0af-bf679bad84ba,user_7d3309d7-21ff-4586-981c-442edddbcc22@yorku.ca,Password123!,STUDENT,true
+user,5b9f7c12-c9c9-4566-bf99-80475289d1ae,student_14fd5bf0-278c-4428-b644-5de9c46ff917@yorku.ca,Password123!,STUDENT,true
+user,174690c6-47d6-4a0d-a1c4-bc09f17189f6,faculty_4ab29a80-947b-4268-8805-76f705ff3d2d@yorku.ca,Password123!,FACULTY,true
+user,6629e302-cf59-45c3-b23f-ff39d468d263,partner_6060874c-fcc9-4b55-bac6-b79d520893de@gmail.com,Password123!,PARTNER,true
+user,8ba84c95-f95d-4972-b874-4dbaaa85a0c8,staff_ffbb177a-1994-49ad-8781-9fcaa64d4ff5@yorku.ca,Password123!,STAFF,true
+user,24648ab2-fb71-46ef-a227-650c803f29f8,student_c73504da-b9a6-4d45-8417-6a9ad75f2111@yorku.ca,Password123!,STUDENT,true
+user,0084004c-1adc-45d6-bd03-b1ef1fa1dff9,partner_57999a27-8aa4-47cf-8e45-53aedcfbf8d3@gmail.com,Password123!,PARTNER,true
+user1,5f231e0f-23a0-41e2-b0e3-fb7db30b5ade,user1_d6c0125a-0fbb-4430-b106-da205d1f89f0@yorku.ca,Password123!,STUDENT,true
+user2,b51d010c-2e84-4641-ab24-a5dad1a26d4d,user2_2e3253cb-140d-4bc1-a2fb-d79f6ed0bba7@gmail.com,Password123!1,PARTNER,true
+user,5005a685-9187-42f1-9008-115b08a7fbb3,id_d8fe38a1-33c4-4f97-8d99-ac9e29e37561@yorku.ca,Password123!,STUDENT,true
+user,41fdd3e6-494d-4880-a451-65e8c6cececc,same_39efffeb-995f-41fe-a19a-73a7ee977790@yorku.ca,Password123!,STUDENT,true
+user,41fdd3e6-494d-4880-a451-65e8c6cececc,same_39efffeb-995f-41fe-a19a-73a7ee977790@yorku.ca,Password123!,STUDENT,true
+user,b2caf377-2b7d-4353-846d-669f4cd174bc,checkType_ff2ab063-d54e-4345-9643-0e6776dfe57d@yorku.ca,Password123!,FACULTY,true
+user,68d0b8f5-f615-4802-88c7-a73d214705a4,user_bd07415c-650b-43c9-bb27-1a010e7cf471@yorku.ca,Password123!,STUDENT,true
+user,c1df323b-49d8-4e38-865c-16a707dc5355,user0_c8ac7d3d-0dd3-4ab3-8ddf-e0c278b17f79@yorku.ca,Password123!,STUDENT,true
+user,e8f02f25-8a5f-457d-9a0d-00cda9026605,user1_ff84ef35-e8cc-49bd-bf78-e74ac7eac2e9@yorku.ca,Password123!,STUDENT,true
+user,d31ab583-7eeb-41be-aea6-883a5554286e,user2_302d81ca-12b6-42f1-b40f-12ed6e113d2c@yorku.ca,Password123!,STUDENT,true
+user,eca248f0-e7e2-4caf-abbf-73c25063d770,user3_d27d46df-6784-4cf4-b493-31d842cefd02@yorku.ca,Password123!,STUDENT,true
+user,d1d4131d-6e81-49a4-8cec-5ff3c140ec28,user4_0fdb1e54-f5e1-41ed-a055-d09ed6062ebb@yorku.ca,Password123!,STUDENT,true
+user,51e446f9-64b7-4dc4-a934-efc5435d2c31,student_c51e2a40-07b6-4fa7-868d-427a940cc80e@yorku.ca,Password123!,STUDENT,true
+user,74059afe-d621-474c-b317-614ba1bdaff2,user_2b2cc164-a827-4fda-bcbd-72e85afbbdad@gmail.com,Password123!,PARTNER,true
+user,5a937bec-2d80-4420-a650-81ba4ec3aa70,faculty_119402e4-9d27-4f35-951f-c7f572bf1443@yorku.ca,Password123!,FACULTY,true
+user,0cfb442d-7422-42b7-b5ac-359f637db1f6,user_5a078218-27b3-42e1-9a70-3dfe92c12b31@yorku.ca,Password123!,STAFF,true
+user,b036ed73-fba6-4702-b56a-bd7b439b7873,staff_1900128a-82da-4e78-b669-33b617cb5d72@yorku.ca,Password123!,STAFF,true
+user,0a10eb9c-d474-4edf-8364-8c1bfe989b40,email1_06cee79f-ee48-451c-b9da-741bbcd68388@yorku.ca,Password123!,STUDENT,true
+user,8c9ffc56-52ce-4b91-b1b1-db6060d41a32,email2_00afa710-bd9f-4376-9216-23af0315cfff@yorku.ca,Password123!,STUDENT,true
+user,5864b194-87d4-40e8-8fbd-23807ad249fe,partner_154f03f2-c296-41de-86f5-681b9545ce8e@gmail.com,Password123!,PARTNER,true
+Jerry West,df6c2296-9c33-467c-af80-285839590685,jwest@email.com,@Password123,STAFF,true
+Jerry West,d94e1712-007c-4cf1-ad5d-1c048fc34fe1,jwest@email.com,@Password123,STAFF,true
+Jerry West,1d83a383-b34a-44b7-b82f-9f44ca81c7e9,jwest@email.com,@Password123,STAFF,true
+Jerry West,5c62c677-1052-4e12-b978-ebcdba13a5cd,jwest@email.com,@Password123,STAFF,true
+Jerry West,1e99b5bf-4072-4dfb-90e0-9190d52f707b,jwest@email.com,@Password123,STAFF,true
+Jerry West,313515c1-3e2b-41d7-aaac-151d6659bc51,jwest@email.com,@Password123,STAFF,true
+Jerry West,c4d4d8d8-846e-4551-936f-3fade42b432c,jwest@email.com,@Password123,STAFF,true
+Jerry West,78c13214-e7d6-4d74-8a06-f7e0513d74cf,jwest@email.com,@Password123,STAFF,true
+Jerry West,5ca4ffa1-23a3-46d6-a018-9e7f37f0c7b5,jwest@email.com,@Password123,STAFF,true
+Jerry West,eec6e536-f9e6-44c6-92de-8197ab74877d,jwest@email.com,@Password123,STAFF,true
+Login User,cd0d5eb4-5ecb-45d4-8763-a5c7ccf6f60d,login_fe724a1c-8c6e-441f-9ead-7f7fb385a9e2@yorku.ca,Password123!,STUDENT,true
+York Partner,64db2943-ac97-47ff-b713-7aef5eabb627,partnerYork_e8127b0a-f244-4bae-9ebf-cf0936accb1d@yorku.ca,Password123!,PARTNER,true
+Student,46ad2a1a-5360-46fe-8427-87be37ee2756,student_f2e8c6ad-1b79-452a-9bbf-8b3c4bdbf782@yorku.ca,Password123!,STUDENT,true
+Student1,c07dc1b6-1860-4ac1-b94a-13ef31b25ed4,student1_31b1b733-d0ef-4a5e-9d9e-1cab3d502ad2@my.yorku.ca,Password123!,STUDENT,true
+Faculty,c27cd599-b811-44f2-b311-9978136e184a,faculty_da81a3f9-b954-4ae8-a479-d420453b8965@yorku.ca,Password123!,FACULTY,true
+Staff,0637f60c-4c39-40c2-87a2-024ea3f73ff0,staff_578452ee-3871-4815-aba3-860ce7a0200f@yorku.ca,Password123!,STAFF,true
+Partner,0147aa2a-53cd-4675-831b-e9ed7338392f,partner_f77d164e-b33c-48dd-a1d6-dd1c3e2f3846@gmail.com,Password123!,PARTNER,true
+user,365cc0ac-53c3-497a-98c6-c8251ff81dfe,user_efa3f2bf-72dd-4ed4-9479-7561fd5f1d85@yorku.ca,Password123!,STUDENT,true
+User1,f3dc54b3-86e4-4ac6-8db8-b6af0099f191,same_d7bcbef4-20e1-4ad0-a810-901ff6fbf7de@yorku.ca,Password123!,STUDENT,true
+Logout User,5c5c4a8d-4493-449b-9093-6d96a535ba77,user_356b51fd-254b-4209-aeb5-7984d80661f6@yorku.ca,Password123!,STUDENT,true
+user,05ecafd8-86fb-401b-8147-bb2dc5843e5a,student_fdc4181a-35a5-4681-9b80-36d57befe91b@yorku.ca,Password123!,STUDENT,true
+user,5a11e825-fcae-44a6-bb97-c514337aa119,faculty_5dbbe6d0-aa06-476f-9370-03aa0eb76987@yorku.ca,Password123!,FACULTY,true
+user,f3fbc06e-b938-41fd-b8d7-f46e2719888a,partner_ba428788-e58e-4ef7-8fa2-de7f86d7e797@gmail.com,Password123!,PARTNER,true
+user,f080a87a-1c25-43da-bd00-6c0a8632fe70,staff_f9b27b2e-f955-4278-8eb9-7796e087db93@yorku.ca,Password123!,STAFF,true
+user,dd68bc41-f444-4e87-a56b-03b6114d0d59,student_783e1f74-d23a-4b28-b3d3-eddfce80858a@yorku.ca,Password123!,STUDENT,true
+user,f3a0ff47-18a1-4e11-b03f-09a18b231a1d,partner_374e8939-253f-42dc-bb0d-d15eac1a3657@gmail.com,Password123!,PARTNER,true
+user1,bff53aeb-2fd7-4b78-a539-1378e830cb5d,user1_4efcb63d-3d19-4b9f-a771-d6f10ee287c7@yorku.ca,Password123!,STUDENT,true
+user2,bbc4fd14-18ee-48b9-83e3-d8bd85f7eb2f,user2_b1a1ebac-34c8-4940-9779-5b0d0b294c95@gmail.com,Password123!1,PARTNER,true
+user,87e03e43-1139-42e4-ba6f-0bee533350d5,id_68b9367c-bdea-4f90-90c5-8c4f9fedc458@yorku.ca,Password123!,STUDENT,true
+user,3ca1f3f6-4719-41d2-87a2-d6c9d51963e8,same_9f7c88c8-b063-458e-878e-984a84ccdb86@yorku.ca,Password123!,STUDENT,true
+user,3ca1f3f6-4719-41d2-87a2-d6c9d51963e8,same_9f7c88c8-b063-458e-878e-984a84ccdb86@yorku.ca,Password123!,STUDENT,true
+user,3ffe2387-7cc0-4d60-8f5d-933468980187,checkType_627740fc-0553-4457-9448-eb5c653c96e7@yorku.ca,Password123!,FACULTY,true
+user,95d09877-a224-4283-86c3-9c9f2aca3aca,user_e183a7a2-2526-45d5-9694-633e6ffb7491@yorku.ca,Password123!,STUDENT,true
+user,200c3ecc-d64e-4df2-80bb-4f49e64de688,user0_32457943-c56d-4825-af10-0915dbbc11d5@yorku.ca,Password123!,STUDENT,true
+user,9d4b5be8-38bf-4677-a559-48fb27872b52,user1_e6a1358c-9cb0-4e07-b2ad-539bb167bf93@yorku.ca,Password123!,STUDENT,true
+user,cf5a343d-a13a-4a38-be07-34a50f7c5e29,user2_19dae105-b7d5-4921-a1a6-e4e1c1a5a336@yorku.ca,Password123!,STUDENT,true
+user,06e74434-52f9-4146-8fe6-a697000f70ce,user3_7fb20d44-aea7-428a-89f2-6b397f4c8d04@yorku.ca,Password123!,STUDENT,true
+user,1f76a8c8-9f77-4d3f-99fb-3e8cf8229ee0,user4_42759779-3614-4272-8996-eb709afd01f8@yorku.ca,Password123!,STUDENT,true
+user,cbc77c64-0ff5-4b22-bc59-8ad7567cd85e,student_81f9e6c9-cfe6-40c7-92e9-0700e9ce0600@yorku.ca,Password123!,STUDENT,true
+user,dcd7f15f-4587-457d-8069-ad4a334ca93f,user_52131b13-2139-466d-bcdc-bbbc42e3df54@gmail.com,Password123!,PARTNER,true
+user,a5f49ec3-5401-4a4a-a37e-d9c5c37438f3,faculty_dd0c0595-2655-41c0-9faf-36c79f5aa429@yorku.ca,Password123!,FACULTY,true
+user,b7ac6a1b-32d0-4eb6-8153-202426ab52aa,user_c733e5e1-3ba0-4468-b861-e21e952ea4ce@yorku.ca,Password123!,STAFF,true
+user,ffd2db57-4377-4365-9c4b-692b330657cc,staff_e08f8679-8568-4fa3-9ff8-383fb028a98b@yorku.ca,Password123!,STAFF,true
+user,19da056e-b842-4fb1-bf6c-c7712995ec65,email1_43b933fb-9dea-4dae-a8e8-7947815335bb@yorku.ca,Password123!,STUDENT,true
+user,52967cc0-3e6b-4101-9eca-1053a1899f19,email2_ea51d7cf-9147-4db6-a820-2b37ec1686d5@yorku.ca,Password123!,STUDENT,true
+user,c8147d3a-2bbd-4842-99b4-a5298ee5d8d2,partner_e748c877-df5f-4de3-9086-f94691a0c38c@gmail.com,Password123!,PARTNER,true
+Jerry West,555dbc41-1d0d-4ce0-b234-9a82957ca78b,jwest@email.com,@Password123,STAFF,true
+Jerry West,c13717bf-f1ba-4e0d-a634-0306a5e521f3,jwest@email.com,@Password123,STAFF,true
+Jerry West,5773ab83-7a16-40fc-b0a2-ab2ef74d65b9,jwest@email.com,@Password123,STAFF,true
+Jerry West,15919f17-1fc7-4f98-9f5a-a075812a2617,jwest@email.com,@Password123,STAFF,true
+Jerry West,22b724ae-dc7d-4c47-ace4-72c9df6daba5,jwest@email.com,@Password123,STAFF,true
+Jerry West,0b87b488-35e6-4892-a66b-2e47be2c8cae,jwest@email.com,@Password123,STAFF,true
+Jerry West,a73a5603-2986-4cbb-ad73-b065c74bd9e5,jwest@email.com,@Password123,STAFF,true
+Jerry West,a9b5b62a-0226-4fb1-9ee2-f463dce163e6,jwest@email.com,@Password123,STAFF,true
+Jerry West,494e8172-3b6d-4c2e-a6e8-27b63acb4590,jwest@email.com,@Password123,STAFF,true
+Jerry West,279de86a-2fda-4227-bb56-45c6daf7a047,jwest@email.com,@Password123,STAFF,true
+Login User,b00823e7-bdc8-4213-996d-f37c26ca2260,login_38778100-4fff-432a-a1b5-cff0396e495f@yorku.ca,Password123!,STUDENT,true
+York Partner,a8e6d958-ccc8-4a43-97a9-7194dbd0aabc,partnerYork_8eda9d7b-ad9a-4edc-b97d-ea4fe18cfe4a@yorku.ca,Password123!,PARTNER,true
+Student,8f08b9f3-6d27-4b31-aa4c-69a368a65cbb,student_66e0c9c6-c3ec-4bf5-8387-3b26e7f17e5a@yorku.ca,Password123!,STUDENT,true
+Student1,ff4ca4e5-c600-42b6-a323-2b2adf413752,student1_49c97b75-f947-4062-960a-404dcc292e13@my.yorku.ca,Password123!,STUDENT,true
+Faculty,a8c7087e-b12f-418d-b2f8-007f9e154446,faculty_7dad7f9c-0536-4814-abd8-e534d38a2f7e@yorku.ca,Password123!,FACULTY,true
+Staff,f87a962e-6c18-4fb0-ae63-60cf9b02b66f,staff_6c7156f7-5069-4acc-8fb1-dc56442b954a@yorku.ca,Password123!,STAFF,true
+Partner,a026925b-9cd8-4820-85ea-a12f85b88efc,partner_db38a448-57b1-4c53-a120-5a3dbe2ca207@gmail.com,Password123!,PARTNER,true
+user,045837cc-9c78-4275-af6a-0e889aab66c7,user_ea7ee6fd-296d-43bb-8570-b5b9db58c97e@yorku.ca,Password123!,STUDENT,true
+User1,d21c7668-e5ea-4c43-9d99-42fd13a1476e,same_aadb2c97-42ae-4613-876f-49759d4c108a@yorku.ca,Password123!,STUDENT,true
+Logout User,d80fb662-9535-4a6a-a21a-ca052035ab2b,user_393fa093-c084-46d6-8ebd-4aba06f77d64@yorku.ca,Password123!,STUDENT,true
+user,468099d1-cd5d-4877-aa5b-8f14d775963b,student_fb356d92-cf7f-467a-8228-cbc44379b6b1@yorku.ca,Password123!,STUDENT,true
+user,0480ea6a-9907-4b03-b71f-47b197e4d93b,faculty_dff2e7ac-1358-461a-b615-5f7998623bae@yorku.ca,Password123!,FACULTY,true
+user,2122e72f-d9dc-4d8a-895b-647a0d59a493,partner_cbfdeed3-3e90-4a40-b804-e11a44ac47ca@gmail.com,Password123!,PARTNER,true
+user,89fa03b1-7e5b-4ff1-a8d9-5799f57c15e1,staff_411bd4bb-428d-478c-8442-cba48de84ae0@yorku.ca,Password123!,STAFF,true
+user,d0eb98f2-8ef0-4cac-a6a4-61e58e12e13c,student_7a0a827c-f519-4907-a3b0-e686cb0c20df@yorku.ca,Password123!,STUDENT,true
+user,472e115a-4a3f-40e8-8481-292f1b14c27b,partner_e2721390-0a5a-444e-b1c5-f751bf072a56@gmail.com,Password123!,PARTNER,true
+user1,ecf53aca-de40-48fe-bf17-3d4cb3a26788,user1_be3c9897-36d8-44f3-8199-becce18ff388@yorku.ca,Password123!,STUDENT,true
+user2,e15b7f85-e2e1-4858-8017-f45a47aba7f3,user2_5a0d73f7-fa04-4614-9ae4-2a7020046c7a@gmail.com,Password123!1,PARTNER,true
+user,a923be82-510e-436c-9e47-71bdc7df864c,id_2834dbd5-4369-49f7-a2ce-048d5da6d354@yorku.ca,Password123!,STUDENT,true
+user,30009024-c2d3-4c3d-a535-c92d8fd5b50d,same_29f6dbad-2409-4a69-a515-1bedd1dc98ba@yorku.ca,Password123!,STUDENT,true
+user,30009024-c2d3-4c3d-a535-c92d8fd5b50d,same_29f6dbad-2409-4a69-a515-1bedd1dc98ba@yorku.ca,Password123!,STUDENT,true
+user,433585b4-7833-4ea5-b666-d72bfed9c609,checkType_72c0189c-96f3-43b6-8e17-9b0dfd22d22c@yorku.ca,Password123!,FACULTY,true
+user,eb79e516-da6a-49a4-9deb-9ef7f6c674d2,user_bec61378-0224-4180-9907-2552d03ec490@yorku.ca,Password123!,STUDENT,true
+user,532dc013-fa49-4906-a42f-4358522583e8,user0_c0894fb2-d6f7-4a90-b1af-f5e7ed443ce3@yorku.ca,Password123!,STUDENT,true
+user,a263b1c3-1170-4513-97fe-a15f9ab9cf24,user1_5670bb02-3466-4f76-87e0-3eacf7bf5a92@yorku.ca,Password123!,STUDENT,true
+user,5f73fff5-9b51-48c2-b851-95992e12edb6,user2_0c8ca7f6-ceb0-4859-96b4-462057c703cf@yorku.ca,Password123!,STUDENT,true
+user,db836226-467a-43d9-bc66-231e329365e7,user3_4d60d471-5a42-47ce-bcb2-1b8602d2d74b@yorku.ca,Password123!,STUDENT,true
+user,985fb9bc-cb64-4253-ad87-80f273d84454,user4_f7350b8a-d918-4ec8-a878-a8c50518e9ca@yorku.ca,Password123!,STUDENT,true
+user,740aa8d4-ebcc-41a2-a224-fa5e4e978cc1,student_0afe0227-9d3f-4b66-9c58-e63c33503c18@yorku.ca,Password123!,STUDENT,true
+user,bfa9d82c-e721-4765-8c11-1f2c914f9633,user_9f8d29d9-30a5-4ca6-8245-11cb2c8dc9df@gmail.com,Password123!,PARTNER,true
+user,2cfd0319-4b00-4520-afa5-f18bbdba4a0e,faculty_937adc94-9c1f-4cb4-833a-d0a9926e01ef@yorku.ca,Password123!,FACULTY,true
+user,77a24608-7d7e-4e16-bff2-92c94ad5bf2b,user_d120e891-0f45-46da-bc2d-a83f01d91d18@yorku.ca,Password123!,STAFF,true
+user,d2b34475-f17b-46e7-93bf-fa2ec100cb35,staff_6004c979-8ea9-45d9-98c7-a1e89d9c24ea@yorku.ca,Password123!,STAFF,true
+user,3e205582-397d-49a8-8d96-ec12439694af,email1_ce067bca-bd1e-45b1-bd9b-ee9c61a6e147@yorku.ca,Password123!,STUDENT,true
+user,6d0856e8-7347-431e-8858-f2d351c0e0d1,email2_5de0ef22-9e3e-4941-af29-e95977fb4069@yorku.ca,Password123!,STUDENT,true
+user,d97d6c37-a7a2-4ad0-bf68-dbeed429462e,partner_e2949ad3-d3a1-4da1-b76c-a5ec39112770@gmail.com,Password123!,PARTNER,true
+Jerry West,068dba84-837e-4b51-8e74-113b98017f5d,jwest@email.com,@Password123,STAFF,true
+Jerry West,54c5a260-3a9e-42ce-9816-5c55bece8ce4,jwest@email.com,@Password123,STAFF,true
+Jerry West,bd2a14bc-ba97-49f6-8b8d-954492f1639b,jwest@email.com,@Password123,STAFF,true
+Jerry West,9293dec4-dfc6-454a-9e1d-b288b0a469d3,jwest@email.com,@Password123,STAFF,true
+Jerry West,ec04d563-d297-4117-8c03-c794bc9b93aa,jwest@email.com,@Password123,STAFF,true
+Jerry West,4f90a005-96a9-448d-989a-67a755ca48af,jwest@email.com,@Password123,STAFF,true
+Jerry West,55c91a8a-f572-400c-8dfd-3f5f7668dfb9,jwest@email.com,@Password123,STAFF,true
+Jerry West,955ce190-b75e-4d0f-845d-76d4b0d3dca8,jwest@email.com,@Password123,STAFF,true
+Jerry West,589540c4-a012-4d97-868d-f057cbaef4c8,jwest@email.com,@Password123,STAFF,true
+Jerry West,9c122db9-15cd-4de0-899f-2368483d4f0f,jwest@email.com,@Password123,STAFF,true
+Login User,416818c7-6bf5-41f3-a235-20ae885dd2f3,login_9c11ada5-5f85-43eb-8472-3b0982c0d7ad@yorku.ca,Password123!,STUDENT,true
+York Partner,53182e05-e319-4d10-98fa-8b41083ddf52,partnerYork_c520a4ff-2af5-46fe-91f6-aec8e84171bf@yorku.ca,Password123!,PARTNER,true
+Student,a11a1eae-f668-4c3b-9fda-69778f634959,student_22a9674c-2812-467d-83c2-accf1a807c37@yorku.ca,Password123!,STUDENT,true
+Student1,c37ca9f0-4bd6-4329-b51a-a8ab18781a24,student1_f106ee19-e168-488e-9558-a9394a0d9d4d@my.yorku.ca,Password123!,STUDENT,true
+Faculty,793283f5-805c-4685-a85a-f030e06d004f,faculty_99c6825e-905b-495e-9a8a-df2716bdf01b@yorku.ca,Password123!,FACULTY,true
+Staff,b2056cd2-5f03-4120-839c-3a2099048885,staff_0499f7ba-1efe-49a9-8082-6c6bc1655742@yorku.ca,Password123!,STAFF,true
+Partner,2554f948-5d17-45e7-9f30-12a7e48514a4,partner_a4927517-96a8-4478-9a61-92741b868716@gmail.com,Password123!,PARTNER,true
+user,fffe7e47-a107-48a5-9129-378e587b95da,user_9db40649-0a62-49c0-ad42-b801afdf2260@yorku.ca,Password123!,STUDENT,true
+User1,d99bb099-d7fe-4373-82f2-70042fcd0c8d,same_6ad7768c-a135-453c-aa98-5e338b41b366@yorku.ca,Password123!,STUDENT,true
+Logout User,885f42b6-a2b7-478f-8451-6178c5843beb,user_330058b1-687a-4e1e-a879-3a00b30c1d09@yorku.ca,Password123!,STUDENT,true
+user,6fabcd75-2c01-4d16-b691-fb96cad0b0eb,student_231d48db-857d-4b90-b214-dd8987b71a46@yorku.ca,Password123!,STUDENT,true
+user,f105f74b-ede4-4e73-89d7-bc8f66e5a86f,faculty_82fb7f60-df05-4a92-8af0-50531656ce74@yorku.ca,Password123!,FACULTY,true
+user,ae477405-b9f2-45c6-9a9f-2df4b138b054,partner_bf4821bf-30e6-4b6a-ba1f-e25c7a589037@gmail.com,Password123!,PARTNER,true
+user,e99a111f-d4bc-4509-b304-801a9010900d,staff_cdcf3ee6-2ea0-4e91-b3b4-bf96ba7b9616@yorku.ca,Password123!,STAFF,true
+user,3cdebd75-0b14-4d1c-9945-e44f3a136043,student_2a9d6fcc-e73f-4906-998f-915c8bcb2bb7@yorku.ca,Password123!,STUDENT,true
+user,200a1cf0-c939-4054-88b0-c9433c7183d5,partner_c0bf96b2-ff7e-454c-81cf-e89fe782831c@gmail.com,Password123!,PARTNER,true
+user1,cb89314e-c8f2-412a-a66a-654631aba0af,user1_d1469d6a-f280-48f3-84c5-40d2345411b6@yorku.ca,Password123!,STUDENT,true
+user2,fb256b26-b2d5-4077-94ae-20487bd111a4,user2_f15a2453-e5e9-486e-9b77-ef16df73205b@gmail.com,Password123!1,PARTNER,true
+user,913c0e44-edc9-4566-b342-c183862f9131,id_f588d3e2-3fe2-41b7-a9ab-4159ae95363b@yorku.ca,Password123!,STUDENT,true
+user,74f86a39-5ee9-42df-8523-2608b16f4ccd,same_9a14b906-5c2f-4eb2-993b-1cc088f4057f@yorku.ca,Password123!,STUDENT,true
+user,74f86a39-5ee9-42df-8523-2608b16f4ccd,same_9a14b906-5c2f-4eb2-993b-1cc088f4057f@yorku.ca,Password123!,STUDENT,true
+user,93437a90-cfce-44ec-b79b-6eb20c4a9531,checkType_18ec6957-8e77-4f90-9c53-cf1a02315f92@yorku.ca,Password123!,FACULTY,true
+user,240a0f2a-ac79-4cde-b92a-a76780b76d34,user_6f80d0b1-1394-4ce0-8d21-ada5494a3d8f@yorku.ca,Password123!,STUDENT,true
+user,4f74fb71-9cf1-4442-857b-049dd11f8c91,user0_43e57128-afb0-4c7c-8c99-c4abcd5e9c41@yorku.ca,Password123!,STUDENT,true
+user,c667c548-d390-4c6f-b12e-3c794b568274,user1_ef663d89-529f-4e60-8c49-050c5e5e85d4@yorku.ca,Password123!,STUDENT,true
+user,48cfdaba-ac12-4365-97b4-fecb28f241f1,user2_ce174c63-ba7c-47c2-93a1-ac1756fb4f5a@yorku.ca,Password123!,STUDENT,true
+user,b947cd70-c73d-409c-ba61-2cdbf91367cc,user3_b8915c74-2985-46cc-8f81-6a24712a986b@yorku.ca,Password123!,STUDENT,true
+user,0ccaf98a-436e-4a52-9c84-39f238fcead1,user4_4c1c882f-e223-4c29-84ef-447399eb39d5@yorku.ca,Password123!,STUDENT,true
+user,738eb565-3f15-44a7-b5ec-105f81c80e71,student_ee70be23-06cf-447e-8b58-2b1e9597d38e@yorku.ca,Password123!,STUDENT,true
+user,09a42890-76ff-4574-9cf8-7bd1dd9c1483,user_7f6fa8ef-4a48-46d3-9179-0c546a520b60@gmail.com,Password123!,PARTNER,true
+user,c3e24921-31ac-4192-987c-9ce5625a5dc9,faculty_ddb1b5cd-f887-4c63-bcee-b9087648cddb@yorku.ca,Password123!,FACULTY,true
+user,148ee710-8cb9-42a0-9664-4138fb21b923,user_17fa10ed-e0e4-441c-9c61-427880de3efd@yorku.ca,Password123!,STAFF,true
+user,e3d2f579-e21c-4d41-a4f9-a057b84647ce,staff_ecb1d047-50d6-4479-ba8e-611ea02b59de@yorku.ca,Password123!,STAFF,true
+user,1724fb80-991b-42a2-9676-b09c40c14dfb,email1_b5850920-f746-4c17-b51d-6c07bc613b09@yorku.ca,Password123!,STUDENT,true
+user,60ba7b0c-f839-48ba-b87c-5b272b9cf85a,email2_a2437149-6598-42f6-966e-ad1a5e2dee3e@yorku.ca,Password123!,STUDENT,true
+user,3a06a0b7-a13a-47e2-a968-433d26868e4b,partner_72584933-e3da-444e-b662-da3890744dc1@gmail.com,Password123!,PARTNER,true

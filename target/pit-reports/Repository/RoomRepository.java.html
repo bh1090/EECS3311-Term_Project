@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>RoomRepository.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package Repository;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.BufferedReader;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.File;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.FileReader;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.FileWriter;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.PrintWriter;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Database.Database;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Model.Room.Room;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Model.State.RoomDisabledState;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Model.State.RoomEnabledState;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Model.State.RoomReadyForEnableState;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Repository for managing Room data persistence via CSV.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Implements Singleton pattern to ensure only one point of access to the file.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class RoomRepository {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private static RoomRepository instance = null;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private List&#60;Room&#62; rooms = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    // Private constructor to enforce Singleton</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public RoomRepository() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_28'/>
+28
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_28'>1</a>
+<span>
+1. &#60;init&#62; : removed call to Repository/RoomRepository::loadRoomsFromCSV &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        loadRoomsFromCSV();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static synchronized RoomRepository getInstance() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_32'/>
+32
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_32'>1</a>
+<span>
+1. getInstance : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (instance == null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            instance = new RoomRepository();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_35'/>
+35
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_35'>1</a>
+<span>
+1. getInstance : replaced return value with null for Repository/RoomRepository::getInstance &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return instance;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    // === PUBLIC BUSINESS METHODS ===</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Saves a room to the list and writes the entire list to CSV.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Acts as both &#34;Create&#34; and &#34;Update&#34;.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void save(Room room) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // Remove old version if it exists (update logic)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_46'/>
+46
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_46'>2</a>
+<span>
+1. lambda$0 : replaced boolean return with true for Repository/RoomRepository::lambda$0 &rarr; KILLED<br/>
+2. lambda$0 : replaced boolean return with false for Repository/RoomRepository::lambda$0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        rooms.removeIf(r -&#62; r.getRoomId().equals(room.getRoomId()));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        rooms.add(room);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_48'/>
+48
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_48'>1</a>
+<span>
+1. save : removed call to Repository/RoomRepository::saveRoomsToCSV &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        saveRoomsToCSV();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public Room findById(String id) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_52'/>
+52
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_52'>1</a>
+<span>
+1. findById : replaced return value with null for Repository/RoomRepository::findById &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return rooms.stream()</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_53'/>
+53
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_53'>2</a>
+<span>
+1. lambda$1 : replaced boolean return with false for Repository/RoomRepository::lambda$1 &rarr; KILLED<br/>
+2. lambda$1 : replaced boolean return with true for Repository/RoomRepository::lambda$1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            .filter(r -&#62; r.getRoomId().equals(id))</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            .findFirst().orElse(null);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public List&#60;Room&#62; findAll() { </span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_58'/>
+58
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_58'>1</a>
+<span>
+1. findAll : replaced return value with Collections.emptyList for Repository/RoomRepository::findAll &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new ArrayList&#60;&#62;(rooms); // Return copy to protect internal list</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Generates the next numeric ID by finding the max current ID.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String generateNextId() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        int maxId = 0;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (Room r : rooms) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            try {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                int currentId = Integer.parseInt(r.getRoomId());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_69'/>
+69
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_69'>2</a>
+<span>
+1. generateNextId : changed conditional boundary &rarr; SURVIVED<br/>
+2. generateNextId : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                if (currentId &#62; maxId) maxId = currentId;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            } catch (NumberFormatException e) { </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                // Ignore non-numeric IDs</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_74'/>
+74
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_74'>2</a>
+<span>
+1. generateNextId : replaced return value with &#34;&#34; for Repository/RoomRepository::generateNextId &rarr; KILLED<br/>
+2. generateNextId : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return String.valueOf(maxId + 1);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    // === CSV PERSISTENCE METHODS ===</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private void loadRoomsFromCSV() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_80'/>
+80
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_80'>1</a>
+<span>
+1. loadRoomsFromCSV : removed call to java/util/List::clear &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        rooms.clear();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        File file = new File(Database.getInstance().getRoomCsvPath());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_82'/>
+82
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_82'>1</a>
+<span>
+1. loadRoomsFromCSV : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (!file.exists()) return;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        try (BufferedReader br = new BufferedReader(new FileReader(file))) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            String line;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            br.readLine(); // Skip Header</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_87'/>
+87
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_87'>1</a>
+<span>
+1. loadRoomsFromCSV : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            while ((line = br.readLine()) != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                String[] values = line.split(&#34;,&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                // Expecting: Room ID, Capacity, Location, Status, Price (Optional)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_90'/>
+90
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_90'>2</a>
+<span>
+1. loadRoomsFromCSV : changed conditional boundary &rarr; SURVIVED<br/>
+2. loadRoomsFromCSV : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                if (values.length &#60; 4) continue; </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                String id = values[0].trim();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                String capacity = values[1].trim();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                String location = values[2].trim();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                String statusStr = values[3].trim();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                // Handle Price (Default to 0.0 if column missing)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                double price = 0.0;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_99'/>
+99
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_99'>2</a>
+<span>
+1. loadRoomsFromCSV : negated conditional &rarr; SURVIVED<br/>
+2. loadRoomsFromCSV : changed conditional boundary &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                if (values.length &#62;= 5) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                    try {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                        price = Double.parseDouble(values[4].trim());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    } catch (NumberFormatException e) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_103'/>
+103
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_103'>1</a>
+<span>
+1. loadRoomsFromCSV : removed call to java/io/PrintStream::println &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                        System.out.println(&#34;Invalid price format for room &#34; + id);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                Room room = new Room(id, location, price, capacity);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                // Restore State</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_110'/>
+110
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_110'>1</a>
+<span>
+1. loadRoomsFromCSV : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                if (statusStr.equalsIgnoreCase(&#34;DISABLED&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_111'/>
+111
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_111'>1</a>
+<span>
+1. loadRoomsFromCSV : removed call to Model/Room/Room::setState &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                    room.setState(new RoomDisabledState());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_112'/>
+112
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_112'>1</a>
+<span>
+1. loadRoomsFromCSV : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                } else if (statusStr.equalsIgnoreCase(&#34;READY_FOR_ENABLE&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_113'/>
+113
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_113'>1</a>
+<span>
+1. loadRoomsFromCSV : removed call to Model/Room/Room::setState &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                    room.setState(new RoomReadyForEnableState());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                } else {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_115'/>
+115
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_115'>1</a>
+<span>
+1. loadRoomsFromCSV : removed call to Model/Room/Room::setState &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                    room.setState(new RoomEnabledState());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_116'/>
+116
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_116'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                rooms.add(room);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        } catch (IOException e) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_121'/>
+121
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_121'>1</a>
+<span>
+1. loadRoomsFromCSV : removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            e.printStackTrace();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private void saveRoomsToCSV() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        try (PrintWriter pw = new PrintWriter(new FileWriter(Database.getInstance().getRoomCsvPath()))) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_127'/>
+127
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_127'>1</a>
+<span>
+1. saveRoomsToCSV : removed call to java/io/PrintWriter::println &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            pw.println(&#34;Room ID,Capacity,Location,Status,Price&#34;); </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            for (Room r : rooms) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_130'/>
+130
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_130'>1</a>
+<span>
+1. saveRoomsToCSV : removed call to java/io/PrintWriter::println &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                pw.println(</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    r.getRoomId() + &#34;,&#34; +</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    r.getRoomCapacity() + &#34;,&#34; +</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_133'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    r.getLocation() + &#34;,&#34; +</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    r.getState().getStateName() + &#34;,&#34; +</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    r.getPrice() </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                );</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_138'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        } catch (IOException e) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_139'/>
+139
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_139'>1</a>
+<span>
+1. saveRoomsToCSV : removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            e.printStackTrace();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_140'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ef591af_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_28'>28</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_28'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed call to Repository/RoomRepository::loadRoomsFromCSV &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=<init>,-methodDesc=()V],-indexes=[15],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=<init>,-methodDesc=()V],-indexes=[15],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=<init>,-methodDesc=()V],-indexes=[15],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_32'>32</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_32'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getInstance<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testSingletonInstance(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_35'>35</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_35'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getInstance<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> replaced return value with null for Repository/RoomRepository::getInstance &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_46'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$0<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testFindAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> replaced boolean return with true for Repository/RoomRepository::lambda$0 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$0<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testUpdateRoomDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> replaced boolean return with false for Repository/RoomRepository::lambda$0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_48'>48</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_48'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>save<br/><b>Killed by : </b>none</span></span> removed call to Repository/RoomRepository::saveRoomsToCSV &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=save,-methodDesc=(LModel/Room/Room;)V],-indexes=[19],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=save,-methodDesc=(LModel/Room/Room;)V],-indexes=[19],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=save,-methodDesc=(LModel/Room/Room;)V],-indexes=[19],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testSaveAndFindRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testMaintenanceCompleted(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceDisabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testEnableRoomLogic(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testGenerateNextId(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testUpdateRoomDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testFindAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminProxyShowsDetailsCorrectly(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestHidesDisabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceEnabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGuestListFiltersReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestReturnsProxies(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testPricePreservationThroughFacade(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAllRoomsForAdminReturnsAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testDisableRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateBookingSuccess(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testGetBookingDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCancelBooking(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testBookingConflict(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckIn(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckOut(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_52'>52</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_52'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>findById<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testSaveAndFindRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> replaced return value with null for Repository/RoomRepository::findById &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_53'>53</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_53'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$1<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testSaveAndFindRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> replaced boolean return with false for Repository/RoomRepository::lambda$1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$1<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testFindByIdNotFound(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> replaced boolean return with true for Repository/RoomRepository::lambda$1 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_58'>58</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_58'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>findAll<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> replaced return value with Collections.emptyList for Repository/RoomRepository::findAll &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_69'>69</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_69'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>generateNextId<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testGenerateNextId(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>generateNextId<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=generateNextId,-methodDesc=()Ljava/lang/String;],-indexes=[28],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=generateNextId,-methodDesc=()Ljava/lang/String;],-indexes=[28],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=generateNextId,-methodDesc=()Ljava/lang/String;],-indexes=[28],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testGenerateNextId(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testDisableRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateBookingSuccess(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testGetBookingDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCancelBooking(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testBookingConflict(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckOut(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckIn(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_74'>74</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_74'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>generateNextId<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testGenerateNextId(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> replaced return value with &#34;&#34; for Repository/RoomRepository::generateNextId &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>generateNextId<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testGenerateNextId(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</span></span> Replaced integer addition with subtraction &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_80'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> removed call to java/util/List::clear &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_82'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[18],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[18],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[18],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_87'>87</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_87'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[184],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[184],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[184],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_90'>90</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_90'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_99'>99</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_99'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[96],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[96],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[96],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[96],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[96],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[96],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_103'>103</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_103'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; NO_COVERAGE</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_110'>110</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_110'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[133],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[133],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[133],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_111'>111</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_111'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> removed call to Model/Room/Room::setState &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[140],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[140],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[140],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_112'>112</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_112'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[149],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[149],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[149],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_113'>113</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_113'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> removed call to Model/Room/Room::setState &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[156],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[156],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[156],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_115'>115</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_115'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> removed call to Model/Room/Room::setState &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[167],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[167],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=loadRoomsFromCSV,-methodDesc=()V],-indexes=[167],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_121'>121</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_121'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadRoomsFromCSV<br/><b>Killed by : </b>none</span></span> removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_127'>127</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_127'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>saveRoomsToCSV<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintWriter::println &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=saveRoomsToCSV,-methodDesc=()V],-indexes=[21],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=saveRoomsToCSV,-methodDesc=()V],-indexes=[21],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=saveRoomsToCSV,-methodDesc=()V],-indexes=[21],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testSaveAndFindRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testMaintenanceCompleted(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceDisabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testEnableRoomLogic(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testGenerateNextId(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testUpdateRoomDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testFindAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminProxyShowsDetailsCorrectly(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestHidesDisabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceEnabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGuestListFiltersReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestReturnsProxies(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testPricePreservationThroughFacade(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAllRoomsForAdminReturnsAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testDisableRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateBookingSuccess(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testGetBookingDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCancelBooking(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testBookingConflict(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckIn(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckOut(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_130'>130</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_130'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>saveRoomsToCSV<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintWriter::println &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=saveRoomsToCSV,-methodDesc=()V],-indexes=[64],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=saveRoomsToCSV,-methodDesc=()V],-indexes=[64],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.RoomRepository,-method=saveRoomsToCSV,-methodDesc=()V],-indexes=[64],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testSaveAndFindRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testMaintenanceCompleted(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceDisabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testEnableRoomLogic(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testGenerateNextId(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testUpdateRoomDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testFindAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminProxyShowsDetailsCorrectly(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestHidesDisabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceEnabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGuestListFiltersReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestReturnsProxies(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testPricePreservationThroughFacade(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAllRoomsForAdminReturnsAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testDisableRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateBookingSuccess(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testGetBookingDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCancelBooking(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testBookingConflict(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckIn(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckOut(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ef591af_139'>139</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ef591af_139'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>saveRoomsToCSV<br/><b>Killed by : </b>none</span></span> removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testSaveAndFindRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest) (2 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testMaintenanceCompleted(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (2 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceDisabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testEnableRoomLogic(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (2 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testGenerateNextId(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testUpdateRoomDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest) (4 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testFindAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminProxyShowsDetailsCorrectly(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (4 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestHidesDisabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testStatePersistenceEnabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGuestListFiltersReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestReturnsProxies(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testPricePreservationThroughFacade(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAllRoomsForAdminReturnsAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (6 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testDisableRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateBookingSuccess(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testGetBookingDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCancelBooking(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (6 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testBookingConflict(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (9 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckIn(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (9 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckOut(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (8 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (20 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testFacadeInitialization(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testSingletonInstance(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest.testFindByIdNotFound(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomRepositoryTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testListIndependence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testEmptyListBehavior(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (1 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.22.0
+
+</body>
+</html>

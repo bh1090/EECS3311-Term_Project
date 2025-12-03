@@ -1,0 +1,45 @@
+-------------------------------------------------------------------------------
+Test set: RegressionTest0
+-------------------------------------------------------------------------------
+Tests run: 500, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 2.247 s <<< FAILURE! -- in RegressionTest0
+RegressionTest0.test134 -- Time elapsed: 0.007 s <<< FAILURE!
+java.lang.AssertionError: '102' != '1'
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at RegressionTest0.test134(RegressionTest0.java:2033)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+RegressionTest0.test213 -- Time elapsed: 0.003 s <<< FAILURE!
+java.lang.AssertionError: '3' != '1'
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at RegressionTest0.test213(RegressionTest0.java:3474)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+RegressionTest0.test258 -- Time elapsed: 0.002 s <<< FAILURE!
+java.lang.AssertionError: '102' != '2'
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at RegressionTest0.test258(RegressionTest0.java:4373)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+RegressionTest0.test260 -- Time elapsed: 0.005 s <<< FAILURE!
+java.lang.AssertionError: '102' != '2'
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at RegressionTest0.test260(RegressionTest0.java:4409)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+RegressionTest0.test268 -- Time elapsed: 0.001 s <<< FAILURE!
+java.lang.AssertionError: Expected exception of type java.lang.NullPointerException; message: date
+	at org.junit.Assert.fail(Assert.java:89)
+	at RegressionTest0.test268(RegressionTest0.java:4530)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+RegressionTest0.test307 -- Time elapsed: 0.002 s <<< FAILURE!
+java.lang.AssertionError: '102' != '2'
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at RegressionTest0.test307(RegressionTest0.java:5389)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+

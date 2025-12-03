@@ -1,0 +1,85 @@
+-------------------------------------------------------------------------------
+Test set: ErrorTest0
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 9, Errors: 3, Skipped: 0, Time elapsed: 0.438 s <<< FAILURE! -- in ErrorTest0
+ErrorTest0.test01 -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because "this.logID" is null
+	at Model.Sensor.OccupancySensorData.equals(OccupancySensorData.java:26)
+	at ErrorTest0.test01(ErrorTest0.java:26)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test02 -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because "this.logID" is null
+	at Model.Sensor.OccupancySensorData.equals(OccupancySensorData.java:26)
+	at ErrorTest0.test02(ErrorTest0.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test03 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because "this.id" is null
+	at Model.Sensor.Sensor.equals(Sensor.java:63)
+	at ErrorTest0.test03(ErrorTest0.java:42)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test04 -- Time elapsed: 0.076 s <<< FAILURE!
+java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test04(ErrorTest0.java:58)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test05 -- Time elapsed: 0.048 s <<< FAILURE!
+java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test05(ErrorTest0.java:74)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test06 -- Time elapsed: 0.050 s <<< FAILURE!
+java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test06(ErrorTest0.java:93)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test07 -- Time elapsed: 0.063 s <<< FAILURE!
+java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorData17 and occupancySensorData26
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test07(ErrorTest0.java:119)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test08 -- Time elapsed: 0.055 s <<< FAILURE!
+java.lang.AssertionError: Contract failed: equals-hashcode on scanIDSensorDataList11 and scanIDSensorDataList21
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test08(ErrorTest0.java:141)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test09 -- Time elapsed: 0.025 s <<< FAILURE!
+java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList16
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test09(ErrorTest0.java:159)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test10 -- Time elapsed: 0.031 s <<< FAILURE!
+java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test10(ErrorTest0.java:175)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test11 -- Time elapsed: 0.047 s <<< FAILURE!
+java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList16
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test11(ErrorTest0.java:192)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+ErrorTest0.test12 -- Time elapsed: 0.029 s <<< FAILURE!
+java.lang.AssertionError: Contract failed: equals-hashcode on scanIDSensorDataList11 and scanIDSensorDataList14
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test12(ErrorTest0.java:209)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+

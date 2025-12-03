@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>GuestRoomProxy.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package Model.Room;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//This class hides maintenance state.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class GuestRoomProxy implements RoomProxy {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> private Room realRoom;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''> public GuestRoomProxy(Room room) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>     this.realRoom = room;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''> }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> @Override</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> public void showRoomDetails() {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     // Guests don&#39;t need to know the internal state if it&#39;s enabled</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_15'/>
+15
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_15'>1</a>
+<span>
+1. showRoomDetails : removed call to java/io/PrintStream::println &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>     System.out.println(&#34;GUEST VIEW: Location=&#34; + realRoom.getLocation() + </span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                        &#34;, Price=$&#34; + realRoom.getPrice() + </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                        &#34;/night&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''> }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> @Override</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_21'/>
+21
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_21'>1</a>
+<span>
+1. getRoomId : replaced return value with &#34;&#34; for Model/Room/GuestRoomProxy::getRoomId &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'> public String getRoomId() { return realRoom.getRoomId(); }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_15'>15</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_15'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>showRoomDetails<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testPriceFormatting(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest)</span></span> removed call to java/io/PrintStream::println &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@a2fb8a5_21'>21</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@a2fb8a5_21'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getRoomId<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testGetRoomId(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest)</span></span> replaced return value with &#34;&#34; for Model/Room/GuestRoomProxy::getRoomId &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testPriceFormatting(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testNightlyRateLabel(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testGuestViewLabel(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testShowRoomDetailsHidesInternalState(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testShowRoomDetailsContainsPrice(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testShowRoomDetailsContainsLocation(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testDifferentRoomData(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testGetRoomId(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest.testDelegationIsLive(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.GuestRoomProxyTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestHidesDisabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGuestListFiltersReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestReturnsProxies(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testPricePreservationThroughFacade(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.22.0
+
+</body>
+</html>

@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>PaymentRepository.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package Repository;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.BufferedReader;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.File;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.FileReader;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.FileWriter;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.PrintWriter;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Model.Payment.Payment;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Database.Database;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Repository for managing Payment data persistence via CSV.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class PaymentRepository {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private static PaymentRepository instance = null;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private List&#60;Payment&#62; payments = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private PaymentRepository() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_22'/>
+22
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_22'>1</a>
+<span>
+1. &#60;init&#62; : removed call to Repository/PaymentRepository::loadPaymentsFromCSV &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        loadPaymentsFromCSV();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static synchronized PaymentRepository getInstance() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_26'/>
+26
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_26'>1</a>
+<span>
+1. getInstance : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (instance == null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            instance = new PaymentRepository();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_29'/>
+29
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_29'>1</a>
+<span>
+1. getInstance : replaced return value with null for Repository/PaymentRepository::getInstance &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return instance;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void save(Payment payment) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_33'/>
+33
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_33'>2</a>
+<span>
+1. lambda$0 : replaced boolean return with true for Repository/PaymentRepository::lambda$0 &rarr; KILLED<br/>
+2. lambda$0 : replaced boolean return with false for Repository/PaymentRepository::lambda$0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        payments.removeIf(p -&#62; p.getPaymentId().equals(payment.getPaymentId()));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        payments.add(payment);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_35'/>
+35
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_35'>1</a>
+<span>
+1. save : removed call to Repository/PaymentRepository::savePaymentsToCSV &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        savePaymentsToCSV();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_38'/>
+38
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_38'>1</a>
+<span>
+1. findAll : replaced return value with Collections.emptyList for Repository/PaymentRepository::findAll &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    public List&#60;Payment&#62; findAll() { return new ArrayList&#60;&#62;(payments); }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private void loadPaymentsFromCSV() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_41'/>
+41
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_41'>1</a>
+<span>
+1. loadPaymentsFromCSV : removed call to java/util/List::clear &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        payments.clear();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        File file = new File(Database.getInstance().getPaymentCsvPath());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_43'/>
+43
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_43'>1</a>
+<span>
+1. loadPaymentsFromCSV : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (!file.exists()) return;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        try (BufferedReader br = new BufferedReader(new FileReader(file))) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            String line;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            br.readLine(); </span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_48'/>
+48
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_48'>1</a>
+<span>
+1. loadPaymentsFromCSV : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            while ((line = br.readLine()) != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                String[] val = line.split(&#34;,&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_50'/>
+50
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_50'>2</a>
+<span>
+1. loadPaymentsFromCSV : negated conditional &rarr; SURVIVED<br/>
+2. loadPaymentsFromCSV : changed conditional boundary &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                if (val.length &#60; 3) continue;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                String pId = val[0].trim();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                String amountStr = val[1].trim();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                String status = val[2].trim();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                double amount = Double.parseDouble(amountStr);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                Payment p = new Payment(pId, amount);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_59'/>
+59
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_59'>1</a>
+<span>
+1. loadPaymentsFromCSV : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                if (&#34;COMPLETED&#34;.equalsIgnoreCase(status)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_60'/>
+60
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_60'>1</a>
+<span>
+1. loadPaymentsFromCSV : removed call to Model/Payment/Payment::completePayment &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                    p.completePayment();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                payments.add(p);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        } catch (IOException e) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_65'/>
+65
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_65'>1</a>
+<span>
+1. loadPaymentsFromCSV : removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            e.printStackTrace();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private void savePaymentsToCSV() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        try (PrintWriter pw = new PrintWriter(new FileWriter(Database.getInstance().getPaymentCsvPath()))) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_71'/>
+71
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_71'>1</a>
+<span>
+1. savePaymentsToCSV : removed call to java/io/PrintWriter::println &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            pw.println(&#34;paymentId,amount,status&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            for (Payment p : payments) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_73'/>
+73
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_73'>1</a>
+<span>
+1. savePaymentsToCSV : removed call to java/io/PrintWriter::println &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                pw.println(p.getPaymentId() + &#34;,&#34; + p.getAmount() + &#34;,&#34; + p.getStatus());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        } catch (IOException e) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_76'/>
+76
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_76'>1</a>
+<span>
+1. savePaymentsToCSV : removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            e.printStackTrace();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2ac3d530_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_22'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed call to Repository/PaymentRepository::loadPaymentsFromCSV &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=<init>,-methodDesc=()V],-indexes=[15],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=<init>,-methodDesc=()V],-indexes=[15],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=<init>,-methodDesc=()V],-indexes=[15],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_26'>26</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_26'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getInstance<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSingletonInstance(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_29'>29</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_29'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getInstance<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testUpdatePaymentAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</span></span> replaced return value with null for Repository/PaymentRepository::getInstance &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_33'>33</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_33'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$0<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</span></span> replaced boolean return with true for Repository/PaymentRepository::lambda$0 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$0<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testUpdatePaymentAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</span></span> replaced boolean return with false for Repository/PaymentRepository::lambda$0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_35'>35</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_35'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>save<br/><b>Killed by : </b>none</span></span> removed call to Repository/PaymentRepository::savePaymentsToCSV &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=save,-methodDesc=(LModel/Payment/Payment;)V],-indexes=[19],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=save,-methodDesc=(LModel/Payment/Payment;)V],-indexes=[19],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=save,-methodDesc=(LModel/Payment/Payment;)V],-indexes=[19],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testUpdatePaymentAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testZeroAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveAndRetrieve(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveUpdatesExistingCount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testHighPrecisionAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testPaymentCompletionPersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testPendingPaymentPersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveMultiplePayments(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_38'>38</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_38'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>findAll<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testUpdatePaymentAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</span></span> replaced return value with Collections.emptyList for Repository/PaymentRepository::findAll &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_41'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadPaymentsFromCSV<br/><b>Killed by : </b>none</span></span> removed call to java/util/List::clear &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_43'>43</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_43'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadPaymentsFromCSV<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[18],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[18],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[18],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_48'>48</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_48'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadPaymentsFromCSV<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[119],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[119],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[119],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_50'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadPaymentsFromCSV<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>loadPaymentsFromCSV<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[56],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_59'>59</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_59'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadPaymentsFromCSV<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[98],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[98],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[98],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_60'>60</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_60'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadPaymentsFromCSV<br/><b>Killed by : </b>none</span></span> removed call to Model/Payment/Payment::completePayment &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[102],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[102],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=loadPaymentsFromCSV,-methodDesc=()V],-indexes=[102],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_65'>65</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_65'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>loadPaymentsFromCSV<br/><b>Killed by : </b>none</span></span> removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_71'>71</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_71'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>savePaymentsToCSV<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintWriter::println &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=savePaymentsToCSV,-methodDesc=()V],-indexes=[21],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=savePaymentsToCSV,-methodDesc=()V],-indexes=[21],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=savePaymentsToCSV,-methodDesc=()V],-indexes=[21],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testUpdatePaymentAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testZeroAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveAndRetrieve(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveUpdatesExistingCount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testHighPrecisionAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testPaymentCompletionPersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testPendingPaymentPersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveMultiplePayments(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_73'>73</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_73'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>savePaymentsToCSV<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintWriter::println &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=savePaymentsToCSV,-methodDesc=()V],-indexes=[45],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=savePaymentsToCSV,-methodDesc=()V],-indexes=[45],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Repository.PaymentRepository,-method=savePaymentsToCSV,-methodDesc=()V],-indexes=[45],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testUpdatePaymentAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testZeroAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveAndRetrieve(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveUpdatesExistingCount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testHighPrecisionAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testPaymentCompletionPersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testPendingPaymentPersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveMultiplePayments(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2ac3d530_76'>76</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2ac3d530_76'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>savePaymentsToCSV<br/><b>Killed by : </b>none</span></span> removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testFindAllReturnsCopy(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest) (7 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testFacadeInitialization(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSingletonInstance(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testListIndependence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testEmptyListBehavior(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testUpdatePaymentAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testZeroAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveAndRetrieve(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testPaymentCompletionPersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveUpdatesExistingCount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest) (2 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testHighPrecisionAmount(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest) (2 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testPendingPaymentPersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest) (1 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testMaintenanceCompleted(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (2 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testEnableRoomLogic(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (2 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminProxyShowsDetailsCorrectly(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (4 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestHidesDisabled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGuestListFiltersReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAvailableRoomsForGuestReturnsProxies(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testPricePreservationThroughFacade(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testGetAllRoomsForAdminReturnsAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (6 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testDisableRoom(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest.testSaveMultiplePayments(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.PaymentRepositoryTest) (13 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateBookingSuccess(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testGetBookingDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCancelBooking(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (6 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testBookingConflict(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (9 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckIn(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (9 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckOut(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (8 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest.testAdminCanSeeReadyForEnable(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomListFacadeTest) (20 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.22.0
+
+</body>
+</html>

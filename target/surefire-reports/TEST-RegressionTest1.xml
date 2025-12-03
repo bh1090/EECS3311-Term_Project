@@ -1,0 +1,1948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="RegressionTest1" time="0.667" tests="305" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
+    <property name="java.class.path" value="/home/2calq/Downloads/EECS3311-Term_Project/target/test-classes:/home/2calq/Downloads/EECS3311-Term_Project/target/classes:/home/2calq/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/home/2calq/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/2calq/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/home/2calq/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/2calq/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:/home/2calq/.m2/repository/org/mockito/mockito-junit-jupiter/5.20.0/mockito-junit-jupiter-5.20.0.jar:/home/2calq/.m2/repository/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar:/home/2calq/.m2/repository/net/bytebuddy/byte-buddy/1.17.7/byte-buddy-1.17.7.jar:/home/2calq/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.7/byte-buddy-agent-1.17.7.jar:/home/2calq/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/2calq/.m2/repository/org/mockito/mockito-inline/5.2.0/mockito-inline-5.2.0.jar:/home/2calq/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/2calq/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/2calq/.m2/repository/org/junit/platform/junit-platform-suite-api/1.11.0/junit-platform-suite-api-1.11.0.jar:/home/2calq/.m2/repository/com/github/stefanbirkner/system-lambda/1.2.1/system-lambda-1.2.1.jar:/home/2calq/.m2/repository/net/sourceforge/javacsv/javacsv/2.0/javacsv-2.0.jar:/home/2calq/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/home/2calq/.m2/repository/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar:/home/2calq/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar:/home/2calq/.m2/repository/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/home/2calq/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar:/home/2calq/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/2calq/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://openjdk.org/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/nix/store/hm028d05qs6138ggq02239sh6qf5xwd6-openjdk-21.0.8+9/lib/openjdk/lib"/>
+    <property name="sun.java.command" value="/home/2calq/Downloads/EECS3311-Term_Project/target/surefire/surefirebooter-20251201201732854_3.jar /home/2calq/Downloads/EECS3311-Term_Project/target/surefire 2025-12-01T20-17-32_676-jvmRun1 surefire-20251201201732854_1tmp surefire_0-20251201201732854_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/2calq/Downloads/EECS3311-Term_Project/target/test-classes:/home/2calq/Downloads/EECS3311-Term_Project/target/classes:/home/2calq/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/home/2calq/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/2calq/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/home/2calq/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/2calq/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:/home/2calq/.m2/repository/org/mockito/mockito-junit-jupiter/5.20.0/mockito-junit-jupiter-5.20.0.jar:/home/2calq/.m2/repository/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar:/home/2calq/.m2/repository/net/bytebuddy/byte-buddy/1.17.7/byte-buddy-1.17.7.jar:/home/2calq/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.7/byte-buddy-agent-1.17.7.jar:/home/2calq/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/2calq/.m2/repository/org/mockito/mockito-inline/5.2.0/mockito-inline-5.2.0.jar:/home/2calq/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/2calq/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/2calq/.m2/repository/org/junit/platform/junit-platform-suite-api/1.11.0/junit-platform-suite-api-1.11.0.jar:/home/2calq/.m2/repository/com/github/stefanbirkner/system-lambda/1.2.1/system-lambda-1.2.1.jar:/home/2calq/.m2/repository/net/sourceforge/javacsv/javacsv/2.0/javacsv-2.0.jar:/home/2calq/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/home/2calq/.m2/repository/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar:/home/2calq/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar:/home/2calq/.m2/repository/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/home/2calq/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar:/home/2calq/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/2calq/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/2calq"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="/nix/store/hm028d05qs6138ggq02239sh6qf5xwd6-openjdk-21.0.8+9/lib/openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/2calq/Downloads/EECS3311-Term_Project"/>
+    <property name="style.color" value="always"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/2calq/Downloads/EECS3311-Term_Project/target/surefire/surefirebooter-20251201201732854_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.8+9-nixos"/>
+    <property name="user.name" value="2calq"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.12.47"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/2calq/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.8"/>
+    <property name="user.dir" value="/home/2calq/Downloads/EECS3311-Term_Project"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/nix/store/qfm3kqdbpd289nnmdhd4dis4svd2nzwv-glib-2.84.4/lib:/nix/store/lw4v9xvxyqrabifarmvj36prncj0c947-gtk+3-3.24.49/lib:/nix/store/ycsmihpja2k7bcw8kw9r3h9x1a2q0gsg-libXtst-1.2.5/lib:/nix/store/nvxsavc5m25w942qggc7gn4bfkagqcy4-libsecret-0.21.7/lib:/nix/store/qyh23a3qqpqrw14x05iq1rds9m19204j-webkitgtk-2.48.6+abi=4.1/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="N/A"/>
+    <property name="java.vm.version" value="21.0.8+9-nixos"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="test501" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test502" classname="RegressionTest1" time="0.003">
+    <system-out><![CDATA[Room is already disabled.
+Room passed checks. Enabling.
+Room created: 188
+]]></system-out>
+  </testcase>
+  <testcase name="test503" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test504" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test505" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test506" classname="RegressionTest1" time="0.013"/>
+  <testcase name="test507" classname="RegressionTest1" time="0.003">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Already ready.
+]]></system-out>
+  </testcase>
+  <testcase name="test508" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test509" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Cannot check out a completed booking.
+Cannot cancel. Guest is already here.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Guest checking out. Booking complete.
+Cannot cancel a completed booking.
+Cannot cancel a completed booking.
+]]></system-out>
+  </testcase>
+  <testcase name="test510" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Disabling room...
+]]></system-out>
+  </testcase>
+  <testcase name="test511" classname="RegressionTest1" time="0.007"/>
+  <testcase name="test512" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+]]></system-out>
+  </testcase>
+  <testcase name="test513" classname="RegressionTest1" time="0.01">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+Room passed checks. Enabling.
+Room created: 189
+Room passed checks. Enabling.
+Room created: 190
+Room is already disabled.
+Room is already disabled.
+Room passed checks. Enabling.
+Room created: 191
+Room passed checks. Enabling.
+Room created: 192
+]]></system-out>
+  </testcase>
+  <testcase name="test514" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test515" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot cancel. Guest is already here.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Guest checking out. Booking complete.
+]]></system-out>
+  </testcase>
+  <testcase name="test516" classname="RegressionTest1" time="0.003"/>
+  <testcase name="test517" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Booking already finished.
+Booking cancelled.
+]]></system-out>
+  </testcase>
+  <testcase name="test518" classname="RegressionTest1" time="0.003">
+    <system-err><![CDATA[java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test518(RegressionTest1.java:463)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test519" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test520" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test521" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test522" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test523" classname="RegressionTest1" time="0.003"/>
+  <testcase name="test524" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test525" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test526" classname="RegressionTest1" time="0.005"/>
+  <testcase name="test527" classname="RegressionTest1" time="0.004">
+    <system-out><![CDATA[Room sent to maintenance check.
+]]></system-out>
+  </testcase>
+  <testcase name="test528" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test529" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test530" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[GUEST VIEW: Location=, Price=$100.0/night
+]]></system-out>
+  </testcase>
+  <testcase name="test531" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test532" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test533" classname="RegressionTest1" time="0.003"/>
+  <testcase name="test534" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test535" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test536" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room passed checks. Enabling.
+Room is already enabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test537" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test538" classname="RegressionTest1" time="0.002"/>
+  <testcase name="test539" classname="RegressionTest1" time="0.005">
+    <system-out><![CDATA[Cannot enable directly from Disabled. Must be prepped first.
+Room passed checks. Enabling.
+Already ready.
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test540" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test541" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test542" classname="RegressionTest1" time="0.052"/>
+  <testcase name="test543" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test544" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test545" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test546" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Disabling room...
+Room sent to maintenance check.
+Already ready.
+Disabling room...
+]]></system-out>
+  </testcase>
+  <testcase name="test547" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test548" classname="RegressionTest1" time="0.008"/>
+  <testcase name="test549" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Guest checked in.
+]]></system-out>
+  </testcase>
+  <testcase name="test550" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test551" classname="RegressionTest1" time="0.006">
+    <system-out><![CDATA[Cannot check out a completed booking.
+]]></system-out>
+  </testcase>
+  <testcase name="test552" classname="RegressionTest1" time="0.004">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test553" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Disabling room...
+Already ready.
+Already ready.
+Room sent to maintenance check.
+Already ready.
+Already ready.
+Disabling room...
+Already ready.
+Room passed checks. Enabling.
+]]></system-out>
+  </testcase>
+  <testcase name="test554" classname="RegressionTest1" time="0.007">
+    <system-out><![CDATA[Already checked in.
+Cannot cancel. Guest is already here.
+]]></system-out>
+  </testcase>
+  <testcase name="test555" classname="RegressionTest1" time="0.003">
+    <system-out><![CDATA[Room is already disabled.
+Room passed checks. Enabling.
+Room created: 193
+]]></system-out>
+  </testcase>
+  <testcase name="test556" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test557" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test558" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test559" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test560" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+Already checked in.
+Cannot check out a completed booking.
+Cannot cancel. Guest is already here.
+Already checked in.
+Cannot cancel. Guest is already here.
+]]></system-out>
+  </testcase>
+  <testcase name="test561" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test562" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test563" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test564" classname="RegressionTest1" time="0.077"/>
+  <testcase name="test565" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test566" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Disabling room...
+GUEST VIEW: Location=, Price=$100.0/night
+]]></system-out>
+  </testcase>
+  <testcase name="test567" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot enable directly from Disabled. Must be prepped first.
+Room passed checks. Enabling.
+Already ready.
+]]></system-out>
+  </testcase>
+  <testcase name="test568" classname="RegressionTest1" time="0.003"/>
+  <testcase name="test569" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test570" classname="RegressionTest1" time="0.004"/>
+  <testcase name="test571" classname="RegressionTest1" time="0.02"/>
+  <testcase name="test572" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test573" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Already checked in.
+]]></system-out>
+  </testcase>
+  <testcase name="test574" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test575" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Room is already disabled.
+Room passed checks. Enabling.
+Room created: 194
+]]></system-out>
+  </testcase>
+  <testcase name="test576" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test577" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test578" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test579" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test580" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test581" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test582" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test583" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test584" classname="RegressionTest1" time="0.003">
+    <system-err><![CDATA[java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test584(RegressionTest1.java:1668)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test585" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test586" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Already checked in.
+]]></system-out>
+  </testcase>
+  <testcase name="test587" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test588" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test589" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Error: Booking was cancelled.
+Cannot cancel. Guest is already here.
+]]></system-out>
+  </testcase>
+  <testcase name="test590" classname="RegressionTest1" time="0.004"/>
+  <testcase name="test591" classname="RegressionTest1" time="0.056"/>
+  <testcase name="test592" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test593" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test594" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Guest checking out. Booking complete.
+]]></system-out>
+  </testcase>
+  <testcase name="test595" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test596" classname="RegressionTest1" time="0.003"/>
+  <testcase name="test597" classname="RegressionTest1" time="0.006">
+    <system-err><![CDATA[java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test597(RegressionTest1.java:1917)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+java.io.FileNotFoundException: 14 (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:71)
+	at RegressionTest1.test597(RegressionTest1.java:1919)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+java.io.FileNotFoundException: 3b878a93-2f8d-4168-99fd-22b8dbe103f1 (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:71)
+	at RegressionTest1.test597(RegressionTest1.java:1922)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test598" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+]]></system-out>
+  </testcase>
+  <testcase name="test599" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test600" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test601" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test602" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Room sent to maintenance check.
+]]></system-out>
+  </testcase>
+  <testcase name="test603" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test604" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test605" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test606" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot enable directly from Disabled. Must be prepped first.
+]]></system-out>
+  </testcase>
+  <testcase name="test607" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot cancel. Guest is already here.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Guest checking out. Booking complete.
+Guest checking out. Booking complete.
+Cannot cancel a completed booking.
+]]></system-out>
+  </testcase>
+  <testcase name="test608" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test609" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot enable directly from Disabled. Must be prepped first.
+Room passed checks. Enabling.
+Already ready.
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Room is already disabled.
+Cannot enable directly from Disabled. Must be prepped first.
+]]></system-out>
+  </testcase>
+  <testcase name="test610" classname="RegressionTest1" time="0.002"/>
+  <testcase name="test611" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test612" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Disabling room...
+]]></system-out>
+  </testcase>
+  <testcase name="test613" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Already checked in.
+]]></system-out>
+  </testcase>
+  <testcase name="test614" classname="RegressionTest1" time="0.004">
+    <system-out><![CDATA[Room is already disabled.
+Room passed checks. Enabling.
+Room created: 195
+Room passed checks. Enabling.
+Room created: 196
+]]></system-out>
+  </testcase>
+  <testcase name="test615" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot enable directly from Disabled. Must be prepped first.
+Room passed checks. Enabling.
+Already ready.
+]]></system-out>
+  </testcase>
+  <testcase name="test616" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test617" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test618" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test619" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Error: Booking was cancelled.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot cancel a completed booking.
+Error: Booking was cancelled.
+Cannot cancel a completed booking.
+]]></system-out>
+  </testcase>
+  <testcase name="test620" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test621" classname="RegressionTest1" time="0.002">
+    <system-err><![CDATA[java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test621(RegressionTest1.java:2485)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test622" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test623" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test624" classname="RegressionTest1" time="0.005"/>
+  <testcase name="test625" classname="RegressionTest1" time="0.005">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+Room passed checks. Enabling.
+Room created: 197
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test626" classname="RegressionTest1" time="0.004">
+    <system-err><![CDATA[java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test626(RegressionTest1.java:2598)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test627" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test628" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room passed checks. Enabling.
+]]></system-out>
+  </testcase>
+  <testcase name="test629" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+]]></system-out>
+  </testcase>
+  <testcase name="test630" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Already checked in.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Error: Booking was cancelled.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Error: Booking was cancelled.
+Cannot cancel. Guest is already here.
+]]></system-out>
+  </testcase>
+  <testcase name="test631" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test632" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test633" classname="RegressionTest1" time="0.006"/>
+  <testcase name="test634" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room sent to maintenance check.
+Already ready.
+Disabling room...
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Disabling room...
+]]></system-out>
+  </testcase>
+  <testcase name="test635" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test636" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test637" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Cannot check out a completed booking.
+Cannot cancel. Guest is already here.
+Booking already finished.
+]]></system-out>
+  </testcase>
+  <testcase name="test638" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test639" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room sent to maintenance check.
+Already ready.
+Already ready.
+]]></system-out>
+  </testcase>
+  <testcase name="test640" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test641" classname="RegressionTest1" time="0.003">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+Already ready.
+]]></system-out>
+  </testcase>
+  <testcase name="test642" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test643" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test644" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test645" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot enable directly from Disabled. Must be prepped first.
+Room passed checks. Enabling.
+Disabling room...
+Room sent to maintenance check.
+Already ready.
+Disabling room...
+Disabling room...
+Room is already enabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test646" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test647" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test648" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot enable directly from Disabled. Must be prepped first.
+]]></system-out>
+  </testcase>
+  <testcase name="test649" classname="RegressionTest1" time="0.012"/>
+  <testcase name="test650" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test651" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test652" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test653" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test654" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Guest checking out. Booking complete.
+Guest checking out. Booking complete.
+Booking already finished.
+Cannot cancel. Guest is already here.
+]]></system-out>
+  </testcase>
+  <testcase name="test655" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test656" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test657" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test658" classname="RegressionTest1" time="0.002"/>
+  <testcase name="test659" classname="RegressionTest1" time="0.008">
+    <system-err><![CDATA[java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test659(RegressionTest1.java:3331)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test659(RegressionTest1.java:3346)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test660" classname="RegressionTest1" time="0.002"/>
+  <testcase name="test661" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test662" classname="RegressionTest1" time="0.002"/>
+  <testcase name="test663" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test664" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test665" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test666" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Error: Booking was cancelled.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Error: Booking was cancelled.
+Error: Booking was cancelled.
+Cannot check out. Guest hasn't checked in yet.
+Cannot check out a completed booking.
+Booking cancelled.
+]]></system-out>
+  </testcase>
+  <testcase name="test667" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test668" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test669" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test670" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room sent to maintenance check.
+Already ready.
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Room is already enabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test671" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test672" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Already ready.
+]]></system-out>
+  </testcase>
+  <testcase name="test673" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Guest checking out. Booking complete.
+Cannot check out a completed booking.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+]]></system-out>
+  </testcase>
+  <testcase name="test674" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking cancelled.
+]]></system-out>
+  </testcase>
+  <testcase name="test675" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Cannot check out a completed booking.
+Cannot cancel. Guest is already here.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Guest checking out. Booking complete.
+]]></system-out>
+  </testcase>
+  <testcase name="test676" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room sent to maintenance check.
+Already ready.
+Room is already enabled.
+Room sent to maintenance check.
+]]></system-out>
+  </testcase>
+  <testcase name="test677" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test678" classname="RegressionTest1" time="0.002">
+    <system-err><![CDATA[java.io.FileNotFoundException: 14 (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:71)
+	at RegressionTest1.test678(RegressionTest1.java:3836)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test679" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+Cannot cancel. Guest is already here.
+]]></system-out>
+  </testcase>
+  <testcase name="test680" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Error: Booking was cancelled.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot cancel a completed booking.
+Error: Booking was cancelled.
+Cannot check out a completed booking.
+Error: Booking was cancelled.
+Guest checked in.
+]]></system-out>
+  </testcase>
+  <testcase name="test681" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Error: Booking was cancelled.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot cancel a completed booking.
+Error: Booking was cancelled.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Error: Booking was cancelled.
+]]></system-out>
+  </testcase>
+  <testcase name="test682" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test683" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test684" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test685" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test686" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test687" classname="RegressionTest1" time="0.001">
+    <system-err><![CDATA[java.io.FileNotFoundException: 14 (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:71)
+	at RegressionTest1.test687(RegressionTest1.java:4126)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test688" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test689" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room sent to maintenance check.
+Room sent to maintenance check.
+Already ready.
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Room is already enabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test690" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test691" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test692" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Disabling room...
+]]></system-out>
+  </testcase>
+  <testcase name="test693" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test694" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test695" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test696" classname="RegressionTest1" time="0.015"/>
+  <testcase name="test697" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test698" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot cancel. Guest is already here.
+]]></system-out>
+  </testcase>
+  <testcase name="test699" classname="RegressionTest1" time="0.004">
+    <system-out><![CDATA[Room is already disabled.
+Room passed checks. Enabling.
+Room created: 198
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test700" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test701" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test702" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out. Guest hasn't checked in yet.
+Guest checked in.
+]]></system-out>
+  </testcase>
+  <testcase name="test703" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test704" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test705" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test706" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test707" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test708" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test709" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test710" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test711" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test712" classname="RegressionTest1" time="0.002"/>
+  <testcase name="test713" classname="RegressionTest1" time="0.008"/>
+  <testcase name="test714" classname="RegressionTest1" time="0.002"/>
+  <testcase name="test715" classname="RegressionTest1" time="0.003">
+    <system-out><![CDATA[Room is already disabled.
+Cannot enable directly from Disabled. Must be prepped first.
+Room passed checks. Enabling.
+Room created: 199
+]]></system-out>
+  </testcase>
+  <testcase name="test716" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room sent to maintenance check.
+Already ready.
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test717" classname="RegressionTest1" time="0.004">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+Room passed checks. Enabling.
+Room created: 200
+Room passed checks. Enabling.
+Room created: 201
+]]></system-out>
+  </testcase>
+  <testcase name="test718" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test719" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot enable directly from Disabled. Must be prepped first.
+]]></system-out>
+  </testcase>
+  <testcase name="test720" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test721" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test722" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test723" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test724" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test725" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test726" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out. Guest hasn't checked in yet.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking cancelled.
+]]></system-out>
+  </testcase>
+  <testcase name="test727" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test728" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room sent to maintenance check.
+Already ready.
+Disabling room...
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Disabling room...
+Room sent to maintenance check.
+Already ready.
+Room is already enabled.
+Room sent to maintenance check.
+Room is already enabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test729" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test730" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test731" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test732" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test733" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test734" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test735" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room is already disabled.
+Room passed checks. Enabling.
+Room created: 202
+]]></system-out>
+  </testcase>
+  <testcase name="test736" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test737" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test738" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test739" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test740" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test741" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test742" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Error: Booking was cancelled.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Error: Booking was cancelled.
+Error: Booking was cancelled.
+Cannot check out. Guest hasn't checked in yet.
+Error: Booking was cancelled.
+Cannot cancel. Guest is already here.
+]]></system-out>
+  </testcase>
+  <testcase name="test743" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Guest checked in.
+Booking cancelled.
+]]></system-out>
+  </testcase>
+  <testcase name="test744" classname="RegressionTest1" time="0.002"/>
+  <testcase name="test745" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+]]></system-out>
+  </testcase>
+  <testcase name="test746" classname="RegressionTest1" time="0.004">
+    <system-err><![CDATA[java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test746(RegressionTest1.java:5257)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test747" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test748" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Room sent to maintenance check.
+]]></system-out>
+  </testcase>
+  <testcase name="test749" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test750" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test751" classname="RegressionTest1" time="0.003">
+    <system-out><![CDATA[Cannot check out. Guest hasn't checked in yet.
+Already ready.
+]]></system-out>
+  </testcase>
+  <testcase name="test752" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room sent to maintenance check.
+Already ready.
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Already ready.
+Room sent to maintenance check.
+Already ready.
+Room is already enabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test753" classname="RegressionTest1" time="0.003"/>
+  <testcase name="test754" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test755" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out. Guest hasn't checked in yet.
+]]></system-out>
+  </testcase>
+  <testcase name="test756" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test757" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test758" classname="RegressionTest1" time="0.004">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+Room passed checks. Enabling.
+Room created: 203
+]]></system-out>
+  </testcase>
+  <testcase name="test759" classname="RegressionTest1" time="0.003">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test760" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test761" classname="RegressionTest1" time="0.002"/>
+  <testcase name="test762" classname="RegressionTest1" time="0.002"/>
+  <testcase name="test763" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test764" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Disabling room...
+Room sent to maintenance check.
+Disabling room...
+]]></system-out>
+  </testcase>
+  <testcase name="test765" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test766" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test767" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Guest checked in.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot cancel a completed booking.
+Cannot check out. Guest hasn't checked in yet.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Cannot check out. Guest hasn't checked in yet.
+Cannot check out a completed booking.
+Guest checked in.
+Cannot check out. Guest hasn't checked in yet.
+]]></system-out>
+  </testcase>
+  <testcase name="test768" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Already checked in.
+]]></system-out>
+  </testcase>
+  <testcase name="test769" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Guest checking out. Booking complete.
+Guest checking out. Booking complete.
+]]></system-out>
+  </testcase>
+  <testcase name="test770" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test771" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test772" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot cancel. Guest is already here.
+]]></system-out>
+  </testcase>
+  <testcase name="test773" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test774" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test775" classname="RegressionTest1" time="0.006">
+    <system-err><![CDATA[java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test775(RegressionTest1.java:5927)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test775(RegressionTest1.java:5937)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test776" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Error: Booking was cancelled.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Error: Booking was cancelled.
+Error: Booking was cancelled.
+]]></system-out>
+  </testcase>
+  <testcase name="test777" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test778" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+Cannot check out a completed booking.
+Cannot check out a completed booking.
+Booking already finished.
+Cannot cancel a completed booking.
+Cannot check out a completed booking.
+]]></system-out>
+  </testcase>
+  <testcase name="test779" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Room sent to maintenance check.
+Already ready.
+Disabling room...
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Disabling room...
+]]></system-out>
+  </testcase>
+  <testcase name="test780" classname="RegressionTest1" time="0.001">
+    <failure message="&apos;4&apos; != &apos;2&apos;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: '4' != '2'
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at RegressionTest1.test780(RegressionTest1.java:6123)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></failure>
+  </testcase>
+  <testcase name="test781" classname="RegressionTest1" time="0.006">
+    <system-err><![CDATA[java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test781(RegressionTest1.java:6137)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:672)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Repository.ServiceRequestRepository.parseCsvFileToMap(ServiceRequestRepository.java:78)
+	at RegressionTest1.test781(RegressionTest1.java:6147)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></system-err>
+  </testcase>
+  <testcase name="test782" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Room passed checks. Enabling.
+]]></system-out>
+  </testcase>
+  <testcase name="test783" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test784" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test785" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test786" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test787" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out a completed booking.
+]]></system-out>
+  </testcase>
+  <testcase name="test788" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Disabling room...
+]]></system-out>
+  </testcase>
+  <testcase name="test789" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Disabling room...
+Already ready.
+Already ready.
+Room sent to maintenance check.
+Already ready.
+Already ready.
+Already ready.
+]]></system-out>
+  </testcase>
+  <testcase name="test790" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Room is already disabled.
+Room is already disabled.
+]]></system-out>
+  </testcase>
+  <testcase name="test791" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[Cannot check out. Guest hasn't checked in yet.
+]]></system-out>
+  </testcase>
+  <testcase name="test792" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Disabling room...
+Already ready.
+Already ready.
+]]></system-out>
+  </testcase>
+  <testcase name="test793" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[ADMIN VIEW: ID=COMPLETED, State=READY_FOR_ENABLE, Price=100.0
+]]></system-out>
+  </testcase>
+  <testcase name="test794" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test795" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test796" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot check out. Guest hasn't checked in yet.
+]]></system-out>
+  </testcase>
+  <testcase name="test797" classname="RegressionTest1" time="0.0">
+    <system-out><![CDATA[ADMIN VIEW: ID=COMPLETED, State=DISABLED, Price=100.0
+ADMIN VIEW: ID=COMPLETED, State=DISABLED, Price=100.0
+]]></system-out>
+  </testcase>
+  <testcase name="test798" classname="RegressionTest1" time="0.005"/>
+  <testcase name="test799" classname="RegressionTest1" time="0.007"/>
+  <testcase name="test800" classname="RegressionTest1" time="0.001">
+    <system-out><![CDATA[Cannot enable directly from Disabled. Must be prepped first.
+Room passed checks. Enabling.
+Disabling room...
+Room sent to maintenance check.
+Already ready.
+Disabling room...
+Cannot enable directly from Disabled. Must be prepped first.
+Disabling room...
+]]></system-out>
+  </testcase>
+  <testcase name="test801" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test802" classname="RegressionTest1" time="0.001"/>
+  <testcase name="test803" classname="RegressionTest1" time="0.002">
+    <system-out><![CDATA[Cannot check out. Guest hasn't checked in yet.
+]]></system-out>
+  </testcase>
+  <testcase name="test804" classname="RegressionTest1" time="0.0"/>
+  <testcase name="test805" classname="RegressionTest1" time="0.001"/>
+</testsuite>

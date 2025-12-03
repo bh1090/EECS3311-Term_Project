@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>ConfirmedState.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package Model.State;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//Initial state after payment.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import Model.Room.Booking;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>public class ConfirmedState implements BookingState {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> @Override</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> public void cancel(Booking context) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_10'/>
+10
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_10'>1</a>
+<span>
+1. cancel : removed call to java/io/PrintStream::println &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>     System.out.println(&#34;Booking cancelled.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_11'/>
+11
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_11'>1</a>
+<span>
+1. cancel : removed call to Model/Room/Booking::setState &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>     context.setState(new CancelledState());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''> }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> @Override</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> public void checkIn(Booking context) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_16'/>
+16
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_16'>1</a>
+<span>
+1. checkIn : removed call to java/io/PrintStream::println &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>     System.out.println(&#34;Guest checked in.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_17'/>
+17
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_17'>1</a>
+<span>
+1. checkIn : removed call to Model/Room/Booking::setState &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>     context.setState(new CheckInState());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''> }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> @Override</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> public void checkOut(Booking context) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_22'/>
+22
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_22'>1</a>
+<span>
+1. checkOut : removed call to java/io/PrintStream::println &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>     System.out.println(&#34;Cannot check out. Guest hasn&#39;t checked in yet.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''> }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> @Override</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_26'/>
+26
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_26'>1</a>
+<span>
+1. getStatus : replaced return value with &#34;&#34; for Model/State/ConfirmedState::getStatus &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'> public String getStatus() { return &#34;CONFIRMED&#34;; }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3d405fe5_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3d405fe5_10'>10</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_10'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>cancel<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Model.State.ConfirmedState,-method=cancel,-methodDesc=(LModel/Room/Booking;)V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Model.State.ConfirmedState,-method=cancel,-methodDesc=(LModel/Room/Booking;)V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Model.State.ConfirmedState,-method=cancel,-methodDesc=(LModel/Room/Booking;)V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testCancelFlow(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testCannotCheckInIfCancelled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest.testUpdateBookingStatusToCancelled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest)</li> <li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCancelBooking(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3d405fe5_11'>11</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_11'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>cancel<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testCancelFlow(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest)</span></span> removed call to Model/Room/Booking::setState &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3d405fe5_16'>16</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_16'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkIn<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckOut(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest)</span></span> removed call to java/io/PrintStream::println &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3d405fe5_17'>17</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_17'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkIn<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testCheckInFlow(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest)</span></span> removed call to Model/Room/Booking::setState &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3d405fe5_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_22'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkOut<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=Model.State.ConfirmedState,-method=checkOut,-methodDesc=(LModel/Room/Booking;)V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=Model.State.ConfirmedState,-method=checkOut,-methodDesc=(LModel/Room/Booking;)V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=Model.State.ConfirmedState,-method=checkOut,-methodDesc=(LModel/Room/Booking;)V],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testCannotCheckOutIfNotCheckedIn(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3d405fe5_26'>26</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3d405fe5_26'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getStatus<br/><b>Killed by : </b>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testInitialStateIsConfirmed(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest)</span></span> replaced return value with &#34;&#34; for Model/State/ConfirmedState::getStatus &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testCancelFlow(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testCannotCheckInIfCancelled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest.testUpdateBookingStatusToCancelled(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest) (6 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCancelBooking(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (6 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testInitialStateIsConfirmed(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testCannotCheckOutIfNotCheckedIn(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest.testTimePersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest.testUserIdPersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest.testSaveAndFindBooking(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest.testUpdateBookingStatusToCompleted(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest) (3 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest.testOverwritingBookingUpdatesExisting(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest.testUpdateBookingStatusToCheckedIn(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testCreateBookingSuccess(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testGetBookingDetails(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (5 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testBookingConflict(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (9 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckIn(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (9 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest.testPerformCheckOut(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.RoomServiceTest) (8 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest.testFindAll(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest) (20 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest.testDateAndPersistence(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingRepositoryTest) (47 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testCheckInFlow(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest) (0 ms)</li><li>test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest.testCheckOutFlow(test.java.org.apache.maven.archetypes.maven_archetype_quickstart.Bhavya.BookingTest) (1 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.22.0
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: RegressionTest1
+-------------------------------------------------------------------------------
+Tests run: 305, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.667 s <<< FAILURE! -- in RegressionTest1
+RegressionTest1.test780 -- Time elapsed: 0.001 s <<< FAILURE!
+java.lang.AssertionError: '4' != '2'
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at RegressionTest1.test780(RegressionTest1.java:6123)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+

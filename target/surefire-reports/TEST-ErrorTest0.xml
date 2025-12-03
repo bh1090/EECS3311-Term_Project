@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="ErrorTest0" time="0.438" tests="12" errors="3" skipped="0" failures="9">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
+    <property name="java.class.path" value="/home/2calq/Downloads/EECS3311-Term_Project/target/test-classes:/home/2calq/Downloads/EECS3311-Term_Project/target/classes:/home/2calq/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/home/2calq/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/2calq/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/home/2calq/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/2calq/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:/home/2calq/.m2/repository/org/mockito/mockito-junit-jupiter/5.20.0/mockito-junit-jupiter-5.20.0.jar:/home/2calq/.m2/repository/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar:/home/2calq/.m2/repository/net/bytebuddy/byte-buddy/1.17.7/byte-buddy-1.17.7.jar:/home/2calq/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.7/byte-buddy-agent-1.17.7.jar:/home/2calq/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/2calq/.m2/repository/org/mockito/mockito-inline/5.2.0/mockito-inline-5.2.0.jar:/home/2calq/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/2calq/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/2calq/.m2/repository/org/junit/platform/junit-platform-suite-api/1.11.0/junit-platform-suite-api-1.11.0.jar:/home/2calq/.m2/repository/com/github/stefanbirkner/system-lambda/1.2.1/system-lambda-1.2.1.jar:/home/2calq/.m2/repository/net/sourceforge/javacsv/javacsv/2.0/javacsv-2.0.jar:/home/2calq/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/home/2calq/.m2/repository/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar:/home/2calq/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar:/home/2calq/.m2/repository/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/home/2calq/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar:/home/2calq/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/2calq/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://openjdk.org/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/nix/store/hm028d05qs6138ggq02239sh6qf5xwd6-openjdk-21.0.8+9/lib/openjdk/lib"/>
+    <property name="sun.java.command" value="/home/2calq/Downloads/EECS3311-Term_Project/target/surefire/surefirebooter-20251201201732854_3.jar /home/2calq/Downloads/EECS3311-Term_Project/target/surefire 2025-12-01T20-17-32_676-jvmRun1 surefire-20251201201732854_1tmp surefire_0-20251201201732854_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/2calq/Downloads/EECS3311-Term_Project/target/test-classes:/home/2calq/Downloads/EECS3311-Term_Project/target/classes:/home/2calq/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/home/2calq/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/2calq/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/home/2calq/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/2calq/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:/home/2calq/.m2/repository/org/mockito/mockito-junit-jupiter/5.20.0/mockito-junit-jupiter-5.20.0.jar:/home/2calq/.m2/repository/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar:/home/2calq/.m2/repository/net/bytebuddy/byte-buddy/1.17.7/byte-buddy-1.17.7.jar:/home/2calq/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.7/byte-buddy-agent-1.17.7.jar:/home/2calq/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/2calq/.m2/repository/org/mockito/mockito-inline/5.2.0/mockito-inline-5.2.0.jar:/home/2calq/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/2calq/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/2calq/.m2/repository/org/junit/platform/junit-platform-suite-api/1.11.0/junit-platform-suite-api-1.11.0.jar:/home/2calq/.m2/repository/com/github/stefanbirkner/system-lambda/1.2.1/system-lambda-1.2.1.jar:/home/2calq/.m2/repository/net/sourceforge/javacsv/javacsv/2.0/javacsv-2.0.jar:/home/2calq/.m2/repository/com/opencsv/opencsv/5.12.0/opencsv-5.12.0.jar:/home/2calq/.m2/repository/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar:/home/2calq/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar:/home/2calq/.m2/repository/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/home/2calq/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar:/home/2calq/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/2calq/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/2calq"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="/nix/store/hm028d05qs6138ggq02239sh6qf5xwd6-openjdk-21.0.8+9/lib/openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/2calq/Downloads/EECS3311-Term_Project"/>
+    <property name="style.color" value="always"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/2calq/Downloads/EECS3311-Term_Project/target/surefire/surefirebooter-20251201201732854_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.8+9-nixos"/>
+    <property name="user.name" value="2calq"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.12.47"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/2calq/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.8"/>
+    <property name="user.dir" value="/home/2calq/Downloads/EECS3311-Term_Project"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/nix/store/qfm3kqdbpd289nnmdhd4dis4svd2nzwv-glib-2.84.4/lib:/nix/store/lw4v9xvxyqrabifarmvj36prncj0c947-gtk+3-3.24.49/lib:/nix/store/ycsmihpja2k7bcw8kw9r3h9x1a2q0gsg-libXtst-1.2.5/lib:/nix/store/nvxsavc5m25w942qggc7gn4bfkagqcy4-libsecret-0.21.7/lib:/nix/store/qyh23a3qqpqrw14x05iq1rds9m19204j-webkitgtk-2.48.6+abi=4.1/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="N/A"/>
+    <property name="java.vm.version" value="21.0.8+9-nixos"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="test01" classname="ErrorTest0" time="0.002">
+    <error message="Cannot invoke &quot;String.equals(Object)&quot; because &quot;this.logID&quot; is null" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because "this.logID" is null
+	at Model.Sensor.OccupancySensorData.equals(OccupancySensorData.java:26)
+	at ErrorTest0.test01(ErrorTest0.java:26)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></error>
+  </testcase>
+  <testcase name="test02" classname="ErrorTest0" time="0.001">
+    <error message="Cannot invoke &quot;String.equals(Object)&quot; because &quot;this.logID&quot; is null" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because "this.logID" is null
+	at Model.Sensor.OccupancySensorData.equals(OccupancySensorData.java:26)
+	at ErrorTest0.test02(ErrorTest0.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></error>
+  </testcase>
+  <testcase name="test03" classname="ErrorTest0" time="0.003">
+    <error message="Cannot invoke &quot;String.equals(Object)&quot; because &quot;this.id&quot; is null" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because "this.id" is null
+	at Model.Sensor.Sensor.equals(Sensor.java:63)
+	at ErrorTest0.test03(ErrorTest0.java:42)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></error>
+  </testcase>
+  <testcase name="test04" classname="ErrorTest0" time="0.076">
+    <failure message="Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test04(ErrorTest0.java:58)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></failure>
+  </testcase>
+  <testcase name="test05" classname="ErrorTest0" time="0.048">
+    <failure message="Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test05(ErrorTest0.java:74)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></failure>
+  </testcase>
+  <testcase name="test06" classname="ErrorTest0" time="0.05">
+    <failure message="Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test06(ErrorTest0.java:93)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></failure>
+  </testcase>
+  <testcase name="test07" classname="ErrorTest0" time="0.063">
+    <failure message="Contract failed: equals-hashcode on occupancySensorData17 and occupancySensorData26" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorData17 and occupancySensorData26
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test07(ErrorTest0.java:119)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></failure>
+  </testcase>
+  <testcase name="test08" classname="ErrorTest0" time="0.055">
+    <failure message="Contract failed: equals-hashcode on scanIDSensorDataList11 and scanIDSensorDataList21" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Contract failed: equals-hashcode on scanIDSensorDataList11 and scanIDSensorDataList21
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test08(ErrorTest0.java:141)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></failure>
+  </testcase>
+  <testcase name="test09" classname="ErrorTest0" time="0.025">
+    <failure message="Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList16" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList16
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test09(ErrorTest0.java:159)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></failure>
+  </testcase>
+  <testcase name="test10" classname="ErrorTest0" time="0.031">
+    <failure message="Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList12
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test10(ErrorTest0.java:175)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></failure>
+  </testcase>
+  <testcase name="test11" classname="ErrorTest0" time="0.047">
+    <failure message="Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList16" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Contract failed: equals-hashcode on occupancySensorDataList1 and occupancySensorDataList16
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test11(ErrorTest0.java:192)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></failure>
+  </testcase>
+  <testcase name="test12" classname="ErrorTest0" time="0.029">
+    <failure message="Contract failed: equals-hashcode on scanIDSensorDataList11 and scanIDSensorDataList14" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Contract failed: equals-hashcode on scanIDSensorDataList11 and scanIDSensorDataList14
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at ErrorTest0.test12(ErrorTest0.java:209)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+]]></failure>
+  </testcase>
+</testsuite>
